@@ -38,7 +38,7 @@ export default function fullcalendar({
             if (locale === 'fa' || locale === 'fa-AF') {
                 console.log('[FullCalendar] Configuring Jalali calendar for locale:', locale);
                 
-                // Override title format to show Jalali date
+                // Override title format to show Jalali date  
                 calendarConfig.titleFormat = function(date) {
                     const m = momentJalaali(date.date.marker)
                     return m.format('jMMMM jYYYY')
@@ -47,44 +47,6 @@ export default function fullcalendar({
                 // Configure fixed week count
                 calendarConfig.fixedWeekCount = false
                 calendarConfig.showNonCurrentDates = false
-                
-                // Set initial view if not specified
-                if (!config.initialView) {
-                    calendarConfig.initialView = 'jalaliMonth'
-                }
-                
-                // Create a custom Jalali month view
-                calendarConfig.views = {
-                    jalaliMonth: {
-                        type: 'dayGrid',
-                        duration: { days: 1 }, // Will be overridden by visibleRange
-                        buttonText: 'ماه',
-                        fixedWeekCount: false,
-                        visibleRange: function(currentDate) {
-                            console.log('[FullCalendar] jalaliMonth visibleRange called with:', currentDate);
-                            const m = momentJalaali(currentDate)
-                            const start = m.clone().startOf('jMonth')
-                            const end = m.clone().endOf('jMonth').add(1, 'day')
-                            
-                            console.log('[FullCalendar] Jalali month range:', {
-                                start: start.format('YYYY-MM-DD'),
-                                startJalali: start.format('jYYYY-jMM-jDD'),
-                                end: end.format('YYYY-MM-DD'),
-                                endJalali: end.format('jYYYY-jMM-jDD'),
-                                currentDate: momentJalaali(currentDate).format('jYYYY-jMM-jDD')
-                            });
-                            
-                            return {
-                                start: start.toDate(),
-                                end: end.toDate()
-                            }
-                        }
-                    },
-                    // Alias dayGridMonth to jalaliMonth for compatibility
-                    dayGridMonth: {
-                        type: 'jalaliMonth'
-                    }
-                }
             }
 
             this.calendar = new Calendar(this.$el, {
@@ -191,17 +153,44 @@ export default function fullcalendar({
 
             this.calendar.render()
 
+            // Override prev/next navigation for Jalali calendar
+            const isJalali = locale === 'fa' || locale === 'fa-AF'
+            
             window.addEventListener('filament-fullcalendar--refresh', () =>
                 this.calendar.refetchEvents(),
             )
 
-            window.addEventListener('filament-fullcalendar--prev', () =>
-                this.calendar.prev(),
-            )
+            window.addEventListener('filament-fullcalendar--prev', () => {
+                if (isJalali && this.calendar.view.type === 'dayGridMonth') {
+                    // Get current date and move back by one Jalali month
+                    const currentDate = this.calendar.getDate()
+                    const m = momentJalaali(currentDate)
+                    const newDate = m.subtract(1, 'jMonth').toDate()
+                    console.log('[FullCalendar] Jalali prev:', {
+                        from: momentJalaali(currentDate).format('jYYYY-jMM-jDD'),
+                        to: momentJalaali(newDate).format('jYYYY-jMM-jDD')
+                    })
+                    this.calendar.gotoDate(newDate)
+                } else {
+                    this.calendar.prev()
+                }
+            })
 
-            window.addEventListener('filament-fullcalendar--next', () =>
-                this.calendar.next(),
-            )
+            window.addEventListener('filament-fullcalendar--next', () => {
+                if (isJalali && this.calendar.view.type === 'dayGridMonth') {
+                    // Get current date and move forward by one Jalali month
+                    const currentDate = this.calendar.getDate()
+                    const m = momentJalaali(currentDate)
+                    const newDate = m.add(1, 'jMonth').toDate()
+                    console.log('[FullCalendar] Jalali next:', {
+                        from: momentJalaali(currentDate).format('jYYYY-jMM-jDD'),
+                        to: momentJalaali(newDate).format('jYYYY-jMM-jDD')
+                    })
+                    this.calendar.gotoDate(newDate)
+                } else {
+                    this.calendar.next()
+                }
+            })
 
             window.addEventListener('filament-fullcalendar--today', () =>
                 this.calendar.today(),

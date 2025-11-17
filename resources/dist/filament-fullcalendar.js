@@ -1,5 +1,5 @@
-var Fo, e0, Zz, Jz, Dt, $e, ip, ei, ti, mo = {}, oi = [], Dd = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
-function Ne(t, e) {
+var Fo, e0, Zz, Jz, _t, Ze, ip, ei, ti, mo = {}, oi = [], Dd = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+function Se(t, e) {
   for (var o in e) t[o] = e[o];
   return t;
 }
@@ -7,13 +7,13 @@ function Mi(t) {
   var e = t.parentNode;
   e && e.removeChild(t);
 }
-function u(t, e, o) {
+function f(t, e, o) {
   var M, n, b, r = {};
   for (b in e) b == "key" ? M = e[b] : b == "ref" ? n = e[b] : r[b] = e[b];
   if (arguments.length > 2 && (r.children = arguments.length > 3 ? Fo.call(arguments, 2) : o), typeof t == "function" && t.defaultProps != null) for (b in t.defaultProps) r[b] === void 0 && (r[b] = t.defaultProps[b]);
-  return co(t, r, M, n, null);
+  return ao(t, r, M, n, null);
 }
-function co(t, e, o, M, n) {
+function ao(t, e, o, M, n) {
   var b = { type: t, props: e, key: o, ref: M, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: n ?? ++Zz };
   return n == null && e0.vnode != null && e0.vnode(b), b;
 }
@@ -50,28 +50,28 @@ function go(t, e, o, M, n) {
   }
 }
 function ap(t) {
-  Dt = !0;
+  _t = !0;
   try {
     return this.l[t.type + !1](e0.event ? e0.event(t) : t);
   } finally {
-    Dt = !1;
+    _t = !1;
   }
 }
 function sp(t) {
-  Dt = !0;
+  _t = !0;
   try {
     return this.l[t.type + !0](e0.event ? e0.event(t) : t);
   } finally {
-    Dt = !1;
+    _t = !1;
   }
 }
 function u1(t, e) {
   this.props = t, this.context = e;
 }
-function l2(t, e) {
-  if (e == null) return t.__ ? l2(t.__, t.__.__k.indexOf(t) + 1) : null;
+function d2(t, e) {
+  if (e == null) return t.__ ? d2(t.__, t.__.__k.indexOf(t) + 1) : null;
   for (var o; e < t.__k.length; e++) if ((o = t.__k[e]) != null && o.__e != null) return o.__e;
-  return typeof t.type == "function" ? l2(t) : null;
+  return typeof t.type == "function" ? d2(t) : null;
 }
 function ni(t) {
   var e, o;
@@ -84,32 +84,32 @@ function ni(t) {
   }
 }
 function Cd(t) {
-  Dt ? setTimeout(t) : ei(t);
+  _t ? setTimeout(t) : ei(t);
 }
 function Wn(t) {
-  (!t.__d && (t.__d = !0) && $e.push(t) && !yo.__r++ || ip !== e0.debounceRendering) && ((ip = e0.debounceRendering) || Cd)(yo);
+  (!t.__d && (t.__d = !0) && Ze.push(t) && !yo.__r++ || ip !== e0.debounceRendering) && ((ip = e0.debounceRendering) || Cd)(yo);
 }
 function yo() {
   var t, e, o, M, n, b, r, z;
-  for ($e.sort(function(i, a) {
+  for (Ze.sort(function(i, a) {
     return i.__v.__b - a.__v.__b;
-  }); t = $e.shift(); ) t.__d && (e = $e.length, M = void 0, n = void 0, r = (b = (o = t).__v).__e, (z = o.__P) && (M = [], (n = Ne({}, b)).__v = b.__v + 1, tb(z, b, n, o.__n, z.ownerSVGElement !== void 0, b.__h != null ? [r] : null, M, r ?? l2(b), b.__h), ii(M, b), b.__e != r && ni(b)), $e.length > e && $e.sort(function(i, a) {
+  }); t = Ze.shift(); ) t.__d && (e = Ze.length, M = void 0, n = void 0, r = (b = (o = t).__v).__e, (z = o.__P) && (M = [], (n = Se({}, b)).__v = b.__v + 1, tb(z, b, n, o.__n, z.ownerSVGElement !== void 0, b.__h != null ? [r] : null, M, r ?? d2(b), b.__h), ii(M, b), b.__e != r && ni(b)), Ze.length > e && Ze.sort(function(i, a) {
     return i.__v.__b - a.__v.__b;
   }));
   yo.__r = 0;
 }
 function bi(t, e, o, M, n, b, r, z, i, a) {
-  var s, d, A, f, h, R, W, g = M && M.__k || oi, N = g.length;
-  for (o.__k = [], s = 0; s < e.length; s++) if ((f = o.__k[s] = (f = e[s]) == null || typeof f == "boolean" ? null : typeof f == "string" || typeof f == "number" || typeof f == "bigint" ? co(null, f, null, null, f) : Array.isArray(f) ? co(M0, { children: f }, null, null, null) : f.__b > 0 ? co(f.type, f.props, f.key, f.ref ? f.ref : null, f.__v) : f) != null) {
-    if (f.__ = o, f.__b = o.__b + 1, (A = g[s]) === null || A && f.key == A.key && f.type === A.type) g[s] = void 0;
+  var s, d, u, A, h, R, W, g = M && M.__k || oi, N = g.length;
+  for (o.__k = [], s = 0; s < e.length; s++) if ((A = o.__k[s] = (A = e[s]) == null || typeof A == "boolean" ? null : typeof A == "string" || typeof A == "number" || typeof A == "bigint" ? ao(null, A, null, null, A) : Array.isArray(A) ? ao(M0, { children: A }, null, null, null) : A.__b > 0 ? ao(A.type, A.props, A.key, A.ref ? A.ref : null, A.__v) : A) != null) {
+    if (A.__ = o, A.__b = o.__b + 1, (u = g[s]) === null || u && A.key == u.key && A.type === u.type) g[s] = void 0;
     else for (d = 0; d < N; d++) {
-      if ((A = g[d]) && f.key == A.key && f.type === A.type) {
+      if ((u = g[d]) && A.key == u.key && A.type === u.type) {
         g[d] = void 0;
         break;
       }
-      A = null;
+      u = null;
     }
-    tb(t, f, A = A || mo, n, b, r, z, i, a), h = f.__e, (d = f.ref) && A.ref != d && (W || (W = []), A.ref && W.push(A.ref, null, f), W.push(d, f.__c || h, f)), h != null ? (R == null && (R = h), typeof f.type == "function" && f.__k === A.__k ? f.__d = i = ri(f, i, t) : i = pi(t, f, A, g, h, i), typeof o.type == "function" && (o.__d = i)) : i && A.__e == i && i.parentNode != t && (i = l2(A));
+    tb(t, A, u = u || mo, n, b, r, z, i, a), h = A.__e, (d = A.ref) && u.ref != d && (W || (W = []), u.ref && W.push(u.ref, null, A), W.push(d, A.__c || h, A)), h != null ? (R == null && (R = h), typeof A.type == "function" && A.__k === u.__k ? A.__d = i = ri(A, i, t) : i = pi(t, A, u, g, h, i), typeof o.type == "function" && (o.__d = i)) : i && u.__e == i && i.parentNode != t && (i = d2(u));
   }
   for (o.__e = R, s = N; s--; ) g[s] != null && (typeof o.type == "function" && g[s].__e != null && g[s].__e == o.__d && (o.__d = zi(M).nextSibling), ai(g[s], g[s]));
   if (W) for (s = 0; s < W.length; s++) ci(W[s], W[++s], W[++s]);
@@ -142,14 +142,14 @@ function zi(t) {
   return null;
 }
 function tb(t, e, o, M, n, b, r, z, i) {
-  var a, s, d, A, f, h, R, W, g, N, B, k, j, Y, U, Z = e.type;
+  var a, s, d, u, A, h, R, W, g, N, B, C, Y, j, U, Z = e.type;
   if (e.constructor !== void 0) return null;
   o.__h != null && (i = o.__h, z = e.__e = o.__e, e.__h = null, b = [z]), (a = e0.__b) && a(e);
   try {
     e: if (typeof Z == "function") {
-      if (W = e.props, g = (a = Z.contextType) && M[a.__c], N = a ? g ? g.props.value : a.__ : M, o.__c ? R = (s = e.__c = o.__c).__ = s.__E : ("prototype" in Z && Z.prototype.render ? e.__c = s = new Z(W, N) : (e.__c = s = new u1(W, N), s.constructor = Z, s.render = Xd), g && g.sub(s), s.props = W, s.state || (s.state = {}), s.context = N, s.__n = M, d = s.__d = !0, s.__h = [], s._sb = []), s.__s == null && (s.__s = s.state), Z.getDerivedStateFromProps != null && (s.__s == s.state && (s.__s = Ne({}, s.__s)), Ne(s.__s, Z.getDerivedStateFromProps(W, s.__s))), A = s.props, f = s.state, s.__v = e, d) Z.getDerivedStateFromProps == null && s.componentWillMount != null && s.componentWillMount(), s.componentDidMount != null && s.__h.push(s.componentDidMount);
+      if (W = e.props, g = (a = Z.contextType) && M[a.__c], N = a ? g ? g.props.value : a.__ : M, o.__c ? R = (s = e.__c = o.__c).__ = s.__E : ("prototype" in Z && Z.prototype.render ? e.__c = s = new Z(W, N) : (e.__c = s = new u1(W, N), s.constructor = Z, s.render = Xd), g && g.sub(s), s.props = W, s.state || (s.state = {}), s.context = N, s.__n = M, d = s.__d = !0, s.__h = [], s._sb = []), s.__s == null && (s.__s = s.state), Z.getDerivedStateFromProps != null && (s.__s == s.state && (s.__s = Se({}, s.__s)), Se(s.__s, Z.getDerivedStateFromProps(W, s.__s))), u = s.props, A = s.state, s.__v = e, d) Z.getDerivedStateFromProps == null && s.componentWillMount != null && s.componentWillMount(), s.componentDidMount != null && s.__h.push(s.componentDidMount);
       else {
-        if (Z.getDerivedStateFromProps == null && W !== A && s.componentWillReceiveProps != null && s.componentWillReceiveProps(W, N), !s.__e && s.shouldComponentUpdate != null && s.shouldComponentUpdate(W, s.__s, N) === !1 || e.__v === o.__v) {
+        if (Z.getDerivedStateFromProps == null && W !== u && s.componentWillReceiveProps != null && s.componentWillReceiveProps(W, N), !s.__e && s.shouldComponentUpdate != null && s.shouldComponentUpdate(W, s.__s, N) === !1 || e.__v === o.__v) {
           for (e.__v !== o.__v && (s.props = W, s.state = s.__s, s.__d = !1), e.__e = o.__e, e.__k = o.__k, e.__k.forEach(function(S0) {
             S0 && (S0.__ = e);
           }), B = 0; B < s._sb.length; B++) s.__h.push(s._sb[B]);
@@ -157,16 +157,16 @@ function tb(t, e, o, M, n, b, r, z, i) {
           break e;
         }
         s.componentWillUpdate != null && s.componentWillUpdate(W, s.__s, N), s.componentDidUpdate != null && s.__h.push(function() {
-          s.componentDidUpdate(A, f, h);
+          s.componentDidUpdate(u, A, h);
         });
       }
-      if (s.context = N, s.props = W, s.__P = t, k = e0.__r, j = 0, "prototype" in Z && Z.prototype.render) {
-        for (s.state = s.__s, s.__d = !1, k && k(e), a = s.render(s.props, s.state, s.context), Y = 0; Y < s._sb.length; Y++) s.__h.push(s._sb[Y]);
+      if (s.context = N, s.props = W, s.__P = t, C = e0.__r, Y = 0, "prototype" in Z && Z.prototype.render) {
+        for (s.state = s.__s, s.__d = !1, C && C(e), a = s.render(s.props, s.state, s.context), j = 0; j < s._sb.length; j++) s.__h.push(s._sb[j]);
         s._sb = [];
       } else do
-        s.__d = !1, k && k(e), a = s.render(s.props, s.state, s.context), s.state = s.__s;
-      while (s.__d && ++j < 25);
-      s.state = s.__s, s.getChildContext != null && (M = Ne(Ne({}, M), s.getChildContext())), d || s.getSnapshotBeforeUpdate == null || (h = s.getSnapshotBeforeUpdate(A, f)), U = a != null && a.type === M0 && a.key == null ? a.props.children : a, bi(t, Array.isArray(U) ? U : [U], e, o, M, n, b, r, z, i), s.base = e.__e, e.__h = null, s.__h.length && r.push(s), R && (s.__E = s.__ = null), s.__e = !1;
+        s.__d = !1, C && C(e), a = s.render(s.props, s.state, s.context), s.state = s.__s;
+      while (s.__d && ++Y < 25);
+      s.state = s.__s, s.getChildContext != null && (M = Se(Se({}, M), s.getChildContext())), d || s.getSnapshotBeforeUpdate == null || (h = s.getSnapshotBeforeUpdate(u, A)), U = a != null && a.type === M0 && a.key == null ? a.props.children : a, bi(t, Array.isArray(U) ? U : [U], e, o, M, n, b, r, z, i), s.base = e.__e, e.__h = null, s.__h.length && r.push(s), R && (s.__E = s.__ = null), s.__e = !1;
     } else b == null && e.__v === o.__v ? (e.__k = o.__k, e.__e = o.__e) : e.__e = kd(o.__e, e, o, M, n, b, r, i);
     (a = e0.diffed) && a(e);
   } catch (S0) {
@@ -185,26 +185,26 @@ function ii(t, e) {
   });
 }
 function kd(t, e, o, M, n, b, r, z) {
-  var i, a, s, d = o.props, A = e.props, f = e.type, h = 0;
-  if (f === "svg" && (n = !0), b != null) {
-    for (; h < b.length; h++) if ((i = b[h]) && "setAttribute" in i == !!f && (f ? i.localName === f : i.nodeType === 3)) {
+  var i, a, s, d = o.props, u = e.props, A = e.type, h = 0;
+  if (A === "svg" && (n = !0), b != null) {
+    for (; h < b.length; h++) if ((i = b[h]) && "setAttribute" in i == !!A && (A ? i.localName === A : i.nodeType === 3)) {
       t = i, b[h] = null;
       break;
     }
   }
   if (t == null) {
-    if (f === null) return document.createTextNode(A);
-    t = n ? document.createElementNS("http://www.w3.org/2000/svg", f) : document.createElement(f, A.is && A), b = null, z = !1;
+    if (A === null) return document.createTextNode(u);
+    t = n ? document.createElementNS("http://www.w3.org/2000/svg", A) : document.createElement(A, u.is && u), b = null, z = !1;
   }
-  if (f === null) d === A || z && t.data === A || (t.data = A);
+  if (A === null) d === u || z && t.data === u || (t.data = u);
   else {
-    if (b = b && Fo.call(t.childNodes), a = (d = o.props || mo).dangerouslySetInnerHTML, s = A.dangerouslySetInnerHTML, !z) {
+    if (b = b && Fo.call(t.childNodes), a = (d = o.props || mo).dangerouslySetInnerHTML, s = u.dangerouslySetInnerHTML, !z) {
       if (b != null) for (d = {}, h = 0; h < t.attributes.length; h++) d[t.attributes[h].name] = t.attributes[h].value;
       (s || a) && (s && (a && s.__html == a.__html || s.__html === t.innerHTML) || (t.innerHTML = s && s.__html || ""));
     }
-    if (_d(t, A, d, n, z), s) e.__k = [];
-    else if (h = e.props.children, bi(t, Array.isArray(h) ? h : [h], e, o, M, n && f !== "foreignObject", b, r, b ? b[0] : o.__k && l2(o, 0), z), b != null) for (h = b.length; h--; ) b[h] != null && Mi(b[h]);
-    z || ("value" in A && (h = A.value) !== void 0 && (h !== t.value || f === "progress" && !h || f === "option" && h !== d.value) && go(t, "value", h, d.value, !1), "checked" in A && (h = A.checked) !== void 0 && h !== t.checked && go(t, "checked", h, d.checked, !1));
+    if (_d(t, u, d, n, z), s) e.__k = [];
+    else if (h = e.props.children, bi(t, Array.isArray(h) ? h : [h], e, o, M, n && A !== "foreignObject", b, r, b ? b[0] : o.__k && d2(o, 0), z), b != null) for (h = b.length; h--; ) b[h] != null && Mi(b[h]);
+    z || ("value" in u && (h = u.value) !== void 0 && (h !== t.value || A === "progress" && !h || A === "option" && h !== d.value) && go(t, "value", h, d.value, !1), "checked" in u && (h = u.checked) !== void 0 && h !== t.checked && go(t, "checked", h, d.checked, !1));
   }
   return t;
 }
@@ -231,9 +231,9 @@ function ai(t, e, o) {
 function Xd(t, e, o) {
   return this.constructor(t, o);
 }
-function d2(t, e, o) {
+function A2(t, e, o) {
   var M, n, b;
-  e0.__ && e0.__(t, e), n = (M = !1) ? null : e.__k, b = [], tb(e, t = e.__k = u(M0, null, [t]), n || mo, mo, e.ownerSVGElement !== void 0, n ? null : e.firstChild ? Fo.call(e.childNodes) : null, b, n ? n.__e : e.firstChild, M), ii(b, t);
+  e0.__ && e0.__(t, e), n = (M = !1) ? null : e.__k, b = [], tb(e, t = e.__k = f(M0, null, [t]), n || mo, mo, e.ownerSVGElement !== void 0, n ? null : e.firstChild ? Fo.call(e.childNodes) : null, b, n ? n.__e : e.firstChild, M), ii(b, t);
 }
 function xd(t, e) {
   var o = { __c: e = "__cC" + ti++, __: t, Consumer: function(M, n) {
@@ -265,16 +265,16 @@ Fo = oi.slice, e0 = { __e: function(t, e, o, M) {
   throw t;
 } }, Zz = 0, Jz = function(t) {
   return t != null && t.constructor === void 0;
-}, Dt = !1, u1.prototype.setState = function(t, e) {
+}, _t = !1, u1.prototype.setState = function(t, e) {
   var o;
-  o = this.__s != null && this.__s !== this.state ? this.__s : this.__s = Ne({}, this.state), typeof t == "function" && (t = t(Ne({}, o), this.props)), t && Ne(o, t), t != null && this.__v && (e && this._sb.push(e), Wn(this));
+  o = this.__s != null && this.__s !== this.state ? this.__s : this.__s = Se({}, this.state), typeof t == "function" && (t = t(Se({}, o), this.props)), t && Se(o, t), t != null && this.__v && (e && this._sb.push(e), Wn(this));
 }, u1.prototype.forceUpdate = function(t) {
   this.__v && (this.__e = !0, t && this.__h.push(t), Wn(this));
-}, u1.prototype.render = M0, $e = [], ei = typeof Promise == "function" ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, yo.__r = 0, ti = 0;
-var H1, YM, Op, si = [], jM = [], lp = e0.__b, dp = e0.__r, Ap = e0.diffed, up = e0.__c, fp = e0.unmount;
+}, u1.prototype.render = M0, Ze = [], ei = typeof Promise == "function" ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, yo.__r = 0, ti = 0;
+var H1, jM, Op, si = [], YM = [], lp = e0.__b, dp = e0.__r, Ap = e0.diffed, up = e0.__c, fp = e0.unmount;
 function Id() {
   for (var t; t = si.shift(); ) if (t.__P && t.__H) try {
-    t.__H.__h.forEach(ao), t.__H.__h.forEach(Rn), t.__H.__h = [];
+    t.__H.__h.forEach(so), t.__H.__h.forEach(Rn), t.__H.__h = [];
   } catch (e) {
     t.__H.__h = [], e0.__e(e, t.__v);
   }
@@ -284,19 +284,19 @@ e0.__b = function(t) {
 }, e0.__r = function(t) {
   dp && dp(t);
   var e = (H1 = t.__c).__H;
-  e && (YM === H1 ? (e.__h = [], H1.__h = [], e.__.forEach(function(o) {
-    o.__N && (o.__ = o.__N), o.__V = jM, o.__N = o.i = void 0;
-  })) : (e.__h.forEach(ao), e.__h.forEach(Rn), e.__h = [])), YM = H1;
+  e && (jM === H1 ? (e.__h = [], H1.__h = [], e.__.forEach(function(o) {
+    o.__N && (o.__ = o.__N), o.__V = YM, o.__N = o.i = void 0;
+  })) : (e.__h.forEach(so), e.__h.forEach(Rn), e.__h = [])), jM = H1;
 }, e0.diffed = function(t) {
   Ap && Ap(t);
   var e = t.__c;
   e && e.__H && (e.__H.__h.length && (si.push(e) !== 1 && Op === e0.requestAnimationFrame || ((Op = e0.requestAnimationFrame) || Pd)(Id)), e.__H.__.forEach(function(o) {
-    o.i && (o.__H = o.i), o.__V !== jM && (o.__ = o.__V), o.i = void 0, o.__V = jM;
-  })), YM = H1 = null;
+    o.i && (o.__H = o.i), o.__V !== YM && (o.__ = o.__V), o.i = void 0, o.__V = YM;
+  })), jM = H1 = null;
 }, e0.__c = function(t, e) {
   e.some(function(o) {
     try {
-      o.__h.forEach(ao), o.__h = o.__h.filter(function(M) {
+      o.__h.forEach(so), o.__h = o.__h.filter(function(M) {
         return !M.__ || Rn(M);
       });
     } catch (M) {
@@ -310,7 +310,7 @@ e0.__b = function(t) {
   var e, o = t.__c;
   o && o.__H && (o.__H.__.forEach(function(M) {
     try {
-      ao(M);
+      so(M);
     } catch (n) {
       e = n;
     }
@@ -323,7 +323,7 @@ function Pd(t) {
   }, M = setTimeout(o, 100);
   qp && (e = requestAnimationFrame(o));
 }
-function ao(t) {
+function so(t) {
   var e = H1, o = t.__c;
   typeof o == "function" && (t.__c = void 0, o()), H1 = e;
 }
@@ -377,7 +377,7 @@ function di(t) {
   var e = t.__.__c;
   return e && e.__a && e.__a(t);
 }
-function eo() {
+function to() {
   this.u = null, this.o = null;
 }
 e0.unmount = function(t) {
@@ -411,8 +411,8 @@ e0.unmount = function(t) {
     }
     this.__b = null;
   }
-  var n = e.__a && u(M0, null, t.fallback);
-  return n && (n.__h = null), [u(M0, null, e.__a ? null : t.children), n];
+  var n = e.__a && f(M0, null, t.fallback);
+  return n && (n.__h = null), [f(M0, null, e.__a ? null : t.children), n];
 };
 var gp = function(t, e, o) {
   if (++o[1] === o[0] && t.o.delete(e), t.props.revealOrder && (t.props.revealOrder[0] !== "t" || !t.o.size)) for (o = t.u; o; ) {
@@ -421,28 +421,28 @@ var gp = function(t, e, o) {
     t.u = o = o[2];
   }
 };
-function Yd(t) {
+function jd(t) {
   return this.getChildContext = function() {
     return t.context;
   }, t.children;
 }
-function jd(t) {
+function Yd(t) {
   var e = this, o = t.i;
   e.componentWillUnmount = function() {
-    d2(null, e.l), e.l = null, e.i = null;
+    A2(null, e.l), e.l = null, e.i = null;
   }, e.i && e.i !== o && e.componentWillUnmount(), t.__v ? (e.l || (e.i = o, e.l = { nodeType: 1, parentNode: o, childNodes: [], appendChild: function(M) {
     this.childNodes.push(M), e.i.appendChild(M);
   }, insertBefore: function(M, n) {
     this.childNodes.push(M), e.i.appendChild(M);
   }, removeChild: function(M) {
     this.childNodes.splice(this.childNodes.indexOf(M) >>> 1, 1), e.i.removeChild(M);
-  } }), d2(u(Yd, { context: e.context }, t.__v), e.l)) : e.l && e.componentWillUnmount();
+  } }), A2(f(jd, { context: e.context }, t.__v), e.l)) : e.l && e.componentWillUnmount();
 }
 function Fd(t, e) {
-  var o = u(jd, { __v: t, i: e });
+  var o = f(Yd, { __v: t, i: e });
   return o.containerInfo = e, o;
 }
-(eo.prototype = new u1()).__a = function(t) {
+(to.prototype = new u1()).__a = function(t) {
   var e = this, o = di(e.__v), M = e.o.get(t);
   return M[0]++, function(n) {
     var b = function() {
@@ -450,13 +450,13 @@ function Fd(t, e) {
     };
     o ? o(b) : b();
   };
-}, eo.prototype.render = function(t) {
+}, to.prototype.render = function(t) {
   this.u = null, this.o = /* @__PURE__ */ new Map();
   var e = Lo(t.children);
   t.revealOrder && t.revealOrder[0] === "b" && e.reverse();
   for (var o = e.length; o--; ) this.o.set(e[o], this.u = [1, 0, this.u]);
   return t.children;
-}, eo.prototype.componentDidUpdate = eo.prototype.componentDidMount = function() {
+}, to.prototype.componentDidUpdate = to.prototype.componentDidMount = function() {
   var t = this;
   this.o.forEach(function(e, o) {
     gp(t, o, e);
@@ -508,7 +508,7 @@ e0.__r = function(t) {
   Np && Np(t), t.__c;
 };
 const Ai = [], mn = /* @__PURE__ */ new Map();
-function Ie(t) {
+function Pe(t) {
   Ai.push(t), mn.forEach((e) => {
     fi(e, t);
   });
@@ -553,8 +553,8 @@ function MA() {
 }
 typeof document < "u" && ui(document);
 var nA = ':root{--fc-small-font-size:.85em;--fc-page-bg-color:#fff;--fc-neutral-bg-color:hsla(0,0%,82%,.3);--fc-neutral-text-color:grey;--fc-border-color:#ddd;--fc-button-text-color:#fff;--fc-button-bg-color:#2c3e50;--fc-button-border-color:#2c3e50;--fc-button-hover-bg-color:#1e2b37;--fc-button-hover-border-color:#1a252f;--fc-button-active-bg-color:#1a252f;--fc-button-active-border-color:#151e27;--fc-event-bg-color:#3788d8;--fc-event-border-color:#3788d8;--fc-event-text-color:#fff;--fc-event-selected-overlay-color:rgba(0,0,0,.25);--fc-more-link-bg-color:#d0d0d0;--fc-more-link-text-color:inherit;--fc-event-resizer-thickness:8px;--fc-event-resizer-dot-total-width:8px;--fc-event-resizer-dot-border-width:1px;--fc-non-business-color:hsla(0,0%,84%,.3);--fc-bg-event-color:#8fdf82;--fc-bg-event-opacity:0.3;--fc-highlight-color:rgba(188,232,241,.3);--fc-today-bg-color:rgba(255,220,40,.15);--fc-now-indicator-color:red}.fc-not-allowed,.fc-not-allowed .fc-event{cursor:not-allowed}.fc{display:flex;flex-direction:column;font-size:1em}.fc,.fc *,.fc :after,.fc :before{box-sizing:border-box}.fc table{border-collapse:collapse;border-spacing:0;font-size:1em}.fc th{text-align:center}.fc td,.fc th{padding:0;vertical-align:top}.fc a[data-navlink]{cursor:pointer}.fc a[data-navlink]:hover{text-decoration:underline}.fc-direction-ltr{direction:ltr;text-align:left}.fc-direction-rtl{direction:rtl;text-align:right}.fc-theme-standard td,.fc-theme-standard th{border:1px solid var(--fc-border-color)}.fc-liquid-hack td,.fc-liquid-hack th{position:relative}@font-face{font-family:fcicons;font-style:normal;font-weight:400;src:url("data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBfAAAAC8AAAAYGNtYXAXVtKNAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZgYydxIAAAF4AAAFNGhlYWQUJ7cIAAAGrAAAADZoaGVhB20DzAAABuQAAAAkaG10eCIABhQAAAcIAAAALGxvY2ED4AU6AAAHNAAAABhtYXhwAA8AjAAAB0wAAAAgbmFtZXsr690AAAdsAAABhnBvc3QAAwAAAAAI9AAAACAAAwPAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpBgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6Qb//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAWIAjQKeAskAEwAAJSc3NjQnJiIHAQYUFwEWMjc2NCcCnuLiDQ0MJAz/AA0NAQAMJAwNDcni4gwjDQwM/wANIwz/AA0NDCMNAAAAAQFiAI0CngLJABMAACUBNjQnASYiBwYUHwEHBhQXFjI3AZ4BAA0N/wAMJAwNDeLiDQ0MJAyNAQAMIw0BAAwMDSMM4uINIwwNDQAAAAIA4gC3Ax4CngATACcAACUnNzY0JyYiDwEGFB8BFjI3NjQnISc3NjQnJiIPAQYUHwEWMjc2NCcB87e3DQ0MIw3VDQ3VDSMMDQ0BK7e3DQ0MJAzVDQ3VDCQMDQ3zuLcMJAwNDdUNIwzWDAwNIwy4twwkDA0N1Q0jDNYMDA0jDAAAAgDiALcDHgKeABMAJwAAJTc2NC8BJiIHBhQfAQcGFBcWMjchNzY0LwEmIgcGFB8BBwYUFxYyNwJJ1Q0N1Q0jDA0Nt7cNDQwjDf7V1Q0N1QwkDA0Nt7cNDQwkDLfWDCMN1Q0NDCQMt7gMIw0MDNYMIw3VDQ0MJAy3uAwjDQwMAAADAFUAAAOrA1UAMwBoAHcAABMiBgcOAQcOAQcOARURFBYXHgEXHgEXHgEzITI2Nz4BNz4BNz4BNRE0JicuAScuAScuASMFITIWFx4BFx4BFx4BFREUBgcOAQcOAQcOASMhIiYnLgEnLgEnLgE1ETQ2Nz4BNz4BNz4BMxMhMjY1NCYjISIGFRQWM9UNGAwLFQkJDgUFBQUFBQ4JCRULDBgNAlYNGAwLFQkJDgUFBQUFBQ4JCRULDBgN/aoCVgQIBAQHAwMFAQIBAQIBBQMDBwQECAT9qgQIBAQHAwMFAQIBAQIBBQMDBwQECASAAVYRGRkR/qoRGRkRA1UFBAUOCQkVDAsZDf2rDRkLDBUJCA4FBQUFBQUOCQgVDAsZDQJVDRkLDBUJCQ4FBAVVAgECBQMCBwQECAX9qwQJAwQHAwMFAQICAgIBBQMDBwQDCQQCVQUIBAQHAgMFAgEC/oAZEhEZGRESGQAAAAADAFUAAAOrA1UAMwBoAIkAABMiBgcOAQcOAQcOARURFBYXHgEXHgEXHgEzITI2Nz4BNz4BNz4BNRE0JicuAScuAScuASMFITIWFx4BFx4BFx4BFREUBgcOAQcOAQcOASMhIiYnLgEnLgEnLgE1ETQ2Nz4BNz4BNz4BMxMzFRQWMzI2PQEzMjY1NCYrATU0JiMiBh0BIyIGFRQWM9UNGAwLFQkJDgUFBQUFBQ4JCRULDBgNAlYNGAwLFQkJDgUFBQUFBQ4JCRULDBgN/aoCVgQIBAQHAwMFAQIBAQIBBQMDBwQECAT9qgQIBAQHAwMFAQIBAQIBBQMDBwQECASAgBkSEhmAERkZEYAZEhIZgBEZGREDVQUEBQ4JCRUMCxkN/asNGQsMFQkIDgUFBQUFBQ4JCBUMCxkNAlUNGQsMFQkJDgUEBVUCAQIFAwIHBAQIBf2rBAkDBAcDAwUBAgICAgEFAwMHBAMJBAJVBQgEBAcCAwUCAQL+gIASGRkSgBkSERmAEhkZEoAZERIZAAABAOIAjQMeAskAIAAAExcHBhQXFjI/ARcWMjc2NC8BNzY0JyYiDwEnJiIHBhQX4uLiDQ0MJAzi4gwkDA0N4uINDQwkDOLiDCQMDQ0CjeLiDSMMDQ3h4Q0NDCMN4uIMIw0MDOLiDAwNIwwAAAABAAAAAQAAa5n0y18PPPUACwQAAAAAANivOVsAAAAA2K85WwAAAAADqwNVAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAOrAAEAAAAAAAAAAAAAAAAAAAALBAAAAAAAAAAAAAAAAgAAAAQAAWIEAAFiBAAA4gQAAOIEAABVBAAAVQQAAOIAAAAAAAoAFAAeAEQAagCqAOoBngJkApoAAQAAAAsAigADAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAcAAAABAAAAAAACAAcAYAABAAAAAAADAAcANgABAAAAAAAEAAcAdQABAAAAAAAFAAsAFQABAAAAAAAGAAcASwABAAAAAAAKABoAigADAAEECQABAA4ABwADAAEECQACAA4AZwADAAEECQADAA4APQADAAEECQAEAA4AfAADAAEECQAFABYAIAADAAEECQAGAA4AUgADAAEECQAKADQApGZjaWNvbnMAZgBjAGkAYwBvAG4Ac1ZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGZjaWNvbnMAZgBjAGkAYwBvAG4Ac2ZjaWNvbnMAZgBjAGkAYwBvAG4Ac1JlZ3VsYXIAUgBlAGcAdQBsAGEAcmZjaWNvbnMAZgBjAGkAYwBvAG4Ac0ZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=") format("truetype")}.fc-icon{speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-family:fcicons!important;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1;text-align:center;text-transform:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:1em}.fc-icon-chevron-left:before{content:"\\e900"}.fc-icon-chevron-right:before{content:"\\e901"}.fc-icon-chevrons-left:before{content:"\\e902"}.fc-icon-chevrons-right:before{content:"\\e903"}.fc-icon-minus-square:before{content:"\\e904"}.fc-icon-plus-square:before{content:"\\e905"}.fc-icon-x:before{content:"\\e906"}.fc .fc-button{border-radius:0;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible;text-transform:none}.fc .fc-button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}.fc .fc-button{-webkit-appearance:button}.fc .fc-button:not(:disabled){cursor:pointer}.fc .fc-button{background-color:transparent;border:1px solid transparent;border-radius:.25em;display:inline-block;font-size:1em;font-weight:400;line-height:1.5;padding:.4em .65em;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;vertical-align:middle}.fc .fc-button:hover{text-decoration:none}.fc .fc-button:focus{box-shadow:0 0 0 .2rem rgba(44,62,80,.25);outline:0}.fc .fc-button:disabled{opacity:.65}.fc .fc-button-primary{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:hover{background-color:var(--fc-button-hover-bg-color);border-color:var(--fc-button-hover-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:disabled{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button-primary:not(:disabled).fc-button-active,.fc .fc-button-primary:not(:disabled):active{background-color:var(--fc-button-active-bg-color);border-color:var(--fc-button-active-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:not(:disabled).fc-button-active:focus,.fc .fc-button-primary:not(:disabled):active:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button .fc-icon{font-size:1.5em;vertical-align:middle}.fc .fc-button-group{display:inline-flex;position:relative;vertical-align:middle}.fc .fc-button-group>.fc-button{flex:1 1 auto;position:relative}.fc .fc-button-group>.fc-button.fc-button-active,.fc .fc-button-group>.fc-button:active,.fc .fc-button-group>.fc-button:focus,.fc .fc-button-group>.fc-button:hover{z-index:1}.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child){border-bottom-left-radius:0;border-top-left-radius:0;margin-left:-1px}.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child){border-bottom-right-radius:0;border-top-right-radius:0}.fc-direction-rtl .fc-button-group>.fc-button:not(:first-child){border-bottom-right-radius:0;border-top-right-radius:0;margin-right:-1px}.fc-direction-rtl .fc-button-group>.fc-button:not(:last-child){border-bottom-left-radius:0;border-top-left-radius:0}.fc .fc-toolbar{align-items:center;display:flex;justify-content:space-between}.fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.5em}.fc .fc-toolbar.fc-footer-toolbar{margin-top:1.5em}.fc .fc-toolbar-title{font-size:1.75em;margin:0}.fc-direction-ltr .fc-toolbar>*>:not(:first-child){margin-left:.75em}.fc-direction-rtl .fc-toolbar>*>:not(:first-child){margin-right:.75em}.fc-direction-rtl .fc-toolbar-ltr{flex-direction:row-reverse}.fc .fc-scroller{-webkit-overflow-scrolling:touch;position:relative}.fc .fc-scroller-liquid{height:100%}.fc .fc-scroller-liquid-absolute{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-scroller-harness{direction:ltr;overflow:hidden;position:relative}.fc .fc-scroller-harness-liquid{height:100%}.fc-direction-rtl .fc-scroller-harness>.fc-scroller{direction:rtl}.fc-theme-standard .fc-scrollgrid{border:1px solid var(--fc-border-color)}.fc .fc-scrollgrid,.fc .fc-scrollgrid table{table-layout:fixed;width:100%}.fc .fc-scrollgrid table{border-left-style:hidden;border-right-style:hidden;border-top-style:hidden}.fc .fc-scrollgrid{border-bottom-width:0;border-collapse:separate;border-right-width:0}.fc .fc-scrollgrid-liquid{height:100%}.fc .fc-scrollgrid-section,.fc .fc-scrollgrid-section table,.fc .fc-scrollgrid-section>td{height:1px}.fc .fc-scrollgrid-section-liquid>td{height:100%}.fc .fc-scrollgrid-section>*{border-left-width:0;border-top-width:0}.fc .fc-scrollgrid-section-footer>*,.fc .fc-scrollgrid-section-header>*{border-bottom-width:0}.fc .fc-scrollgrid-section-body table,.fc .fc-scrollgrid-section-footer table{border-bottom-style:hidden}.fc .fc-scrollgrid-section-sticky>*{background:var(--fc-page-bg-color);position:sticky;z-index:3}.fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky>*{top:0}.fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky>*{bottom:0}.fc .fc-scrollgrid-sticky-shim{height:1px;margin-bottom:-1px}.fc-sticky{position:sticky}.fc .fc-view-harness{flex-grow:1;position:relative}.fc .fc-view-harness-active>.fc-view{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-col-header-cell-cushion{display:inline-block;padding:2px 4px}.fc .fc-bg-event,.fc .fc-highlight,.fc .fc-non-business{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-non-business{background:var(--fc-non-business-color)}.fc .fc-bg-event{background:var(--fc-bg-event-color);opacity:var(--fc-bg-event-opacity)}.fc .fc-bg-event .fc-event-title{font-size:var(--fc-small-font-size);font-style:italic;margin:.5em}.fc .fc-highlight{background:var(--fc-highlight-color)}.fc .fc-cell-shaded,.fc .fc-day-disabled{background:var(--fc-neutral-bg-color)}a.fc-event,a.fc-event:hover{text-decoration:none}.fc-event.fc-event-draggable,.fc-event[href]{cursor:pointer}.fc-event .fc-event-main{position:relative;z-index:2}.fc-event-dragging:not(.fc-event-selected){opacity:.75}.fc-event-dragging.fc-event-selected{box-shadow:0 2px 7px rgba(0,0,0,.3)}.fc-event .fc-event-resizer{display:none;position:absolute;z-index:4}.fc-event-selected .fc-event-resizer,.fc-event:hover .fc-event-resizer{display:block}.fc-event-selected .fc-event-resizer{background:var(--fc-page-bg-color);border-color:inherit;border-radius:calc(var(--fc-event-resizer-dot-total-width)/2);border-style:solid;border-width:var(--fc-event-resizer-dot-border-width);height:var(--fc-event-resizer-dot-total-width);width:var(--fc-event-resizer-dot-total-width)}.fc-event-selected .fc-event-resizer:before{bottom:-20px;content:"";left:-20px;position:absolute;right:-20px;top:-20px}.fc-event-selected,.fc-event:focus{box-shadow:0 2px 5px rgba(0,0,0,.2)}.fc-event-selected:before,.fc-event:focus:before{bottom:0;content:"";left:0;position:absolute;right:0;top:0;z-index:3}.fc-event-selected:after,.fc-event:focus:after{background:var(--fc-event-selected-overlay-color);bottom:-1px;content:"";left:-1px;position:absolute;right:-1px;top:-1px;z-index:1}.fc-h-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-h-event .fc-event-main{color:var(--fc-event-text-color)}.fc-h-event .fc-event-main-frame{display:flex}.fc-h-event .fc-event-time{max-width:100%;overflow:hidden}.fc-h-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-width:0}.fc-h-event .fc-event-title{display:inline-block;left:0;max-width:100%;overflow:hidden;right:0;vertical-align:top}.fc-h-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end){border-bottom-left-radius:0;border-left-width:0;border-top-left-radius:0}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start){border-bottom-right-radius:0;border-right-width:0;border-top-right-radius:0}.fc-h-event:not(.fc-event-selected) .fc-event-resizer{bottom:0;top:0;width:var(--fc-event-resizer-thickness)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end{cursor:w-resize;left:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start{cursor:e-resize;right:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-h-event.fc-event-selected .fc-event-resizer{margin-top:calc(var(--fc-event-resizer-dot-total-width)*-.5);top:50%}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end{left:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start{right:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc .fc-popover{box-shadow:0 2px 6px rgba(0,0,0,.15);position:absolute;z-index:9999}.fc .fc-popover-header{align-items:center;display:flex;flex-direction:row;justify-content:space-between;padding:3px 4px}.fc .fc-popover-title{margin:0 2px}.fc .fc-popover-close{cursor:pointer;font-size:1.1em;opacity:.65}.fc-theme-standard .fc-popover{background:var(--fc-page-bg-color);border:1px solid var(--fc-border-color)}.fc-theme-standard .fc-popover-header{background:var(--fc-neutral-bg-color)}';
-Ie(nA);
-class A2 {
+Pe(nA);
+class u2 {
   constructor(e) {
     this.drainedOption = e, this.isRunning = !1, this.isDirty = !1, this.pauseDepths = {}, this.timeoutId = 0;
   }
@@ -611,7 +611,7 @@ function Q0(t, e) {
 function qi(t, e) {
   return (t.matches || t.matchesSelector || t.msMatchesSelector).call(t, e);
 }
-function rt(t, e) {
+function pt(t, e) {
   let o = t instanceof HTMLElement ? [t] : t, M = [];
   for (let n = 0; n < o.length; n += 1) {
     let b = o[n].querySelectorAll(e);
@@ -632,7 +632,7 @@ function bA(t, e) {
   return M;
 }
 const rA = /(top|left|right|bottom|width|height)$/i;
-function Nt(t, e) {
+function St(t, e) {
   for (let o in e)
     hi(t, o, e[o]);
 }
@@ -747,13 +747,13 @@ function le(t, e) {
   let o = String(t);
   return "000".substr(0, e - o.length) + o;
 }
-function i2(t, e, o) {
+function c2(t, e, o) {
   return typeof t == "function" ? t(...e) : typeof t == "string" ? e.reduce((M, n, b) => M.replace("$" + b, n || ""), t) : o;
 }
 function dA(t, e) {
   return t - e;
 }
-function Je(t) {
+function et(t) {
   return t % 1 === 0;
 }
 function AA(t) {
@@ -829,12 +829,12 @@ function Ni(t, e) {
   };
 }
 function WA(t) {
-  return St(t) / 365;
+  return Tt(t) / 365;
 }
 function RA(t) {
-  return St(t) / 30;
+  return Tt(t) / 30;
 }
-function St(t) {
+function Tt(t) {
   return M1(t) / 864e5;
 }
 function mA(t) {
@@ -846,13 +846,13 @@ function gA(t) {
 function M1(t) {
   return t.years * (365 * 864e5) + t.months * (30 * 864e5) + t.days * 864e5 + t.milliseconds;
 }
-function ke(t, e) {
+function Xe(t, e) {
   let o = null;
   for (let M = 0; M < Bp.length; M += 1) {
     let n = Bp[M];
     if (e[n]) {
       let b = t[n] / e[n];
-      if (!Je(b) || o !== null && o !== b)
+      if (!et(b) || o !== null && o !== b)
         return null;
       o = b;
     } else if (t[n])
@@ -860,7 +860,7 @@ function ke(t, e) {
   }
   return o;
 }
-function Xe(t) {
+function xe(t) {
   let e = t.milliseconds;
   if (e) {
     if (e % 1e3 !== 0)
@@ -893,21 +893,21 @@ function q1(t, e, o) {
 }
 const Si = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 function Dp(t, e) {
-  let o = Se(t);
+  let o = Te(t);
   return o[2] += e * 7, s1(o);
 }
 function X0(t, e) {
-  let o = Se(t);
+  let o = Te(t);
   return o[2] += e, s1(o);
 }
 function ue(t, e) {
-  let o = Se(t);
+  let o = Te(t);
   return o[6] += e, s1(o);
 }
 function LA(t, e) {
-  return Pe(t, e) / 7;
+  return He(t, e) / 7;
 }
-function Pe(t, e) {
+function He(t, e) {
   return (e.valueOf() - t.valueOf()) / (1e3 * 60 * 60 * 24);
 }
 function vA(t, e) {
@@ -924,16 +924,16 @@ function TA(t, e) {
   return {
     years: 0,
     months: 0,
-    days: Math.round(Pe(o, M)),
+    days: Math.round(He(o, M)),
     milliseconds: e.valueOf() - M.valueOf() - (t.valueOf() - o.valueOf())
   };
 }
 function wA(t, e) {
-  let o = u2(t, e);
+  let o = f2(t, e);
   return o !== null && o % 7 === 0 ? o / 7 : null;
 }
-function u2(t, e) {
-  return Te(t) === Te(e) ? Math.round(Pe(t, e)) : null;
+function f2(t, e) {
+  return we(t) === we(e) ? Math.round(He(t, e)) : null;
 }
 function g0(t) {
   return s1([
@@ -977,7 +977,7 @@ function _A(t, e, o) {
   return b >= 1 ? Math.min(n, b) : n;
 }
 function VM(t, e, o, M) {
-  let n = s1([e, 0, 1 + CA(e, o, M)]), b = g0(t), r = Math.round(Pe(n, b));
+  let n = s1([e, 0, 1 + CA(e, o, M)]), b = g0(t), r = Math.round(He(n, b));
   return Math.floor(r / 7) + 1;
 }
 function CA(t, e, o) {
@@ -1006,7 +1006,7 @@ function Cp(t) {
     t[5] || 0
   );
 }
-function Se(t) {
+function Te(t) {
   return [
     t.getUTCFullYear(),
     t.getUTCMonth(),
@@ -1023,14 +1023,14 @@ function s1(t) {
 function bb(t) {
   return !isNaN(t.valueOf());
 }
-function Te(t) {
+function we(t) {
   return t.getUTCHours() * 1e3 * 60 * 60 + t.getUTCMinutes() * 1e3 * 60 + t.getUTCSeconds() * 1e3 + t.getUTCMilliseconds();
 }
 function Qo(t, e, o = !1) {
   let M = t.toISOString();
   return M = M.replace(".000", ""), o && (M = M.replace("T00:00:00Z", "")), M.length > 10 && (e == null ? M = M.replace("Z", "") : e !== 0 && (M = M.replace("Z", rb(e, !0)))), M;
 }
-function It(t) {
+function Pt(t) {
   return t.toISOString().replace(/T.*$/, "");
 }
 function yn(t) {
@@ -1055,7 +1055,7 @@ function I(t, e, o) {
     return M = b, n;
   };
 }
-function _e(t, e, o) {
+function Ce(t, e, o) {
   let M, n;
   return (b) => (M ? K0(M, b) || (n = t.call(this, b)) : n = t.call(this, b), M = b, n);
 }
@@ -1108,7 +1108,7 @@ const KM = {
   hour: 1,
   minute: 1,
   second: 1
-}, to = /\s*([ap])\.?m\.?/i, XA = /,/g, xA = /\s+/g, IA = /\u200e/g, PA = /UTC|GMT/;
+}, oo = /\s*([ap])\.?m\.?/i, XA = /,/g, xA = /\s+/g, IA = /\u200e/g, PA = /UTC|GMT/;
 class HA {
   constructor(e) {
     let o = {}, M = {}, n = 9;
@@ -1129,8 +1129,8 @@ class HA {
     let a = this.format(e, M), s = this.format(o, M);
     if (a === s)
       return a;
-    let d = QA(b, i), A = Xp(d, r, M), f = A(e), h = A(o), R = KA(a, f, s, h), W = r.separator || n || M.defaultSeparator || "";
-    return R ? R.before + f + W + h + R.after : a + W + s;
+    let d = QA(b, i), u = Xp(d, r, M), A = u(e), h = u(o), R = KA(a, A, s, h), W = r.separator || n || M.defaultSeparator || "";
+    return R ? R.before + A + W + h + R.after : a + W + s;
   }
   getSmallestUnit() {
     switch (this.smallestUnitNum) {
@@ -1154,7 +1154,7 @@ function Xp(t, e, o) {
   return M === 1 && t.timeZoneName === "short" ? (n) => rb(n.timeZoneOffset) : M === 0 && e.week ? (n) => GA(o.computeWeekNumber(n.marker), o.weekText, o.weekTextLong, o.locale, e.week) : UA(t, e, o);
 }
 function UA(t, e, o) {
-  t = Object.assign({}, t), e = Object.assign({}, e), YA(t, e), t.timeZone = "UTC";
+  t = Object.assign({}, t), e = Object.assign({}, e), jA(t, e), t.timeZone = "UTC";
   let M = new Intl.DateTimeFormat(o.locale.codes, t), n;
   if (e.omitZeroMinute) {
     let b = Object.assign({}, t);
@@ -1164,17 +1164,17 @@ function UA(t, e, o) {
     let { marker: r } = b, z;
     n && !r.getUTCMinutes() ? z = n : z = M;
     let i = z.format(r);
-    return jA(i, b, t, e, o);
+    return YA(i, b, t, e, o);
   };
 }
-function YA(t, e) {
+function jA(t, e) {
   t.timeZoneName && (t.hour || (t.hour = "2-digit"), t.minute || (t.minute = "2-digit")), t.timeZoneName === "long" && (t.timeZoneName = "short"), e.omitZeroMinute && (t.second || t.millisecond) && delete e.omitZeroMinute;
 }
-function jA(t, e, o, M, n) {
+function YA(t, e, o, M, n) {
   return t = t.replace(IA, ""), o.timeZoneName === "short" && (t = FA(t, n.timeZone === "UTC" || e.timeZoneOffset == null ? "UTC" : (
     // important to normalize for IE, which does "GMT"
     rb(e.timeZoneOffset)
-  ))), M.omitCommas && (t = t.replace(XA, "").trim()), M.omitZeroMinute && (t = t.replace(":00", "")), M.meridiem === !1 ? t = t.replace(to, "").trim() : M.meridiem === "narrow" ? t = t.replace(to, (b, r) => r.toLocaleLowerCase()) : M.meridiem === "short" ? t = t.replace(to, (b, r) => `${r.toLocaleLowerCase()}m`) : M.meridiem === "lowercase" && (t = t.replace(to, (b) => b.toLocaleLowerCase())), t = t.replace(xA, " "), t = t.trim(), t;
+  ))), M.omitCommas && (t = t.replace(XA, "").trim()), M.omitZeroMinute && (t = t.replace(":00", "")), M.meridiem === !1 ? t = t.replace(oo, "").trim() : M.meridiem === "narrow" ? t = t.replace(oo, (b, r) => r.toLocaleLowerCase()) : M.meridiem === "short" ? t = t.replace(oo, (b, r) => `${r.toLocaleLowerCase()}m`) : M.meridiem === "lowercase" && (t = t.replace(oo, (b) => b.toLocaleLowerCase())), t = t.replace(xA, " "), t = t.trim(), t;
 }
 function FA(t, e) {
   let o = !1;
@@ -1185,7 +1185,7 @@ function GA(t, e, o, M, n) {
   return n === "long" ? b.push(o) : (n === "short" || n === "narrow") && b.push(e), (n === "long" || n === "short") && b.push(" "), b.push(M.simpleNumberFormat.format(t)), M.options.direction === "rtl" && b.reverse(), b.join("");
 }
 function VA(t, e, o) {
-  return o.getMarkerYear(t) !== o.getMarkerYear(e) ? 5 : o.getMarkerMonth(t) !== o.getMarkerMonth(e) ? 4 : o.getMarkerDay(t) !== o.getMarkerDay(e) ? 2 : Te(t) !== Te(e) ? 1 : 0;
+  return o.getMarkerYear(t) !== o.getMarkerYear(e) ? 5 : o.getMarkerMonth(t) !== o.getMarkerMonth(e) ? 4 : o.getMarkerDay(t) !== o.getMarkerDay(e) ? 2 : we(t) !== we(e) ? 1 : 0;
 }
 function QA(t, e) {
   let o = {};
@@ -1444,7 +1444,7 @@ const Ip = {
   handleCustomRendering: v,
   customRenderingMetaMap: v,
   customRenderingReplaces: Boolean
-}, c2 = {
+}, a2 = {
   eventDisplay: "auto",
   defaultRangeSeparator: " - ",
   titleRangeSeparator: " – ",
@@ -1526,22 +1526,22 @@ const Ip = {
   initialEvents: v,
   events: v,
   eventSources: v
-}, Qe = {
-  headerToolbar: Ke,
-  footerToolbar: Ke,
-  buttonText: Ke,
-  buttonHints: Ke,
-  buttonIcons: Ke,
-  dateIncrement: Ke,
-  plugins: oo,
-  events: oo,
-  eventSources: oo,
-  resources: oo
+}, Ke = {
+  headerToolbar: $e,
+  footerToolbar: $e,
+  buttonText: $e,
+  buttonHints: $e,
+  buttonIcons: $e,
+  dateIncrement: $e,
+  plugins: Mo,
+  events: Mo,
+  eventSources: Mo,
+  resources: Mo
 };
-function Ke(t, e) {
+function $e(t, e) {
   return typeof t == "object" && typeof e == "object" && t && e ? K0(t, e) : t === e;
 }
-function oo(t, e) {
+function Mo(t, e) {
   return Array.isArray(t) && Array.isArray(e) ? q1(t, e) : t === e;
 }
 const JA = {
@@ -1557,9 +1557,9 @@ const JA = {
   willUnmount: v
 };
 function $M(t) {
-  return pb(t, Qe);
+  return pb(t, Ke);
 }
-function y2(t, e) {
+function L2(t, e) {
   let o = {}, M = {};
   for (let n in e)
     n in t && (o[n] = e[n](t[n]));
@@ -1575,7 +1575,7 @@ function pb(t, e) {
   let o = {};
   if (e) {
     for (let M in e)
-      if (e[M] === Ke) {
+      if (e[M] === $e) {
         let n = [];
         for (let b = t.length - 1; b >= 0; b -= 1) {
           let r = t[b][M];
@@ -1602,7 +1602,7 @@ function fe(t, e) {
     e(t[M], M) && (o[M] = t[M]);
   return o;
 }
-function Y0(t, e) {
+function j0(t, e) {
   let o = {};
   for (let M in t)
     o[M] = e(t[M], M);
@@ -1647,7 +1647,7 @@ function ou(t, e) {
     So.call(e, M) && t[M] !== e[M] && o.push(M);
   return o;
 }
-function so(t, e, o = {}) {
+function Oo(t, e, o = {}) {
   if (t === e)
     return !0;
   for (let M in e)
@@ -1690,7 +1690,7 @@ class ru {
     return s1(e);
   }
   markerToArray(e) {
-    return Se(e);
+    return Te(e);
   }
 }
 nu("gregory", ru);
@@ -1766,20 +1766,20 @@ class zu {
   // Diffing Whole Units
   diffWholeYears(e, o) {
     let { calendarSystem: M } = this;
-    return Te(e) === Te(o) && M.getMarkerDay(e) === M.getMarkerDay(o) && M.getMarkerMonth(e) === M.getMarkerMonth(o) ? M.getMarkerYear(o) - M.getMarkerYear(e) : null;
+    return we(e) === we(o) && M.getMarkerDay(e) === M.getMarkerDay(o) && M.getMarkerMonth(e) === M.getMarkerMonth(o) ? M.getMarkerYear(o) - M.getMarkerYear(e) : null;
   }
   diffWholeMonths(e, o) {
     let { calendarSystem: M } = this;
-    return Te(e) === Te(o) && M.getMarkerDay(e) === M.getMarkerDay(o) ? M.getMarkerMonth(o) - M.getMarkerMonth(e) + (M.getMarkerYear(o) - M.getMarkerYear(e)) * 12 : null;
+    return we(e) === we(o) && M.getMarkerDay(e) === M.getMarkerDay(o) ? M.getMarkerMonth(o) - M.getMarkerMonth(e) + (M.getMarkerYear(o) - M.getMarkerYear(e)) * 12 : null;
   }
   // Range / Duration
   greatestWholeUnit(e, o) {
     let M = this.diffWholeYears(e, o);
-    return M !== null ? { unit: "year", value: M } : (M = this.diffWholeMonths(e, o), M !== null ? { unit: "month", value: M } : (M = wA(e, o), M !== null ? { unit: "week", value: M } : (M = u2(e, o), M !== null ? { unit: "day", value: M } : (M = vA(e, o), Je(M) ? { unit: "hour", value: M } : (M = NA(e, o), Je(M) ? { unit: "minute", value: M } : (M = SA(e, o), Je(M) ? { unit: "second", value: M } : { unit: "millisecond", value: o.valueOf() - e.valueOf() }))))));
+    return M !== null ? { unit: "year", value: M } : (M = this.diffWholeMonths(e, o), M !== null ? { unit: "month", value: M } : (M = wA(e, o), M !== null ? { unit: "week", value: M } : (M = f2(e, o), M !== null ? { unit: "day", value: M } : (M = vA(e, o), et(M) ? { unit: "hour", value: M } : (M = NA(e, o), et(M) ? { unit: "minute", value: M } : (M = SA(e, o), et(M) ? { unit: "second", value: M } : { unit: "millisecond", value: o.valueOf() - e.valueOf() }))))));
   }
   countDurationsBetween(e, o, M) {
     let n;
-    return M.years && (n = this.diffWholeYears(e, o), n !== null) ? n / WA(M) : M.months && (n = this.diffWholeMonths(e, o), n !== null) ? n / RA(M) : M.days && (n = u2(e, o), n !== null) ? n / St(M) : (o.valueOf() - e.valueOf()) / M1(M);
+    return M.years && (n = this.diffWholeYears(e, o), n !== null) ? n / WA(M) : M.months && (n = this.diffWholeMonths(e, o), n !== null) ? n / RA(M) : M.days && (n = f2(e, o), n !== null) ? n / Tt(M) : (o.valueOf() - e.valueOf()) / M1(M);
   }
   // Start-Of
   // these DON'T return zoned-dates. only UTC start-of dates
@@ -1837,14 +1837,14 @@ class zu {
     return this.timeZone === "local" ? s1(_p(new Date(e))) : this.timeZone === "UTC" || !this.namedTimeZoneImpl ? new Date(e) : s1(this.namedTimeZoneImpl.timestampToArray(e));
   }
   offsetForMarker(e) {
-    return this.timeZone === "local" ? -Cp(Se(e)).getTimezoneOffset() : this.timeZone === "UTC" ? 0 : this.namedTimeZoneImpl ? this.namedTimeZoneImpl.offsetForArray(Se(e)) : null;
+    return this.timeZone === "local" ? -Cp(Te(e)).getTimezoneOffset() : this.timeZone === "UTC" ? 0 : this.namedTimeZoneImpl ? this.namedTimeZoneImpl.offsetForArray(Te(e)) : null;
   }
   // Conversion
   toDate(e, o) {
-    return this.timeZone === "local" ? Cp(Se(e)) : this.timeZone === "UTC" ? new Date(e.valueOf()) : this.namedTimeZoneImpl ? new Date(e.valueOf() - this.namedTimeZoneImpl.offsetForArray(Se(e)) * 1e3 * 60) : new Date(e.valueOf() - (o || 0));
+    return this.timeZone === "local" ? Cp(Te(e)) : this.timeZone === "UTC" ? new Date(e.valueOf()) : this.namedTimeZoneImpl ? new Date(e.valueOf() - this.namedTimeZoneImpl.offsetForArray(Te(e)) * 1e3 * 60) : new Date(e.valueOf() - (o || 0));
   }
 }
-class L2 {
+class v2 {
   constructor(e) {
     this.iconOverrideOption && this.setIconOverride(e[this.iconOverrideOption]);
   }
@@ -1873,23 +1873,23 @@ class L2 {
     return this.iconOverrideCustomButtonOption && (o = e[this.iconOverrideCustomButtonOption], o) ? `${this.baseIconClass} ${this.applyIconOverridePrefix(o)}` : "";
   }
 }
-L2.prototype.classes = {};
-L2.prototype.iconClasses = {};
-L2.prototype.baseIconClass = "";
-L2.prototype.iconOverridePrefix = "";
-function _t(t) {
+v2.prototype.classes = {};
+v2.prototype.iconClasses = {};
+v2.prototype.baseIconClass = "";
+v2.prototype.iconOverridePrefix = "";
+function Ct(t) {
   t();
   let e = e0.debounceRendering, o = [];
   function M(n) {
     o.push(n);
   }
-  for (e0.debounceRendering = M, d2(u(iu, {}), document.createElement("div")); o.length; )
+  for (e0.debounceRendering = M, A2(f(iu, {}), document.createElement("div")); o.length; )
     o.shift()();
   e0.debounceRendering = e;
 }
 class iu extends u1 {
   render() {
-    return u("div", {});
+    return f("div", {});
   }
   componentDidMount() {
     this.setState({});
@@ -1938,7 +1938,7 @@ class cu {
   }
 }
 const Q1 = Ei({});
-function au(t, e, o, M, n, b, r, z, i, a, s, d, A, f) {
+function au(t, e, o, M, n, b, r, z, i, a, s, d, u, A) {
   return {
     dateEnv: n,
     nowManager: b,
@@ -1962,19 +1962,19 @@ function au(t, e, o, M, n, b, r, z, i, a, s, d, A, f) {
     createScrollResponder(h) {
       return new cu(h, s, r0(o.scrollTime), o.scrollTimeReset);
     },
-    registerInteractiveComponent: A,
-    unregisterInteractiveComponent: f
+    registerInteractiveComponent: u,
+    unregisterInteractiveComponent: A
   };
 }
-class pt extends u1 {
+class zt extends u1 {
   // debug: boolean
   shouldComponentUpdate(e, o) {
-    return !so(
+    return !Oo(
       this.props,
       e,
       this.propEquality
       /*, this.debug */
-    ) || !so(
+    ) || !Oo(
       this.state,
       o,
       this.stateEquality
@@ -1983,15 +1983,15 @@ class pt extends u1 {
   }
   // HACK for freakin' React StrictMode
   safeSetState(e) {
-    so(this.state, Object.assign(Object.assign({}, this.state), e), this.stateEquality) || this.setState(e);
+    Oo(this.state, Object.assign(Object.assign({}, this.state), e), this.stateEquality) || this.setState(e);
   }
 }
-pt.addPropsEquality = su;
-pt.addStateEquality = Ou;
-pt.contextType = Q1;
-pt.prototype.propEquality = {};
-pt.prototype.stateEquality = {};
-class $ extends pt {
+zt.addPropsEquality = su;
+zt.addStateEquality = Ou;
+zt.contextType = Q1;
+zt.prototype.propEquality = {};
+zt.prototype.stateEquality = {};
+class $ extends zt {
 }
 $.contextType = Q1;
 function su(t) {
@@ -2018,16 +2018,16 @@ class ib extends $ {
     const { props: e, context: o } = this, { options: M } = o, { customGenerator: n, defaultGenerator: b, renderProps: r } = e, z = Di(e, [], this.handleEl);
     let i = !1, a, s = [], d;
     if (n != null) {
-      const A = typeof n == "function" ? n(r, u) : n;
-      if (A === !0)
+      const u = typeof n == "function" ? n(r, f) : n;
+      if (u === !0)
         i = !0;
       else {
-        const f = A && typeof A == "object";
-        f && "html" in A ? z.dangerouslySetInnerHTML = { __html: A.html } : f && "domNodes" in A ? s = Array.prototype.slice.call(A.domNodes) : (f ? Jz(A) : typeof A != "function") ? a = A : d = A;
+        const A = u && typeof u == "object";
+        A && "html" in u ? z.dangerouslySetInnerHTML = { __html: u.html } : A && "domNodes" in u ? s = Array.prototype.slice.call(u.domNodes) : (A ? Jz(u) : typeof u != "function") ? a = u : d = u;
       }
     } else
       i = !Ln(e.generatorName, M);
-    return i && b && (a = b(r)), this.queuedDomNodes = s, this.currentGeneratorMeta = d, u(e.elTag, z, a);
+    return i && b && (a = b(r)), this.queuedDomNodes = s, this.currentGeneratorMeta = d, f(e.elTag, z, a);
   }
   componentDidMount() {
     this.applyQueueudDomNodes(), this.triggerCustomRendering(!0);
@@ -2091,9 +2091,9 @@ class T0 extends u1 {
     const { props: e } = this, o = Au(e.classNameGenerator, e.renderProps);
     if (e.children) {
       const M = Di(e, o, this.handleEl), n = e.children(this.InnerContent, e.renderProps, M);
-      return e.elTag ? u(e.elTag, M, n) : n;
+      return e.elTag ? f(e.elTag, M, n) : n;
     } else
-      return u(ib, Object.assign(Object.assign({}, e), { elRef: this.handleEl, elTag: e.elTag || "div", elClasses: (e.elClasses || []).concat(o), renderId: this.context }));
+      return f(ib, Object.assign(Object.assign({}, e), { elRef: this.handleEl, elTag: e.elTag || "div", elClasses: (e.elClasses || []).concat(o), renderId: this.context }));
   }
   componentDidMount() {
     var e, o;
@@ -2107,16 +2107,16 @@ class T0 extends u1 {
 T0.contextType = _i;
 function du(t, e) {
   const o = t.props;
-  return u(ib, Object.assign({ renderProps: o.renderProps, generatorName: o.generatorName, customGenerator: o.customGenerator, defaultGenerator: o.defaultGenerator, renderId: t.context }, e));
+  return f(ib, Object.assign({ renderProps: o.renderProps, generatorName: o.generatorName, customGenerator: o.customGenerator, defaultGenerator: o.defaultGenerator, renderId: t.context }, e));
 }
 function Au(t, e) {
   const o = typeof t == "function" ? t(e) : t || [];
   return typeof o == "string" ? [o] : o;
 }
-class xe extends $ {
+class Ie extends $ {
   render() {
     let { props: e, context: o } = this, { options: M } = o, n = { view: o.viewApi };
-    return u(T0, { elRef: e.elRef, elTag: e.elTag || "div", elAttrs: e.elAttrs, elClasses: [
+    return f(T0, { elRef: e.elRef, elTag: e.elTag || "div", elAttrs: e.elAttrs, elClasses: [
       ...Ci(e.viewSpec),
       ...e.elClasses || []
     ], elStyle: e.elStyle, renderProps: n, classNameGenerator: M.viewClassNames, generatorName: void 0, didMount: M.viewDidMount, willUnmount: M.viewWillUnmount }, () => e.children);
@@ -2154,14 +2154,14 @@ function $o(t, e) {
 function Zo(t, e) {
   return (t.start === null || e.start !== null && e.start >= t.start) && (t.end === null || e.end !== null && e.end <= t.end);
 }
-function j1(t, e) {
+function Y1(t, e) {
   return (t.start === null || e >= t.start) && (t.end === null || e < t.end);
 }
 function qu(t, e) {
   return e.start != null && t < e.start ? e.start : e.end != null && t >= e.end ? new Date(e.end.valueOf() - 1) : t;
 }
 function Xi(t) {
-  let e = Math.floor(Pe(t.start, t.end)) || 1, o = g0(t.start), M = X0(o, e);
+  let e = Math.floor(He(t.start, t.end)) || 1, o = g0(t.start), M = X0(o, e);
   return { start: o, end: M };
 }
 function Jo(t, e = r0(0)) {
@@ -2175,9 +2175,9 @@ function Jo(t, e = r0(0)) {
 }
 function hu(t) {
   let e = Jo(t);
-  return Pe(e.start, e.end) > 1;
+  return He(e.start, e.end) > 1;
 }
-function gt(t, e, o, M) {
+function yt(t, e, o, M) {
   return M === "year" ? r0(o.diffWholeYears(t, e), "year") : M === "month" ? r0(o.diffWholeMonths(t, e), "month") : TA(t, e);
 }
 class xi {
@@ -2209,7 +2209,7 @@ class xi {
   // from its previous value. decremented = -1, incremented = 1 (default).
   build(e, o, M = !0) {
     let { props: n } = this, b, r, z, i, a, s;
-    return b = this.buildValidRange(), b = this.trimHiddenDays(b), M && (e = qu(e, b)), r = this.buildCurrentRangeInfo(e, o), z = /^(year|month|week|day)$/.test(r.unit), i = this.buildRenderRange(this.trimHiddenDays(r.range), r.unit, z), i = this.trimHiddenDays(i), a = i, n.showNonCurrentDates || (a = F1(a, r.range)), a = this.adjustActiveRange(a), a = F1(a, b), s = $o(r.range, b), j1(i, e) || (e = i.start), {
+    return b = this.buildValidRange(), b = this.trimHiddenDays(b), M && (e = qu(e, b)), r = this.buildCurrentRangeInfo(e, o), z = /^(year|month|week|day)$/.test(r.unit), i = this.buildRenderRange(this.trimHiddenDays(r.range), r.unit, z), i = this.trimHiddenDays(i), a = i, n.showNonCurrentDates || (a = F1(a, r.range)), a = this.adjustActiveRange(a), a = F1(a, b), s = $o(r.range, b), Y1(i, e) || (e = i.start), {
       currentDate: e,
       // constraint for where prev/next operations can go and where events can be dragged/resized to.
       // an object with optional start and end properties.
@@ -2249,7 +2249,7 @@ class xi {
   // Guaranteed to have `range` and `unit` properties. `duration` is optional.
   buildCurrentRangeInfo(e, o) {
     let { props: M } = this, n = null, b = null, r = null, z;
-    return M.duration ? (n = M.duration, b = M.durationUnit, r = this.buildRangeFromDuration(e, o, n, b)) : (z = this.props.dayCount) ? (b = "day", r = this.buildRangeFromDayCount(e, o, z)) : (r = this.buildCustomVisibleRange(e)) ? b = M.dateEnv.greatestWholeUnit(r.start, r.end).unit : (n = this.getFallbackDuration(), b = Xe(n).unit, r = this.buildRangeFromDuration(e, o, n, b)), { duration: n, unit: b, range: r };
+    return M.duration ? (n = M.duration, b = M.durationUnit, r = this.buildRangeFromDuration(e, o, n, b)) : (z = this.props.dayCount) ? (b = "day", r = this.buildRangeFromDayCount(e, o, z)) : (r = this.buildCustomVisibleRange(e)) ? b = M.dateEnv.greatestWholeUnit(r.start, r.end).unit : (n = this.getFallbackDuration(), b = xe(n).unit, r = this.buildRangeFromDuration(e, o, n, b)), { duration: n, unit: b, range: r };
   }
   getFallbackDuration() {
     return r0({ day: 1 });
@@ -2258,7 +2258,7 @@ class xi {
   // slotMinTime or slotMaxTime causes the range to expand.
   adjustActiveRange(e) {
     let { dateEnv: o, usesMinMaxTime: M, slotMinTime: n, slotMaxTime: b } = this.props, { start: r, end: z } = e;
-    return M && (St(n) < 0 && (r = g0(r), r = o.add(r, n)), St(b) > 1 && (z = g0(z), z = X0(z, -1), z = o.add(z, b))), { start: r, end: z };
+    return M && (Tt(n) < 0 && (r = g0(r), r = o.add(r, n)), Tt(b) > 1 && (z = g0(z), z = X0(z, -1), z = o.add(z, b))), { start: r, end: z };
   }
   // Builds the "current" range when it is specified as an explicit duration.
   // `unit` is the already-computed greatestDurationDenominator unit of duration.
@@ -2266,9 +2266,9 @@ class xi {
     let { dateEnv: b, dateAlignment: r } = this.props, z, i, a;
     if (!r) {
       let { dateIncrement: d } = this.props;
-      d && M1(d) < M1(M) ? r = Xe(d).unit : r = n;
+      d && M1(d) < M1(M) ? r = xe(d).unit : r = n;
     }
-    St(M) <= 1 && this.isHiddenDay(z) && (z = this.skipHiddenDays(z, o), z = g0(z));
+    Tt(M) <= 1 && this.isHiddenDay(z) && (z = this.skipHiddenDays(z, o), z = g0(z));
     function s() {
       z = b.startOf(e, r), i = b.add(z, M), a = { start: z, end: i };
     }
@@ -2365,7 +2365,7 @@ function Wu(t, e, o, M) {
   }
   return null;
 }
-function Mt(t, e, o) {
+function nt(t, e, o) {
   let { dateEnv: M, pluginHooks: n, options: b } = o, { defs: r, instances: z } = t;
   z = fe(z, (i) => !r[i.defId].recurringDef);
   for (let i in r) {
@@ -2374,12 +2374,12 @@ function Mt(t, e, o) {
       let { duration: s } = a.recurringDef;
       s || (s = a.allDay ? b.defaultAllDayEventDuration : b.defaultTimedEventDuration);
       let d = Ru(a, s, e, M, n.recurringTypes);
-      for (let A of d) {
-        let f = cb(i, {
-          start: A,
-          end: M.add(A, s)
+      for (let u of d) {
+        let A = cb(i, {
+          start: u,
+          end: M.add(u, s)
         });
-        z[f.instanceId] = f;
+        z[A.instanceId] = A;
       }
     }
   }
@@ -2392,7 +2392,7 @@ function Ru(t, e, o, M, n) {
   }, M);
   return t.allDay && (r = r.map(g0)), r;
 }
-const Oo = {
+const lo = {
   id: String,
   groupId: String,
   title: String,
@@ -2403,26 +2403,26 @@ const Oo = {
   end: v,
   date: v,
   allDay: Boolean
-}, mu = Object.assign(Object.assign(Object.assign({}, Oo), Ii), { extendedProps: v });
+}, mu = Object.assign(Object.assign(Object.assign({}, lo), Ii), { extendedProps: v });
 function Pi(t, e, o, M, n = ab(o), b, r) {
   let { refined: z, extra: i } = Hi(t, o, n), a = yu(e, o), s = Wu(z, a, o.dateEnv, o.pluginHooks.recurringTypes);
   if (s) {
-    let A = vn(z, i, e ? e.sourceId : "", s.allDay, !!s.duration, o, b);
-    return A.recurringDef = {
+    let u = vn(z, i, e ? e.sourceId : "", s.allDay, !!s.duration, o, b);
+    return u.recurringDef = {
       typeId: s.typeId,
       typeData: s.typeData,
       duration: s.duration
-    }, { def: A, instance: null };
+    }, { def: u, instance: null };
   }
   let d = gu(z, a, o, M);
   if (d) {
-    let A = vn(z, i, e ? e.sourceId : "", d.allDay, d.hasEnd, o, b), f = cb(A.defId, d.range, d.forcedStartTzo, d.forcedEndTzo);
-    return r && A.publicId && r[A.publicId] && (f.instanceId = r[A.publicId]), { def: A, instance: f };
+    let u = vn(z, i, e ? e.sourceId : "", d.allDay, d.hasEnd, o, b), A = cb(u.defId, d.range, d.forcedStartTzo, d.forcedEndTzo);
+    return r && u.publicId && r[u.publicId] && (A.instanceId = r[u.publicId]), { def: u, instance: A };
   }
   return null;
 }
 function Hi(t, e, o = ab(e)) {
-  return y2(t, o);
+  return L2(t, o);
 }
 function ab(t) {
   return Object.assign(Object.assign(Object.assign({}, To), mu), t.pluginHooks.eventRefiners);
@@ -2439,7 +2439,7 @@ function vn(t, e, o, M, n, b, r) {
     allDay: M,
     hasEnd: n,
     interactive: t.interactive,
-    ui: q2(t, b),
+    ui: h2(t, b),
     extendedProps: Object.assign(Object.assign({}, t.extendedProps || {}), e)
   };
   for (let i of b.pluginHooks.eventDefMemberAdders)
@@ -2464,7 +2464,7 @@ function yu(t, e) {
   let o = null;
   return t && (o = t.defaultAllDay), o == null && (o = e.options.defaultAllDay), o;
 }
-function f2(t, e, o, M, n, b) {
+function q2(t, e, o, M, n, b) {
   let r = f1(), z = ab(o);
   for (let i of t) {
     let a = Pi(i, e, o, M, z, n, b);
@@ -2512,7 +2512,7 @@ function vu(t, e) {
   };
 }
 function Nu(t, e) {
-  return Array.isArray(t) ? f2(t, null, e, !0) : typeof t == "object" && t ? f2([t], null, e, !0) : t != null ? String(t) : null;
+  return Array.isArray(t) ? q2(t, null, e, !0) : typeof t == "object" && t ? q2([t], null, e, !0) : t != null ? String(t) : null;
 }
 function Sn(t) {
   return Array.isArray(t) ? t : typeof t == "string" ? t.split(/\s+/) : [];
@@ -2543,7 +2543,7 @@ const To = {
   textColor: "",
   classNames: []
 };
-function q2(t, e) {
+function h2(t, e) {
   let o = Nu(t.constraint, e);
   return {
     display: t.display || null,
@@ -2587,10 +2587,10 @@ const wu = {
   success: v,
   failure: v
 };
-function Ui(t, e, o = Yi(e)) {
+function Ui(t, e, o = ji(e)) {
   let M;
   if (typeof t == "string" ? M = { url: t } : typeof t == "function" || Array.isArray(t) ? M = { events: t } : typeof t == "object" && t && (M = t), M) {
-    let { refined: n, extra: b } = y2(M, o), r = Bu(n, e);
+    let { refined: n, extra: b } = L2(M, o), r = Bu(n, e);
     if (r)
       return {
         _raw: t,
@@ -2605,13 +2605,13 @@ function Ui(t, e, o = Yi(e)) {
         sourceId: V1(),
         sourceDefId: r.sourceDefId,
         meta: r.meta,
-        ui: q2(n, e),
+        ui: h2(n, e),
         extendedProps: b
       };
   }
   return null;
 }
-function Yi(t) {
+function ji(t) {
   return Object.assign(Object.assign(Object.assign({}, To), wu), t.pluginHooks.eventSourceRefiners);
 }
 function Bu(t, e) {
@@ -2646,7 +2646,7 @@ function Eu(t, e, o, M, n) {
     case "NEXT":
     case "CHANGE_DATE":
     case "CHANGE_VIEW_TYPE":
-      return M ? Mt(t, M.activeRange, n) : t;
+      return M ? nt(t, M.activeRange, n) : t;
     case "REMOVE_EVENTS":
       return vu(t, e.eventStore);
     case "REMOVE_EVENT_SOURCE":
@@ -2662,21 +2662,21 @@ function Eu(t, e, o, M, n) {
 function Du(t, e, o, M, n, b) {
   if (e && // not already removed
   o === e.latestFetchId) {
-    let r = f2(ji(n, e, b), e, b);
-    return M && (r = Mt(r, M, b)), eM(Fi(t, e.sourceId), r);
+    let r = q2(Yi(n, e, b), e, b);
+    return M && (r = nt(r, M, b)), eM(Fi(t, e.sourceId), r);
   }
   return t;
 }
 function _u(t, e, o, M, n) {
   const { defIdMap: b, instanceIdMap: r } = Xu(t);
-  let z = f2(ji(o, e, n), e, n, !1, b, r);
-  return Mt(z, M, n);
+  let z = q2(Yi(o, e, n), e, n, !1, b, r);
+  return nt(z, M, n);
 }
-function ji(t, e, o) {
+function Yi(t, e, o) {
   let M = o.options.eventDataTransform, n = e ? e.eventDataTransform : null;
-  return n && (t = Yp(t, n)), M && (t = Yp(t, M)), t;
+  return n && (t = jp(t, n)), M && (t = jp(t, M)), t;
 }
-function Yp(t, e) {
+function jp(t, e) {
   let o;
   if (!e)
     o = t;
@@ -2690,10 +2690,10 @@ function Yp(t, e) {
   return o;
 }
 function Cu(t, e, o, M) {
-  return o && (e = Mt(e, o, M)), eM(t, e);
+  return o && (e = nt(e, o, M)), eM(t, e);
 }
-function jp(t, e, o) {
-  let { defs: M } = t, n = Y0(t.instances, (b) => M[b.defId].allDay ? b : Object.assign(Object.assign({}, b), { range: {
+function Yp(t, e, o) {
+  let { defs: M } = t, n = j0(t.instances, (b) => M[b.defId].allDay ? b : Object.assign(Object.assign({}, b), { range: {
     start: o.createMarker(e.toDate(b.range.start, b.forcedStartTzo)),
     end: o.createMarker(e.toDate(b.range.end, b.forcedEndTzo))
   }, forcedStartTzo: o.canComputeOffset ? null : b.forcedStartTzo, forcedEndTzo: o.canComputeOffset ? null : b.forcedEndTzo }));
@@ -2720,7 +2720,7 @@ function Xu(t) {
   }
   return { defIdMap: M, instanceIdMap: n };
 }
-class v2 {
+class N2 {
   constructor() {
     this.handlers = {}, this.thisContext = null;
   }
@@ -2761,7 +2761,7 @@ const Pu = {
   // so multiple defs get grouped
 };
 function Gi(t, e) {
-  return f2(Hu(t), null, e);
+  return q2(Hu(t), null, e);
 }
 function Hu(t) {
   let e;
@@ -2790,15 +2790,15 @@ function db(t, e, o, M) {
   let n = wo(t.defs, e), b = f1();
   for (let r in t.defs) {
     let z = t.defs[r];
-    b.defs[r] = Yu(z, n[r], o, M);
+    b.defs[r] = ju(z, n[r], o, M);
   }
   for (let r in t.instances) {
     let z = t.instances[r], i = b.defs[z.defId];
-    b.instances[r] = ju(z, i, n[z.defId], o, M);
+    b.instances[r] = Yu(z, i, n[z.defId], o, M);
   }
   return b;
 }
-function Yu(t, e, o, M) {
+function ju(t, e, o, M) {
   let n = o.standardProps || {};
   n.hasEnd == null && e.durationEditable && (o.startDelta || o.endDelta) && (n.hasEnd = !0);
   let b = Object.assign(Object.assign(Object.assign({}, t), n), { ui: Object.assign(Object.assign({}, t.ui), n.ui) });
@@ -2807,7 +2807,7 @@ function Yu(t, e, o, M) {
     r(b, o, M);
   return !b.hasEnd && M.options.forceEventDuration && (b.hasEnd = !0), b;
 }
-function ju(t, e, o, M, n) {
+function Yu(t, e, o, M, n) {
   let { dateEnv: b } = n, r = M.standardProps && M.standardProps.allDay === !0, z = M.standardProps && M.standardProps.hasEnd === !1, i = Object.assign({}, t);
   return r && (i.range = Xi(i.range)), M.datesDelta && o.startEditable && (i.range = {
     start: b.add(i.range.start, M.datesDelta),
@@ -2826,7 +2826,7 @@ function ju(t, e, o, M, n) {
     end: g0(i.range.end)
   }), i.range.end < i.range.start && (i.range.end = Fp(e.allDay, i.range.start, n)), i;
 }
-class Wt {
+class Rt {
   constructor(e, o) {
     this.context = e, this.internalEventSource = o;
   }
@@ -2866,12 +2866,12 @@ class N0 {
     if (e in Ii)
       console.warn("Could not set date-related prop 'name'. Use one of the date-related methods instead.");
     else if (e === "id")
-      o = Oo[e](o), this.mutate({
+      o = lo[e](o), this.mutate({
         standardProps: { publicId: o }
         // hardcoded internal name
       });
-    else if (e in Oo)
-      o = Oo[e](o), this.mutate({
+    else if (e in lo)
+      o = lo[e](o), this.mutate({
         standardProps: { [e]: o }
       });
     else if (e in To) {
@@ -2890,7 +2890,7 @@ class N0 {
   setStart(e, o = {}) {
     let { dateEnv: M } = this._context, n = M.createMarker(e);
     if (n && this._instance) {
-      let b = this._instance.range, r = gt(b.start, n, M, o.granularity);
+      let b = this._instance.range, r = yt(b.start, n, M, o.granularity);
       o.maintainDuration ? this.mutate({ datesDelta: r }) : this.mutate({ startDelta: r });
     }
   }
@@ -2898,7 +2898,7 @@ class N0 {
     let { dateEnv: M } = this._context, n;
     if (!(e != null && (n = M.createMarker(e), !n)) && this._instance)
       if (n) {
-        let b = gt(this._instance.range.end, n, M, o.granularity);
+        let b = yt(this._instance.range.end, n, M, o.granularity);
         this.mutate({ endDelta: b });
       } else
         this.mutate({ standardProps: { hasEnd: !1 } });
@@ -2908,9 +2908,9 @@ class N0 {
     if (r && !(o != null && (z = n.createMarker(o), !z)) && this._instance) {
       let i = this._instance.range;
       M.allDay === !0 && (i = Xi(i));
-      let a = gt(i.start, r, n, M.granularity);
+      let a = yt(i.start, r, n, M.granularity);
       if (z) {
-        let s = gt(i.end, z, n, M.granularity);
+        let s = yt(i.end, z, n, M.granularity);
         qA(a, s) ? this.mutate({ datesDelta: a, standardProps: b }) : this.mutate({ startDelta: a, endDelta: s, standardProps: b });
       } else
         b.hasEnd = !1, this.mutate({ datesDelta: a, standardProps: b });
@@ -2966,7 +2966,7 @@ class N0 {
       }), n.emitter.trigger("eventChange", {
         oldEvent: i,
         event: this,
-        relatedEvents: et(r, n, o),
+        relatedEvents: tt(r, n, o),
         revert() {
           n.dispatch({
             type: "RESET_EVENTS",
@@ -2995,7 +2995,7 @@ class N0 {
   }
   get source() {
     let { sourceId: e } = this._def;
-    return e ? new Wt(this._context, this._context.getCurrentData().eventSources[e]) : null;
+    return e ? new Rt(this._context, this._context.getCurrentData().eventSources[e]) : null;
   }
   get start() {
     return this._instance ? this._context.dateEnv.toDate(this._instance.range.start) : null;
@@ -3086,7 +3086,7 @@ function Qi(t) {
     instances: o ? { [o.instanceId]: o } : {}
   };
 }
-function et(t, e, o) {
+function tt(t, e, o) {
   let { defs: M, instances: n } = t, b = [], r = o ? o.instanceId : "";
   for (let z in n) {
     let i = n[z], a = M[i.defId];
@@ -3101,10 +3101,10 @@ function Tn(t, e, o, M) {
     a[d.defId].display === "inverse-background" && (d.groupId ? (n[d.groupId] = [], r[d.groupId] || (r[d.groupId] = d)) : b[s] = []);
   }
   for (let s in t.instances) {
-    let d = t.instances[s], A = t.defs[d.defId], f = a[A.defId], h = d.range, R = !A.allDay && M ? Jo(h, M) : h, W = F1(R, o);
-    W && (f.display === "inverse-background" ? A.groupId ? n[A.groupId].push(W) : b[d.defId].push(W) : f.display !== "none" && (f.display === "background" ? z : i).push({
-      def: A,
-      ui: f,
+    let d = t.instances[s], u = t.defs[d.defId], A = a[u.defId], h = d.range, R = !u.allDay && M ? Jo(h, M) : h, W = F1(R, o);
+    W && (A.display === "inverse-background" ? u.groupId ? n[u.groupId].push(W) : b[d.defId].push(W) : A.display !== "none" && (A.display === "background" ? z : i).push({
+      def: u,
+      ui: A,
       instance: d,
       range: W,
       isStart: R.start && R.start.valueOf() === W.start.valueOf(),
@@ -3112,27 +3112,27 @@ function Tn(t, e, o, M) {
     }));
   }
   for (let s in n) {
-    let d = n[s], A = Up(d, o);
-    for (let f of A) {
+    let d = n[s], u = Up(d, o);
+    for (let A of u) {
       let h = r[s], R = a[h.defId];
       z.push({
         def: h,
         ui: R,
         instance: null,
-        range: f,
+        range: A,
         isStart: !1,
         isEnd: !1
       });
     }
   }
   for (let s in b) {
-    let d = b[s], A = Up(d, o);
-    for (let f of A)
+    let d = b[s], u = Up(d, o);
+    for (let A of u)
       z.push({
         def: t.defs[s],
         ui: a[s],
         instance: null,
-        range: f,
+        range: A,
         isStart: !1,
         isEnd: !1
       });
@@ -3145,12 +3145,12 @@ function Fu(t) {
 function Gp(t, e) {
   t.fcSeg = e;
 }
-function Ct(t) {
+function kt(t) {
   return t.fcSeg || t.parentNode.fcSeg || // for the harness
   null;
 }
 function wo(t, e) {
-  return Y0(t, (o) => Ki(o, e));
+  return j0(t, (o) => Ki(o, e));
 }
 function Ki(t, e) {
   let o = [];
@@ -3183,15 +3183,15 @@ function Qu(t, e) {
 function Ku(t, e) {
   return t.isEnd && t.eventRange.ui.durationEditable;
 }
-function a2(t, e, o, M, n, b, r) {
-  let { dateEnv: z, options: i } = o, { displayEventTime: a, displayEventEnd: s } = i, d = t.eventRange.def, A = t.eventRange.instance;
+function s2(t, e, o, M, n, b, r) {
+  let { dateEnv: z, options: i } = o, { displayEventTime: a, displayEventEnd: s } = i, d = t.eventRange.def, u = t.eventRange.instance;
   a == null && (a = M !== !1), s == null && (s = n !== !1);
-  let f = A.range.start, h = A.range.end, R = b || t.start || t.eventRange.range.start, W = r || t.end || t.eventRange.range.end, g = g0(f).valueOf() === g0(R).valueOf(), N = g0(ue(h, -1)).valueOf() === g0(ue(W, -1)).valueOf();
-  return a && !d.allDay && (g || N) ? (R = g ? f : R, W = N ? h : W, s && d.hasEnd ? z.formatRange(R, W, e, {
-    forcedStartTzo: b ? null : A.forcedStartTzo,
-    forcedEndTzo: r ? null : A.forcedEndTzo
+  let A = u.range.start, h = u.range.end, R = b || t.start || t.eventRange.range.start, W = r || t.end || t.eventRange.range.end, g = g0(A).valueOf() === g0(R).valueOf(), N = g0(ue(h, -1)).valueOf() === g0(ue(W, -1)).valueOf();
+  return a && !d.allDay && (g || N) ? (R = g ? A : R, W = N ? h : W, s && d.hasEnd ? z.formatRange(R, W, e, {
+    forcedStartTzo: b ? null : u.forcedStartTzo,
+    forcedEndTzo: r ? null : u.forcedEndTzo
   }) : z.format(R, e, {
-    forcedTzo: b ? null : A.forcedStartTzo
+    forcedTzo: b ? null : u.forcedStartTzo
     // nooooo, same
   })) : "";
 }
@@ -3200,7 +3200,7 @@ function v1(t, e, o) {
   return {
     isPast: M.end <= (o || e.start),
     isFuture: M.start >= (o || e.end),
-    isToday: e && j1(e, M.start)
+    isToday: e && Y1(e, M.start)
   };
 }
 function $u(t) {
@@ -3241,7 +3241,7 @@ function Ju(t, e, o) {
   return M;
 }
 function ef(t, e) {
-  let { refined: o, extra: M } = y2(t, Zu), n = o.start ? e.createMarkerMeta(o.start) : null, b = o.end ? e.createMarkerMeta(o.end) : null, { allDay: r } = o;
+  let { refined: o, extra: M } = L2(t, Zu), n = o.start ? e.createMarkerMeta(o.start) : null, b = o.end ? e.createMarkerMeta(o.end) : null, { allDay: r } = o;
   return r == null && (r = n && n.isTimeUnspecified && (!b || b.isTimeUnspecified)), Object.assign({ range: {
     start: n ? n.marker : null,
     end: b ? b.marker : null
@@ -3338,11 +3338,11 @@ class rf extends $ {
     super(...arguments), this.state = {
       forPrint: !1
     }, this.handleBeforePrint = () => {
-      _t(() => {
+      Ct(() => {
         this.setState({ forPrint: !0 });
       });
     }, this.handleAfterPrint = () => {
-      _t(() => {
+      Ct(() => {
         this.setState({ forPrint: !1 });
       });
     };
@@ -3365,7 +3365,7 @@ class rf extends $ {
     e.off("_beforeprint", this.handleBeforePrint), e.off("_afterprint", this.handleAfterPrint);
   }
 }
-class Pt {
+class Ht {
   constructor(e) {
     this.component = e.component, this.isHitComboAllowed = e.isHitComboAllowed || null;
   }
@@ -3436,7 +3436,7 @@ function zf(t) {
   let e = g0(t), o = X0(e, 1);
   return { start: e, end: o };
 }
-class Ht {
+class Ut {
   getCurrentData() {
     return this.currentDataManager.getCurrentData();
   }
@@ -3626,7 +3626,7 @@ class Ht {
       }), this.triggerEventAdd(e)), e;
     }
     let M = this.getCurrentData(), n;
-    if (o instanceof Wt)
+    if (o instanceof Rt)
       n = o.internalEventSource;
     else if (typeof o == "boolean")
       o && ([n] = zb(M.eventSources));
@@ -3679,7 +3679,7 @@ class Ht {
   }
   getEvents() {
     let e = this.getCurrentData();
-    return et(e.eventStore, e);
+    return tt(e.eventStore, e);
   }
   removeAllEvents() {
     this.dispatch({ type: "REMOVE_ALL_EVENTS" });
@@ -3689,7 +3689,7 @@ class Ht {
   getEventSources() {
     let e = this.getCurrentData(), o = e.eventSources, M = [];
     for (let n in o)
-      M.push(new Wt(e, o[n]));
+      M.push(new Rt(e, o[n]));
     return M;
   }
   getEventSourceById(e) {
@@ -3697,18 +3697,18 @@ class Ht {
     e = String(e);
     for (let n in M)
       if (M[n].publicId === e)
-        return new Wt(o, M[n]);
+        return new Rt(o, M[n]);
     return null;
   }
   addEventSource(e) {
     let o = this.getCurrentData();
-    if (e instanceof Wt)
+    if (e instanceof Rt)
       return o.eventSources[e.internalEventSource.sourceId] || this.dispatch({
         type: "ADD_EVENT_SOURCES",
         sources: [e.internalEventSource]
       }), e;
     let M = Ui(e, o);
-    return M ? (this.dispatch({ type: "ADD_EVENT_SOURCES", sources: [M] }), new Wt(o, M)) : null;
+    return M ? (this.dispatch({ type: "ADD_EVENT_SOURCES", sources: [M] }), new Rt(o, M)) : null;
   }
   removeAllEventSources() {
     this.dispatch({ type: "REMOVE_ALL_EVENT_SOURCES" });
@@ -3768,15 +3768,15 @@ class hb {
   }
   splitProps(e) {
     let o = this.getKeyInfo(e), M = this.getKeysForEventDefs(e.eventStore), n = this.splitDateSelection(e.dateSelection), b = this.splitIndividualUi(e.eventUiBases, M), r = this.splitEventStore(e.eventStore, M), z = this.splitEventDrag(e.eventDrag), i = this.splitEventResize(e.eventResize), a = {};
-    this.eventUiBuilders = Y0(o, (s, d) => this.eventUiBuilders[d] || I(lf));
+    this.eventUiBuilders = j0(o, (s, d) => this.eventUiBuilders[d] || I(lf));
     for (let s in o) {
-      let d = o[s], A = r[s] || JM, f = this.eventUiBuilders[s];
+      let d = o[s], u = r[s] || JM, A = this.eventUiBuilders[s];
       a[s] = {
         businessHours: d.businessHours || e.businessHours,
         dateSelection: n[s] || null,
-        eventStore: A,
-        eventUiBases: f(e.eventUiBases[""], d.ui, b[s]),
-        eventSelection: A.instances[e.eventSelection] ? e.eventSelection : "",
+        eventStore: u,
+        eventUiBases: A(e.eventUiBases[""], d.ui, b[s]),
+        eventSelection: u.instances[e.eventSelection] ? e.eventSelection : "",
         eventDrag: z[s] || null,
         eventResize: i[s] || null
       };
@@ -3793,7 +3793,7 @@ class hb {
     return o;
   }
   _getKeysForEventDefs(e) {
-    return Y0(e.defs, (o) => this.getKeysForEventDef(o));
+    return j0(e.defs, (o) => this.getKeysForEventDef(o));
   }
   _splitEventStore(e, o) {
     let { defs: M, instances: n } = e, b = {};
@@ -3841,17 +3841,17 @@ function lf(t, e, o) {
   };
   return o && Object.assign(n, o), n;
 }
-function N2(t, e, o, M) {
+function S2(t, e, o, M) {
   return {
     dow: t.getUTCDay(),
-    isDisabled: !!(M && (!M.activeRange || !j1(M.activeRange, t))),
-    isOther: !!(M && !j1(M.currentRange, t)),
-    isToday: !!(e && j1(e, t)),
+    isDisabled: !!(M && (!M.activeRange || !Y1(M.activeRange, t))),
+    isOther: !!(M && !Y1(M.currentRange, t)),
+    isToday: !!(e && Y1(e, t)),
     isPast: !!(o ? t < o : e && t < e.start),
     isFuture: !!(o ? t > o : e && t >= e.end)
   };
 }
-function Ut(t, e) {
+function jt(t, e) {
   let o = [
     "fc-day",
     `fc-day-${Si[t.dow]}`
@@ -3866,7 +3866,7 @@ function oc(t, e) {
   return t.isDisabled ? o.push("fc-slot-disabled") : (t.isToday && (o.push("fc-slot-today"), o.push(e.getClass("today"))), t.isPast && o.push("fc-slot-past"), t.isFuture && o.push("fc-slot-future")), o;
 }
 const df = m0({ year: "numeric", month: "long", day: "numeric" }), Af = m0({ week: "long" });
-function nt(t, e, o = "day", M = !0) {
+function bt(t, e, o = "day", M = !0) {
   const { dateEnv: n, options: b, calendarApi: r } = t;
   let z = n.format(e, o === "week" ? Af : df);
   if (b.navLinks) {
@@ -3875,7 +3875,7 @@ function nt(t, e, o = "day", M = !0) {
       let d = o === "day" ? b.navLinkDayClick : o === "week" ? b.navLinkWeekClick : null;
       typeof d == "function" ? d.call(r, n.toDate(e), s) : (typeof d == "string" && (o = d), r.zoomTo(e, o));
     };
-    return Object.assign({ title: i2(b.navLinkHint, [z, i], z), "data-navlink": "" }, M ? mi(a) : { onClick: a });
+    return Object.assign({ title: c2(b.navLinkHint, [z, i], z), "data-navlink": "" }, M ? mi(a) : { onClick: a });
   }
   return { "aria-label": z };
 }
@@ -3885,7 +3885,7 @@ function Bo() {
 }
 function uf() {
   let t = document.createElement("div");
-  Nt(t, {
+  St(t, {
     position: "absolute",
     top: -1e3,
     left: 0,
@@ -4013,10 +4013,10 @@ class qe {
     return this.bottoms[e] - this.tops[e];
   }
   similarTo(e) {
-    return Mo(this.tops || [], e.tops || []) && Mo(this.bottoms || [], e.bottoms || []) && Mo(this.lefts || [], e.lefts || []) && Mo(this.rights || [], e.rights || []);
+    return no(this.tops || [], e.tops || []) && no(this.bottoms || [], e.bottoms || []) && no(this.lefts || [], e.lefts || []) && no(this.rights || [], e.rights || []);
   }
 }
-function Mo(t, e) {
+function no(t, e) {
   const o = t.length;
   if (o !== e.length)
     return !1;
@@ -4176,7 +4176,7 @@ class mb {
   }
   insertEntryAt(e, o) {
     let { entriesByLevel: M, levelCoords: n } = this;
-    o.lateral === -1 ? (on(n, o.level, o.levelCoord), on(M, o.level, [e])) : on(M[o.level], o.lateral, e), this.stackCnts[tt(e)] = o.stackCnt;
+    o.lateral === -1 ? (on(n, o.level, o.levelCoord), on(M, o.level, [e])) : on(M[o.level], o.lateral, e), this.stackCnts[ot(e)] = o.stackCnt;
   }
   /*
   does not care about limits
@@ -4194,23 +4194,23 @@ class mb {
         (g = W[B]) && // but not past the whole entry list
         g.span.start < e.span.end;
       ) {
-        let k = R + this.getEntryThickness(g);
-        k > z && (z = k, s = g, i = h, a = B), k === z && (d = Math.max(d, b[tt(g)] + 1)), B += 1;
+        let C = R + this.getEntryThickness(g);
+        C > z && (z = C, s = g, i = h, a = B), C === z && (d = Math.max(d, b[ot(g)] + 1)), B += 1;
       }
     }
-    let A = 0;
+    let u = 0;
     if (s)
-      for (A = i + 1; A < r && o[A] < z; )
-        A += 1;
-    let f = -1;
-    return A < r && o[A] === z && (f = En(M[A], e.span.end, Bn)[0]), {
+      for (u = i + 1; u < r && o[u] < z; )
+        u += 1;
+    let A = -1;
+    return u < r && o[u] === z && (A = En(M[u], e.span.end, Bn)[0]), {
       touchingLevel: i,
       touchingLateral: a,
       touchingEntry: s,
       stackCnt: d,
       levelCoord: z,
-      level: A,
-      lateral: f
+      level: u,
+      lateral: A
     };
   }
   // sorted by levelCoord (lowest to highest)
@@ -4227,7 +4227,7 @@ class mb {
 function Bn(t) {
   return t.span.end;
 }
-function tt(t) {
+function ot(t) {
   return t.index + ":" + t.span.start;
 }
 function zc(t) {
@@ -4278,7 +4278,7 @@ function En(t, e, o) {
 }
 class gf {
   constructor(e, o) {
-    this.emitter = new v2();
+    this.emitter = new N2();
   }
   destroy() {
   }
@@ -4299,10 +4299,10 @@ function ac(t) {
 }
 class sc extends $ {
   render() {
-    let { dateEnv: e, options: o, theme: M, viewApi: n } = this.context, { props: b } = this, { date: r, dateProfile: z } = b, i = N2(r, b.todayRange, null, z), a = [cc].concat(Ut(i, M)), s = e.format(r, b.dayHeaderFormat), d = !i.isDisabled && b.colCnt > 1 ? nt(this.context, r) : {}, A = e.toDate(r);
-    e.namedTimeZoneImpl && (A = ue(A, 36e5));
-    let f = Object.assign(Object.assign(Object.assign({ date: A, view: n }, b.extraRenderProps), { text: s }), i);
-    return u(T0, { elTag: "th", elClasses: a, elAttrs: Object.assign({ role: "columnheader", colSpan: b.colSpan, "data-date": i.isDisabled ? void 0 : It(r) }, b.extraDataAttrs), renderProps: f, generatorName: "dayHeaderContent", customGenerator: o.dayHeaderContent, defaultGenerator: ac, classNameGenerator: o.dayHeaderClassNames, didMount: o.dayHeaderDidMount, willUnmount: o.dayHeaderWillUnmount }, (h) => u("div", { className: "fc-scrollgrid-sync-inner" }, !i.isDisabled && u(h, { elTag: "a", elAttrs: d, elClasses: [
+    let { dateEnv: e, options: o, theme: M, viewApi: n } = this.context, { props: b } = this, { date: r, dateProfile: z } = b, i = S2(r, b.todayRange, null, z), a = [cc].concat(jt(i, M)), s = e.format(r, b.dayHeaderFormat), d = !i.isDisabled && b.colCnt > 1 ? bt(this.context, r) : {}, u = e.toDate(r);
+    e.namedTimeZoneImpl && (u = ue(u, 36e5));
+    let A = Object.assign(Object.assign(Object.assign({ date: u, view: n }, b.extraRenderProps), { text: s }), i);
+    return f(T0, { elTag: "th", elClasses: a, elAttrs: Object.assign({ role: "columnheader", colSpan: b.colSpan, "data-date": i.isDisabled ? void 0 : Pt(r) }, b.extraDataAttrs), renderProps: A, generatorName: "dayHeaderContent", customGenerator: o.dayHeaderContent, defaultGenerator: ac, classNameGenerator: o.dayHeaderClassNames, didMount: o.dayHeaderDidMount, willUnmount: o.dayHeaderWillUnmount }, (h) => f("div", { className: "fc-scrollgrid-sync-inner" }, !i.isDisabled && f(h, { elTag: "a", elAttrs: d, elClasses: [
       "fc-col-header-cell-cushion",
       b.isSticky && "fc-sticky"
     ] })));
@@ -4322,14 +4322,14 @@ class Oc extends $ {
       // TODO: make this public?
       date: r
     }, z), { view: n }), e.extraRenderProps), { text: i });
-    return u(T0, { elTag: "th", elClasses: [
+    return f(T0, { elTag: "th", elClasses: [
       cc,
-      ...Ut(z, M),
+      ...jt(z, M),
       ...e.extraClassNames || []
-    ], elAttrs: Object.assign({ role: "columnheader", colSpan: e.colSpan }, e.extraDataAttrs), renderProps: a, generatorName: "dayHeaderContent", customGenerator: b.dayHeaderContent, defaultGenerator: ac, classNameGenerator: b.dayHeaderClassNames, didMount: b.dayHeaderDidMount, willUnmount: b.dayHeaderWillUnmount }, (s) => u(
+    ], elAttrs: Object.assign({ role: "columnheader", colSpan: e.colSpan }, e.extraDataAttrs), renderProps: a, generatorName: "dayHeaderContent", customGenerator: b.dayHeaderContent, defaultGenerator: ac, classNameGenerator: b.dayHeaderClassNames, didMount: b.dayHeaderDidMount, willUnmount: b.dayHeaderWillUnmount }, (s) => f(
       "div",
       { className: "fc-scrollgrid-sync-inner" },
-      u(s, { elTag: "a", elClasses: [
+      f(s, { elTag: "a", elClasses: [
         "fc-col-header-cell-cushion",
         e.isSticky && "fc-sticky"
       ], elAttrs: {
@@ -4344,11 +4344,11 @@ class yb extends $ {
   }
   render() {
     let { context: e } = this, { dates: o, dateProfile: M, datesRepDistinctDays: n, renderIntro: b } = this.props, r = this.createDayHeaderFormatter(e.options.dayHeaderFormat, n, o.length);
-    return u(S1, { unit: "day" }, (z, i) => u(
+    return f(S1, { unit: "day" }, (z, i) => f(
       "tr",
       { role: "row" },
       b && b("day"),
-      o.map((a) => n ? u(sc, { key: a.toISOString(), date: a, dateProfile: M, todayRange: i, colCnt: o.length, dayHeaderFormat: r }) : u(Oc, { key: a.getUTCDay(), dow: a.getUTCDay(), dayHeaderFormat: r }))
+      o.map((a) => n ? f(sc, { key: a.toISOString(), date: a, dateProfile: M, todayRange: i, colCnt: o.length, dayHeaderFormat: r }) : f(Oc, { key: a.getUTCDay(), dow: a.getUTCDay(), dayHeaderFormat: r }))
     ));
   }
 }
@@ -4377,7 +4377,7 @@ class lc {
   // If after the last offset, returns an offset past the last cell offset.
   // Only works for *start* dates of cells. Will not work for exclusive end dates for cells.
   getDateDayIndex(e) {
-    let { indices: o } = this, M = Math.floor(Pe(this.dates[0], e));
+    let { indices: o } = this, M = Math.floor(He(this.dates[0], e));
     return M < 0 ? o[0] - 1 : M >= o.length ? o[o.length - 1] + 1 : o[M];
   }
 }
@@ -4461,11 +4461,11 @@ class Lb {
     );
   }
   _sliceBusinessHours(e, o, M, n, ...b) {
-    return e ? this._sliceEventStore(Mt(e, no(o, !!M), n), {}, o, M, ...b).bg : [];
+    return e ? this._sliceEventStore(nt(e, bo(o, !!M), n), {}, o, M, ...b).bg : [];
   }
   _sliceEventStore(e, o, M, n, ...b) {
     if (e) {
-      let r = Tn(e, o, no(M, !!n), n);
+      let r = Tn(e, o, bo(M, !!n), n);
       return {
         bg: this.sliceEventRanges(r.bg, b),
         fg: this.sliceEventRanges(r.fg, b)
@@ -4476,7 +4476,7 @@ class Lb {
   _sliceInteraction(e, o, M, n, ...b) {
     if (!e)
       return null;
-    let r = Tn(e.mutatedEvents, o, no(M, !!n), n);
+    let r = Tn(e.mutatedEvents, o, bo(M, !!n), n);
     return {
       segs: this.sliceEventRanges(r.fg, b),
       affectedInstances: e.affectedEvents.instances,
@@ -4486,7 +4486,7 @@ class Lb {
   _sliceDateSpan(e, o, M, n, b, ...r) {
     if (!e)
       return [];
-    let z = no(o, !!M), i = F1(e.range, z);
+    let z = bo(o, !!M), i = F1(e.range, z);
     if (i) {
       e = Object.assign(Object.assign({}, e), { range: i });
       let a = nf(e, n, b), s = this.sliceRange(e.range, ...r);
@@ -4520,7 +4520,7 @@ class Lb {
     return n;
   }
 }
-function no(t, e) {
+function bo(t, e) {
   let o = t.activeRange;
   return e ? o : {
     start: ue(o.start, t.slotMinTime.milliseconds),
@@ -4547,26 +4547,26 @@ function fc(t, e, o = {}, M) {
 }
 function Nf(t, e, o, M) {
   let n = e.getCurrentData(), b = t.eventDrag, r = b.mutatedEvents, z = r.defs, i = r.instances, a = wo(z, b.isEvent ? t.eventUiBases : { "": n.selectionConfig });
-  M && (a = Y0(a, M));
-  let s = ku(t.eventStore, b.affectedEvents.instances), d = s.defs, A = s.instances, f = wo(d, t.eventUiBases);
+  M && (a = j0(a, M));
+  let s = ku(t.eventStore, b.affectedEvents.instances), d = s.defs, u = s.instances, A = wo(d, t.eventUiBases);
   for (let h in i) {
     let R = i[h], W = R.range, g = a[R.defId], N = z[R.defId];
     if (!qc(g.constraints, W, s, t.businessHours, e))
       return !1;
-    let { eventOverlap: B } = e.options, k = typeof B == "function" ? B : null;
-    for (let Y in A) {
-      let U = A[Y];
-      if ($o(W, U.range) && (f[U.defId].overlap === !1 && b.isEvent || g.overlap === !1 || k && !k(
+    let { eventOverlap: B } = e.options, C = typeof B == "function" ? B : null;
+    for (let j in u) {
+      let U = u[j];
+      if ($o(W, U.range) && (A[U.defId].overlap === !1 && b.isEvent || g.overlap === !1 || C && !C(
         new N0(e, d[U.defId], U),
         // still event
         new N0(e, N, R)
       )))
         return !1;
     }
-    let j = n.eventStore;
-    for (let Y of g.allows) {
-      let U = Object.assign(Object.assign({}, o), { range: R.range, allDay: N.allDay }), Z = j.defs[N.defId], S0 = j.instances[h], W0;
-      if (Z ? W0 = new N0(e, Z, S0) : W0 = new N0(e, N), !Y(lb(U, e), W0))
+    let Y = n.eventStore;
+    for (let j of g.allows) {
+      let U = Object.assign(Object.assign({}, o), { range: R.range, allDay: N.allDay }), Z = Y.defs[N.defId], S0 = Y.instances[h], W0;
+      if (Z ? W0 = new N0(e, Z, S0) : W0 = new N0(e, N), !j(lb(U, e), W0))
         return !1;
     }
   }
@@ -4577,14 +4577,14 @@ function Sf(t, e, o, M) {
   if (M && (a = M(a)), !qc(a.constraints, i, n, t.businessHours, e))
     return !1;
   let { selectOverlap: s } = e.options, d = typeof s == "function" ? s : null;
-  for (let A in r) {
-    let f = r[A];
-    if ($o(i, f.range) && (a.overlap === !1 || d && !d(new N0(e, b[f.defId], f), null)))
+  for (let u in r) {
+    let A = r[u];
+    if ($o(i, A.range) && (a.overlap === !1 || d && !d(new N0(e, b[A.defId], A), null)))
       return !1;
   }
-  for (let A of a.allows) {
-    let f = Object.assign(Object.assign({}, o), z);
-    if (!A(lb(f, e), null))
+  for (let u of a.allows) {
+    let A = Object.assign(Object.assign({}, o), z);
+    if (!u(lb(A, e), null))
       return !1;
   }
   return !0;
@@ -4596,7 +4596,7 @@ function qc(t, e, o, M, n) {
   return !0;
 }
 function Tf(t, e, o, M, n) {
-  return t === "businessHours" ? Mn(Mt(M, e, n)) : typeof t == "string" ? Mn(tM(o, (b) => b.groupId === t)) : typeof t == "object" && t ? Mn(Mt(t, e, n)) : [];
+  return t === "businessHours" ? Mn(nt(M, e, n)) : typeof t == "string" ? Mn(tM(o, (b) => b.groupId === t)) : typeof t == "object" && t ? Mn(nt(t, e, n)) : [];
 }
 function Mn(t) {
   let { instances: e } = t, o = [];
@@ -4610,7 +4610,7 @@ function wf(t, e) {
       return !0;
   return !1;
 }
-const bo = /^(visible|hidden)$/;
+const ro = /^(visible|hidden)$/;
 class vb extends $ {
   constructor() {
     super(...arguments), this.handleEl = (e) => {
@@ -4619,7 +4619,7 @@ class vb extends $ {
   }
   render() {
     let { props: e } = this, { liquid: o, liquidIsAbsolute: M } = e, n = o && M, b = ["fc-scroller"];
-    return o && (M ? b.push("fc-scroller-liquid-absolute") : b.push("fc-scroller-liquid")), u("div", { ref: this.handleEl, className: b.join(" "), style: {
+    return o && (M ? b.push("fc-scroller-liquid-absolute") : b.push("fc-scroller-liquid")), f("div", { ref: this.handleEl, className: b.join(" "), style: {
       overflowX: e.overflowX,
       overflowY: e.overflowY,
       left: n && -(e.overcomeLeft || 0) || "",
@@ -4632,7 +4632,7 @@ class vb extends $ {
     } }, e.children);
   }
   needsXScrolling() {
-    if (bo.test(this.props.overflowX))
+    if (ro.test(this.props.overflowX))
       return !1;
     let { el: e } = this, o = this.el.getBoundingClientRect().width - this.getYScrollbarWidth(), { children: M } = e;
     for (let n = 0; n < M.length; n += 1)
@@ -4641,7 +4641,7 @@ class vb extends $ {
     return !1;
   }
   needsYScrolling() {
-    if (bo.test(this.props.overflowY))
+    if (ro.test(this.props.overflowY))
       return !1;
     let { el: e } = this, o = this.el.getBoundingClientRect().height - this.getXScrollbarWidth(), { children: M } = e;
     for (let n = 0; n < M.length; n += 1)
@@ -4650,10 +4650,10 @@ class vb extends $ {
     return !1;
   }
   getXScrollbarWidth() {
-    return bo.test(this.props.overflowX) ? 0 : this.el.offsetHeight - this.el.clientHeight;
+    return ro.test(this.props.overflowX) ? 0 : this.el.offsetHeight - this.el.clientHeight;
   }
   getYScrollbarWidth() {
-    return bo.test(this.props.overflowY) ? 0 : this.el.offsetWidth - this.el.clientWidth;
+    return ro.test(this.props.overflowY) ? 0 : this.el.offsetWidth - this.el.clientWidth;
   }
 }
 class Z0 {
@@ -4680,7 +4680,7 @@ class Z0 {
   }
 }
 function hc(t) {
-  let e = rt(t, ".fc-scrollgrid-shrink"), o = 0;
+  let e = pt(t, ".fc-scrollgrid-shrink"), o = 0;
   for (let M of e)
     o = Math.max(o, AA(M));
   return Math.ceil(o);
@@ -4694,7 +4694,7 @@ function Wc(t, e) {
 }
 function Rc(t, e, o, M) {
   let { expandRows: n } = o;
-  return typeof e.content == "function" ? e.content(o) : u("table", {
+  return typeof e.content == "function" ? e.content(o) : f("table", {
     role: "presentation",
     className: [
       e.tableClassName,
@@ -4706,7 +4706,7 @@ function Rc(t, e, o, M) {
       height: n ? o.clientHeight : ""
       // css `height` on a <table> serves as a min-height
     }
-  }, o.tableColGroupNode, u(M ? "thead" : "tbody", {
+  }, o.tableColGroupNode, f(M ? "thead" : "tbody", {
     role: "presentation"
   }, typeof e.rowContent == "function" ? e.rowContent(o) : e.rowContent));
 }
@@ -4718,12 +4718,12 @@ function gc(t, e) {
   for (let M of t) {
     let n = M.span || 1;
     for (let b = 0; b < n; b += 1)
-      o.push(u("col", { style: {
+      o.push(f("col", { style: {
         width: M.width === "shrink" ? yc(e) : M.width || "",
         minWidth: M.minWidth || ""
       } }));
   }
-  return u("colgroup", {}, ...o);
+  return f("colgroup", {}, ...o);
 }
 function yc(t) {
   return t ?? 4;
@@ -4750,13 +4750,13 @@ function Nc(t, e) {
   ];
   return e && t.liquid && t.maxHeight == null && o.push("fc-scrollgrid-section-liquid"), t.isSticky && o.push("fc-scrollgrid-section-sticky"), o;
 }
-function kt(t) {
-  return u("div", { className: "fc-scrollgrid-sticky-shim", style: {
+function Xt(t) {
+  return f("div", { className: "fc-scrollgrid-sticky-shim", style: {
     width: t.clientWidth,
     minWidth: t.tableMinWidth
   } });
 }
-function Xt(t) {
+function xt(t) {
   let { stickyHeaderDates: e } = t;
   return (e == null || e === "auto") && (e = t.height === "auto" || t.viewHeight === "auto"), e;
 }
@@ -4778,45 +4778,45 @@ class Sb extends $ {
   render() {
     let { props: e, state: o, context: M } = this, n = e.sections || [], b = this.processCols(e.cols), r = this.renderMicroColGroup(b, o.shrinkWidth), z = vc(e.liquid, M);
     e.collapsibleWidth && z.push("fc-scrollgrid-collapsible");
-    let i = n.length, a = 0, s, d = [], A = [], f = [];
+    let i = n.length, a = 0, s, d = [], u = [], A = [];
     for (; a < i && (s = n[a]).type === "header"; )
       d.push(this.renderSection(s, r, !0)), a += 1;
     for (; a < i && (s = n[a]).type === "body"; )
-      A.push(this.renderSection(s, r, !1)), a += 1;
+      u.push(this.renderSection(s, r, !1)), a += 1;
     for (; a < i && (s = n[a]).type === "footer"; )
-      f.push(this.renderSection(s, r, !0)), a += 1;
+      A.push(this.renderSection(s, r, !0)), a += 1;
     let h = !fb();
     const R = { role: "rowgroup" };
-    return u("table", {
+    return f("table", {
       role: "grid",
       className: z.join(" "),
       style: { height: e.height }
-    }, !!(!h && d.length) && u("thead", R, ...d), !!(!h && A.length) && u("tbody", R, ...A), !!(!h && f.length) && u("tfoot", R, ...f), h && u("tbody", R, ...d, ...A, ...f));
+    }, !!(!h && d.length) && f("thead", R, ...d), !!(!h && u.length) && f("tbody", R, ...u), !!(!h && A.length) && f("tfoot", R, ...A), h && f("tbody", R, ...d, ...u, ...A));
   }
   renderSection(e, o, M) {
-    return "outerContent" in e ? u(M0, { key: e.key }, e.outerContent) : u("tr", { key: e.key, role: "presentation", className: Nc(e, this.props.liquid).join(" ") }, this.renderChunkTd(e, o, e.chunk, M));
+    return "outerContent" in e ? f(M0, { key: e.key }, e.outerContent) : f("tr", { key: e.key, role: "presentation", className: Nc(e, this.props.liquid).join(" ") }, this.renderChunkTd(e, o, e.chunk, M));
   }
   renderChunkTd(e, o, M, n) {
     if ("outerContent" in M)
       return M.outerContent;
-    let { props: b } = this, { forceYScrollbars: r, scrollerClientWidths: z, scrollerClientHeights: i } = this.state, a = Wc(b, e), s = Nb(b, e), d = b.liquid ? r ? "scroll" : a ? "auto" : "hidden" : "visible", A = e.key, f = Rc(e, M, {
+    let { props: b } = this, { forceYScrollbars: r, scrollerClientWidths: z, scrollerClientHeights: i } = this.state, a = Wc(b, e), s = Nb(b, e), d = b.liquid ? r ? "scroll" : a ? "auto" : "hidden" : "visible", u = e.key, A = Rc(e, M, {
       tableColGroupNode: o,
       tableMinWidth: "",
-      clientWidth: !b.collapsibleWidth && z[A] !== void 0 ? z[A] : null,
-      clientHeight: i[A] !== void 0 ? i[A] : null,
+      clientWidth: !b.collapsibleWidth && z[u] !== void 0 ? z[u] : null,
+      clientHeight: i[u] !== void 0 ? i[u] : null,
       expandRows: e.expandRows,
       syncRowHeights: !1,
       rowSyncHeights: [],
       reportRowHeightChange: () => {
       }
     }, n);
-    return u(n ? "th" : "td", {
+    return f(n ? "th" : "td", {
       ref: M.elRef,
       role: "presentation"
-    }, u(
+    }, f(
       "div",
       { className: `fc-scroller-harness${s ? " fc-scroller-harness-liquid" : ""}` },
-      u(vb, { ref: this.scrollerRefs.createRef(A), elRef: this.scrollerElRefs.createRef(A), overflowY: d, overflowX: b.liquid ? "hidden" : "visible", maxHeight: e.maxHeight, liquid: s, liquidIsAbsolute: !0 }, f)
+      f(vb, { ref: this.scrollerRefs.createRef(u), elRef: this.scrollerElRefs.createRef(u), overflowY: d, overflowX: b.liquid ? "hidden" : "visible", maxHeight: e.maxHeight, liquid: s, liquidIsAbsolute: !0 }, A)
     ));
   }
   _handleScrollerEl(e, o) {
@@ -4891,7 +4891,7 @@ class nM extends $ {
       isDragging: !!e.isDragging,
       isResizing: !!e.isResizing
     };
-    return u(T0, { elRef: this.handleEl, elTag: e.elTag, elAttrs: e.elAttrs, elClasses: [
+    return f(T0, { elRef: this.handleEl, elTag: e.elTag, elAttrs: e.elAttrs, elClasses: [
       ...$u(z),
       ...n.eventRange.ui.classNames,
       ...e.elClasses || []
@@ -4903,16 +4903,16 @@ class nM extends $ {
 }
 class bM extends $ {
   render() {
-    let { props: e, context: o } = this, { options: M } = o, { seg: n } = e, { ui: b } = n.eventRange, r = M.eventTimeFormat || e.defaultTimeFormat, z = a2(n, r, o, e.defaultDisplayEventTime, e.defaultDisplayEventEnd);
-    return u(nM, Object.assign({}, e, { elTag: "a", elStyle: {
+    let { props: e, context: o } = this, { options: M } = o, { seg: n } = e, { ui: b } = n.eventRange, r = M.eventTimeFormat || e.defaultTimeFormat, z = s2(n, r, o, e.defaultDisplayEventTime, e.defaultDisplayEventEnd);
+    return f(nM, Object.assign({}, e, { elTag: "a", elStyle: {
       borderColor: b.borderColor,
       backgroundColor: b.backgroundColor
-    }, elAttrs: ub(n, o), defaultGenerator: Ef, timeText: z }), (i, a) => u(
+    }, elAttrs: ub(n, o), defaultGenerator: Ef, timeText: z }), (i, a) => f(
       M0,
       null,
-      u(i, { elTag: "div", elClasses: ["fc-event-main"], elStyle: { color: a.textColor } }),
-      !!a.isStartResizable && u("div", { className: "fc-event-resizer fc-event-resizer-start" }),
-      !!a.isEndResizable && u("div", { className: "fc-event-resizer fc-event-resizer-end" })
+      f(i, { elTag: "div", elClasses: ["fc-event-main"], elStyle: { color: a.textColor } }),
+      !!a.isStartResizable && f("div", { className: "fc-event-resizer fc-event-resizer-start" }),
+      !!a.isEndResizable && f("div", { className: "fc-event-resizer fc-event-resizer-end" })
     ));
   }
 }
@@ -4920,28 +4920,28 @@ bM.addPropsEquality({
   seg: K0
 });
 function Ef(t) {
-  return u(
+  return f(
     "div",
     { className: "fc-event-main-frame" },
-    t.timeText && u("div", { className: "fc-event-time" }, t.timeText),
-    u(
+    t.timeText && f("div", { className: "fc-event-time" }, t.timeText),
+    f(
       "div",
       { className: "fc-event-title-container" },
-      u("div", { className: "fc-event-title fc-sticky" }, t.event.title || u(M0, null, " "))
+      f("div", { className: "fc-event-title fc-sticky" }, t.event.title || f(M0, null, " "))
     )
   );
 }
-const Yt = (t) => u(Q1.Consumer, null, (e) => {
+const Yt = (t) => f(Q1.Consumer, null, (e) => {
   let { options: o } = e, M = {
     isAxis: t.isAxis,
     date: e.dateEnv.toDate(t.date),
     view: e.viewApi
   };
-  return u(T0, { elRef: t.elRef, elTag: t.elTag || "div", elAttrs: t.elAttrs, elClasses: t.elClasses, elStyle: t.elStyle, renderProps: M, generatorName: "nowIndicatorContent", customGenerator: o.nowIndicatorContent, classNameGenerator: o.nowIndicatorClassNames, didMount: o.nowIndicatorDidMount, willUnmount: o.nowIndicatorWillUnmount }, t.children);
+  return f(T0, { elRef: t.elRef, elTag: t.elTag || "div", elAttrs: t.elAttrs, elClasses: t.elClasses, elStyle: t.elStyle, renderProps: M, generatorName: "nowIndicatorContent", customGenerator: o.nowIndicatorContent, classNameGenerator: o.nowIndicatorClassNames, didMount: o.nowIndicatorDidMount, willUnmount: o.nowIndicatorWillUnmount }, t.children);
 }), Df = m0({ day: "numeric" });
 class Tb extends $ {
   constructor() {
-    super(...arguments), this.refineRenderProps = _e(_f);
+    super(...arguments), this.refineRenderProps = Ce(_f);
   }
   render() {
     let { props: e, context: o } = this, { options: M } = o, n = this.refineRenderProps({
@@ -4955,8 +4955,8 @@ class Tb extends $ {
       dateEnv: o.dateEnv,
       monthStartFormat: M.monthStartFormat
     });
-    return u(T0, { elRef: e.elRef, elTag: e.elTag, elAttrs: Object.assign(Object.assign({}, e.elAttrs), n.isDisabled ? {} : { "data-date": It(e.date) }), elClasses: [
-      ...Ut(n, o.theme),
+    return f(T0, { elRef: e.elRef, elTag: e.elTag, elAttrs: Object.assign(Object.assign({}, e.elAttrs), n.isDisabled ? {} : { "data-date": Pt(e.date) }), elClasses: [
+      ...jt(n, o.theme),
       ...e.elClasses || []
     ], elStyle: e.elStyle, renderProps: n, generatorName: "dayCellContent", customGenerator: M.dayCellContent, defaultGenerator: e.defaultGenerator, classNameGenerator: (
       // don't use custom classNames if disabled
@@ -4968,7 +4968,7 @@ function wb(t) {
   return !!(t.dayCellContent || Ln("dayCellContent", t));
 }
 function _f(t) {
-  let { date: e, dateEnv: o, dateProfile: M, isMonthStart: n } = t, b = N2(e, t.todayRange, null, M), r = t.showDayNumber ? o.format(e, n ? t.monthStartFormat : Df) : "";
+  let { date: e, dateEnv: o, dateProfile: M, isMonthStart: n } = t, b = S2(e, t.todayRange, null, M), r = t.showDayNumber ? o.format(e, n ? t.monthStartFormat : Df) : "";
   return Object.assign(Object.assign(Object.assign({ date: o.toDate(e), view: t.viewApi }, b), {
     isMonthStart: n,
     dayNumberText: r
@@ -4977,19 +4977,19 @@ function _f(t) {
 class Bb extends $ {
   render() {
     let { props: e } = this, { seg: o } = e;
-    return u(nM, { elTag: "div", elClasses: ["fc-bg-event"], elStyle: { backgroundColor: o.eventRange.ui.backgroundColor }, defaultGenerator: Cf, seg: o, timeText: "", isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: !1, isPast: e.isPast, isFuture: e.isFuture, isToday: e.isToday, disableDragging: !0, disableResizing: !0 });
+    return f(nM, { elTag: "div", elClasses: ["fc-bg-event"], elStyle: { backgroundColor: o.eventRange.ui.backgroundColor }, defaultGenerator: Cf, seg: o, timeText: "", isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: !1, isPast: e.isPast, isFuture: e.isFuture, isToday: e.isToday, disableDragging: !0, disableResizing: !0 });
   }
 }
 function Cf(t) {
   let { title: e } = t.event;
-  return e && u("div", { className: "fc-event-title" }, t.event.title);
+  return e && f("div", { className: "fc-event-title" }, t.event.title);
 }
 function Eb(t) {
-  return u("div", { className: `fc-${t}` });
+  return f("div", { className: `fc-${t}` });
 }
-const Sc = (t) => u(Q1.Consumer, null, (e) => {
+const Sc = (t) => f(Q1.Consumer, null, (e) => {
   let { dateEnv: o, options: M } = e, { date: n } = t, b = M.weekNumberFormat || t.defaultFormat, r = o.computeWeekNumber(n), z = o.format(n, b), i = { num: r, text: z, date: n };
-  return u(
+  return f(
     T0,
     { elRef: t.elRef, elTag: t.elTag, elAttrs: t.elAttrs, elClasses: t.elClasses, elStyle: t.elStyle, renderProps: i, generatorName: "weekNumberContent", customGenerator: M.weekNumberContent, defaultGenerator: kf, classNameGenerator: M.weekNumberClassNames, didMount: M.weekNumberDidMount, willUnmount: M.weekNumberWillUnmount },
     t.children
@@ -5020,16 +5020,16 @@ class Xf extends $ {
       "fc-popover",
       e.getClass("popover")
     ].concat(M.extraClassNames || []);
-    return Fd(u(
+    return Fd(f(
       "div",
       Object.assign({}, M.extraAttrs, { id: M.id, className: b.join(" "), "aria-labelledby": n.titleId, ref: this.handleRootEl }),
-      u(
+      f(
         "div",
         { className: "fc-popover-header " + e.getClass("popoverHeader") },
-        u("span", { className: "fc-popover-title", id: n.titleId }, M.title),
-        u("span", { className: "fc-popover-close " + e.getIconClass("close"), title: o.closeHint, onClick: this.handleCloseClick })
+        f("span", { className: "fc-popover-title", id: n.titleId }, M.title),
+        f("span", { className: "fc-popover-close " + e.getIconClass("close"), title: o.closeHint, onClick: this.handleCloseClick })
       ),
-      u("div", { className: "fc-popover-body " + e.getClass("popoverContent") }, M.children)
+      f("div", { className: "fc-popover-body " + e.getClass("popoverContent") }, M.children)
     ), M.parentEl);
   }
   componentDidMount() {
@@ -5044,7 +5044,7 @@ class Xf extends $ {
       let r = n.getBoundingClientRect(), z = M ? Q0(o, ".fc-scrollgrid").getBoundingClientRect().top : b.top, i = e ? b.right - r.width : b.left;
       z = Math.max(z, nn), i = Math.min(i, document.documentElement.clientWidth - nn - r.width), i = Math.max(i, nn);
       let a = n.offsetParent.getBoundingClientRect();
-      Nt(n, {
+      St(n, {
         top: z - a.top,
         left: i - a.left
       });
@@ -5062,10 +5062,10 @@ class xf extends $0 {
   }
   render() {
     let { options: e, dateEnv: o } = this.context, { props: M } = this, { startDate: n, todayRange: b, dateProfile: r } = M, z = o.format(n, e.dayPopoverFormat);
-    return u(Tb, { elRef: this.handleRootEl, date: n, dateProfile: r, todayRange: b }, (i, a, s) => u(
+    return f(Tb, { elRef: this.handleRootEl, date: n, dateProfile: r, todayRange: b }, (i, a, s) => f(
       Xf,
       { elRef: s.ref, id: M.id, title: z, extraClassNames: ["fc-more-popover"].concat(s.className || []), extraAttrs: s, parentEl: M.parentEl, alignmentEl: M.alignmentEl, alignGridTop: M.alignGridTop, onClose: M.onClose },
-      wb(e) && u(i, { elTag: "div", elClasses: ["fc-more-popover-misc"] }),
+      wb(e) && f(i, { elTag: "div", elClasses: ["fc-more-popover-misc"] }),
       M.children
     ));
   }
@@ -5122,21 +5122,21 @@ class Db extends $ {
   }
   render() {
     let { props: e, state: o } = this;
-    return u(Q1.Consumer, null, (M) => {
-      let { viewApi: n, options: b, calendarApi: r } = M, { moreLinkText: z } = b, { moreCnt: i } = e, a = Kp(e), s = typeof z == "function" ? z.call(r, i) : `+${i} ${z}`, d = i2(b.moreLinkHint, [i], s), A = {
+    return f(Q1.Consumer, null, (M) => {
+      let { viewApi: n, options: b, calendarApi: r } = M, { moreLinkText: z } = b, { moreCnt: i } = e, a = Kp(e), s = typeof z == "function" ? z.call(r, i) : `+${i} ${z}`, d = c2(b.moreLinkHint, [i], s), u = {
         num: i,
         shortText: `+${i}`,
         text: s,
         view: n
       };
-      return u(
+      return f(
         M0,
         null,
-        !!e.moreCnt && u(T0, { elTag: e.elTag || "a", elRef: this.handleLinkEl, elClasses: [
+        !!e.moreCnt && f(T0, { elTag: e.elTag || "a", elRef: this.handleLinkEl, elClasses: [
           ...e.elClasses || [],
           "fc-more-link"
-        ], elStyle: e.elStyle, elAttrs: Object.assign(Object.assign(Object.assign({}, e.elAttrs), mi(this.handleClick)), { title: d, "aria-expanded": o.isPopoverOpen, "aria-controls": o.isPopoverOpen ? o.popoverId : "" }), renderProps: A, generatorName: "moreLinkContent", customGenerator: b.moreLinkContent, defaultGenerator: e.defaultGenerator || If, classNameGenerator: b.moreLinkClassNames, didMount: b.moreLinkDidMount, willUnmount: b.moreLinkWillUnmount }, e.children),
-        o.isPopoverOpen && u(xf, { id: o.popoverId, startDate: a.start, endDate: a.end, dateProfile: e.dateProfile, todayRange: e.todayRange, extraDateSpan: e.extraDateSpan, parentEl: this.parentEl, alignmentEl: e.alignmentElRef ? e.alignmentElRef.current : this.linkEl, alignGridTop: e.alignGridTop, forceTimed: e.forceTimed, onClose: this.handlePopoverClose }, e.popoverContent())
+        ], elStyle: e.elStyle, elAttrs: Object.assign(Object.assign(Object.assign({}, e.elAttrs), mi(this.handleClick)), { title: d, "aria-expanded": o.isPopoverOpen, "aria-controls": o.isPopoverOpen ? o.popoverId : "" }), renderProps: u, generatorName: "moreLinkContent", customGenerator: b.moreLinkContent, defaultGenerator: e.defaultGenerator || If, classNameGenerator: b.moreLinkClassNames, didMount: b.moreLinkDidMount, willUnmount: b.moreLinkWillUnmount }, e.children),
+        o.isPopoverOpen && f(xf, { id: o.popoverId, startDate: a.start, endDate: a.end, dateProfile: e.dateProfile, todayRange: e.todayRange, extraDateSpan: e.extraDateSpan, parentEl: this.parentEl, alignmentEl: e.alignmentElRef ? e.alignmentElRef.current : this.linkEl, alignGridTop: e.alignGridTop, forceTimed: e.forceTimed, onClose: this.handlePopoverClose }, e.popoverContent())
       );
     });
   }
@@ -5177,7 +5177,7 @@ function Hf(t) {
 function Uf(t, e) {
   return t.eventRange.range.end > e.eventRange.range.end ? t : e;
 }
-const Yf = [], Tc = {
+const jf = [], Tc = {
   code: "en",
   week: {
     dow: 0,
@@ -5221,8 +5221,8 @@ const Yf = [], Tc = {
     return `Show ${t} more event${t === 1 ? "" : "s"}`;
   }
 });
-function jf(t) {
-  let e = t.length > 0 ? t[0].code : "en", o = Yf.concat(t), M = {
+function Yf(t) {
+  let e = t.length > 0 ? t[0].code : "en", o = jf.concat(t), M = {
     en: wc
   };
   for (let n of o)
@@ -5390,32 +5390,32 @@ function Kf(t, e) {
 function $f(t, e) {
   return t === void 0 ? e : e === void 0 ? t : new Date(Math.max(t.valueOf(), e.valueOf()));
 }
-class He extends L2 {
+class Ue extends v2 {
 }
-He.prototype.classes = {
+Ue.prototype.classes = {
   root: "fc-theme-standard",
   tableCellShaded: "fc-cell-shaded",
   buttonGroup: "fc-button-group",
   button: "fc-button fc-button-primary",
   buttonActive: "fc-button-active"
 };
-He.prototype.baseIconClass = "fc-icon";
-He.prototype.iconClasses = {
+Ue.prototype.baseIconClass = "fc-icon";
+Ue.prototype.iconClasses = {
   close: "fc-icon-x",
   prev: "fc-icon-chevron-left",
   next: "fc-icon-chevron-right",
   prevYear: "fc-icon-chevrons-left",
   nextYear: "fc-icon-chevrons-right"
 };
-He.prototype.rtlIconClasses = {
+Ue.prototype.rtlIconClasses = {
   prev: "fc-icon-chevron-right",
   next: "fc-icon-chevron-left",
   prevYear: "fc-icon-chevrons-right",
   nextYear: "fc-icon-chevrons-left"
 };
-He.prototype.iconOverrideOption = "buttonIcons";
-He.prototype.iconOverrideCustomButtonOption = "icon";
-He.prototype.iconOverridePrefix = "fc-icon-";
+Ue.prototype.iconOverrideOption = "buttonIcons";
+Ue.prototype.iconOverrideCustomButtonOption = "icon";
+Ue.prototype.iconOverridePrefix = "fc-icon-";
 function Zf(t, e) {
   let o = {}, M;
   for (M in t)
@@ -5445,7 +5445,7 @@ function Jf(t, e, o, M) {
   } : null;
 }
 function $p(t) {
-  return Y0(t, e4);
+  return j0(t, e4);
 }
 function e4(t) {
   let e = typeof t == "function" ? { component: t } : t, { component: o } = e;
@@ -5457,24 +5457,24 @@ function e4(t) {
   };
 }
 function Zp(t) {
-  return (e) => u(Q1.Consumer, null, (o) => u(T0, { elTag: "div", elClasses: Ci(o.viewSpec), renderProps: Object.assign(Object.assign({}, e), { nextDayThreshold: o.options.nextDayThreshold }), generatorName: void 0, customGenerator: t.content, classNameGenerator: t.classNames, didMount: t.didMount, willUnmount: t.willUnmount }));
+  return (e) => f(Q1.Consumer, null, (o) => f(T0, { elTag: "div", elClasses: Ci(o.viewSpec), renderProps: Object.assign(Object.assign({}, e), { nextDayThreshold: o.options.nextDayThreshold }), generatorName: void 0, customGenerator: t.content, classNameGenerator: t.classNames, didMount: t.didMount, willUnmount: t.willUnmount }));
 }
 function t4(t, e, o, M) {
   let n = $p(t), b = $p(e.views), r = Zf(n, b);
-  return Y0(r, (z) => o4(z, b, e, o, M));
+  return j0(r, (z) => o4(z, b, e, o, M));
 }
 function o4(t, e, o, M, n) {
   let b = t.overrides.duration || t.defaults.duration || M.duration || o.duration, r = null, z = "", i = "", a = {};
   if (b && (r = M4(b), r)) {
-    let A = Xe(r);
-    z = A.unit, A.value === 1 && (i = z, a = e[z] ? e[z].rawOptions : {});
+    let u = xe(r);
+    z = u.unit, u.value === 1 && (i = z, a = e[z] ? e[z].rawOptions : {});
   }
-  let s = (A) => {
-    let f = A.buttonText || {}, h = t.defaults.buttonTextKey;
-    return h != null && f[h] != null ? f[h] : f[t.type] != null ? f[t.type] : f[i] != null ? f[i] : null;
-  }, d = (A) => {
-    let f = A.buttonHints || {}, h = t.defaults.buttonTextKey;
-    return h != null && f[h] != null ? f[h] : f[t.type] != null ? f[t.type] : f[i] != null ? f[i] : null;
+  let s = (u) => {
+    let A = u.buttonText || {}, h = t.defaults.buttonTextKey;
+    return h != null && A[h] != null ? A[h] : A[t.type] != null ? A[t.type] : A[i] != null ? A[i] : null;
+  }, d = (u) => {
+    let A = u.buttonHints || {}, h = t.defaults.buttonTextKey;
+    return h != null && A[h] != null ? A[h] : A[t.type] != null ? A[t.type] : A[i] != null ? A[i] : null;
   };
   return {
     type: t.type,
@@ -5486,10 +5486,10 @@ function o4(t, e, o, M, n) {
     optionOverrides: Object.assign(Object.assign({}, a), t.overrides),
     buttonTextOverride: s(M) || s(o) || // constructor-specified buttonText lookup hash takes precedence
     t.overrides.buttonText,
-    buttonTextDefault: s(n) || t.defaults.buttonText || s(c2) || t.type,
+    buttonTextDefault: s(n) || t.defaults.buttonText || s(a2) || t.type,
     // not DRY
     buttonTitleOverride: d(M) || d(o) || t.overrides.buttonHint,
-    buttonTitleDefault: d(n) || t.defaults.buttonHint || d(c2)
+    buttonTitleDefault: d(n) || t.defaults.buttonHint || d(a2)
     // will eventually fall back to buttonText
   };
 }
@@ -5644,7 +5644,7 @@ function kc(t, e) {
   return fe(t, (o) => Xc(o, e));
 }
 function A4(t, e) {
-  let o = Yi(e), M = [].concat(t.eventSources || []), n = [];
+  let o = ji(e), M = [].concat(t.eventSources || []), n = [];
   t.initialEvents && M.unshift(t.initialEvents), t.events && M.unshift(t.events);
   for (let b of M) {
     let r = Ui(b, e, o);
@@ -5718,42 +5718,42 @@ function ez(t, e, o, M, n, b) {
   return { sectionWidgets: r, viewsWithButtons: z, hasTitle: i };
 }
 function R4(t, e, o, M, n, b) {
-  let r = e.direction === "rtl", z = e.customButtons || {}, i = o.buttonText || {}, a = e.buttonText || {}, s = o.buttonHints || {}, d = e.buttonHints || {}, A = t ? t.split(" ") : [], f = [], h = !1;
-  return { widgets: A.map((W) => W.split(",").map((g) => {
+  let r = e.direction === "rtl", z = e.customButtons || {}, i = o.buttonText || {}, a = e.buttonText || {}, s = o.buttonHints || {}, d = e.buttonHints || {}, u = t ? t.split(" ") : [], A = [], h = !1;
+  return { widgets: u.map((W) => W.split(",").map((g) => {
     if (g === "title")
       return h = !0, { buttonName: g };
-    let N, B, k, j, Y, U;
+    let N, B, C, Y, j, U;
     if (N = z[g])
-      k = (Z) => {
+      C = (Z) => {
         N.click && N.click.call(Z.target, Z, Z.target);
-      }, (j = M.getCustomButtonIconClass(N)) || (j = M.getIconClass(g, r)) || (Y = N.text), U = N.hint || N.text;
+      }, (Y = M.getCustomButtonIconClass(N)) || (Y = M.getIconClass(g, r)) || (j = N.text), U = N.hint || N.text;
     else if (B = n[g]) {
-      f.push(g), k = () => {
+      A.push(g), C = () => {
         b.changeView(g);
-      }, (Y = B.buttonTextOverride) || (j = M.getIconClass(g, r)) || (Y = B.buttonTextDefault);
+      }, (j = B.buttonTextOverride) || (Y = M.getIconClass(g, r)) || (j = B.buttonTextDefault);
       let Z = B.buttonTextOverride || B.buttonTextDefault;
-      U = i2(
+      U = c2(
         B.buttonTitleOverride || B.buttonTitleDefault || e.viewHint,
         [Z, g],
         // view-name = buttonName
         Z
       );
     } else if (b[g])
-      if (k = () => {
+      if (C = () => {
         b[g]();
-      }, (Y = i[g]) || (j = M.getIconClass(g, r)) || (Y = a[g]), g === "prevYear" || g === "nextYear") {
+      }, (j = i[g]) || (Y = M.getIconClass(g, r)) || (j = a[g]), g === "prevYear" || g === "nextYear") {
         let Z = g === "prevYear" ? "prev" : "next";
-        U = i2(s[Z] || d[Z], [
+        U = c2(s[Z] || d[Z], [
           a.year || "year",
           "year"
         ], a[g]);
       } else
-        U = (Z) => i2(s[g] || d[g], [
+        U = (Z) => c2(s[g] || d[g], [
           a[Z] || Z,
           Z
         ], a[g]);
-    return { buttonName: g, buttonClick: k, buttonIcon: j, buttonText: Y, buttonHint: U };
-  })), viewsWithButtons: f, hasTitle: h };
+    return { buttonName: g, buttonClick: C, buttonIcon: Y, buttonText: j, buttonHint: U };
+  })), viewsWithButtons: A, hasTitle: h };
 }
 class m4 {
   constructor(e, o, M) {
@@ -5931,7 +5931,7 @@ function k4(t, e) {
 }
 function X4(t, e) {
   let { emitter: o } = e;
-  o.hasHandlers("eventsSet") && o.trigger("eventsSet", et(t, e));
+  o.hasHandlers("eventsSet") && o.trigger("eventsSet", tt(t, e));
 }
 const x4 = [
   y4,
@@ -5952,7 +5952,7 @@ const x4 = [
 ];
 class I4 {
   constructor(e, o) {
-    this.runTaskOption = e, this.drainedOption = o, this.queue = [], this.delayedRunner = new A2(this.drain.bind(this));
+    this.runTaskOption = e, this.drainedOption = o, this.queue = [], this.delayedRunner = new u2(this.drain.bind(this));
   }
   request(e, o) {
     this.queue.push(e), this.delayedRunner.request(o);
@@ -5992,7 +5992,7 @@ function H4(t) {
     return { year: "numeric" };
   if (e === "month")
     return { year: "numeric", month: "long" };
-  let o = u2(t.currentRange.start, t.currentRange.end);
+  let o = f2(t.currentRange.start, t.currentRange.end);
   return o !== null && o > 1 ? { year: "numeric", month: "short", day: "numeric" } : { year: "numeric", month: "long", day: "numeric" };
 }
 class oz {
@@ -6017,8 +6017,8 @@ class oz {
 }
 class U4 {
   constructor(e) {
-    this.computeCurrentViewData = I(this._computeCurrentViewData), this.organizeRawLocales = I(jf), this.buildLocale = I(Bc), this.buildPluginHooks = Qf(), this.buildDateEnv = I(Y4), this.buildTheme = I(j4), this.parseToolbars = I(W4), this.buildViewSpecs = I(t4), this.buildDateProfileGenerator = _e(F4), this.buildViewApi = I(G4), this.buildViewUiProps = _e(K4), this.buildEventUiBySource = I(V4, K0), this.buildEventUiBases = I(Q4), this.parseContextBusinessHours = _e($4), this.buildTitle = I(P4), this.nowManager = new oz(), this.emitter = new v2(), this.actionRunner = new I4(this._handleAction.bind(this), this.updateData.bind(this)), this.currentCalendarOptionsInput = {}, this.currentCalendarOptionsRefined = {}, this.currentViewOptionsInput = {}, this.currentViewOptionsRefined = {}, this.currentCalendarOptionsRefiners = {}, this.optionsForRefining = [], this.optionsForHandling = [], this.getCurrentData = () => this.data, this.dispatch = (A) => {
-      this.actionRunner.request(A);
+    this.computeCurrentViewData = I(this._computeCurrentViewData), this.organizeRawLocales = I(Yf), this.buildLocale = I(Bc), this.buildPluginHooks = Qf(), this.buildDateEnv = I(j4), this.buildTheme = I(Y4), this.parseToolbars = I(W4), this.buildViewSpecs = I(t4), this.buildDateProfileGenerator = Ce(F4), this.buildViewApi = I(G4), this.buildViewUiProps = Ce(K4), this.buildEventUiBySource = I(V4, K0), this.buildEventUiBases = I(Q4), this.parseContextBusinessHours = Ce($4), this.buildTitle = I(P4), this.nowManager = new oz(), this.emitter = new N2(), this.actionRunner = new I4(this._handleAction.bind(this), this.updateData.bind(this)), this.currentCalendarOptionsInput = {}, this.currentCalendarOptionsRefined = {}, this.currentViewOptionsInput = {}, this.currentViewOptionsRefined = {}, this.currentCalendarOptionsRefiners = {}, this.optionsForRefining = [], this.optionsForHandling = [], this.getCurrentData = () => this.data, this.dispatch = (u) => {
+      this.actionRunner.request(u);
     }, this.props = e, this.actionRunner.pause(), this.nowManager = new oz();
     let o = {}, M = this.computeOptionsData(e.optionOverrides, o, e.calendarApi), n = M.calendarOptions.initialView || M.pluginHooks.initialView, b = this.computeCurrentViewData(n, M, e.optionOverrides, o);
     e.calendarApi.currentDataManager = this, this.emitter.setThisContext(e.calendarApi), this.emitter.setOptions(b.options);
@@ -6032,9 +6032,9 @@ class U4 {
       emitter: this.emitter,
       getCurrentData: this.getCurrentData
     }, z = r4(M.calendarOptions, M.dateEnv, this.nowManager), i = b.dateProfileGenerator.build(z);
-    j1(i.activeRange, z) || (z = i.currentRange.start);
-    for (let A of M.pluginHooks.contextInit)
-      A(r);
+    Y1(i.activeRange, z) || (z = i.currentRange.start);
+    for (let u of M.pluginHooks.contextInit)
+      u(r);
     let a = i4(M.calendarOptions, i, r), s = {
       dynamicOptionOverrides: o,
       currentViewType: n,
@@ -6051,8 +6051,8 @@ class U4 {
       eventResize: null,
       selectionConfig: this.buildViewUiProps(r).selectionConfig
     }, d = Object.assign(Object.assign({}, r), s);
-    for (let A of M.pluginHooks.reducers)
-      Object.assign(s, A(null, null, d));
+    for (let u of M.pluginHooks.reducers)
+      Object.assign(s, u(null, null, d));
     bn(s, r) && this.emitter.trigger("loading", !0), this.state = s, this.updateData(), this.actionRunner.resume();
   }
   resetOptions(e, o) {
@@ -6076,14 +6076,14 @@ class U4 {
     }, { currentDate: s, dateProfile: d } = M;
     this.data && this.data.dateProfileGenerator !== i.dateProfileGenerator && (d = i.dateProfileGenerator.build(s)), s = b4(s, e), d = z4(d, e, s, i.dateProfileGenerator), (e.type === "PREV" || // TODO: move this logic into DateProfileGenerator
     e.type === "NEXT" || // "
-    !j1(d.currentRange, s)) && (s = d.currentRange.start);
-    let A = c4(M.eventSources, e, d, a), f = Eu(M.eventStore, e, A, d, a), R = Dc(A) && !i.options.progressiveEventRendering && M.renderableEventStore || f, { eventUiSingleBase: W, selectionConfig: g } = this.buildViewUiProps(a), N = this.buildEventUiBySource(A), B = this.buildEventUiBases(R.defs, W, N), k = {
+    !Y1(d.currentRange, s)) && (s = d.currentRange.start);
+    let u = c4(M.eventSources, e, d, a), A = Eu(M.eventStore, e, u, d, a), R = Dc(u) && !i.options.progressiveEventRendering && M.renderableEventStore || A, { eventUiSingleBase: W, selectionConfig: g } = this.buildViewUiProps(a), N = this.buildEventUiBySource(u), B = this.buildEventUiBases(R.defs, W, N), C = {
       dynamicOptionOverrides: b,
       currentViewType: z,
       currentDate: s,
       dateProfile: d,
-      eventSources: A,
-      eventStore: f,
+      eventSources: u,
+      eventStore: A,
       renderableEventStore: R,
       selectionConfig: g,
       eventUiBases: B,
@@ -6092,16 +6092,16 @@ class U4 {
       eventSelection: f4(M.eventSelection, e),
       eventDrag: q4(M.eventDrag, e),
       eventResize: h4(M.eventResize, e)
-    }, j = Object.assign(Object.assign({}, a), k);
+    }, Y = Object.assign(Object.assign({}, a), C);
     for (let Z of r.pluginHooks.reducers)
-      Object.assign(k, Z(M, e, j));
-    let Y = bn(M, a), U = bn(k, a);
-    !Y && U ? n.trigger("loading", !0) : Y && !U && n.trigger("loading", !1), this.state = k, o.onAction && o.onAction(e);
+      Object.assign(C, Z(M, e, Y));
+    let j = bn(M, a), U = bn(C, a);
+    !j && U ? n.trigger("loading", !0) : j && !U && n.trigger("loading", !1), this.state = C, o.onAction && o.onAction(e);
   }
   updateData() {
     let { props: e, state: o } = this, M = this.data, n = this.computeOptionsData(e.optionOverrides, o.dynamicOptionOverrides, e.calendarApi), b = this.computeCurrentViewData(o.currentViewType, n, e.optionOverrides, o.dynamicOptionOverrides), r = this.data = Object.assign(Object.assign(Object.assign({ nowManager: this.nowManager, viewTitle: this.buildTitle(o.dateProfile, b.options, n.dateEnv), calendarApi: e.calendarApi, dispatch: this.dispatch, emitter: this.emitter, getCurrentData: this.getCurrentData }, n), b), o), z = n.pluginHooks.optionChangeHandlers, i = M && M.calendarOptions, a = n.calendarOptions;
     if (i && i !== a) {
-      i.timeZone !== a.timeZone && (o.eventSources = r.eventSources = a4(r.eventSources, o.dateProfile, r), o.eventStore = r.eventStore = jp(r.eventStore, M.dateEnv, r.dateEnv), o.renderableEventStore = r.renderableEventStore = jp(r.renderableEventStore, M.dateEnv, r.dateEnv));
+      i.timeZone !== a.timeZone && (o.eventSources = r.eventSources = a4(r.eventSources, o.dateProfile, r), o.eventStore = r.eventStore = Yp(r.eventStore, M.dateEnv, r.dateEnv), o.renderableEventStore = r.renderableEventStore = Yp(r.renderableEventStore, M.dateEnv, r.dateEnv));
       for (let s in z)
         (this.optionsForHandling.indexOf(s) !== -1 || i[s] !== a[s]) && z[s](a[s], r);
     }
@@ -6112,14 +6112,14 @@ class U4 {
       return this.stableCalendarOptionsData;
     let { refinedOptions: n, pluginHooks: b, localeDefaults: r, availableLocaleData: z, extra: i } = this.processRawCalendarOptions(e, o);
     Mz(i);
-    let a = this.buildDateEnv(n.timeZone, n.locale, n.weekNumberCalculation, n.firstDay, n.weekText, b, z, n.defaultRangeSeparator), s = this.buildViewSpecs(b.views, this.stableOptionOverrides, this.stableDynamicOptionOverrides, r), d = this.buildTheme(n, b), A = this.parseToolbars(n, this.stableOptionOverrides, d, s, M);
+    let a = this.buildDateEnv(n.timeZone, n.locale, n.weekNumberCalculation, n.firstDay, n.weekText, b, z, n.defaultRangeSeparator), s = this.buildViewSpecs(b.views, this.stableOptionOverrides, this.stableDynamicOptionOverrides, r), d = this.buildTheme(n, b), u = this.parseToolbars(n, this.stableOptionOverrides, d, s, M);
     return this.stableCalendarOptionsData = {
       calendarOptions: n,
       pluginHooks: b,
       dateEnv: a,
       viewSpecs: s,
       theme: d,
-      toolbarConfig: A,
+      toolbarConfig: u,
       localeDefaults: r,
       availableRawLocales: z.map
     };
@@ -6127,18 +6127,18 @@ class U4 {
   // always called from behind a memoizer
   processRawCalendarOptions(e, o) {
     let { locales: M, locale: n } = $M([
-      c2,
+      a2,
       e,
       o
     ]), b = this.organizeRawLocales(M), r = b.map, z = this.buildLocale(n || b.defaultCode, r).options, i = this.buildPluginHooks(e.plugins || [], x4), a = this.currentCalendarOptionsRefiners = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, Ip), Pp), Hp), i.listenerRefiners), i.optionRefiners), s = {}, d = $M([
-      c2,
+      a2,
       z,
       e,
       o
-    ]), A = {}, f = this.currentCalendarOptionsInput, h = this.currentCalendarOptionsRefined, R = !1;
+    ]), u = {}, A = this.currentCalendarOptionsInput, h = this.currentCalendarOptionsRefined, R = !1;
     for (let W in d)
-      this.optionsForRefining.indexOf(W) === -1 && (d[W] === f[W] || Qe[W] && W in f && Qe[W](f[W], d[W])) ? A[W] = h[W] : a[W] ? (A[W] = a[W](d[W]), R = !0) : s[W] = f[W];
-    return R && (this.currentCalendarOptionsInput = d, this.currentCalendarOptionsRefined = A, this.stableOptionOverrides = e, this.stableDynamicOptionOverrides = o), this.optionsForHandling.push(...this.optionsForRefining), this.optionsForRefining = [], {
+      this.optionsForRefining.indexOf(W) === -1 && (d[W] === A[W] || Ke[W] && W in A && Ke[W](A[W], d[W])) ? u[W] = h[W] : a[W] ? (u[W] = a[W](d[W]), R = !0) : s[W] = A[W];
+    return R && (this.currentCalendarOptionsInput = d, this.currentCalendarOptionsRefined = u, this.stableOptionOverrides = e, this.stableDynamicOptionOverrides = o), this.optionsForHandling.push(...this.optionsForRefining), this.optionsForRefining = [], {
       rawOptions: this.currentCalendarOptionsInput,
       refinedOptions: this.currentCalendarOptionsRefined,
       pluginHooks: i,
@@ -6177,23 +6177,23 @@ class U4 {
   }
   processRawViewOptions(e, o, M, n, b) {
     let r = $M([
-      c2,
+      a2,
       e.optionDefaults,
       M,
       n,
       e.optionOverrides,
       b
-    ]), z = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, Ip), Pp), Hp), JA), o.listenerRefiners), o.optionRefiners), i = {}, a = this.currentViewOptionsInput, s = this.currentViewOptionsRefined, d = !1, A = {};
-    for (let f in r)
-      r[f] === a[f] || Qe[f] && Qe[f](r[f], a[f]) ? i[f] = s[f] : (r[f] === this.currentCalendarOptionsInput[f] || Qe[f] && Qe[f](r[f], this.currentCalendarOptionsInput[f]) ? f in this.currentCalendarOptionsRefined && (i[f] = this.currentCalendarOptionsRefined[f]) : z[f] ? i[f] = z[f](r[f]) : A[f] = r[f], d = !0);
+    ]), z = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, Ip), Pp), Hp), JA), o.listenerRefiners), o.optionRefiners), i = {}, a = this.currentViewOptionsInput, s = this.currentViewOptionsRefined, d = !1, u = {};
+    for (let A in r)
+      r[A] === a[A] || Ke[A] && Ke[A](r[A], a[A]) ? i[A] = s[A] : (r[A] === this.currentCalendarOptionsInput[A] || Ke[A] && Ke[A](r[A], this.currentCalendarOptionsInput[A]) ? A in this.currentCalendarOptionsRefined && (i[A] = this.currentCalendarOptionsRefined[A]) : z[A] ? i[A] = z[A](r[A]) : u[A] = r[A], d = !0);
     return d && (this.currentViewOptionsInput = r, this.currentViewOptionsRefined = i), {
       rawOptions: this.currentViewOptionsInput,
       refinedOptions: this.currentViewOptionsRefined,
-      extra: A
+      extra: u
     };
   }
 }
-function Y4(t, e, o, M, n, b, r, z) {
+function j4(t, e, o, M, n, b, r, z) {
   let i = Bc(e || r.defaultCode, r.map);
   return new zu({
     calendarSystem: "gregory",
@@ -6207,8 +6207,8 @@ function Y4(t, e, o, M, n, b, r, z) {
     defaultSeparator: z
   });
 }
-function j4(t, e) {
-  let o = e.themeClasses[t.themeSystem] || He;
+function Y4(t, e) {
+  let o = e.themeClasses[t.themeSystem] || Ue;
   return new o(t);
 }
 function F4(t) {
@@ -6219,7 +6219,7 @@ function G4(t, e, o) {
   return new m4(t, e, o);
 }
 function V4(t) {
-  return Y0(t, (e) => e.ui);
+  return j0(t, (e) => e.ui);
 }
 function Q4(t, e, o) {
   let M = { "": e };
@@ -6232,7 +6232,7 @@ function Q4(t, e, o) {
 function K4(t) {
   let { options: e } = t;
   return {
-    eventUiSingleBase: q2({
+    eventUiSingleBase: h2({
       display: e.eventDisplay,
       editable: e.editable,
       startEditable: e.eventStartEditable,
@@ -6246,7 +6246,7 @@ function K4(t) {
       color: e.eventColor
       // classNames: options.eventClassNames // render hook will handle this
     }, t),
-    selectionConfig: q2({
+    selectionConfig: h2({
       constraint: e.selectConstraint,
       overlap: typeof e.selectOverlap == "boolean" ? e.selectOverlap : void 0,
       allow: e.selectAllow
@@ -6269,22 +6269,22 @@ function Mz(t, e) {
 class Z4 extends $ {
   render() {
     let e = this.props.widgetGroups.map((o) => this.renderWidgetGroup(o));
-    return u("div", { className: "fc-toolbar-chunk" }, ...e);
+    return f("div", { className: "fc-toolbar-chunk" }, ...e);
   }
   renderWidgetGroup(e) {
     let { props: o } = this, { theme: M } = this.context, n = [], b = !0;
     for (let r of e) {
       let { buttonName: z, buttonClick: i, buttonText: a, buttonIcon: s, buttonHint: d } = r;
       if (z === "title")
-        b = !1, n.push(u("h2", { className: "fc-toolbar-title", id: o.titleId }, o.title));
+        b = !1, n.push(f("h2", { className: "fc-toolbar-title", id: o.titleId }, o.title));
       else {
-        let A = z === o.activeButton, f = !o.isTodayEnabled && z === "today" || !o.isPrevEnabled && z === "prev" || !o.isNextEnabled && z === "next", h = [`fc-${z}-button`, M.getClass("button")];
-        A && h.push(M.getClass("buttonActive")), n.push(u("button", { type: "button", title: typeof d == "function" ? d(o.navUnit) : d, disabled: f, "aria-pressed": A, className: h.join(" "), onClick: i }, a || (s ? u("span", { className: s, role: "img" }) : "")));
+        let u = z === o.activeButton, A = !o.isTodayEnabled && z === "today" || !o.isPrevEnabled && z === "prev" || !o.isNextEnabled && z === "next", h = [`fc-${z}-button`, M.getClass("button")];
+        u && h.push(M.getClass("buttonActive")), n.push(f("button", { type: "button", title: typeof d == "function" ? d(o.navUnit) : d, disabled: A, "aria-pressed": u, className: h.join(" "), onClick: i }, a || (s ? f("span", { className: s, role: "img" }) : "")));
       }
     }
     if (n.length > 1) {
       let r = b && M.getClass("buttonGroup") || "";
-      return u("div", { className: r }, ...n);
+      return f("div", { className: r }, ...n);
     }
     return n[0];
   }
@@ -6292,7 +6292,7 @@ class Z4 extends $ {
 class nz extends $ {
   render() {
     let { model: e, extraClassName: o } = this.props, M = !1, n, b, r = e.sectionWidgets, z = r.center;
-    return r.left ? (M = !0, n = r.left) : n = r.start, r.right ? (M = !0, b = r.right) : b = r.end, u(
+    return r.left ? (M = !0, n = r.left) : n = r.start, r.right ? (M = !0, b = r.right) : b = r.end, f(
       "div",
       { className: [
         o || "",
@@ -6306,7 +6306,7 @@ class nz extends $ {
   }
   renderSection(e, o) {
     let { props: M } = this;
-    return u(Z4, { key: e, widgetGroups: o, title: M.title, navUnit: M.navUnit, activeButton: M.activeButton, isTodayEnabled: M.isTodayEnabled, isPrevEnabled: M.isPrevEnabled, isNextEnabled: M.isNextEnabled, titleId: M.titleId });
+    return f(Z4, { key: e, widgetGroups: o, title: M.title, navUnit: M.navUnit, activeButton: M.activeButton, isTodayEnabled: M.isTodayEnabled, isPrevEnabled: M.isPrevEnabled, isNextEnabled: M.isNextEnabled, titleId: M.titleId });
   }
 }
 class J4 extends $ {
@@ -6325,7 +6325,7 @@ class J4 extends $ {
       M || e.liquid || e.height ? "fc-view-harness-active" : "fc-view-harness-passive"
       // let the view do the height
     ], b = "", r = "";
-    return M ? o.availableWidth !== null ? b = o.availableWidth / M : r = `${1 / M * 100}%` : b = e.height || "", u("div", { "aria-labelledby": e.labeledById, ref: this.handleEl, className: n.join(" "), style: { height: b, paddingBottom: r } }, e.children);
+    return M ? o.availableWidth !== null ? b = o.availableWidth / M : r = `${1 / M * 100}%` : b = e.height || "", f("div", { "aria-labelledby": e.labeledById, ref: this.handleEl, className: n.join(" "), style: { height: b, paddingBottom: r } }, e.children);
   }
   componentDidMount() {
     this.context.addResizeHandler(this.handleResize);
@@ -6338,10 +6338,10 @@ class J4 extends $ {
     this.props.aspectRatio && this.setState({ availableWidth: this.el.offsetWidth });
   }
 }
-class eq extends Pt {
+class eq extends Ht {
   constructor(e) {
     super(e), this.handleSegClick = (o, M) => {
-      let { component: n } = this, { context: b } = n, r = Ct(M);
+      let { component: n } = this, { context: b } = n, r = kt(M);
       if (r && // might be the <div> surrounding the more link
       n.isValidSegDownEl(o.target)) {
         let z = Q0(o.target, ".fc-event-forced-url"), i = z ? z.querySelector("a[href]").href : "";
@@ -6361,12 +6361,12 @@ class eq extends Pt {
     );
   }
 }
-class tq extends Pt {
+class tq extends Ht {
   constructor(e) {
     super(e), this.handleEventElRemove = (o) => {
       o === this.currentSegEl && this.handleSegLeave(null, this.currentSegEl);
     }, this.handleSegEnter = (o, M) => {
-      Ct(M) && (this.currentSegEl = M, this.triggerEvent("eventMouseEnter", o, M));
+      kt(M) && (this.currentSegEl = M, this.triggerEvent("eventMouseEnter", o, M));
     }, this.handleSegLeave = (o, M) => {
       this.currentSegEl && (this.currentSegEl = null, this.triggerEvent("eventMouseLeave", o, M));
     }, this.removeHoverListeners = zA(
@@ -6381,7 +6381,7 @@ class tq extends Pt {
     this.removeHoverListeners();
   }
   triggerEvent(e, o, M) {
-    let { component: n } = this, { context: b } = n, r = Ct(M);
+    let { component: n } = this, { context: b } = n, r = kt(M);
     (!o || n.isValidSegDownEl(o.target)) && b.emitter.trigger(e, {
       el: M,
       event: new N0(b, r.eventRange.def, r.eventRange.instance),
@@ -6390,7 +6390,7 @@ class tq extends Pt {
     });
   }
 }
-class oq extends pt {
+class oq extends zt {
   constructor() {
     super(...arguments), this.buildViewContext = I(au), this.buildViewPropTransformers = I(nq), this.buildToolbarProps = I(Mq), this.headerRef = s0(), this.footerRef = s0(), this.interactionsStore = {}, this.state = {
       viewLabelId: Oe()
@@ -6408,7 +6408,7 @@ class oq extends pt {
         delete this.interactionsStore[e.uid];
       }
       delete wn[e.uid];
-    }, this.resizeRunner = new A2(() => {
+    }, this.resizeRunner = new u2(() => {
       this.props.emitter.trigger("_resize", !0), this.props.emitter.trigger("windowResize", { view: this.props.viewApi });
     }), this.handleWindowResize = (e) => {
       let { options: o } = this.props;
@@ -6422,22 +6422,22 @@ class oq extends pt {
     let { props: e } = this, { toolbarConfig: o, options: M } = e, n = !1, b = "", r;
     e.isHeightAuto || e.forPrint ? b = "" : M.height != null ? n = !0 : M.contentHeight != null ? b = M.contentHeight : r = Math.max(M.aspectRatio, 0.5);
     let z = this.buildViewContext(e.viewSpec, e.viewApi, e.options, e.dateProfileGenerator, e.dateEnv, e.nowManager, e.theme, e.pluginHooks, e.dispatch, e.getCurrentData, e.emitter, e.calendarApi, this.registerInteractiveComponent, this.unregisterInteractiveComponent), i = o.header && o.header.hasTitle ? this.state.viewLabelId : void 0;
-    return u(
+    return f(
       Q1.Provider,
       { value: z },
-      u(S1, { unit: "day" }, (a) => {
+      f(S1, { unit: "day" }, (a) => {
         let s = this.buildToolbarProps(e.viewSpec, e.dateProfile, e.dateProfileGenerator, e.currentDate, a, e.viewTitle);
-        return u(
+        return f(
           M0,
           null,
-          o.header && u(nz, Object.assign({ ref: this.headerRef, extraClassName: "fc-header-toolbar", model: o.header, titleId: i }, s)),
-          u(
+          o.header && f(nz, Object.assign({ ref: this.headerRef, extraClassName: "fc-header-toolbar", model: o.header, titleId: i }, s)),
+          f(
             J4,
             { liquid: n, height: b, aspectRatio: r, labeledById: i },
             this.renderView(e),
             this.buildAppendContent()
           ),
-          o.footer && u(nz, Object.assign({ ref: this.footerRef, extraClassName: "fc-footer-toolbar", model: o.footer, titleId: "" }, s))
+          o.footer && f(nz, Object.assign({ ref: this.footerRef, extraClassName: "fc-footer-toolbar", model: o.footer, titleId: "" }, s))
         );
       })
     );
@@ -6462,7 +6462,7 @@ class oq extends pt {
   }
   buildAppendContent() {
     let { props: e } = this, o = e.pluginHooks.viewContainerAppends.map((M) => M(e));
-    return u(M0, {}, ...o);
+    return f(M0, {}, ...o);
   }
   renderView(e) {
     let { pluginHooks: o } = e, { viewSpec: M } = e, n = {
@@ -6480,7 +6480,7 @@ class oq extends pt {
     for (let z of b)
       Object.assign(n, z.transform(n, e));
     let r = M.component;
-    return u(r, Object.assign({}, n));
+    return f(r, Object.assign({}, n));
   }
 }
 function Mq(t, e, o, M, n, b) {
@@ -6489,7 +6489,7 @@ function Mq(t, e, o, M, n, b) {
     title: b,
     activeButton: t.type,
     navUnit: t.singleUnit,
-    isTodayEnabled: r.isValid && !j1(e.currentRange, n),
+    isTodayEnabled: r.isValid && !Y1(e.currentRange, n),
     isPrevEnabled: z.isValid,
     isNextEnabled: i.isValid
   };
@@ -6497,7 +6497,7 @@ function Mq(t, e, o, M, n, b) {
 function nq(t) {
   return t.map((e) => new e());
 }
-class bq extends Ht {
+class bq extends Ut {
   constructor(e, o = {}) {
     super(), this.isRendering = !1, this.isRendered = !1, this.currentClassNames = [], this.customContentRenderId = 0, this.handleAction = (M) => {
       switch (M.type) {
@@ -6511,15 +6511,15 @@ class bq extends Ht {
       if (this.isRendering) {
         this.isRendered = !0;
         let { currentData: M } = this;
-        _t(() => {
-          d2(u(rf, { options: M.calendarOptions, theme: M.theme, emitter: M.emitter }, (n, b, r, z) => (this.setClassNames(n), this.setHeight(b), u(
+        Ct(() => {
+          A2(f(rf, { options: M.calendarOptions, theme: M.theme, emitter: M.emitter }, (n, b, r, z) => (this.setClassNames(n), this.setHeight(b), f(
             _i.Provider,
             { value: this.customContentRenderId },
-            u(oq, Object.assign({ isHeightAuto: r, forPrint: z }, M))
+            f(oq, Object.assign({ isHeightAuto: r, forPrint: z }, M))
           ))), this.el);
         });
-      } else this.isRendered && (this.isRendered = !1, d2(null, this.el), this.setClassNames([]), this.setHeight(""));
-    }, eA(e), this.el = e, this.renderRunner = new A2(this.handleRenderRequest), new U4({
+      } else this.isRendered && (this.isRendered = !1, A2(null, this.el), this.setClassNames([]), this.setHeight(""));
+    }, eA(e), this.el = e, this.renderRunner = new u2(this.handleRenderRequest), new U4({
       optionOverrides: o,
       calendarApi: this,
       onAction: this.handleAction,
@@ -6534,7 +6534,7 @@ class bq extends Ht {
     this.isRendering && (this.isRendering = !1, this.renderRunner.request());
   }
   updateSize() {
-    _t(() => {
+    Ct(() => {
       super.updateSize();
     });
   }
@@ -7460,7 +7460,7 @@ var mq = {
     return "+ ևս " + t;
   },
   noEventsText: "Բացակայում է իրադարձությունը ցուցադրելու"
-}, Yq = {
+}, jq = {
   code: "id",
   week: {
     dow: 1,
@@ -7481,7 +7481,7 @@ var mq = {
   allDayText: "Sehari penuh",
   moreLinkText: "lebih",
   noEventsText: "Tidak ada acara untuk ditampilkan"
-}, jq = {
+}, Yq = {
   code: "is",
   week: {
     dow: 1,
@@ -8413,8 +8413,8 @@ var mq = {
   Pq,
   Hq,
   Uq,
-  Yq,
   jq,
+  Yq,
   Fq,
   Gq,
   Vq,
@@ -8485,7 +8485,7 @@ function Bh(t) {
 function Eh(t) {
   throw new Error('Could not dynamically require "' + t + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
 }
-var lo = { exports: {} }, Dh = lo.exports, bz;
+var Ao = { exports: {} }, Dh = Ao.exports, bz;
 function _h() {
   return bz || (bz = 1, (function(t, e) {
     (function(o, M) {
@@ -8525,13 +8525,13 @@ function _h() {
       function d(p) {
         return p instanceof Date || Object.prototype.toString.call(p) === "[object Date]";
       }
-      function A(p, c) {
+      function u(p, c) {
         var O = [], l, q = p.length;
         for (l = 0; l < q; ++l)
           O.push(c(p[l], l));
         return O;
       }
-      function f(p, c) {
+      function A(p, c) {
         for (var O in c)
           z(c, O) && (p[O] = c[O]);
         return z(c, "toString") && (p.toString = c.toString), z(c, "valueOf") && (p.valueOf = c.valueOf), p;
@@ -8582,18 +8582,18 @@ function _h() {
       }
       function B(p) {
         var c = h(NaN);
-        return p != null ? f(W(c), p) : W(c).userInvalidated = !0, c;
+        return p != null ? A(W(c), p) : W(c).userInvalidated = !0, c;
       }
-      var k = M.momentProperties = [], j = !1;
-      function Y(p, c) {
-        var O, l, q, L = k.length;
+      var C = M.momentProperties = [], Y = !1;
+      function j(p, c) {
+        var O, l, q, L = C.length;
         if (a(c._isAMomentObject) || (p._isAMomentObject = c._isAMomentObject), a(c._i) || (p._i = c._i), a(c._f) || (p._f = c._f), a(c._l) || (p._l = c._l), a(c._strict) || (p._strict = c._strict), a(c._tzm) || (p._tzm = c._tzm), a(c._isUTC) || (p._isUTC = c._isUTC), a(c._offset) || (p._offset = c._offset), a(c._pf) || (p._pf = W(c)), a(c._locale) || (p._locale = c._locale), L > 0)
           for (O = 0; O < L; O++)
-            l = k[O], q = c[l], a(q) || (p[l] = q);
+            l = C[O], q = c[l], a(q) || (p[l] = q);
         return p;
       }
       function U(p) {
-        Y(this, p), this._d = new Date(p._d != null ? p._d.getTime() : NaN), this.isValid() || (this._d = /* @__PURE__ */ new Date(NaN)), j === !1 && (j = !0, M.updateOffset(this), j = !1);
+        j(this, p), this._d = new Date(p._d != null ? p._d.getTime() : NaN), this.isValid() || (this._d = /* @__PURE__ */ new Date(NaN)), Y === !1 && (Y = !0, M.updateOffset(this), Y = !1);
       }
       function Z(p) {
         return p instanceof U || p != null && p._isAMomentObject != null;
@@ -8603,7 +8603,7 @@ function _h() {
       }
       function W0(p, c) {
         var O = !0;
-        return f(function() {
+        return A(function() {
           if (M.deprecationHandler != null && M.deprecationHandler(null, p), O) {
             var l = [], q, L, w, G = arguments.length;
             for (L = 0; L < G; L++) {
@@ -8643,24 +8643,24 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         );
       }
       function ge(p, c) {
-        var O = f({}, p), l;
+        var O = A({}, p), l;
         for (l in c)
-          z(c, l) && (r(p[l]) && r(c[l]) ? (O[l] = {}, f(O[l], p[l]), f(O[l], c[l])) : c[l] != null ? O[l] = c[l] : delete O[l]);
+          z(c, l) && (r(p[l]) && r(c[l]) ? (O[l] = {}, A(O[l], p[l]), A(O[l], c[l])) : c[l] != null ? O[l] = c[l] : delete O[l]);
         for (l in p)
-          z(p, l) && !z(c, l) && r(p[l]) && (O[l] = f({}, O[l]));
+          z(p, l) && !z(c, l) && r(p[l]) && (O[l] = A({}, O[l]));
         return O;
       }
       function J0(p) {
         p != null && this.set(p);
       }
-      var Ue;
-      Object.keys ? Ue = Object.keys : Ue = function(p) {
+      var je;
+      Object.keys ? je = Object.keys : je = function(p) {
         var c, O = [];
         for (c in p)
           z(p, c) && O.push(c);
         return O;
       };
-      var Qt = {
+      var Kt = {
         sameDay: "[Today at] LT",
         nextDay: "[Tomorrow at] LT",
         nextWeek: "dddd [at] LT",
@@ -8668,7 +8668,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         lastWeek: "[Last] dddd [at] LT",
         sameElse: "L"
       };
-      function ct(p, c, O) {
+      function at(p, c, O) {
         var l = this._calendar[p] || this._calendar.sameElse;
         return c1(l) ? l.call(c, O) : l;
       }
@@ -8704,7 +8704,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return L;
         };
       }
-      function j0(p, c) {
+      function Y0(p, c) {
         return p.isValid() ? (c = y(c, p.localeData()), o0[c] = o0[c] || R0(c), o0[c](p)) : p.localeData().invalidDate();
       }
       function y(p, c) {
@@ -8738,7 +8738,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return this._invalidDate;
       }
       var T = "%d", E = /\d{1,2}/;
-      function C(p) {
+      function k(p) {
         return this._ordinal.replace("%d", p);
       }
       var K = {
@@ -8820,7 +8820,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function c0(p) {
         return typeof p == "string" ? d0[p] || d0[p.toLowerCase()] : void 0;
       }
-      function _2(p) {
+      function C2(p) {
         var c = {}, O, l;
         for (l in p)
           z(p, l) && (O = c0(l), O && (c[O] = p[l]));
@@ -8852,15 +8852,15 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return l.priority - q.priority;
         }), c;
       }
-      var hr = /\d/, d1 = /\d\d/, Wr = /\d{3}/, RM = /\d{4}/, C2 = /[+-]?\d{6}/, w0 = /\d\d?/, Rr = /\d\d\d\d?/, mr = /\d\d\d\d\d\d?/, k2 = /\d{1,3}/, mM = /\d{1,4}/, X2 = /[+-]?\d{1,6}/, at = /\d+/, x2 = /[+-]?\d+/, Js = /Z|[+-]\d\d:?\d\d/gi, I2 = /Z|[+-]\d\d(?::?\d\d)?/gi, eO = /[+-]?\d+(\.\d{1,3})?/, Kt = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, st = /^[1-9]\d?/, gM = /^([1-9]\d|\d)/, P2;
-      P2 = {};
+      var hr = /\d/, d1 = /\d\d/, Wr = /\d{3}/, RM = /\d{4}/, k2 = /[+-]?\d{6}/, w0 = /\d\d?/, Rr = /\d\d\d\d?/, mr = /\d\d\d\d\d\d?/, X2 = /\d{1,3}/, mM = /\d{1,4}/, x2 = /[+-]?\d{1,6}/, st = /\d+/, I2 = /[+-]?\d+/, Js = /Z|[+-]\d\d:?\d\d/gi, P2 = /Z|[+-]\d\d(?::?\d\d)?/gi, eO = /[+-]?\d+(\.\d{1,3})?/, $t = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, Ot = /^[1-9]\d?/, gM = /^([1-9]\d|\d)/, H2;
+      H2 = {};
       function V(p, c, O) {
-        P2[p] = c1(c) ? c : function(l, q) {
+        H2[p] = c1(c) ? c : function(l, q) {
           return l && O ? O : c;
         };
       }
       function tO(p, c) {
-        return z(P2, p) ? P2[p](c._strict, c._locale) : new RegExp(oO(p));
+        return z(H2, p) ? H2[p](c._strict, c._locale) : new RegExp(oO(p));
       }
       function oO(p) {
         return J1(
@@ -8890,7 +8890,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         }), q = p.length, O = 0; O < q; O++)
           yM[p[O]] = l;
       }
-      function $t(p, c) {
+      function Zt(p, c) {
         y0(p, function(O, l, q, L) {
           q._w = q._w || {}, c(O, q._w, q, L);
         });
@@ -8898,38 +8898,38 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function MO(p, c, O) {
         c != null && z(yM, p) && yM[p](c, O._a, O, p);
       }
-      function H2(p) {
+      function U2(p) {
         return p % 4 === 0 && p % 100 !== 0 || p % 400 === 0;
       }
-      var e1 = 0, ee = 1, I1 = 2, F0 = 3, B1 = 4, te = 5, je = 6, nO = 7, bO = 8;
+      var e1 = 0, ee = 1, I1 = 2, F0 = 3, B1 = 4, te = 5, Fe = 6, nO = 7, bO = 8;
       F("Y", 0, 0, function() {
         var p = this.year();
         return p <= 9999 ? r1(p, 4) : "+" + p;
       }), F(0, ["YY", 2], 0, function() {
         return this.year() % 100;
-      }), F(0, ["YYYY", 4], 0, "year"), F(0, ["YYYYY", 5], 0, "year"), F(0, ["YYYYYY", 6, !0], 0, "year"), V("Y", x2), V("YY", w0, d1), V("YYYY", mM, RM), V("YYYYY", X2, C2), V("YYYYYY", X2, C2), y0(["YYYYY", "YYYYYY"], e1), y0("YYYY", function(p, c) {
+      }), F(0, ["YYYY", 4], 0, "year"), F(0, ["YYYYY", 5], 0, "year"), F(0, ["YYYYYY", 6, !0], 0, "year"), V("Y", I2), V("YY", w0, d1), V("YYYY", mM, RM), V("YYYYY", x2, k2), V("YYYYYY", x2, k2), y0(["YYYYY", "YYYYYY"], e1), y0("YYYY", function(p, c) {
         c[e1] = p.length === 2 ? M.parseTwoDigitYear(p) : z0(p);
       }), y0("YY", function(p, c) {
         c[e1] = M.parseTwoDigitYear(p);
       }), y0("Y", function(p, c) {
         c[e1] = parseInt(p, 10);
       });
-      function Zt(p) {
-        return H2(p) ? 366 : 365;
+      function Jt(p) {
+        return U2(p) ? 366 : 365;
       }
       M.parseTwoDigitYear = function(p) {
         return z0(p) + (z0(p) > 68 ? 1900 : 2e3);
       };
-      var gr = Ot("FullYear", !0);
+      var gr = lt("FullYear", !0);
       function rO() {
-        return H2(this.year());
+        return U2(this.year());
       }
-      function Ot(p, c) {
+      function lt(p, c) {
         return function(O) {
-          return O != null ? (yr(this, p, O), M.updateOffset(this, c), this) : Jt(this, p);
+          return O != null ? (yr(this, p, O), M.updateOffset(this, c), this) : e2(this, p);
         };
       }
-      function Jt(p, c) {
+      function e2(p, c) {
         if (!p.isValid())
           return NaN;
         var O = p._d, l = p._isUTC;
@@ -8978,7 +8978,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
             default:
               return;
           }
-          L = O, w = p.month(), G = p.date(), G = G === 29 && w === 1 && !H2(L) ? 28 : G, q ? l.setUTCFullYear(L, w, G) : l.setFullYear(L, w, G);
+          L = O, w = p.month(), G = p.date(), G = G === 29 && w === 1 && !U2(L) ? 28 : G, q ? l.setUTCFullYear(L, w, G) : l.setFullYear(L, w, G);
         }
       }
       function pO(p) {
@@ -8986,7 +8986,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function zO(p, c) {
         if (typeof p == "object") {
-          p = _2(p);
+          p = C2(p);
           var O = Zs(p), l, q = O.length;
           for (l = 0; l < q; l++)
             this[O[l].unit](p[O[l].unit]);
@@ -9009,7 +9009,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         if (isNaN(p) || isNaN(c))
           return NaN;
         var O = iO(c, 12);
-        return p += (c - O) / 12, O === 1 ? H2(p) ? 29 : 28 : 31 - O % 7 % 2;
+        return p += (c - O) / 12, O === 1 ? U2(p) ? 29 : 28 : 31 - O % 7 % 2;
       }
       F("M", ["MM", 2], "Mo", function() {
         return this.month() + 1;
@@ -9017,7 +9017,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return this.localeData().monthsShort(this, p);
       }), F("MMMM", 0, 0, function(p) {
         return this.localeData().months(this, p);
-      }), V("M", w0, st), V("MM", w0, d1), V("MMM", function(p, c) {
+      }), V("M", w0, Ot), V("MM", w0, d1), V("MMM", function(p, c) {
         return c.monthsShortRegex(p);
       }), V("MMMM", function(p, c) {
         return c.monthsRegex(p);
@@ -9029,7 +9029,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       });
       var cO = "January_February_March_April_May_June_July_August_September_October_November_December".split(
         "_"
-      ), Lr = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), vr = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, aO = Kt, sO = Kt;
+      ), Lr = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), vr = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, aO = $t, sO = $t;
       function OO(p, c) {
         return p ? b(this._months) ? this._months[p.month()] : this._months[(this._months.isFormat || vr).test(c) ? "format" : "standalone"][p.month()] : b(this._months) ? this._months : this._months.standalone;
       }
@@ -9078,7 +9078,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return l = l < 29 ? l : Math.min(l, LM(p.year(), O)), p._isUTC ? p._d.setUTCMonth(O, l) : p._d.setMonth(O, l), p;
       }
       function Sr(p) {
-        return p != null ? (Nr(this, p), M.updateOffset(this, !0), this) : Jt(this, "Month");
+        return p != null ? (Nr(this, p), M.updateOffset(this, !0), this) : e2(this, "Month");
       }
       function uO() {
         return LM(this.year(), this.month());
@@ -9108,40 +9108,40 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         var G;
         return p < 100 && p >= 0 ? (G = new Date(p + 400, c, O, l, q, L, w), isFinite(G.getFullYear()) && G.setFullYear(p)) : G = new Date(p, c, O, l, q, L, w), G;
       }
-      function e2(p) {
+      function t2(p) {
         var c, O;
         return p < 100 && p >= 0 ? (O = Array.prototype.slice.call(arguments), O[0] = p + 400, c = new Date(Date.UTC.apply(null, O)), isFinite(c.getUTCFullYear()) && c.setUTCFullYear(p)) : c = new Date(Date.UTC.apply(null, arguments)), c;
       }
-      function U2(p, c, O) {
-        var l = 7 + c - O, q = (7 + e2(p, 0, l).getUTCDay() - c) % 7;
+      function j2(p, c, O) {
+        var l = 7 + c - O, q = (7 + t2(p, 0, l).getUTCDay() - c) % 7;
         return -q + l - 1;
       }
       function wr(p, c, O, l, q) {
-        var L = (7 + O - l) % 7, w = U2(p, l, q), G = 1 + 7 * (c - 1) + L + w, n0, a0;
-        return G <= 0 ? (n0 = p - 1, a0 = Zt(n0) + G) : G > Zt(p) ? (n0 = p + 1, a0 = G - Zt(p)) : (n0 = p, a0 = G), {
+        var L = (7 + O - l) % 7, w = j2(p, l, q), G = 1 + 7 * (c - 1) + L + w, n0, a0;
+        return G <= 0 ? (n0 = p - 1, a0 = Jt(n0) + G) : G > Jt(p) ? (n0 = p + 1, a0 = G - Jt(p)) : (n0 = p, a0 = G), {
           year: n0,
           dayOfYear: a0
         };
       }
-      function t2(p, c, O) {
-        var l = U2(p.year(), c, O), q = Math.floor((p.dayOfYear() - l - 1) / 7) + 1, L, w;
+      function o2(p, c, O) {
+        var l = j2(p.year(), c, O), q = Math.floor((p.dayOfYear() - l - 1) / 7) + 1, L, w;
         return q < 1 ? (w = p.year() - 1, L = q + oe(w, c, O)) : q > oe(p.year(), c, O) ? (L = q - oe(p.year(), c, O), w = p.year() + 1) : (w = p.year(), L = q), {
           week: L,
           year: w
         };
       }
       function oe(p, c, O) {
-        var l = U2(p, c, O), q = U2(p + 1, c, O);
-        return (Zt(p) - l + q) / 7;
+        var l = j2(p, c, O), q = j2(p + 1, c, O);
+        return (Jt(p) - l + q) / 7;
       }
-      F("w", ["ww", 2], "wo", "week"), F("W", ["WW", 2], "Wo", "isoWeek"), V("w", w0, st), V("ww", w0, d1), V("W", w0, st), V("WW", w0, d1), $t(
+      F("w", ["ww", 2], "wo", "week"), F("W", ["WW", 2], "Wo", "isoWeek"), V("w", w0, Ot), V("ww", w0, d1), V("W", w0, Ot), V("WW", w0, d1), Zt(
         ["w", "ww", "W", "WW"],
         function(p, c, O, l) {
           c[l.substr(0, 1)] = z0(p);
         }
       );
       function WO(p) {
-        return t2(p, this._week.dow, this._week.doy).week;
+        return o2(p, this._week.dow, this._week.doy).week;
       }
       var RO = {
         dow: 0,
@@ -9160,7 +9160,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return p == null ? c : this.add((p - c) * 7, "d");
       }
       function LO(p) {
-        var c = t2(this, 1, 4).week;
+        var c = o2(this, 1, 4).week;
         return p == null ? c : this.add((p - c) * 7, "d");
       }
       F("d", 0, "do", "day"), F("dd", 0, 0, function(p) {
@@ -9175,10 +9175,10 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return c.weekdaysShortRegex(p);
       }), V("dddd", function(p, c) {
         return c.weekdaysRegex(p);
-      }), $t(["dd", "ddd", "dddd"], function(p, c, O, l) {
+      }), Zt(["dd", "ddd", "dddd"], function(p, c, O, l) {
         var q = O._locale.weekdaysParse(p, l, O._strict);
         q != null ? c.d = q : W(O).invalidWeekday = p;
-      }), $t(["d", "e", "E"], function(p, c, O, l) {
+      }), Zt(["d", "e", "E"], function(p, c, O, l) {
         c[l] = z0(p);
       });
       function vO(p, c) {
@@ -9190,7 +9190,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function vM(p, c) {
         return p.slice(c, 7).concat(p.slice(0, c));
       }
-      var SO = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), Br = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), TO = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), wO = Kt, BO = Kt, EO = Kt;
+      var SO = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), Br = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), TO = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), wO = $t, BO = $t, EO = $t;
       function DO(p, c) {
         var O = b(this._weekdays) ? this._weekdays : this._weekdays[p && p !== !0 && this._weekdays.isFormat.test(c) ? "format" : "standalone"];
         return p === !0 ? vM(O, this._week.dow) : p ? O[p.day()] : O;
@@ -9241,7 +9241,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function xO(p) {
         if (!this.isValid())
           return p != null ? this : NaN;
-        var c = Jt(this, "Day");
+        var c = e2(this, "Day");
         return p != null ? (p = vO(p, this.localeData()), this.add(p - c, "d")) : c;
       }
       function IO(p) {
@@ -9265,7 +9265,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function UO(p) {
         return this._weekdaysParseExact ? (z(this, "_weekdaysRegex") || NM.call(this), p ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex) : (z(this, "_weekdaysShortRegex") || (this._weekdaysShortRegex = BO), this._weekdaysShortStrictRegex && p ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex);
       }
-      function YO(p) {
+      function jO(p) {
         return this._weekdaysParseExact ? (z(this, "_weekdaysRegex") || NM.call(this), p ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex) : (z(this, "_weekdaysMinRegex") || (this._weekdaysMinRegex = EO), this._weekdaysMinStrictRegex && p ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex);
       }
       function NM() {
@@ -9289,10 +9289,10 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function SM() {
         return this.hours() % 12 || 12;
       }
-      function jO() {
+      function YO() {
         return this.hours() || 24;
       }
-      F("H", ["HH", 2], 0, "hour"), F("h", ["hh", 2], 0, SM), F("k", ["kk", 2], 0, jO), F("hmm", 0, 0, function() {
+      F("H", ["HH", 2], 0, "hour"), F("h", ["hh", 2], 0, SM), F("k", ["kk", 2], 0, YO), F("hmm", 0, 0, function() {
         return "" + SM.apply(this) + r1(this.minutes(), 2);
       }), F("hmmss", 0, 0, function() {
         return "" + SM.apply(this) + r1(this.minutes(), 2) + r1(this.seconds(), 2);
@@ -9314,7 +9314,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function Dr(p, c) {
         return c._meridiemParse;
       }
-      V("a", Dr), V("A", Dr), V("H", w0, gM), V("h", w0, st), V("k", w0, st), V("HH", w0, d1), V("hh", w0, d1), V("kk", w0, d1), V("hmm", Rr), V("hmmss", mr), V("Hmm", Rr), V("Hmmss", mr), y0(["H", "HH"], F0), y0(["k", "kk"], function(p, c, O) {
+      V("a", Dr), V("A", Dr), V("H", w0, gM), V("h", w0, Ot), V("k", w0, Ot), V("HH", w0, d1), V("hh", w0, d1), V("kk", w0, d1), V("hmm", Rr), V("hmmss", mr), V("Hmm", Rr), V("Hmmss", mr), y0(["H", "HH"], F0), y0(["k", "kk"], function(p, c, O) {
         var l = z0(p);
         c[F0] = l === 24 ? 0 : l;
       }), y0(["a", "A"], function(p, c, O) {
@@ -9337,12 +9337,12 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function FO(p) {
         return (p + "").toLowerCase().charAt(0) === "p";
       }
-      var GO = /[ap]\.?m?\.?/i, VO = Ot("Hours", !0);
+      var GO = /[ap]\.?m?\.?/i, VO = lt("Hours", !0);
       function QO(p, c, O) {
         return p > 11 ? O ? "pm" : "PM" : O ? "am" : "AM";
       }
       var _r = {
-        calendar: Qt,
+        calendar: Kt,
         longDateFormat: S,
         invalidDate: _,
         ordinal: T,
@@ -9355,7 +9355,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         weekdaysMin: TO,
         weekdaysShort: Br,
         meridiemParse: GO
-      }, C0 = {}, o2 = {}, M2;
+      }, C0 = {}, M2 = {}, n2;
       function KO(p, c) {
         var O, l = Math.min(p.length, c.length);
         for (O = 0; O < l; O += 1)
@@ -9377,7 +9377,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           }
           c++;
         }
-        return M2;
+        return n2;
       }
       function ZO(p) {
         return !!(p && p.match("^[^/\\\\]*$"));
@@ -9386,7 +9386,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         var c = null, O;
         if (C0[p] === void 0 && t && t.exports && ZO(p))
           try {
-            c = M2._abbr, O = Eh, O("./locale/" + p), ye(c);
+            c = n2._abbr, O = Eh, O("./locale/" + p), ye(c);
           } catch {
             C0[p] = null;
           }
@@ -9394,9 +9394,9 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function ye(p, c) {
         var O;
-        return p && (a(c) ? O = Me(p) : O = TM(p, c), O ? M2 = O : typeof console < "u" && console.warn && console.warn(
+        return p && (a(c) ? O = Me(p) : O = TM(p, c), O ? n2 = O : typeof console < "u" && console.warn && console.warn(
           "Locale " + p + " not found. Did you forget to load it?"
-        )), M2._abbr;
+        )), n2._abbr;
       }
       function TM(p, c) {
         if (c !== null) {
@@ -9412,11 +9412,11 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
             else if (O = Y2(c.parentLocale), O != null)
               l = O._config;
             else
-              return o2[c.parentLocale] || (o2[c.parentLocale] = []), o2[c.parentLocale].push({
+              return M2[c.parentLocale] || (M2[c.parentLocale] = []), M2[c.parentLocale].push({
                 name: p,
                 config: c
               }), null;
-          return C0[p] = new J0(ge(l, c)), o2[p] && o2[p].forEach(function(q) {
+          return C0[p] = new J0(ge(l, c)), M2[p] && M2[p].forEach(function(q) {
             TM(q.name, q.config);
           }), ye(p), C0[p];
         } else
@@ -9433,7 +9433,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function Me(p) {
         var c;
         if (p && p._locale && p._locale._abbr && (p = p._locale._abbr), !p)
-          return M2;
+          return n2;
         if (!b(p)) {
           if (c = Y2(p), c)
             return c;
@@ -9442,13 +9442,13 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return $O(p);
       }
       function el() {
-        return Ue(C0);
+        return je(C0);
       }
       function wM(p) {
         var c, O = p._a;
-        return O && W(p).overflow === -2 && (c = O[ee] < 0 || O[ee] > 11 ? ee : O[I1] < 1 || O[I1] > LM(O[e1], O[ee]) ? I1 : O[F0] < 0 || O[F0] > 24 || O[F0] === 24 && (O[B1] !== 0 || O[te] !== 0 || O[je] !== 0) ? F0 : O[B1] < 0 || O[B1] > 59 ? B1 : O[te] < 0 || O[te] > 59 ? te : O[je] < 0 || O[je] > 999 ? je : -1, W(p)._overflowDayOfYear && (c < e1 || c > I1) && (c = I1), W(p)._overflowWeeks && c === -1 && (c = nO), W(p)._overflowWeekday && c === -1 && (c = bO), W(p).overflow = c), p;
+        return O && W(p).overflow === -2 && (c = O[ee] < 0 || O[ee] > 11 ? ee : O[I1] < 1 || O[I1] > LM(O[e1], O[ee]) ? I1 : O[F0] < 0 || O[F0] > 24 || O[F0] === 24 && (O[B1] !== 0 || O[te] !== 0 || O[Fe] !== 0) ? F0 : O[B1] < 0 || O[B1] > 59 ? B1 : O[te] < 0 || O[te] > 59 ? te : O[Fe] < 0 || O[Fe] > 999 ? Fe : -1, W(p)._overflowDayOfYear && (c < e1 || c > I1) && (c = I1), W(p)._overflowWeeks && c === -1 && (c = nO), W(p)._overflowWeekday && c === -1 && (c = bO), W(p).overflow = c), p;
       }
-      var tl = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, ol = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Ml = /Z|[+-]\d\d(?::?\d\d)?/, j2 = [
+      var tl = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, ol = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Ml = /Z|[+-]\d\d(?::?\d\d)?/, F2 = [
         ["YYYYYY-MM-DD", /[+-]\d{6}-\d\d-\d\d/],
         ["YYYY-MM-DD", /\d{4}-\d\d-\d\d/],
         ["GGGG-[W]WW-E", /\d{4}-W\d\d-\d/],
@@ -9485,11 +9485,11 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         PST: -480
       };
       function kr(p) {
-        var c, O, l = p._i, q = tl.exec(l) || ol.exec(l), L, w, G, n0, a0 = j2.length, z1 = BM.length;
+        var c, O, l = p._i, q = tl.exec(l) || ol.exec(l), L, w, G, n0, a0 = F2.length, z1 = BM.length;
         if (q) {
           for (W(p).iso = !0, c = 0, O = a0; c < O; c++)
-            if (j2[c][1].exec(q[1])) {
-              w = j2[c][0], L = j2[c][2] !== !1;
+            if (F2[c][1].exec(q[1])) {
+              w = F2[c][0], L = F2[c][2] !== !1;
               break;
             }
           if (w == null) {
@@ -9571,7 +9571,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
             c[7]
           ), !cl(c[1], O, p))
             return;
-          p._a = O, p._tzm = al(c[8], c[9], c[10]), p._d = e2.apply(null, p._a), p._d.setUTCMinutes(p._d.getUTCMinutes() - p._tzm), W(p).rfc2822 = !0;
+          p._a = O, p._tzm = al(c[8], c[9], c[10]), p._d = t2.apply(null, p._a), p._d.setUTCMinutes(p._d.getUTCMinutes() - p._tzm), W(p).rfc2822 = !0;
         } else
           p._isValid = !1;
       }
@@ -9597,7 +9597,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           p._d = /* @__PURE__ */ new Date(p._i + (p._useUTC ? " UTC" : ""));
         }
       );
-      function lt(p, c, O) {
+      function dt(p, c, O) {
         return p ?? c ?? O;
       }
       function Ol(p) {
@@ -9611,11 +9611,11 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function EM(p) {
         var c, O, l = [], q, L, w;
         if (!p._d) {
-          for (q = Ol(p), p._w && p._a[I1] == null && p._a[ee] == null && ll(p), p._dayOfYear != null && (w = lt(p._a[e1], q[e1]), (p._dayOfYear > Zt(w) || p._dayOfYear === 0) && (W(p)._overflowDayOfYear = !0), O = e2(w, 0, p._dayOfYear), p._a[ee] = O.getUTCMonth(), p._a[I1] = O.getUTCDate()), c = 0; c < 3 && p._a[c] == null; ++c)
+          for (q = Ol(p), p._w && p._a[I1] == null && p._a[ee] == null && ll(p), p._dayOfYear != null && (w = dt(p._a[e1], q[e1]), (p._dayOfYear > Jt(w) || p._dayOfYear === 0) && (W(p)._overflowDayOfYear = !0), O = t2(w, 0, p._dayOfYear), p._a[ee] = O.getUTCMonth(), p._a[I1] = O.getUTCDate()), c = 0; c < 3 && p._a[c] == null; ++c)
             p._a[c] = l[c] = q[c];
           for (; c < 7; c++)
             p._a[c] = l[c] = p._a[c] == null ? c === 2 ? 1 : 0 : p._a[c];
-          p._a[F0] === 24 && p._a[B1] === 0 && p._a[te] === 0 && p._a[je] === 0 && (p._nextDay = !0, p._a[F0] = 0), p._d = (p._useUTC ? e2 : hO).apply(
+          p._a[F0] === 24 && p._a[B1] === 0 && p._a[te] === 0 && p._a[Fe] === 0 && (p._nextDay = !0, p._a[F0] = 0), p._d = (p._useUTC ? t2 : hO).apply(
             null,
             l
           ), L = p._useUTC ? p._d.getUTCDay() : p._d.getDay(), p._tzm != null && p._d.setUTCMinutes(p._d.getUTCMinutes() - p._tzm), p._nextDay && (p._a[F0] = 24), p._w && typeof p._w.d < "u" && p._w.d !== L && (W(p).weekdayMismatch = !0);
@@ -9623,11 +9623,11 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function ll(p) {
         var c, O, l, q, L, w, G, n0, a0;
-        c = p._w, c.GG != null || c.W != null || c.E != null ? (L = 1, w = 4, O = lt(
+        c = p._w, c.GG != null || c.W != null || c.E != null ? (L = 1, w = 4, O = dt(
           c.GG,
           p._a[e1],
-          t2(B0(), 1, 4).year
-        ), l = lt(c.W, 1), q = lt(c.E, 1), (q < 1 || q > 7) && (n0 = !0)) : (L = p._locale._week.dow, w = p._locale._week.doy, a0 = t2(B0(), L, w), O = lt(c.gg, p._a[e1], a0.year), l = lt(c.w, a0.week), c.d != null ? (q = c.d, (q < 0 || q > 6) && (n0 = !0)) : c.e != null ? (q = c.e + L, (c.e < 0 || c.e > 6) && (n0 = !0)) : q = L), l < 1 || l > oe(O, L, w) ? W(p)._overflowWeeks = !0 : n0 != null ? W(p)._overflowWeekday = !0 : (G = wr(O, l, q, L, w), p._a[e1] = G.year, p._dayOfYear = G.dayOfYear);
+          o2(B0(), 1, 4).year
+        ), l = dt(c.W, 1), q = dt(c.E, 1), (q < 1 || q > 7) && (n0 = !0)) : (L = p._locale._week.dow, w = p._locale._week.doy, a0 = o2(B0(), L, w), O = dt(c.gg, p._a[e1], a0.year), l = dt(c.w, a0.week), c.d != null ? (q = c.d, (q < 0 || q > 6) && (n0 = !0)) : c.e != null ? (q = c.e + L, (c.e < 0 || c.e > 6) && (n0 = !0)) : q = L), l < 1 || l > oe(O, L, w) ? W(p)._overflowWeeks = !0 : n0 != null ? W(p)._overflowWeekday = !0 : (G = wr(O, l, q, L, w), p._a[e1] = G.year, p._dayOfYear = G.dayOfYear);
       }
       M.ISO_8601 = function() {
       }, M.RFC_2822 = function() {
@@ -9664,13 +9664,13 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return;
         }
         for (q = 0; q < n0; q++)
-          L = 0, w = !1, c = Y({}, p), p._useUTC != null && (c._useUTC = p._useUTC), c._f = p._f[q], DM(c), N(c) && (w = !0), L += W(c).charsLeftOver, L += W(c).unusedTokens.length * 10, W(c).score = L, G ? L < l && (l = L, O = c) : (l == null || L < l || w) && (l = L, O = c, w && (G = !0));
-        f(p, O || c);
+          L = 0, w = !1, c = j({}, p), p._useUTC != null && (c._useUTC = p._useUTC), c._f = p._f[q], DM(c), N(c) && (w = !0), L += W(c).charsLeftOver, L += W(c).unusedTokens.length * 10, W(c).score = L, G ? L < l && (l = L, O = c) : (l == null || L < l || w) && (l = L, O = c, w && (G = !0));
+        A(p, O || c);
       }
       function ul(p) {
         if (!p._d) {
-          var c = _2(p._i), O = c.day === void 0 ? c.date : c.day;
-          p._a = A(
+          var c = C2(p._i), O = c.day === void 0 ? c.date : c.day;
+          p._a = u(
             [c.year, c.month, O, c.hour, c.minute, c.second, c.millisecond],
             function(l) {
               return l && parseInt(l, 10);
@@ -9688,7 +9688,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function ql(p) {
         var c = p._i;
-        a(c) ? p._d = new Date(M.now()) : d(c) ? p._d = new Date(c.valueOf()) : typeof c == "string" ? sl(p) : b(c) ? (p._a = A(c.slice(0), function(O) {
+        a(c) ? p._d = new Date(M.now()) : d(c) ? p._d = new Date(c.valueOf()) : typeof c == "string" ? sl(p) : b(c) ? (p._a = u(c.slice(0), function(O) {
           return parseInt(O, 10);
         }), EM(p)) : r(c) ? ul(p) : s(c) ? p._d = new Date(c) : M.createFromInputFallback(p);
       }
@@ -9730,7 +9730,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       var gl = function() {
         return Date.now ? Date.now() : +/* @__PURE__ */ new Date();
-      }, n2 = [
+      }, b2 = [
         "year",
         "quarter",
         "month",
@@ -9742,15 +9742,15 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         "millisecond"
       ];
       function yl(p) {
-        var c, O = !1, l, q = n2.length;
+        var c, O = !1, l, q = b2.length;
         for (c in p)
-          if (z(p, c) && !(I0.call(n2, c) !== -1 && (p[c] == null || !isNaN(p[c]))))
+          if (z(p, c) && !(I0.call(b2, c) !== -1 && (p[c] == null || !isNaN(p[c]))))
             return !1;
         for (l = 0; l < q; ++l)
-          if (p[n2[l]]) {
+          if (p[b2[l]]) {
             if (O)
               return !1;
-            parseFloat(p[n2[l]]) !== z0(p[n2[l]]) && (O = !0);
+            parseFloat(p[b2[l]]) !== z0(p[b2[l]]) && (O = !0);
           }
         return !0;
       }
@@ -9760,14 +9760,14 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function vl() {
         return E1(NaN);
       }
-      function F2(p) {
-        var c = _2(p), O = c.year || 0, l = c.quarter || 0, q = c.month || 0, L = c.week || c.isoWeek || 0, w = c.day || 0, G = c.hour || 0, n0 = c.minute || 0, a0 = c.second || 0, z1 = c.millisecond || 0;
+      function G2(p) {
+        var c = C2(p), O = c.year || 0, l = c.quarter || 0, q = c.month || 0, L = c.week || c.isoWeek || 0, w = c.day || 0, G = c.hour || 0, n0 = c.minute || 0, a0 = c.second || 0, z1 = c.millisecond || 0;
         this._isValid = yl(c), this._milliseconds = +z1 + a0 * 1e3 + // 1000
         n0 * 6e4 + // 1000 * 60
         G * 1e3 * 60 * 60, this._days = +w + L * 7, this._months = +q + l * 3 + O * 12, this._data = {}, this._locale = Me(), this._bubble();
       }
-      function G2(p) {
-        return p instanceof F2;
+      function V2(p) {
+        return p instanceof G2;
       }
       function _M(p) {
         return p < 0 ? Math.round(-1 * p) * -1 : Math.round(p);
@@ -9784,8 +9784,8 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return O < 0 && (O = -O, l = "-"), l + r1(~~(O / 60), 2) + c + r1(~~O % 60, 2);
         });
       }
-      Hr("Z", ":"), Hr("ZZ", ""), V("Z", I2), V("ZZ", I2), y0(["Z", "ZZ"], function(p, c, O) {
-        O._useUTC = !0, O._tzm = CM(I2, p);
+      Hr("Z", ":"), Hr("ZZ", ""), V("Z", P2), V("ZZ", P2), y0(["Z", "ZZ"], function(p, c, O) {
+        O._useUTC = !0, O._tzm = CM(P2, p);
       });
       var Sl = /([\+\-]|\d\d)/gi;
       function CM(p, c) {
@@ -9807,7 +9807,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return p != null ? this : NaN;
         if (p != null) {
           if (typeof p == "string") {
-            if (p = CM(I2, p), p === null)
+            if (p = CM(P2, p), p === null)
               return this;
           } else Math.abs(p) < 16 && !O && (p = p * 60);
           return !this._isUTC && c && (q = XM(this)), this._offset = p, this._isUTC = !0, q != null && this.add(q, "m"), l !== p && (!c || this._changeInProgress ? Fr(
@@ -9847,7 +9847,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         if (!a(this._isDSTShifted))
           return this._isDSTShifted;
         var p = {}, c;
-        return Y(p, this), p = xr(p), p._a ? (c = p._isUTC ? h(p._a) : B0(p._a), this._isDSTShifted = this.isValid() && Nl(p._a, c.toArray()) > 0) : this._isDSTShifted = !1, this._isDSTShifted;
+        return j(p, this), p = xr(p), p._a ? (c = p._isUTC ? h(p._a) : B0(p._a), this._isDSTShifted = this.isValid() && Nl(p._a, c.toArray()) > 0) : this._isDSTShifted = !1, this._isDSTShifted;
       }
       function Xl() {
         return this.isValid() ? !this._isUTC : !1;
@@ -9861,7 +9861,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       var Il = /^(-|\+)?(?:(\d*)[. ])?(\d+):(\d+)(?::(\d+)(\.\d*)?)?$/, Pl = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
       function E1(p, c) {
         var O = p, l = null, q, L, w;
-        return G2(p) ? O = {
+        return V2(p) ? O = {
           ms: p._milliseconds,
           d: p._days,
           M: p._months
@@ -9871,35 +9871,35 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           h: z0(l[F0]) * q,
           m: z0(l[B1]) * q,
           s: z0(l[te]) * q,
-          ms: z0(_M(l[je] * 1e3)) * q
+          ms: z0(_M(l[Fe] * 1e3)) * q
           // the millisecond decimal point is included in the match
         }) : (l = Pl.exec(p)) ? (q = l[1] === "-" ? -1 : 1, O = {
-          y: Fe(l[2], q),
-          M: Fe(l[3], q),
-          w: Fe(l[4], q),
-          d: Fe(l[5], q),
-          h: Fe(l[6], q),
-          m: Fe(l[7], q),
-          s: Fe(l[8], q)
+          y: Ge(l[2], q),
+          M: Ge(l[3], q),
+          w: Ge(l[4], q),
+          d: Ge(l[5], q),
+          h: Ge(l[6], q),
+          m: Ge(l[7], q),
+          s: Ge(l[8], q)
         }) : O == null ? O = {} : typeof O == "object" && ("from" in O || "to" in O) && (w = Hl(
           B0(O.from),
           B0(O.to)
-        ), O = {}, O.ms = w.milliseconds, O.M = w.months), L = new F2(O), G2(p) && z(p, "_locale") && (L._locale = p._locale), G2(p) && z(p, "_isValid") && (L._isValid = p._isValid), L;
+        ), O = {}, O.ms = w.milliseconds, O.M = w.months), L = new G2(O), V2(p) && z(p, "_locale") && (L._locale = p._locale), V2(p) && z(p, "_isValid") && (L._isValid = p._isValid), L;
       }
-      E1.fn = F2.prototype, E1.invalid = vl;
-      function Fe(p, c) {
+      E1.fn = G2.prototype, E1.invalid = vl;
+      function Ge(p, c) {
         var O = p && parseFloat(p.replace(",", "."));
         return (isNaN(O) ? 0 : O) * c;
       }
-      function Yr(p, c) {
+      function jr(p, c) {
         var O = {};
         return O.months = c.month() - p.month() + (c.year() - p.year()) * 12, p.clone().add(O.months, "M").isAfter(c) && --O.months, O.milliseconds = +c - +p.clone().add(O.months, "M"), O;
       }
       function Hl(p, c) {
         var O;
-        return p.isValid() && c.isValid() ? (c = kM(c, p), p.isBefore(c) ? O = Yr(p, c) : (O = Yr(c, p), O.milliseconds = -O.milliseconds, O.months = -O.months), O) : { milliseconds: 0, months: 0 };
+        return p.isValid() && c.isValid() ? (c = kM(c, p), p.isBefore(c) ? O = jr(p, c) : (O = jr(c, p), O.milliseconds = -O.milliseconds, O.months = -O.months), O) : { milliseconds: 0, months: 0 };
       }
-      function jr(p, c) {
+      function Yr(p, c) {
         return function(O, l) {
           var q, L;
           return l !== null && !isNaN(+l) && (O1(
@@ -9910,13 +9910,13 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function Fr(p, c, O, l) {
         var q = c._milliseconds, L = _M(c._days), w = _M(c._months);
-        p.isValid() && (l = l ?? !0, w && Nr(p, Jt(p, "Month") + w * O), L && yr(p, "Date", Jt(p, "Date") + L * O), q && p._d.setTime(p._d.valueOf() + q * O), l && M.updateOffset(p, L || w));
+        p.isValid() && (l = l ?? !0, w && Nr(p, e2(p, "Month") + w * O), L && yr(p, "Date", e2(p, "Date") + L * O), q && p._d.setTime(p._d.valueOf() + q * O), l && M.updateOffset(p, L || w));
       }
-      var Ul = jr(1, "add"), Yl = jr(-1, "subtract");
+      var Ul = Yr(1, "add"), jl = Yr(-1, "subtract");
       function Gr(p) {
         return typeof p == "string" || p instanceof String;
       }
-      function jl(p) {
+      function Yl(p) {
         return Z(p) || d(p) || Gr(p) || s(p) || Gl(p) || Fl(p) || p === null || p === void 0;
       }
       function Fl(p) {
@@ -9974,7 +9974,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return O < -6 ? "sameElse" : O < -1 ? "lastWeek" : O < 0 ? "lastDay" : O < 1 ? "sameDay" : O < 2 ? "nextDay" : O < 7 ? "nextWeek" : "sameElse";
       }
       function Kl(p, c) {
-        arguments.length === 1 && (arguments[0] ? jl(arguments[0]) ? (p = arguments[0], c = void 0) : Vl(arguments[0]) && (c = arguments[0], p = void 0) : (p = void 0, c = void 0));
+        arguments.length === 1 && (arguments[0] ? Yl(arguments[0]) ? (p = arguments[0], c = void 0) : Vl(arguments[0]) && (c = arguments[0], p = void 0) : (p = void 0, c = void 0));
         var O = p || B0(), l = kM(O, this).startOf("day"), q = M.calendarFormat(this, l) || "sameElse", L = c && (c1(c[q]) ? c[q].call(this, O) : c[q]);
         return this.format(
           L || this.localeData().calendar(q, this, B0(O))
@@ -10013,13 +10013,13 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           return NaN;
         switch (q = (l.utcOffset() - this.utcOffset()) * 6e4, c = c0(c), c) {
           case "year":
-            L = V2(this, l) / 12;
+            L = Q2(this, l) / 12;
             break;
           case "month":
-            L = V2(this, l);
+            L = Q2(this, l);
             break;
           case "quarter":
-            L = V2(this, l) / 3;
+            L = Q2(this, l) / 3;
             break;
           case "second":
             L = (this - l) / 1e3;
@@ -10046,9 +10046,9 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         }
         return O ? L : g1(L);
       }
-      function V2(p, c) {
+      function Q2(p, c) {
         if (p.date() < c.date())
-          return -V2(c, p);
+          return -Q2(c, p);
         var O = (c.year() - p.year()) * 12 + (c.month() - p.month()), l = p.clone().add(O, "months"), q, L;
         return c - l < 0 ? (q = p.clone().add(O - 1, "months"), L = (c - l) / (l - q)) : (q = p.clone().add(O + 1, "months"), L = (c - l) / (q - l)), -(O + L) || 0;
       }
@@ -10060,10 +10060,10 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         if (!this.isValid())
           return null;
         var c = p !== !0, O = c ? this.clone().utc() : this;
-        return O.year() < 0 || O.year() > 9999 ? j0(
+        return O.year() < 0 || O.year() > 9999 ? Y0(
           O,
           c ? "YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]" : "YYYYYY-MM-DD[T]HH:mm:ss.SSSZ"
-        ) : c1(Date.prototype.toISOString) ? c ? this.toDate().toISOString() : new Date(this.valueOf() + this.utcOffset() * 60 * 1e3).toISOString().replace("Z", j0(O, "Z")) : j0(
+        ) : c1(Date.prototype.toISOString) ? c ? this.toDate().toISOString() : new Date(this.valueOf() + this.utcOffset() * 60 * 1e3).toISOString().replace("Z", Y0(O, "Z")) : Y0(
           O,
           c ? "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]" : "YYYY-MM-DD[T]HH:mm:ss.SSSZ"
         );
@@ -10076,7 +10076,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function z3(p) {
         p || (p = this.isUtc() ? M.defaultFormatUtc : M.defaultFormat);
-        var c = j0(this, p);
+        var c = Y0(this, p);
         return this.localeData().postformat(c);
       }
       function i3(p, c) {
@@ -10104,8 +10104,8 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function Kr() {
         return this._locale;
       }
-      var Q2 = 1e3, dt = 60 * Q2, K2 = 60 * dt, $r = (365 * 400 + 97) * 24 * K2;
-      function At(p, c) {
+      var K2 = 1e3, At = 60 * K2, $2 = 60 * At, $r = (365 * 400 + 97) * 24 * $2;
+      function ut(p, c) {
         return (p % c + c) % c;
       }
       function Zr(p, c, O) {
@@ -10151,16 +10151,16 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
             c = O(this.year(), this.month(), this.date());
             break;
           case "hour":
-            c = this._d.valueOf(), c -= At(
-              c + (this._isUTC ? 0 : this.utcOffset() * dt),
-              K2
+            c = this._d.valueOf(), c -= ut(
+              c + (this._isUTC ? 0 : this.utcOffset() * At),
+              $2
             );
             break;
           case "minute":
-            c = this._d.valueOf(), c -= At(c, dt);
+            c = this._d.valueOf(), c -= ut(c, At);
             break;
           case "second":
-            c = this._d.valueOf(), c -= At(c, Q2);
+            c = this._d.valueOf(), c -= ut(c, K2);
             break;
         }
         return this._d.setTime(c), M.updateOffset(this, !0), this;
@@ -10202,16 +10202,16 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
             c = O(this.year(), this.month(), this.date() + 1) - 1;
             break;
           case "hour":
-            c = this._d.valueOf(), c += K2 - At(
-              c + (this._isUTC ? 0 : this.utcOffset() * dt),
-              K2
+            c = this._d.valueOf(), c += $2 - ut(
+              c + (this._isUTC ? 0 : this.utcOffset() * At),
+              $2
             ) - 1;
             break;
           case "minute":
-            c = this._d.valueOf(), c += dt - At(c, dt) - 1;
+            c = this._d.valueOf(), c += At - ut(c, At) - 1;
             break;
           case "second":
-            c = this._d.valueOf(), c += Q2 - At(c, Q2) - 1;
+            c = this._d.valueOf(), c += K2 - ut(c, K2) - 1;
             break;
         }
         return this._d.setTime(c), M.updateOffset(this, !0), this;
@@ -10256,7 +10256,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return N(this);
       }
       function R3() {
-        return f({}, W(this));
+        return A({}, W(this));
       }
       function m3() {
         return W(this).overflow;
@@ -10276,7 +10276,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
           var q = O._locale.erasParse(p, l, O._strict);
           q ? W(O).era = q : W(O).invalidEra = p;
         }
-      ), V("y", at), V("yy", at), V("yyy", at), V("yyyy", at), V("yo", k3), y0(["y", "yy", "yyy", "yyyy"], e1), y0(["yo"], function(p, c, O, l) {
+      ), V("y", st), V("yy", st), V("yyy", st), V("yyyy", st), V("yo", k3), y0(["y", "yy", "yyy", "yyyy"], e1), y0(["yo"], function(p, c, O, l) {
         var q;
         O._locale._eraYearOrdinalRegex && (q = p.match(O._locale._eraYearOrdinalRegex)), O._locale.eraYearOrdinalParse ? c[e1] = O._locale.eraYearOrdinalParse(p, q) : c[e1] = parseInt(p, 10);
       });
@@ -10373,7 +10373,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return c.erasNarrowRegex(p);
       }
       function k3(p, c) {
-        return c._eraYearOrdinalRegex || at;
+        return c._eraYearOrdinalRegex || st;
       }
       function IM() {
         var p = [], c = [], O = [], l = [], q, L, w, G, n0, a0 = this.eras();
@@ -10389,15 +10389,15 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }), F(0, ["GG", 2], 0, function() {
         return this.isoWeekYear() % 100;
       });
-      function $2(p, c) {
+      function Z2(p, c) {
         F(0, [p, p.length], 0, c);
       }
-      $2("gggg", "weekYear"), $2("ggggg", "weekYear"), $2("GGGG", "isoWeekYear"), $2("GGGGG", "isoWeekYear"), V("G", x2), V("g", x2), V("GG", w0, d1), V("gg", w0, d1), V("GGGG", mM, RM), V("gggg", mM, RM), V("GGGGG", X2, C2), V("ggggg", X2, C2), $t(
+      Z2("gggg", "weekYear"), Z2("ggggg", "weekYear"), Z2("GGGG", "isoWeekYear"), Z2("GGGGG", "isoWeekYear"), V("G", I2), V("g", I2), V("GG", w0, d1), V("gg", w0, d1), V("GGGG", mM, RM), V("gggg", mM, RM), V("GGGGG", x2, k2), V("ggggg", x2, k2), Zt(
         ["gggg", "ggggg", "GGGG", "GGGGG"],
         function(p, c, O, l) {
           c[l.substr(0, 2)] = z0(p);
         }
-      ), $t(["gg", "GG"], function(p, c, O, l) {
+      ), Zt(["gg", "GG"], function(p, c, O, l) {
         c[l] = M.parseTwoDigitYear(p);
       });
       function X3(p) {
@@ -10436,25 +10436,25 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       }
       function ep(p, c, O, l, q) {
         var L;
-        return p == null ? t2(this, l, q).year : (L = oe(p, l, q), c > L && (c = L), Y3.call(this, p, c, O, l, q));
+        return p == null ? o2(this, l, q).year : (L = oe(p, l, q), c > L && (c = L), j3.call(this, p, c, O, l, q));
       }
-      function Y3(p, c, O, l, q) {
-        var L = wr(p, c, O, l, q), w = e2(L.year, 0, L.dayOfYear);
+      function j3(p, c, O, l, q) {
+        var L = wr(p, c, O, l, q), w = t2(L.year, 0, L.dayOfYear);
         return this.year(w.getUTCFullYear()), this.month(w.getUTCMonth()), this.date(w.getUTCDate()), this;
       }
       F("Q", 0, "Qo", "quarter"), V("Q", hr), y0("Q", function(p, c) {
         c[ee] = (z0(p) - 1) * 3;
       });
-      function j3(p) {
+      function Y3(p) {
         return p == null ? Math.ceil((this.month() + 1) / 3) : this.month((p - 1) * 3 + this.month() % 3);
       }
-      F("D", ["DD", 2], "Do", "date"), V("D", w0, st), V("DD", w0, d1), V("Do", function(p, c) {
+      F("D", ["DD", 2], "Do", "date"), V("D", w0, Ot), V("DD", w0, d1), V("Do", function(p, c) {
         return p ? c._dayOfMonthOrdinalParse || c._ordinalParse : c._dayOfMonthOrdinalParseLenient;
       }), y0(["D", "DD"], I1), y0("Do", function(p, c) {
         c[I1] = z0(p.match(w0)[0]);
       });
-      var tp = Ot("Date", !0);
-      F("DDD", ["DDDD", 3], "DDDo", "dayOfYear"), V("DDD", k2), V("DDDD", Wr), y0(["DDD", "DDDD"], function(p, c, O) {
+      var tp = lt("Date", !0);
+      F("DDD", ["DDDD", 3], "DDDo", "dayOfYear"), V("DDD", X2), V("DDDD", Wr), y0(["DDD", "DDDD"], function(p, c, O) {
         O._dayOfYear = z0(p);
       });
       function F3(p) {
@@ -10464,9 +10464,9 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return p == null ? c : this.add(p - c, "d");
       }
       F("m", ["mm", 2], 0, "minute"), V("m", w0, gM), V("mm", w0, d1), y0(["m", "mm"], B1);
-      var G3 = Ot("Minutes", !1);
+      var G3 = lt("Minutes", !1);
       F("s", ["ss", 2], 0, "second"), V("s", w0, gM), V("ss", w0, d1), y0(["s", "ss"], te);
-      var V3 = Ot("Seconds", !1);
+      var V3 = lt("Seconds", !1);
       F("S", 0, 0, function() {
         return ~~(this.millisecond() / 100);
       }), F(0, ["SS", 2], 0, function() {
@@ -10483,16 +10483,16 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return this.millisecond() * 1e5;
       }), F(0, ["SSSSSSSSS", 9], 0, function() {
         return this.millisecond() * 1e6;
-      }), V("S", k2, hr), V("SS", k2, d1), V("SSS", k2, Wr);
+      }), V("S", X2, hr), V("SS", X2, d1), V("SSS", X2, Wr);
       var Le, op;
       for (Le = "SSSS"; Le.length <= 9; Le += "S")
-        V(Le, at);
+        V(Le, st);
       function Q3(p, c) {
-        c[je] = z0(("0." + p) * 1e3);
+        c[Fe] = z0(("0." + p) * 1e3);
       }
       for (Le = "S"; Le.length <= 9; Le += "S")
         y0(Le, Q3);
-      op = Ot("Milliseconds", !1), F("z", 0, 0, "zoneAbbr"), F("zz", 0, 0, "zoneName");
+      op = lt("Milliseconds", !1), F("z", 0, 0, "zoneAbbr"), F("zz", 0, 0, "zoneName");
       function K3() {
         return this._isUTC ? "UTC" : "";
       }
@@ -10500,9 +10500,9 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return this._isUTC ? "Coordinated Universal Time" : "";
       }
       var X = U.prototype;
-      X.add = Ul, X.calendar = Kl, X.clone = $l, X.diff = n3, X.endOf = l3, X.format = z3, X.from = i3, X.fromNow = c3, X.to = a3, X.toNow = s3, X.get = pO, X.invalidAt = m3, X.isAfter = Zl, X.isBefore = Jl, X.isBetween = e3, X.isSame = t3, X.isSameOrAfter = o3, X.isSameOrBefore = M3, X.isValid = W3, X.lang = Qr, X.locale = Vr, X.localeData = Kr, X.max = Wl, X.min = hl, X.parsingFlags = R3, X.set = zO, X.startOf = O3, X.subtract = Yl, X.toArray = f3, X.toObject = q3, X.toDate = u3, X.toISOString = r3, X.inspect = p3, typeof Symbol < "u" && Symbol.for != null && (X[Symbol.for("nodejs.util.inspect.custom")] = function() {
+      X.add = Ul, X.calendar = Kl, X.clone = $l, X.diff = n3, X.endOf = l3, X.format = z3, X.from = i3, X.fromNow = c3, X.to = a3, X.toNow = s3, X.get = pO, X.invalidAt = m3, X.isAfter = Zl, X.isBefore = Jl, X.isBetween = e3, X.isSame = t3, X.isSameOrAfter = o3, X.isSameOrBefore = M3, X.isValid = W3, X.lang = Qr, X.locale = Vr, X.localeData = Kr, X.max = Wl, X.min = hl, X.parsingFlags = R3, X.set = zO, X.startOf = O3, X.subtract = jl, X.toArray = f3, X.toObject = q3, X.toDate = u3, X.toISOString = r3, X.inspect = p3, typeof Symbol < "u" && Symbol.for != null && (X[Symbol.for("nodejs.util.inspect.custom")] = function() {
         return "Moment<" + this.format() + ">";
-      }), X.toJSON = h3, X.toString = b3, X.unix = A3, X.valueOf = d3, X.creationData = g3, X.eraName = N3, X.eraNarrow = S3, X.eraAbbr = T3, X.eraYear = w3, X.year = gr, X.isLeapYear = rO, X.weekYear = X3, X.isoWeekYear = x3, X.quarter = X.quarters = j3, X.month = Sr, X.daysInMonth = uO, X.week = X.weeks = yO, X.isoWeek = X.isoWeeks = LO, X.weeksInYear = H3, X.weeksInWeekYear = U3, X.isoWeeksInYear = I3, X.isoWeeksInISOWeekYear = P3, X.date = tp, X.day = X.days = xO, X.weekday = IO, X.isoWeekday = PO, X.dayOfYear = F3, X.hour = X.hours = VO, X.minute = X.minutes = G3, X.second = X.seconds = V3, X.millisecond = X.milliseconds = op, X.utcOffset = Tl, X.utc = Bl, X.local = El, X.parseZone = Dl, X.hasAlignedHourOffset = _l, X.isDST = Cl, X.isLocal = Xl, X.isUtcOffset = xl, X.isUtc = Ur, X.isUTC = Ur, X.zoneAbbr = K3, X.zoneName = $3, X.dates = W0(
+      }), X.toJSON = h3, X.toString = b3, X.unix = A3, X.valueOf = d3, X.creationData = g3, X.eraName = N3, X.eraNarrow = S3, X.eraAbbr = T3, X.eraYear = w3, X.year = gr, X.isLeapYear = rO, X.weekYear = X3, X.isoWeekYear = x3, X.quarter = X.quarters = Y3, X.month = Sr, X.daysInMonth = uO, X.week = X.weeks = yO, X.isoWeek = X.isoWeeks = LO, X.weeksInYear = H3, X.weeksInWeekYear = U3, X.isoWeeksInYear = I3, X.isoWeeksInISOWeekYear = P3, X.date = tp, X.day = X.days = xO, X.weekday = IO, X.isoWeekday = PO, X.dayOfYear = F3, X.hour = X.hours = VO, X.minute = X.minutes = G3, X.second = X.seconds = V3, X.millisecond = X.milliseconds = op, X.utcOffset = Tl, X.utc = Bl, X.local = El, X.parseZone = Dl, X.hasAlignedHourOffset = _l, X.isDST = Cl, X.isLocal = Xl, X.isUtcOffset = xl, X.isUtc = Ur, X.isUTC = Ur, X.zoneAbbr = K3, X.zoneName = $3, X.dates = W0(
         "dates accessor is deprecated. Use date instead.",
         tp
       ), X.months = W0(
@@ -10528,26 +10528,26 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return p;
       }
       var A0 = J0.prototype;
-      A0.calendar = ct, A0.longDateFormat = D, A0.invalidDate = m, A0.ordinal = C, A0.preparse = Mp, A0.postformat = Mp, A0.relativeTime = p0, A0.pastFuture = _0, A0.set = x1, A0.eras = y3, A0.erasParse = L3, A0.erasConvertYear = v3, A0.erasAbbrRegex = E3, A0.erasNameRegex = B3, A0.erasNarrowRegex = D3, A0.months = OO, A0.monthsShort = lO, A0.monthsParse = AO, A0.monthsRegex = qO, A0.monthsShortRegex = fO, A0.week = WO, A0.firstDayOfYear = gO, A0.firstDayOfWeek = mO, A0.weekdays = DO, A0.weekdaysMin = CO, A0.weekdaysShort = _O, A0.weekdaysParse = XO, A0.weekdaysRegex = HO, A0.weekdaysShortRegex = UO, A0.weekdaysMinRegex = YO, A0.isPM = FO, A0.meridiem = QO;
-      function Z2(p, c, O, l) {
+      A0.calendar = at, A0.longDateFormat = D, A0.invalidDate = m, A0.ordinal = k, A0.preparse = Mp, A0.postformat = Mp, A0.relativeTime = p0, A0.pastFuture = _0, A0.set = x1, A0.eras = y3, A0.erasParse = L3, A0.erasConvertYear = v3, A0.erasAbbrRegex = E3, A0.erasNameRegex = B3, A0.erasNarrowRegex = D3, A0.months = OO, A0.monthsShort = lO, A0.monthsParse = AO, A0.monthsRegex = qO, A0.monthsShortRegex = fO, A0.week = WO, A0.firstDayOfYear = gO, A0.firstDayOfWeek = mO, A0.weekdays = DO, A0.weekdaysMin = CO, A0.weekdaysShort = _O, A0.weekdaysParse = XO, A0.weekdaysRegex = HO, A0.weekdaysShortRegex = UO, A0.weekdaysMinRegex = jO, A0.isPM = FO, A0.meridiem = QO;
+      function J2(p, c, O, l) {
         var q = Me(), L = h().set(l, c);
         return q[O](L, p);
       }
       function np(p, c, O) {
         if (s(p) && (c = p, p = void 0), p = p || "", c != null)
-          return Z2(p, c, O, "month");
+          return J2(p, c, O, "month");
         var l, q = [];
         for (l = 0; l < 12; l++)
-          q[l] = Z2(p, l, O, "month");
+          q[l] = J2(p, l, O, "month");
         return q;
       }
       function PM(p, c, O, l) {
         typeof p == "boolean" ? (s(c) && (O = c, c = void 0), c = c || "") : (c = p, O = c, p = !1, s(c) && (O = c, c = void 0), c = c || "");
         var q = Me(), L = p ? q._week.dow : 0, w, G = [];
         if (O != null)
-          return Z2(c, (O + L) % 7, l, "day");
+          return J2(c, (O + L) % 7, l, "day");
         for (w = 0; w < 7; w++)
-          G[w] = Z2(c, (w + L) % 7, l, "day");
+          G[w] = J2(c, (w + L) % 7, l, "day");
         return G;
       }
       function ed(p, c) {
@@ -10668,16 +10668,16 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
       function hd(p) {
         return p = c0(p), this.isValid() ? this[p + "s"]() : NaN;
       }
-      function Ge(p) {
+      function Ve(p) {
         return function() {
           return this.isValid() ? this._data[p] : NaN;
         };
       }
-      var Wd = Ge("milliseconds"), Rd = Ge("seconds"), md = Ge("minutes"), gd = Ge("hours"), yd = Ge("days"), Ld = Ge("months"), vd = Ge("years");
+      var Wd = Ve("milliseconds"), Rd = Ve("seconds"), md = Ve("minutes"), gd = Ve("hours"), yd = Ve("days"), Ld = Ve("months"), vd = Ve("years");
       function Nd() {
         return g1(this.days() / 7);
       }
-      var re = Math.round, ut = {
+      var re = Math.round, ft = {
         ss: 44,
         // a few seconds to seconds
         s: 45,
@@ -10704,35 +10704,35 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         return p === void 0 ? re : typeof p == "function" ? (re = p, !0) : !1;
       }
       function Bd(p, c) {
-        return ut[p] === void 0 ? !1 : c === void 0 ? ut[p] : (ut[p] = c, p === "s" && (ut.ss = c - 1), !0);
+        return ft[p] === void 0 ? !1 : c === void 0 ? ft[p] : (ft[p] = c, p === "s" && (ft.ss = c - 1), !0);
       }
       function Ed(p, c) {
         if (!this.isValid())
           return this.localeData().invalidDate();
-        var O = !1, l = ut, q, L;
-        return typeof p == "object" && (c = p, p = !1), typeof p == "boolean" && (O = p), typeof c == "object" && (l = Object.assign({}, ut, c), c.s != null && c.ss == null && (l.ss = c.s - 1)), q = this.localeData(), L = Td(this, !O, l, q), O && (L = q.pastFuture(+this, L)), q.postformat(L);
+        var O = !1, l = ft, q, L;
+        return typeof p == "object" && (c = p, p = !1), typeof p == "boolean" && (O = p), typeof c == "object" && (l = Object.assign({}, ft, c), c.s != null && c.ss == null && (l.ss = c.s - 1)), q = this.localeData(), L = Td(this, !O, l, q), O && (L = q.pastFuture(+this, L)), q.postformat(L);
       }
       var UM = Math.abs;
-      function ft(p) {
+      function qt(p) {
         return (p > 0) - (p < 0) || +p;
       }
-      function J2() {
+      function eo() {
         if (!this.isValid())
           return this.localeData().invalidDate();
         var p = UM(this._milliseconds) / 1e3, c = UM(this._days), O = UM(this._months), l, q, L, w, G = this.asSeconds(), n0, a0, z1, pe;
-        return G ? (l = g1(p / 60), q = g1(l / 60), p %= 60, l %= 60, L = g1(O / 12), O %= 12, w = p ? p.toFixed(3).replace(/\.?0+$/, "") : "", n0 = G < 0 ? "-" : "", a0 = ft(this._months) !== ft(G) ? "-" : "", z1 = ft(this._days) !== ft(G) ? "-" : "", pe = ft(this._milliseconds) !== ft(G) ? "-" : "", n0 + "P" + (L ? a0 + L + "Y" : "") + (O ? a0 + O + "M" : "") + (c ? z1 + c + "D" : "") + (q || l || p ? "T" : "") + (q ? pe + q + "H" : "") + (l ? pe + l + "M" : "") + (p ? pe + w + "S" : "")) : "P0D";
+        return G ? (l = g1(p / 60), q = g1(l / 60), p %= 60, l %= 60, L = g1(O / 12), O %= 12, w = p ? p.toFixed(3).replace(/\.?0+$/, "") : "", n0 = G < 0 ? "-" : "", a0 = qt(this._months) !== qt(G) ? "-" : "", z1 = qt(this._days) !== qt(G) ? "-" : "", pe = qt(this._milliseconds) !== qt(G) ? "-" : "", n0 + "P" + (L ? a0 + L + "Y" : "") + (O ? a0 + O + "M" : "") + (c ? z1 + c + "D" : "") + (q || l || p ? "T" : "") + (q ? pe + q + "H" : "") + (l ? pe + l + "M" : "") + (p ? pe + w + "S" : "")) : "P0D";
       }
-      var O0 = F2.prototype;
-      O0.isValid = Ll, O0.abs = bd, O0.add = rd, O0.subtract = pd, O0.as = id, O0.asMilliseconds = zp, O0.asSeconds = cd, O0.asMinutes = ad, O0.asHours = sd, O0.asDays = Od, O0.asWeeks = ld, O0.asMonths = dd, O0.asQuarters = Ad, O0.asYears = ud, O0.valueOf = fd, O0._bubble = zd, O0.clone = qd, O0.get = hd, O0.milliseconds = Wd, O0.seconds = Rd, O0.minutes = md, O0.hours = gd, O0.days = yd, O0.weeks = Nd, O0.months = Ld, O0.years = vd, O0.humanize = Ed, O0.toISOString = J2, O0.toString = J2, O0.toJSON = J2, O0.locale = Vr, O0.localeData = Kr, O0.toIsoString = W0(
+      var O0 = G2.prototype;
+      O0.isValid = Ll, O0.abs = bd, O0.add = rd, O0.subtract = pd, O0.as = id, O0.asMilliseconds = zp, O0.asSeconds = cd, O0.asMinutes = ad, O0.asHours = sd, O0.asDays = Od, O0.asWeeks = ld, O0.asMonths = dd, O0.asQuarters = Ad, O0.asYears = ud, O0.valueOf = fd, O0._bubble = zd, O0.clone = qd, O0.get = hd, O0.milliseconds = Wd, O0.seconds = Rd, O0.minutes = md, O0.hours = gd, O0.days = yd, O0.weeks = Nd, O0.months = Ld, O0.years = vd, O0.humanize = Ed, O0.toISOString = eo, O0.toString = eo, O0.toJSON = eo, O0.locale = Vr, O0.localeData = Kr, O0.toIsoString = W0(
         "toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)",
-        J2
-      ), O0.lang = Qr, F("X", 0, 0, "unix"), F("x", 0, 0, "valueOf"), V("x", x2), V("X", eO), y0("X", function(p, c, O) {
+        eo
+      ), O0.lang = Qr, F("X", 0, 0, "unix"), F("x", 0, 0, "valueOf"), V("x", I2), V("X", eO), y0("X", function(p, c, O) {
         O._d = new Date(parseFloat(p) * 1e3);
       }), y0("x", function(p, c, O) {
         O._d = new Date(z0(p));
       });
       //! moment.js
-      return M.version = "2.30.1", n(B0), M.fn = X, M.min = Rl, M.max = ml, M.now = gl, M.utc = h, M.unix = Z3, M.months = ed, M.isDate = d, M.locale = ye, M.invalid = B, M.duration = E1, M.isMoment = Z, M.weekdays = od, M.parseZone = J3, M.localeData = Me, M.isDuration = G2, M.monthsShort = td, M.weekdaysMin = nd, M.defineLocale = TM, M.updateLocale = JO, M.locales = el, M.weekdaysShort = Md, M.normalizeUnits = c0, M.relativeTimeRounding = wd, M.relativeTimeThreshold = Bd, M.calendarFormat = Ql, M.prototype = X, M.HTML5_FMT = {
+      return M.version = "2.30.1", n(B0), M.fn = X, M.min = Rl, M.max = ml, M.now = gl, M.utc = h, M.unix = Z3, M.months = ed, M.isDate = d, M.locale = ye, M.invalid = B, M.duration = E1, M.isMoment = Z, M.weekdays = od, M.parseZone = J3, M.localeData = Me, M.isDuration = V2, M.monthsShort = td, M.weekdaysMin = nd, M.defineLocale = TM, M.updateLocale = JO, M.locales = el, M.weekdaysShort = Md, M.normalizeUnits = c0, M.relativeTimeRounding = wd, M.relativeTimeThreshold = Bd, M.calendarFormat = Ql, M.prototype = X, M.HTML5_FMT = {
         DATETIME_LOCAL: "YYYY-MM-DDTHH:mm",
         // <input type="datetime-local" />
         DATETIME_LOCAL_SECONDS: "YYYY-MM-DDTHH:mm:ss",
@@ -10753,7 +10753,7 @@ Arguments: ` + Array.prototype.slice.call(l).join("") + `
         // <input type="month" />
       }, M;
     }));
-  })(lo)), lo.exports;
+  })(Ao)), Ao.exports;
 }
 var zn, rz;
 function Ch() {
@@ -10769,8 +10769,8 @@ function Ch() {
     d2j: a,
     g2d: s,
     d2g: d,
-    jalaaliToDateObject: f,
-    jalaaliWeek: A
+    jalaaliToDateObject: A,
+    jalaaliWeek: u
   };
   var t = [
     -61,
@@ -10810,20 +10810,20 @@ function Ch() {
     return g <= 6 ? 31 : g <= 11 || n(W) ? 30 : 29;
   }
   function r(W) {
-    var g = t.length, N = t[0], B, k, j, Y, U;
+    var g = t.length, N = t[0], B, C, Y, j, U;
     if (W < N || W >= t[g - 1])
       throw new Error("Invalid Jalaali year " + W);
-    for (U = 1; U < g && (B = t[U], k = B - N, !(W < B)); U += 1)
+    for (U = 1; U < g && (B = t[U], C = B - N, !(W < B)); U += 1)
       N = B;
-    return Y = W - N, k - Y < 6 && (Y = Y - k + h(k + 4, 33) * 33), j = R(R(Y + 1, 33) - 1, 4), j === -1 && (j = 4), j;
+    return j = W - N, C - j < 6 && (j = j - C + h(C + 4, 33) * 33), Y = R(R(j + 1, 33) - 1, 4), Y === -1 && (Y = 4), Y;
   }
   function z(W, g) {
-    var N = t.length, B = W + 621, k = -14, j = t[0], Y, U, Z, S0, W0, H0, O1;
-    if (W < j || W >= t[N - 1])
+    var N = t.length, B = W + 621, C = -14, Y = t[0], j, U, Z, S0, W0, H0, O1;
+    if (W < Y || W >= t[N - 1])
       throw new Error("Invalid Jalaali year " + W);
-    for (O1 = 1; O1 < N && (Y = t[O1], U = Y - j, !(W < Y)); O1 += 1)
-      k = k + h(U, 33) * 8 + h(R(U, 33), 4), j = Y;
-    return H0 = W - j, k = k + h(H0, 33) * 8 + h(R(H0, 33) + 3, 4), R(U, 33) === 4 && U - H0 === 4 && (k += 1), S0 = h(B, 4) - h((h(B, 100) + 1) * 3, 4) - 150, W0 = 20 + k - S0, g ? { gy: B, march: W0 } : (U - H0 < 6 && (H0 = H0 - U + h(U + 4, 33) * 33), Z = R(R(H0 + 1, 33) - 1, 4), Z === -1 && (Z = 4), {
+    for (O1 = 1; O1 < N && (j = t[O1], U = j - Y, !(W < j)); O1 += 1)
+      C = C + h(U, 33) * 8 + h(R(U, 33), 4), Y = j;
+    return H0 = W - Y, C = C + h(H0, 33) * 8 + h(R(H0, 33) + 3, 4), R(U, 33) === 4 && U - H0 === 4 && (C += 1), S0 = h(B, 4) - h((h(B, 100) + 1) * 3, 4) - 150, W0 = 20 + C - S0, g ? { gy: B, march: W0 } : (U - H0 < 6 && (H0 = H0 - U + h(U + 4, 33) * 33), Z = R(R(H0 + 1, 33) - 1, 4), Z === -1 && (Z = 4), {
       leap: Z,
       gy: B,
       march: W0
@@ -10834,21 +10834,21 @@ function Ch() {
     return s(B.gy, 3, B.march) + (g - 1) * 31 - h(g, 7) * (g - 7) + N - 1;
   }
   function a(W) {
-    var g = d(W).gy, N = g - 621, B = z(N, !1), k = s(g, 3, B.march), j, Y, U;
-    if (U = W - k, U >= 0) {
+    var g = d(W).gy, N = g - 621, B = z(N, !1), C = s(g, 3, B.march), Y, j, U;
+    if (U = W - C, U >= 0) {
       if (U <= 185)
-        return Y = 1 + h(U, 31), j = R(U, 31) + 1, {
+        return j = 1 + h(U, 31), Y = R(U, 31) + 1, {
           jy: N,
-          jm: Y,
-          jd: j
+          jm: j,
+          jd: Y
         };
       U -= 186;
     } else
       N -= 1, U += 179, B.leap === 1 && (U += 1);
-    return Y = 7 + h(U, 30), j = R(U, 30) + 1, {
+    return j = 7 + h(U, 30), Y = R(U, 30) + 1, {
       jy: N,
-      jm: Y,
-      jd: j
+      jm: j,
+      jd: Y
     };
   }
   function s(W, g, N) {
@@ -10856,30 +10856,30 @@ function Ch() {
     return B = B - h(h(W + 100100 + h(g - 8, 6), 100) * 3, 4) + 752, B;
   }
   function d(W) {
-    var g, N, B, k, j;
-    return g = 4 * W + 139361631, g = g + h(h(4 * W + 183187720, 146097) * 3, 4) * 4 - 3908, N = h(R(g, 1461), 4) * 5 + 308, B = h(R(N, 153), 5) + 1, k = R(h(N, 153), 12) + 1, j = h(g, 1461) - 100100 + h(8 - k, 6), {
-      gy: j,
-      gm: k,
+    var g, N, B, C, Y;
+    return g = 4 * W + 139361631, g = g + h(h(4 * W + 183187720, 146097) * 3, 4) * 4 - 3908, N = h(R(g, 1461), 4) * 5 + 308, B = h(R(N, 153), 5) + 1, C = R(h(N, 153), 12) + 1, Y = h(g, 1461) - 100100 + h(8 - C, 6), {
+      gy: Y,
+      gm: C,
       gd: B
     };
   }
-  function A(W, g, N) {
-    var B = f(W, g, N).getDay(), k = B == 6 ? 0 : -(B + 1), j = 6 + k;
+  function u(W, g, N) {
+    var B = A(W, g, N).getDay(), C = B == 6 ? 0 : -(B + 1), Y = 6 + C;
     return {
-      saturday: a(i(W, g, N + k)),
-      friday: a(i(W, g, N + j))
+      saturday: a(i(W, g, N + C)),
+      friday: a(i(W, g, N + Y))
     };
   }
-  function f(W, g, N, B, k, j, Y) {
+  function A(W, g, N, B, C, Y, j) {
     var U = o(W, g, N);
     return new Date(
       U.gy,
       U.gm - 1,
       U.gd,
       B || 0,
-      k || 0,
-      j || 0,
-      Y || 0
+      C || 0,
+      Y || 0,
+      j || 0
     );
   }
   function h(W, g) {
@@ -10894,7 +10894,7 @@ var cn, pz;
 function kh() {
   if (pz) return cn;
   pz = 1, cn = o0;
-  var t = _h(), e = Ch(), o = /(\[[^\[]*\])|(\\)?j(Mo|MM?M?M?|Do|DDDo|DD?D?D?|w[o|w]?|YYYYY|YYYY|YY|gg(ggg?)?|)|(\\)?(Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|mm?|ss?|SS?S?|X|zz?|ZZ?|.)/g, M = /(\[[^\[]*\])|(\\)?(LTS?|LL?L?L?|l{1,4})/g, n = /\d\d?/, b = /\d{1,3}/, r = /\d{3}/, z = /\d{1,4}/, i = /[+\-]?\d{1,6}/, a = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i, s = /Z|[\+\-]\d\d:?\d\d/i, d = /T/i, A = /[\+\-]?\d+(\.\d{1,3})?/, f = {
+  var t = _h(), e = Ch(), o = /(\[[^\[]*\])|(\\)?j(Mo|MM?M?M?|Do|DDDo|DD?D?D?|w[o|w]?|YYYYY|YYYY|YY|gg(ggg?)?|)|(\\)?(Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|mm?|ss?|SS?S?|X|zz?|ZZ?|.)/g, M = /(\[[^\[]*\])|(\\)?(LTS?|LL?L?L?|l{1,4})/g, n = /\d\d?/, b = /\d{1,3}/, r = /\d{3}/, z = /\d{1,4}/, i = /[+\-]?\d{1,6}/, a = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i, s = /Z|[\+\-]\d\d:?\d\d/i, d = /T/i, u = /[\+\-]?\d+(\.\d{1,3})?/, A = {
     1: "۱",
     2: "۲",
     3: "۳",
@@ -10959,24 +10959,24 @@ function kh() {
       return U(this.jWeekYear(), 5);
     }
   };
-  function k(y, S) {
+  function C(y, S) {
     return function(D) {
       return U(y.call(this, D), S);
     };
   }
-  function j(y, S) {
+  function Y(y, S) {
     return function(D) {
       return this.localeData().ordinal(y.call(this, D), S);
     };
   }
   (function() {
     for (var y; g.length; )
-      y = g.pop(), B["j" + y + "o"] = j(B["j" + y], y);
+      y = g.pop(), B["j" + y + "o"] = Y(B["j" + y], y);
     for (; N.length; )
-      y = N.pop(), B["j" + y + y] = k(B["j" + y], 2);
-    B.jDDDD = k(B.jDDD, 3);
+      y = N.pop(), B["j" + y + y] = C(B["j" + y], 2);
+    B.jDDDD = C(B.jDDD, 3);
   })();
-  function Y(y, S) {
+  function j(y, S) {
     var D;
     for (D in S)
       S.hasOwnProperty(D) && (y[D] = S[D]);
@@ -11025,7 +11025,7 @@ function kh() {
   function O1(y) {
     return Object.getPrototypeOf ? Object.getPrototypeOf(y) : "".__proto__ ? y.__proto__ : y.constructor.prototype;
   }
-  Y(
+  j(
     O1(t.localeData()),
     {
       _jMonths: [
@@ -11121,7 +11121,7 @@ function kh() {
       case "A":
         return t.localeData(S._l)._meridiemParse;
       case "X":
-        return A;
+        return u;
       case "Z":
       case "ZZ":
         return s;
@@ -11176,24 +11176,24 @@ function kh() {
     var S, D, _ = y._a[0], m = y._a[1], T = y._a[2];
     return _ == null && m == null && T == null ? [0, 0, 1] : (_ = _ ?? 0, m = m ?? 0, T = T ?? 1, (T < 1 || T > o0.jDaysInMonth(_, m) || m < 0 || m > 11) && (y._isValid = !1), S = p1(_, m, T), D = F(S.gy, S.gm, S.gd), isNaN(S.gy) && (y._isValid = !1), y._jDiff = 0, ~~D.jy !== _ && (y._jDiff += 1), ~~D.jm !== m && (y._jDiff += 1), ~~D.jd !== T && (y._jDiff += 1), [S.gy, S.gm, S.gd]);
   }
-  function Ue(y) {
+  function je(y) {
     var S = y._f.match(o), D = y._i + "", _ = S.length, m, T, E;
     for (y._a = [], m = 0; m < _; m += 1)
       T = S[m], E = (x1(T, y).exec(D) || [])[0], E && (D = D.slice(D.indexOf(E) + E.length)), B[T] && ge(T, E, y);
     return D && (y._il = D), J0(y);
   }
-  function Qt(y, S) {
-    var D = y._f.length, _, m, T, E, C, K;
+  function Kt(y, S) {
+    var D = y._f.length, _, m, T, E, k, K;
     if (D === 0)
       return m1(/* @__PURE__ */ new Date(NaN));
     for (_ = 0; _ < D; _ += 1)
-      m = y._f[_], C = 0, T = m1(y._i, m, y._l, y._strict, S), T.isValid() && (C += T._jDiff, T._il && (C += T._il.length), (K == null || C < K) && (K = C, E = T));
+      m = y._f[_], k = 0, T = m1(y._i, m, y._l, y._strict, S), T.isValid() && (k += T._jDiff, T._il && (k += T._il.length), (K == null || k < K) && (K = k, E = T));
     return E;
   }
-  function ct(y) {
-    var S = y._i + "", D = "", _ = "", m = y._f.match(o), T = m.length, E, C, K;
+  function at(y) {
+    var S = y._i + "", D = "", _ = "", m = y._f.match(o), T = m.length, E, k, K;
     for (E = 0; E < T; E += 1)
-      C = m[E], K = (x1(C, y).exec(S) || [])[0], K && (S = S.slice(S.indexOf(K) + K.length)), B[C] instanceof Function || (_ += C, K && (D += K));
+      k = m[E], K = (x1(k, y).exec(S) || [])[0], K && (S = S.slice(S.indexOf(K) + K.length)), B[k] instanceof Function || (_ += k, K && (D += K));
     y._i = D, y._f = _;
   }
   function r1(y, S, D) {
@@ -11211,18 +11211,18 @@ function kh() {
       _f: S,
       _l: D,
       _strict: _
-    }, E, C, K, p0 = y, _0 = S;
+    }, E, k, K, p0 = y, _0 = S;
     if (S) {
       if (Z(S))
-        return Qt(T, m);
-      E = Ue(T), ct(T), S = "YYYY-MM-DD-" + T._f, y = U(E[0], 4) + "-" + U(E[1] + 1, 2) + "-" + U(E[2], 2) + "-" + T._i;
+        return Kt(T, m);
+      E = je(T), at(T), S = "YYYY-MM-DD-" + T._f, y = U(E[0], 4) + "-" + U(E[1] + 1, 2) + "-" + U(E[2], 2) + "-" + T._i;
     }
-    return m ? C = t.utc(y, S, D, _) : C = t(y, S, D, _), T._isValid === !1 && (C._isValid = !1), C._jDiff = T._jDiff || 0, K = H0(o0.fn), Y(K, C), _ && S && K.isValid() && (K._isValid = K.format(_0) === p0), C._d.getTime() > Ye && (K._isValid = !1), K;
+    return m ? k = t.utc(y, S, D, _) : k = t(y, S, D, _), T._isValid === !1 && (k._isValid = !1), k._jDiff = T._jDiff || 0, K = H0(o0.fn), j(K, k), _ && S && K.isValid() && (K._isValid = K.format(_0) === p0), k._d.getTime() > Ye && (K._isValid = !1), K;
   }
   function o0(y, S, D, _) {
     return m1(y, S, D, _, !1);
   }
-  Y(o0, t), o0.fn = H0(t.fn), o0.utc = function(y, S, D, _) {
+  j(o0, t), o0.fn = H0(t.fn), o0.utc = function(y, S, D, _) {
     return m1(y, S, D, _, !0);
   }, o0.unix = function(y) {
     return m1(y * 1e3);
@@ -11241,7 +11241,7 @@ function kh() {
     return typeof y == "number" ? (D = F(this.year(), this.month(), this.date()), S = Math.min(D.jd, o0.jDaysInMonth(y, D.jm)), _ = p1(y, D.jm, S), W0(this, _.gy, _.gm, _.gd), t.updateOffset(this), this) : F(this.year(), this.month(), this.date()).jy;
   }, o0.fn.jMonth = function(y) {
     var S, D, _;
-    return y != null ? typeof y == "string" && (y = this.localeData().jMonthsParse(y), typeof y != "number") ? this : (D = F(this.year(), this.month(), this.date()), S = Math.min(D.jd, o0.jDaysInMonth(D.jy, y)), this.jYear(D.jy + R0(y, 12)), y = j0(y, 12), y < 0 && (y += 12, this.jYear(this.jYear() - 1)), _ = p1(this.jYear(), y, S), W0(this, _.gy, _.gm, _.gd), t.updateOffset(this), this) : F(this.year(), this.month(), this.date()).jm;
+    return y != null ? typeof y == "string" && (y = this.localeData().jMonthsParse(y), typeof y != "number") ? this : (D = F(this.year(), this.month(), this.date()), S = Math.min(D.jd, o0.jDaysInMonth(D.jy, y)), this.jYear(D.jy + R0(y, 12)), y = Y0(y, 12), y < 0 && (y += 12, this.jYear(this.jYear() - 1)), _ = p1(this.jYear(), y, S), W0(this, _.gy, _.gm, _.gd), t.updateOffset(this), this) : F(this.year(), this.month(), this.date()).jm;
   }, o0.fn.jDate = function(y) {
     var S, D;
     return typeof y == "number" ? (S = F(this.year(), this.month(), this.date()), D = p1(S.jy, S.jm, y), W0(this, D.gy, D.gm, D.gd), t.updateOffset(this), this) : F(this.year(), this.month(), this.date()).jd;
@@ -11269,7 +11269,7 @@ function kh() {
   }, o0.fn.clone = function() {
     return o0(this);
   }, o0.fn.jYears = o0.fn.jYear, o0.fn.jMonths = o0.fn.jMonth, o0.fn.jDates = o0.fn.jDate, o0.fn.jWeeks = o0.fn.jWeek, o0.jDaysInMonth = function(y, S) {
-    return y += R0(S, 12), S = j0(S, 12), S < 0 && (S += 12, y -= 1), S < 6 ? 31 : S < 11 || o0.jIsLeapYear(y) ? 30 : 29;
+    return y += R0(S, 12), S = Y0(S, 12), S < 0 && (S += 12, y -= 1), S < 6 ? 31 : S < 11 || o0.jIsLeapYear(y) ? 30 : 29;
   }, o0.jIsLeapYear = e.isLeapJalaaliYear, o0.loadPersian = function(y) {
     var S = y !== void 0 && y.hasOwnProperty("usePersianDigits") ? y.usePersianDigits : !1, D = y !== void 0 && y.hasOwnProperty("dialect") ? y.dialect : "persian";
     t.locale("fa"), t.updateLocale(
@@ -11326,7 +11326,7 @@ function kh() {
         },
         postformat: function(_) {
           return S ? _.replace(/\d/g, function(m) {
-            return f[m];
+            return A[m];
           }).replace(/,/g, "،") : _;
         },
         ordinal: "%dم",
@@ -11404,7 +11404,7 @@ function kh() {
         },
         postformat: function(_) {
           return S ? _.replace(/\d/g, function(m) {
-            return f[m];
+            return A[m];
           }).replace(/,/g, "،") : _;
         },
         ordinal: "%dم",
@@ -11482,7 +11482,7 @@ function kh() {
         },
         postformat: function(_) {
           return S ? _.replace(/\d/g, function(m) {
-            return f[m];
+            return A[m];
           }).replace(/,/g, "،") : _;
         },
         ordinal: "%dم",
@@ -11535,13 +11535,13 @@ function kh() {
   function R0(y, S) {
     return ~~(y / S);
   }
-  function j0(y, S) {
+  function Y0(y, S) {
     return y - ~~(y / S) * S;
   }
   return cn;
 }
 var Xh = kh();
-const Ao = /* @__PURE__ */ xc(Xh);
+const Ne = /* @__PURE__ */ xc(Xh);
 N1.touchMouseIgnoreWait = 500;
 let _n = 0, Eo = 0, Cn = !1;
 class Ic {
@@ -11587,7 +11587,7 @@ class Ic {
           deltaY: n - this.origPageY
         });
       }
-    }, this.containerEl = e, this.emitter = new v2(), e.addEventListener("mousedown", this.handleMouseDown), e.addEventListener("touchstart", this.handleTouchStart, { passive: !0 }), Ph();
+    }, this.containerEl = e, this.emitter = new N2(), e.addEventListener("mousedown", this.handleMouseDown), e.addEventListener("touchstart", this.handleTouchStart, { passive: !0 }), Ph();
   }
   destroy() {
     this.containerEl.removeEventListener("mousedown", this.handleMouseDown), this.containerEl.removeEventListener("touchstart", this.handleTouchStart, { passive: !0 }), Hh();
@@ -11688,7 +11688,7 @@ class Uh {
   }
   doRevertAnimation(e, o) {
     let M = this.mirrorEl, n = this.sourceEl.getBoundingClientRect();
-    M.style.transition = "top " + o + "ms,left " + o + "ms", Nt(M, {
+    M.style.transition = "top " + o + "ms,left " + o + "ms", St(M, {
       left: n.left,
       top: n.top
     }), iA(M, () => {
@@ -11699,14 +11699,14 @@ class Uh {
     this.mirrorEl && (Go(this.mirrorEl), this.mirrorEl = null), this.sourceEl = null;
   }
   updateElPosition() {
-    this.sourceEl && this.isVisible && Nt(this.getMirrorEl(), {
+    this.sourceEl && this.isVisible && St(this.getMirrorEl(), {
       left: this.sourceElRect.left + this.deltaX,
       top: this.sourceElRect.top + this.deltaY
     });
   }
   getMirrorEl() {
     let e = this.sourceElRect, o = this.mirrorEl;
-    return o || (o = this.mirrorEl = this.sourceEl.cloneNode(!0), o.style.userSelect = "none", o.style.webkitUserSelect = "none", o.style.pointerEvents = "none", o.classList.add("fc-event-dragging"), Nt(o, {
+    return o || (o = this.mirrorEl = this.sourceEl.cloneNode(!0), o.style.userSelect = "none", o.style.webkitUserSelect = "none", o.style.pointerEvents = "none", o.classList.add("fc-event-dragging"), St(o, {
       position: "fixed",
       zIndex: this.zIndex,
       visibility: "",
@@ -11766,7 +11766,7 @@ class Uc extends Hc {
     return rc(this.scrollController.el);
   }
 }
-class Yh extends Hc {
+class jh extends Hc {
   constructor(e) {
     super(new Wf(), e);
   }
@@ -11788,7 +11788,7 @@ class Yh extends Hc {
   }
 }
 const zz = typeof performance == "function" ? performance.now : Date.now;
-class jh {
+class Yh {
   constructor() {
     this.isEnabled = !0, this.scrollQuery = [window, ".fc-scroller"], this.edgeThreshold = 50, this.maxVelocity = 300, this.pointerScreenX = null, this.pointerScreenY = null, this.isAnimating = !1, this.scrollCaches = null, this.everMovedUp = !1, this.everMovedDown = !1, this.everMovedLeft = !1, this.everMovedRight = !1, this.animate = () => {
       if (this.isAnimating) {
@@ -11852,7 +11852,7 @@ class jh {
     return n;
   }
   buildCaches(e) {
-    return this.queryScrollEls(e).map((o) => o === window ? new Yh(!1) : new Uc(o, !1));
+    return this.queryScrollEls(e).map((o) => o === window ? new jh(!1) : new Uc(o, !1));
   }
   queryScrollEls(e) {
     let o = [];
@@ -11861,7 +11861,7 @@ class jh {
     return o;
   }
 }
-class S2 extends gf {
+class T2 extends gf {
   constructor(e, o) {
     super(e), this.containerEl = e, this.delay = null, this.minDistance = 0, this.touchScrollAllowed = !0, this.mirrorNeedsRevert = !1, this.isInteracting = !1, this.isDragging = !1, this.isDelayEnded = !1, this.isDistanceSurpassed = !1, this.delayTimeoutId = null, this.onPointerDown = (n) => {
       this.isDragging || (this.isInteracting = !0, this.isDelayEnded = !1, this.isDistanceSurpassed = !1, cA(document.body), sA(document.body), n.isTouch || n.origEvent.preventDefault(), this.emitter.trigger("pointerdown", n), this.isInteracting && // not destroyed via pointerdown handler
@@ -11878,7 +11878,7 @@ class S2 extends gf {
       this.isInteracting && (this.isInteracting = !1, aA(document.body), OA(document.body), this.emitter.trigger("pointerup", n), this.isDragging && (this.autoScroller.stop(), this.tryStopDrag(n)), this.delayTimeoutId && (clearTimeout(this.delayTimeoutId), this.delayTimeoutId = null));
     };
     let M = this.pointer = new Ic(e);
-    M.emitter.on("pointerdown", this.onPointerDown), M.emitter.on("pointermove", this.onPointerMove), M.emitter.on("pointerup", this.onPointerUp), o && (M.selector = o), this.mirror = new Uh(), this.autoScroller = new jh();
+    M.emitter.on("pointerdown", this.onPointerDown), M.emitter.on("pointermove", this.onPointerMove), M.emitter.on("pointerup", this.onPointerUp), o && (M.selector = o), this.mirror = new Uh(), this.autoScroller = new Yh();
   }
   destroy() {
     this.pointer.destroy(), this.onPointerUp({});
@@ -11962,7 +11962,7 @@ class pM {
       this.releaseHits(), this.emitter.trigger("pointerup", M);
     }, this.handleDragEnd = (M) => {
       this.movingHit && this.emitter.trigger("hitupdate", null, !0, M), this.finalHit = this.movingHit, this.movingHit = null, this.emitter.trigger("dragend", M);
-    }, this.droppableStore = o, e.emitter.on("pointerdown", this.handlePointerDown), e.emitter.on("dragstart", this.handleDragStart), e.emitter.on("dragmove", this.handleDragMove), e.emitter.on("pointerup", this.handlePointerUp), e.emitter.on("dragend", this.handleDragEnd), this.dragging = e, this.emitter = new v2();
+    }, this.droppableStore = o, e.emitter.on("pointerdown", this.handlePointerDown), e.emitter.on("dragstart", this.handleDragStart), e.emitter.on("dragmove", this.handleDragMove), e.emitter.on("pointerup", this.handlePointerUp), e.emitter.on("dragend", this.handleDragEnd), this.dragging = e, this.emitter = new N2();
   }
   // sets initialHit
   // sets coordAdjust
@@ -11984,7 +11984,7 @@ class pM {
     (o || !zM(this.movingHit, M)) && (this.movingHit = M, this.emitter.trigger("hitupdate", M, !1, e));
   }
   prepareHits() {
-    this.offsetTrackers = Y0(this.droppableStore, (e) => (e.component.prepareHits(), new Fh(e.el)));
+    this.offsetTrackers = j0(this.droppableStore, (e) => (e.component.prepareHits(), new Fh(e.el)));
   }
   releaseHits() {
     let { offsetTrackers: e } = this;
@@ -11998,12 +11998,12 @@ class pM {
       let z = M[r].component, i = n[r];
       if (i && // wasn't destroyed mid-drag
       i.isWithinClipping(e, o)) {
-        let a = i.computeLeft(), s = i.computeTop(), d = e - a, A = o - s, { origRect: f } = i, h = f.right - f.left, R = f.bottom - f.top;
+        let a = i.computeLeft(), s = i.computeTop(), d = e - a, u = o - s, { origRect: A } = i, h = A.right - A.left, R = A.bottom - A.top;
         if (
           // must be within the element's bounds
-          d >= 0 && d < h && A >= 0 && A < R
+          d >= 0 && d < h && u >= 0 && u < R
         ) {
-          let W = z.queryHit(d, A, h, R);
+          let W = z.queryHit(d, u, h, R);
           W && // make sure the hit is within activeRange, meaning it's not a dead cell
           Zo(W.dateProfile.activeRange, W.dateSpan.range) && // Ensure the component we are querying for the hit is accessibly my the pointer
           // Prevents obscured calendars (ex: under a modal dialog) from accepting hit
@@ -12011,7 +12011,7 @@ class pM {
           (this.disablePointCheck || i.el.contains(i.el.getRootNode().elementFromPoint(
             // add-back origins to get coordinate relative to top-left of window viewport
             d + a - window.scrollX,
-            A + s - window.scrollY
+            u + s - window.scrollY
           ))) && (!b || W.layer > b.layer) && (W.componentId = r, W.context = z.context, W.rect.left += a, W.rect.right += a, W.rect.top += s, W.rect.bottom += s, b = W);
         }
       }
@@ -12022,7 +12022,7 @@ class pM {
 function zM(t, e) {
   return !t && !e ? !0 : !!t != !!e ? !1 : tf(t.dateSpan, e.dateSpan);
 }
-function Yc(t, e) {
+function jc(t, e) {
   let o = {};
   for (let M of e.pluginHooks.datePointTransforms)
     Object.assign(o, M(t, e));
@@ -12035,7 +12035,7 @@ function Vh(t, e) {
     allDay: t.allDay
   };
 }
-class Qh extends Pt {
+class Qh extends Ht {
   constructor(e) {
     super(e), this.handlePointerDown = (M) => {
       let { dragging: n } = this, b = M.origEvent.target;
@@ -12045,11 +12045,11 @@ class Qh extends Pt {
       if (!b.wasTouchScroll) {
         let { initialHit: r, finalHit: z } = this.hitDragging;
         if (r && z && zM(r, z)) {
-          let { context: i } = n, a = Object.assign(Object.assign({}, Yc(r.dateSpan, i)), { dayEl: r.dayEl, jsEvent: M.origEvent, view: i.viewApi || i.calendarApi.view });
+          let { context: i } = n, a = Object.assign(Object.assign({}, jc(r.dateSpan, i)), { dayEl: r.dayEl, jsEvent: M.origEvent, view: i.viewApi || i.calendarApi.view });
           i.emitter.trigger("dateClick", a);
         }
       }
-    }, this.dragging = new S2(e.el), this.dragging.autoScroller.isEnabled = !1;
+    }, this.dragging = new T2(e.el), this.dragging.autoScroller.isEnabled = !1;
     let o = this.hitDragging = new pM(this.dragging, qb(e));
     o.emitter.on("pointerdown", this.handlePointerDown), o.emitter.on("dragend", this.handleDragEnd);
   }
@@ -12057,7 +12057,7 @@ class Qh extends Pt {
     this.dragging.destroy();
   }
 }
-class Kh extends Pt {
+class Kh extends Ht {
   constructor(e) {
     super(e), this.dragSelection = null, this.handlePointerDown = (r) => {
       let { component: z, dragging: i } = this, { options: a } = z.context, s = a.selectable && z.isValidDateDownEl(r.origEvent.target);
@@ -12074,7 +12074,7 @@ class Kh extends Pt {
     }, this.handlePointerUp = (r) => {
       this.dragSelection && (Vi(this.dragSelection, r, this.component.context), this.dragSelection = null);
     };
-    let { component: o } = e, { options: M } = o.context, n = this.dragging = new S2(e.el);
+    let { component: o } = e, { options: M } = o.context, n = this.dragging = new T2(e.el);
     n.touchScrollAllowed = !1, n.minDistance = M.selectMinDistance || 0, n.autoScroller.isEnabled = M.dragScroll;
     let b = this.hitDragging = new pM(this.dragging, qb(e));
     b.emitter.on("pointerdown", this.handlePointerDown), b.emitter.on("dragstart", this.handleDragStart), b.emitter.on("hitupdate", this.handleHitUpdate), b.emitter.on("pointerup", this.handlePointerUp);
@@ -12104,13 +12104,13 @@ function Zh(t, e, o) {
   }
   return r.range = { start: b[0], end: b[3] }, r.allDay = M.allDay, r;
 }
-class T2 extends Pt {
+class w2 extends Ht {
   constructor(e) {
     super(e), this.subjectEl = null, this.subjectSeg = null, this.isDragging = !1, this.eventRange = null, this.relevantEvents = null, this.receivingContext = null, this.validMutation = null, this.mutatedRelevantEvents = null, this.handlePointerDown = (r) => {
-      let z = r.origEvent.target, { component: i, dragging: a } = this, { mirror: s } = a, { options: d } = i.context, A = i.context;
+      let z = r.origEvent.target, { component: i, dragging: a } = this, { mirror: s } = a, { options: d } = i.context, u = i.context;
       this.subjectEl = r.subjectEl;
-      let f = this.subjectSeg = Ct(r.subjectEl), R = (this.eventRange = f.eventRange).instance.instanceId;
-      this.relevantEvents = sb(A.getCurrentData().eventStore, R), a.minDistance = r.isTouch ? 0 : d.eventDragMinDistance, a.delay = // only do a touch delay if touch and this event hasn't been selected yet
+      let A = this.subjectSeg = kt(r.subjectEl), R = (this.eventRange = A.eventRange).instance.instanceId;
+      this.relevantEvents = sb(u.getCurrentData().eventStore, R), a.minDistance = r.isTouch ? 0 : d.eventDragMinDistance, a.delay = // only do a touch delay if touch and this event hasn't been selected yet
       r.isTouch && R !== i.props.eventSelection ? e5(i) : null, d.fixedMirrorParent ? s.parentNode = d.fixedMirrorParent : s.parentNode = Q0(z, ".fc"), s.revertDuration = d.dragRevertDuration;
       let W = i.isValidSegDownEl(z) && !Q0(z, ".fc-event-resizer");
       a.setIgnoreMove(!W), this.isDragging = W && r.subjectEl.classList.contains("fc-event-draggable");
@@ -12125,7 +12125,7 @@ class T2 extends Pt {
     }, this.handleHitUpdate = (r, z) => {
       if (!this.isDragging)
         return;
-      let i = this.relevantEvents, a = this.hitDragging.initialHit, s = this.component.context, d = null, A = null, f = null, h = !1, R = {
+      let i = this.relevantEvents, a = this.hitDragging.initialHit, s = this.component.context, d = null, u = null, A = null, h = !1, R = {
         affectedEvents: i,
         mutatedEvents: f1(),
         isEvent: !0
@@ -12133,31 +12133,31 @@ class T2 extends Pt {
       if (r) {
         d = r.context;
         let W = d.options;
-        s === d || W.editable && W.droppable ? (A = Jh(a, r, this.eventRange.instance.range.start, d.getCurrentData().pluginHooks.eventDragMutationMassagers), A && (f = db(i, d.getCurrentData().eventUiBases, A, d), R.mutatedEvents = f, Ac(R, r.dateProfile, d) || (h = !0, A = null, f = null, R.mutatedEvents = f1()))) : d = null;
+        s === d || W.editable && W.droppable ? (u = Jh(a, r, this.eventRange.instance.range.start, d.getCurrentData().pluginHooks.eventDragMutationMassagers), u && (A = db(i, d.getCurrentData().eventUiBases, u, d), R.mutatedEvents = A, Ac(R, r.dateProfile, d) || (h = !0, u = null, A = null, R.mutatedEvents = f1()))) : d = null;
       }
       this.displayDrag(d, R), h ? ob() : Mb(), z || (s === d && // TODO: write test for this
-      zM(a, r) && (A = null), this.dragging.setMirrorNeedsRevert(!A), this.dragging.setMirrorIsVisible(!r || !this.subjectEl.getRootNode().querySelector(".fc-event-mirror")), this.receivingContext = d, this.validMutation = A, this.mutatedRelevantEvents = f);
+      zM(a, r) && (u = null), this.dragging.setMirrorNeedsRevert(!u), this.dragging.setMirrorIsVisible(!r || !this.subjectEl.getRootNode().querySelector(".fc-event-mirror")), this.receivingContext = d, this.validMutation = u, this.mutatedRelevantEvents = A);
     }, this.handlePointerUp = () => {
       this.isDragging || this.cleanup();
     }, this.handleDragEnd = (r) => {
       if (this.isDragging) {
-        let z = this.component.context, i = z.viewApi, { receivingContext: a, validMutation: s } = this, d = this.eventRange.def, A = this.eventRange.instance, f = new N0(z, d, A), h = this.relevantEvents, R = this.mutatedRelevantEvents, { finalHit: W } = this.hitDragging;
+        let z = this.component.context, i = z.viewApi, { receivingContext: a, validMutation: s } = this, d = this.eventRange.def, u = this.eventRange.instance, A = new N0(z, d, u), h = this.relevantEvents, R = this.mutatedRelevantEvents, { finalHit: W } = this.hitDragging;
         if (this.clearDrag(), z.emitter.trigger("eventDragStop", {
           el: this.subjectEl,
-          event: f,
+          event: A,
           jsEvent: r.origEvent,
           view: i
         }), s) {
           if (a === z) {
-            let g = new N0(z, R.defs[d.defId], A ? R.instances[A.instanceId] : null);
+            let g = new N0(z, R.defs[d.defId], u ? R.instances[u.instanceId] : null);
             z.dispatch({
               type: "MERGE_EVENTS",
               eventStore: R
             });
             let N = {
-              oldEvent: f,
+              oldEvent: A,
               event: g,
-              relatedEvents: et(R, z, A),
+              relatedEvents: tt(R, z, u),
               revert() {
                 z.dispatch({
                   type: "MERGE_EVENTS",
@@ -12166,13 +12166,13 @@ class T2 extends Pt {
                 });
               }
             }, B = {};
-            for (let k of z.getCurrentData().pluginHooks.eventDropTransformers)
-              Object.assign(B, k(s, z));
+            for (let C of z.getCurrentData().pluginHooks.eventDropTransformers)
+              Object.assign(B, C(s, z));
             z.emitter.trigger("eventDrop", Object.assign(Object.assign(Object.assign({}, N), B), { el: r.subjectEl, delta: s.datesDelta, jsEvent: r.origEvent, view: i })), z.emitter.trigger("eventChange", N);
           } else if (a) {
             let g = {
-              event: f,
-              relatedEvents: et(h, z, A),
+              event: A,
+              relatedEvents: tt(h, z, u),
               revert() {
                 z.dispatch({
                   type: "MERGE_EVENTS",
@@ -12184,14 +12184,14 @@ class T2 extends Pt {
               type: "REMOVE_EVENTS",
               eventStore: h
             }), z.emitter.trigger("eventRemove", g);
-            let N = R.defs[d.defId], B = R.instances[A.instanceId], k = new N0(a, N, B);
+            let N = R.defs[d.defId], B = R.instances[u.instanceId], C = new N0(a, N, B);
             a.dispatch({
               type: "MERGE_EVENTS",
               eventStore: R
             });
-            let j = {
-              event: k,
-              relatedEvents: et(R, a, B),
+            let Y = {
+              event: C,
+              relatedEvents: tt(R, a, B),
               revert() {
                 a.dispatch({
                   type: "REMOVE_EVENTS",
@@ -12199,18 +12199,18 @@ class T2 extends Pt {
                 });
               }
             };
-            a.emitter.trigger("eventAdd", j), r.isTouch && a.dispatch({
+            a.emitter.trigger("eventAdd", Y), r.isTouch && a.dispatch({
               type: "SELECT_EVENT",
-              eventInstanceId: A.instanceId
-            }), a.emitter.trigger("drop", Object.assign(Object.assign({}, Yc(W.dateSpan, a)), { draggedEl: r.subjectEl, jsEvent: r.origEvent, view: W.context.viewApi })), a.emitter.trigger("eventReceive", Object.assign(Object.assign({}, j), { draggedEl: r.subjectEl, view: W.context.viewApi }));
+              eventInstanceId: u.instanceId
+            }), a.emitter.trigger("drop", Object.assign(Object.assign({}, jc(W.dateSpan, a)), { draggedEl: r.subjectEl, jsEvent: r.origEvent, view: W.context.viewApi })), a.emitter.trigger("eventReceive", Object.assign(Object.assign({}, Y), { draggedEl: r.subjectEl, view: W.context.viewApi }));
           }
         } else
           z.emitter.trigger("_noEventDrop");
       }
       this.cleanup();
     };
-    let { component: o } = this, { options: M } = o.context, n = this.dragging = new S2(e.el);
-    n.pointer.selector = T2.SELECTOR, n.touchScrollAllowed = !1, n.autoScroller.isEnabled = M.dragScroll;
+    let { component: o } = this, { options: M } = o.context, n = this.dragging = new T2(e.el);
+    n.pointer.selector = w2.SELECTOR, n.touchScrollAllowed = !1, n.autoScroller.isEnabled = M.dragScroll;
     let b = this.hitDragging = new pM(this.dragging, wn);
     b.useSubjectCenter = e.useEventCenter, b.emitter.on("pointerdown", this.handlePointerDown), b.emitter.on("dragstart", this.handleDragStart), b.emitter.on("hitupdate", this.handleHitUpdate), b.emitter.on("pointerup", this.handlePointerUp), b.emitter.on("dragend", this.handleDragEnd);
   }
@@ -12237,11 +12237,11 @@ class T2 extends Pt {
     this.subjectSeg = null, this.isDragging = !1, this.eventRange = null, this.relevantEvents = null, this.receivingContext = null, this.validMutation = null, this.mutatedRelevantEvents = null;
   }
 }
-T2.SELECTOR = ".fc-event-draggable, .fc-event-resizable";
+w2.SELECTOR = ".fc-event-draggable, .fc-event-resizable";
 function Jh(t, e, o, M) {
   let n = t.dateSpan, b = e.dateSpan, r = n.range.start, z = b.range.start, i = {};
   n.allDay !== b.allDay && (i.allDay = b.allDay, i.hasEnd = e.context.options.allDayMaintainDuration, b.allDay ? r = g0(o) : r = o);
-  let a = gt(r, z, t.context.dateEnv, t.componentId === e.componentId ? t.largeUnit : null);
+  let a = yt(r, z, t.context.dateEnv, t.componentId === e.componentId ? t.largeUnit : null);
   a.milliseconds && (i.allDay = !1);
   let s = {
     datesDelta: a,
@@ -12255,31 +12255,31 @@ function e5(t) {
   let { options: e } = t.context, o = e.eventLongPressDelay;
   return o == null && (o = e.longPressDelay), o;
 }
-class t5 extends Pt {
+class t5 extends Ht {
   constructor(e) {
     super(e), this.draggingSegEl = null, this.draggingSeg = null, this.eventRange = null, this.relevantEvents = null, this.validMutation = null, this.mutatedRelevantEvents = null, this.handlePointerDown = (b) => {
-      let { component: r } = this, z = this.querySegEl(b), i = Ct(z), a = this.eventRange = i.eventRange;
+      let { component: r } = this, z = this.querySegEl(b), i = kt(z), a = this.eventRange = i.eventRange;
       this.dragging.minDistance = r.context.options.eventDragMinDistance, this.dragging.setIgnoreMove(!this.component.isValidSegDownEl(b.origEvent.target) || b.isTouch && this.component.props.eventSelection !== a.instance.instanceId);
     }, this.handleDragStart = (b) => {
       let { context: r } = this.component, z = this.eventRange;
       this.relevantEvents = sb(r.getCurrentData().eventStore, this.eventRange.instance.instanceId);
       let i = this.querySegEl(b);
-      this.draggingSegEl = i, this.draggingSeg = Ct(i), r.calendarApi.unselect(), r.emitter.trigger("eventResizeStart", {
+      this.draggingSegEl = i, this.draggingSeg = kt(i), r.calendarApi.unselect(), r.emitter.trigger("eventResizeStart", {
         el: i,
         event: new N0(r, z.def, z.instance),
         jsEvent: b.origEvent,
         view: r.viewApi
       });
     }, this.handleHitUpdate = (b, r, z) => {
-      let { context: i } = this.component, a = this.relevantEvents, s = this.hitDragging.initialHit, d = this.eventRange.instance, A = null, f = null, h = !1, R = {
+      let { context: i } = this.component, a = this.relevantEvents, s = this.hitDragging.initialHit, d = this.eventRange.instance, u = null, A = null, h = !1, R = {
         affectedEvents: a,
         mutatedEvents: f1(),
         isEvent: !0
       };
-      b && (b.componentId === s.componentId && this.isHitComboAllowed && !this.isHitComboAllowed(s, b) || (A = o5(s, b, z.subjectEl.classList.contains("fc-event-resizer-start"), d.range))), A && (f = db(a, i.getCurrentData().eventUiBases, A, i), R.mutatedEvents = f, Ac(R, b.dateProfile, i) || (h = !0, A = null, f = null, R.mutatedEvents = null)), f ? i.dispatch({
+      b && (b.componentId === s.componentId && this.isHitComboAllowed && !this.isHitComboAllowed(s, b) || (u = o5(s, b, z.subjectEl.classList.contains("fc-event-resizer-start"), d.range))), u && (A = db(a, i.getCurrentData().eventUiBases, u, i), R.mutatedEvents = A, Ac(R, b.dateProfile, i) || (h = !0, u = null, A = null, R.mutatedEvents = null)), A ? i.dispatch({
         type: "SET_EVENT_RESIZE",
         state: R
-      }) : i.dispatch({ type: "UNSET_EVENT_RESIZE" }), h ? ob() : Mb(), r || (A && zM(s, b) && (A = null), this.validMutation = A, this.mutatedRelevantEvents = f);
+      }) : i.dispatch({ type: "UNSET_EVENT_RESIZE" }), h ? ob() : Mb(), r || (u && zM(s, b) && (u = null), this.validMutation = u, this.mutatedRelevantEvents = A);
     }, this.handleDragEnd = (b) => {
       let { context: r } = this.component, z = this.eventRange.def, i = this.eventRange.instance, a = new N0(r, z, i), s = this.relevantEvents, d = this.mutatedRelevantEvents;
       if (r.emitter.trigger("eventResizeStop", {
@@ -12288,15 +12288,15 @@ class t5 extends Pt {
         jsEvent: b.origEvent,
         view: r.viewApi
       }), this.validMutation) {
-        let A = new N0(r, d.defs[z.defId], i ? d.instances[i.instanceId] : null);
+        let u = new N0(r, d.defs[z.defId], i ? d.instances[i.instanceId] : null);
         r.dispatch({
           type: "MERGE_EVENTS",
           eventStore: d
         });
-        let f = {
+        let A = {
           oldEvent: a,
-          event: A,
-          relatedEvents: et(d, r, i),
+          event: u,
+          relatedEvents: tt(d, r, i),
           revert() {
             r.dispatch({
               type: "MERGE_EVENTS",
@@ -12305,12 +12305,12 @@ class t5 extends Pt {
             });
           }
         };
-        r.emitter.trigger("eventResize", Object.assign(Object.assign({}, f), { el: this.draggingSegEl, startDelta: this.validMutation.startDelta || r0(0), endDelta: this.validMutation.endDelta || r0(0), jsEvent: b.origEvent, view: r.viewApi })), r.emitter.trigger("eventChange", f);
+        r.emitter.trigger("eventResize", Object.assign(Object.assign({}, A), { el: this.draggingSegEl, startDelta: this.validMutation.startDelta || r0(0), endDelta: this.validMutation.endDelta || r0(0), jsEvent: b.origEvent, view: r.viewApi })), r.emitter.trigger("eventChange", A);
       } else
         r.emitter.trigger("_noEventResize");
       this.draggingSeg = null, this.relevantEvents = null, this.validMutation = null;
     };
-    let { component: o } = e, M = this.dragging = new S2(e.el);
+    let { component: o } = e, M = this.dragging = new T2(e.el);
     M.pointer.selector = ".fc-event-resizer", M.touchScrollAllowed = !1, M.autoScroller.isEnabled = o.context.options.dragScroll;
     let n = this.hitDragging = new pM(this.dragging, qb(e));
     n.emitter.on("pointerdown", this.handlePointerDown), n.emitter.on("dragstart", this.handleDragStart), n.emitter.on("hitupdate", this.handleHitUpdate), n.emitter.on("dragend", this.handleDragEnd);
@@ -12323,7 +12323,7 @@ class t5 extends Pt {
   }
 }
 function o5(t, e, o, M) {
-  let n = t.context.dateEnv, b = t.dateSpan.range.start, r = e.dateSpan.range.start, z = gt(b, r, n, t.largeUnit);
+  let n = t.context.dateEnv, b = t.dateSpan.range.start, r = e.dateSpan.range.start, z = yt(b, r, n, t.largeUnit);
   if (o) {
     if (n.add(M.start, z) < M.end)
       return { startDelta: z };
@@ -12337,7 +12337,7 @@ class M5 {
       M.jsEvent && (this.isRecentPointerDateSelect = !0);
     }, this.onDocumentPointerDown = (M) => {
       let n = this.context.options.unselectCancel, b = Wi(M.origEvent);
-      this.matchesCancel = !!Q0(b, n), this.matchesEvent = !!Q0(b, T2.SELECTOR);
+      this.matchesCancel = !!Q0(b, n), this.matchesEvent = !!Q0(b, w2.SELECTOR);
     }, this.onDocumentPointerUp = (M) => {
       let { context: n } = this, { documentPointer: b } = this, r = n.getCurrentData();
       if (!b.wasTouchScroll) {
@@ -12375,18 +12375,18 @@ const n5 = {
 N1.dataAttrPrefix = "";
 var r5 = x0({
   name: "@fullcalendar/interaction",
-  componentInteractions: [Qh, Kh, T2, t5],
+  componentInteractions: [Qh, Kh, w2, t5],
   calendarInteractions: [M5],
-  elementDraggingImpl: S2,
+  elementDraggingImpl: T2,
   optionRefiners: n5,
   listenerRefiners: b5
 });
-class jc extends $0 {
+class Yc extends $0 {
   constructor() {
     super(...arguments), this.headerElRef = s0();
   }
   renderSimpleLayout(e, o) {
-    let { props: M, context: n } = this, b = [], r = Xt(n.options);
+    let { props: M, context: n } = this, b = [], r = xt(n.options);
     return e && b.push({
       type: "header",
       key: "header",
@@ -12401,17 +12401,17 @@ class jc extends $0 {
       key: "body",
       liquid: !0,
       chunk: { content: o }
-    }), u(
-      xe,
+    }), f(
+      Ie,
       { elClasses: ["fc-daygrid"], viewSpec: n.viewSpec },
-      u(Sb, { liquid: !M.isHeightAuto && !M.forPrint, collapsibleWidth: M.forPrint, cols: [], sections: b })
+      f(Sb, { liquid: !M.isHeightAuto && !M.forPrint, collapsibleWidth: M.forPrint, cols: [], sections: b })
     );
   }
   renderHScrollLayout(e, o, M, n) {
     let b = this.context.pluginHooks.scrollGridImpl;
     if (!b)
       throw new Error("No ScrollGrid implementation");
-    let { props: r, context: z } = this, i = !r.forPrint && Xt(z.options), a = !r.forPrint && MM(z.options), s = [];
+    let { props: r, context: z } = this, i = !r.forPrint && xt(z.options), a = !r.forPrint && MM(z.options), s = [];
     return e && s.push({
       type: "header",
       key: "header",
@@ -12436,12 +12436,12 @@ class jc extends $0 {
       isSticky: !0,
       chunks: [{
         key: "main",
-        content: kt
+        content: Xt
       }]
-    }), u(
-      xe,
+    }), f(
+      Ie,
       { elClasses: ["fc-daygrid"], viewSpec: z.viewSpec },
-      u(b, { liquid: !r.isHeightAuto && !r.forPrint, forPrint: r.forPrint, collapsibleWidth: r.forPrint, colGroups: [{ cols: [{ span: M, minWidth: n }] }], sections: s })
+      f(b, { liquid: !r.isHeightAuto && !r.forPrint, forPrint: r.forPrint, collapsibleWidth: r.forPrint, colGroups: [{ cols: [{ span: M, minWidth: n }] }], sections: s })
     );
   }
 }
@@ -12453,7 +12453,7 @@ function uo(t, e) {
     o[M.row].push(M);
   return o;
 }
-function ro(t, e) {
+function po(t, e) {
   let o = [];
   for (let M = 0; M < e; M += 1)
     o[M] = [];
@@ -12492,22 +12492,22 @@ function Gc(t) {
 class Vc extends $ {
   render() {
     let { props: e } = this;
-    return u(bM, Object.assign({}, e, { elClasses: ["fc-daygrid-event", "fc-daygrid-block-event", "fc-h-event"], defaultTimeFormat: Fc, defaultDisplayEventEnd: e.defaultDisplayEventEnd, disableResizing: !e.seg.eventRange.def.allDay }));
+    return f(bM, Object.assign({}, e, { elClasses: ["fc-daygrid-event", "fc-daygrid-block-event", "fc-h-event"], defaultTimeFormat: Fc, defaultDisplayEventEnd: e.defaultDisplayEventEnd, disableResizing: !e.seg.eventRange.def.allDay }));
   }
 }
 class Qc extends $ {
   render() {
-    let { props: e, context: o } = this, { options: M } = o, { seg: n } = e, b = M.eventTimeFormat || Fc, r = a2(n, b, o, !0, e.defaultDisplayEventEnd);
-    return u(nM, Object.assign({}, e, { elTag: "a", elClasses: ["fc-daygrid-event", "fc-daygrid-dot-event"], elAttrs: ub(e.seg, o), defaultGenerator: p5, timeText: r, isResizing: !1, isDateSelecting: !1 }));
+    let { props: e, context: o } = this, { options: M } = o, { seg: n } = e, b = M.eventTimeFormat || Fc, r = s2(n, b, o, !0, e.defaultDisplayEventEnd);
+    return f(nM, Object.assign({}, e, { elTag: "a", elClasses: ["fc-daygrid-event", "fc-daygrid-dot-event"], elAttrs: ub(e.seg, o), defaultGenerator: p5, timeText: r, isResizing: !1, isDateSelecting: !1 }));
   }
 }
 function p5(t) {
-  return u(
+  return f(
     M0,
     null,
-    u("div", { className: "fc-daygrid-event-dot", style: { borderColor: t.borderColor || t.backgroundColor } }),
-    t.timeText && u("div", { className: "fc-event-time" }, t.timeText),
-    u("div", { className: "fc-event-title" }, t.event.title || u(M0, null, " "))
+    f("div", { className: "fc-daygrid-event-dot", style: { borderColor: t.borderColor || t.backgroundColor } }),
+    t.timeText && f("div", { className: "fc-event-time" }, t.timeText),
+    f("div", { className: "fc-event-title" }, t.event.title || f(M0, null, " "))
   );
 }
 class z5 extends $ {
@@ -12516,13 +12516,13 @@ class z5 extends $ {
   }
   render() {
     let { props: e } = this, { allSegs: o, invisibleSegs: M } = this.compileSegs(e.singlePlacements);
-    return u(Db, { elClasses: ["fc-daygrid-more-link"], dateProfile: e.dateProfile, todayRange: e.todayRange, allDayDate: e.allDayDate, moreCnt: e.moreCnt, allSegs: o, hiddenSegs: M, alignmentElRef: e.alignmentElRef, alignGridTop: e.alignGridTop, extraDateSpan: e.extraDateSpan, popoverContent: () => {
+    return f(Db, { elClasses: ["fc-daygrid-more-link"], dateProfile: e.dateProfile, todayRange: e.todayRange, allDayDate: e.allDayDate, moreCnt: e.moreCnt, allSegs: o, hiddenSegs: M, alignmentElRef: e.alignmentElRef, alignGridTop: e.alignGridTop, extraDateSpan: e.extraDateSpan, popoverContent: () => {
       let n = (e.eventDrag ? e.eventDrag.affectedInstances : null) || (e.eventResize ? e.eventResize.affectedInstances : null) || {};
-      return u(M0, null, o.map((b) => {
+      return f(M0, null, o.map((b) => {
         let r = b.eventRange.instance.instanceId;
-        return u("div", { className: "fc-daygrid-event-harness", key: r, style: {
+        return f("div", { className: "fc-daygrid-event-harness", key: r, style: {
           visibility: n[r] ? "hidden" : ""
-        } }, Gc(b) ? u(Qc, Object.assign({ seg: b, isDragging: !1, isSelected: r === e.eventSelection, defaultDisplayEventEnd: !1 }, v1(b, e.todayRange))) : u(Vc, Object.assign({ seg: b, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: r === e.eventSelection, defaultDisplayEventEnd: !1 }, v1(b, e.todayRange))));
+        } }, Gc(b) ? f(Qc, Object.assign({ seg: b, isDragging: !1, isSelected: r === e.eventSelection, defaultDisplayEventEnd: !1 }, v1(b, e.todayRange))) : f(Vc, Object.assign({ seg: b, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: r === e.eventSelection, defaultDisplayEventEnd: !1 }, v1(b, e.todayRange))));
       }));
     } });
   }
@@ -12545,44 +12545,44 @@ class a5 extends $0 {
   render() {
     let { context: e, props: o, state: M, rootElRef: n } = this, { options: b, dateEnv: r } = e, { date: z, dateProfile: i } = o;
     const a = o.showDayNumber && O5(z, i.currentRange, r);
-    return u(Tb, { elTag: "td", elRef: this.handleRootEl, elClasses: [
+    return f(Tb, { elTag: "td", elRef: this.handleRootEl, elClasses: [
       "fc-daygrid-day",
       ...o.extraClassNames || []
-    ], elAttrs: Object.assign(Object.assign(Object.assign({}, o.extraDataAttrs), o.showDayNumber ? { "aria-labelledby": M.dayNumberId } : {}), { role: "gridcell" }), defaultGenerator: s5, date: z, dateProfile: i, todayRange: o.todayRange, showDayNumber: o.showDayNumber, isMonthStart: a, extraRenderProps: o.extraRenderProps }, (s, d) => u(
+    ], elAttrs: Object.assign(Object.assign(Object.assign({}, o.extraDataAttrs), o.showDayNumber ? { "aria-labelledby": M.dayNumberId } : {}), { role: "gridcell" }), defaultGenerator: s5, date: z, dateProfile: i, todayRange: o.todayRange, showDayNumber: o.showDayNumber, isMonthStart: a, extraRenderProps: o.extraRenderProps }, (s, d) => f(
       "div",
       { ref: o.innerElRef, className: "fc-daygrid-day-frame fc-scrollgrid-sync-inner", style: { minHeight: o.minHeight } },
-      o.showWeekNumber && u(Sc, { elTag: "a", elClasses: ["fc-daygrid-week-number"], elAttrs: nt(e, z, "week"), date: z, defaultFormat: c5 }),
-      !d.isDisabled && (o.showDayNumber || wb(b) || o.forceDayTop) ? u(
+      o.showWeekNumber && f(Sc, { elTag: "a", elClasses: ["fc-daygrid-week-number"], elAttrs: bt(e, z, "week"), date: z, defaultFormat: c5 }),
+      !d.isDisabled && (o.showDayNumber || wb(b) || o.forceDayTop) ? f(
         "div",
         { className: "fc-daygrid-day-top" },
-        u(s, { elTag: "a", elClasses: [
+        f(s, { elTag: "a", elClasses: [
           "fc-daygrid-day-number",
           a && "fc-daygrid-month-start"
-        ], elAttrs: Object.assign(Object.assign({}, nt(e, z)), { id: M.dayNumberId }) })
+        ], elAttrs: Object.assign(Object.assign({}, bt(e, z)), { id: M.dayNumberId }) })
       ) : o.showDayNumber ? (
         // for creating correct amount of space (see issue #7162)
-        u(
+        f(
           "div",
           { className: "fc-daygrid-day-top", style: { visibility: "hidden" } },
-          u("a", { className: "fc-daygrid-day-number" }, " ")
+          f("a", { className: "fc-daygrid-day-number" }, " ")
         )
       ) : void 0,
-      u(
+      f(
         "div",
         { className: "fc-daygrid-day-events", ref: o.fgContentElRef },
         o.fgContent,
-        u(
+        f(
           "div",
           { className: "fc-daygrid-day-bottom", style: { marginTop: o.moreMarginTop } },
-          u(z5, { allDayDate: z, singlePlacements: o.singlePlacements, moreCnt: o.moreCnt, alignmentElRef: n, alignGridTop: !o.showDayNumber, extraDateSpan: o.extraDateSpan, dateProfile: o.dateProfile, eventSelection: o.eventSelection, eventDrag: o.eventDrag, eventResize: o.eventResize, todayRange: o.todayRange })
+          f(z5, { allDayDate: z, singlePlacements: o.singlePlacements, moreCnt: o.moreCnt, alignmentElRef: n, alignGridTop: !o.showDayNumber, extraDateSpan: o.extraDateSpan, dateProfile: o.dateProfile, eventSelection: o.eventSelection, eventDrag: o.eventDrag, eventResize: o.eventResize, todayRange: o.todayRange })
         )
       ),
-      u("div", { className: "fc-daygrid-day-bg" }, o.bgContent)
+      f("div", { className: "fc-daygrid-day-bg" }, o.bgContent)
     ));
   }
 }
 function s5(t) {
-  return t.dayNumberText || u(M0, null, " ");
+  return t.dayNumberText || f(M0, null, " ");
 }
 function O5(t, e, o) {
   const { start: M, end: n } = e, b = ue(n, -1), r = o.getYear(M), z = o.getMonth(M), i = o.getYear(b), a = o.getMonth(b);
@@ -12613,9 +12613,9 @@ function l5(t, e, o, M, n, b, r) {
       }
     }) : a.push(N);
   }
-  let s = z.addSegs(i), d = z.toRects(), { singleColPlacements: A, multiColPlacements: f, leftoverMargins: h } = d5(d, t, r), R = [], W = [];
+  let s = z.addSegs(i), d = z.toRects(), { singleColPlacements: u, multiColPlacements: A, leftoverMargins: h } = d5(d, t, r), R = [], W = [];
   for (let g of a) {
-    f[g.firstCol].push({
+    A[g.firstCol].push({
       seg: g,
       isVisible: !1,
       isAbsolute: !0,
@@ -12623,8 +12623,8 @@ function l5(t, e, o, M, n, b, r) {
       marginTop: 0
     });
     for (let N = g.firstCol; N <= g.lastCol; N += 1)
-      A[N].push({
-        seg: Tt(g, N, N + 1, r),
+      u[N].push({
+        seg: wt(g, N, N + 1, r),
         isVisible: !1,
         isAbsolute: !1,
         absoluteTop: 0,
@@ -12635,16 +12635,16 @@ function l5(t, e, o, M, n, b, r) {
     R.push(0);
   for (let g of s) {
     let N = t[g.index], B = g.span;
-    f[B.start].push({
-      seg: Tt(N, B.start, B.end, r),
+    A[B.start].push({
+      seg: wt(N, B.start, B.end, r),
       isVisible: !1,
       isAbsolute: !0,
       absoluteTop: 0,
       marginTop: 0
     });
-    for (let k = B.start; k < B.end; k += 1)
-      R[k] += 1, A[k].push({
-        seg: Tt(N, k, k + 1, r),
+    for (let C = B.start; C < B.end; C += 1)
+      R[C] += 1, u[C].push({
+        seg: wt(N, C, C + 1, r),
         isVisible: !1,
         isAbsolute: !1,
         absoluteTop: 0,
@@ -12653,42 +12653,42 @@ function l5(t, e, o, M, n, b, r) {
   }
   for (let g = 0; g < r.length; g += 1)
     W.push(h[g]);
-  return { singleColPlacements: A, multiColPlacements: f, moreCnts: R, moreMarginTops: W };
+  return { singleColPlacements: u, multiColPlacements: A, moreCnts: R, moreMarginTops: W };
 }
 function d5(t, e, o) {
   let M = A5(t, o.length), n = [], b = [], r = [];
   for (let z = 0; z < o.length; z += 1) {
     let i = M[z], a = [], s = 0, d = 0;
-    for (let f of i) {
-      let h = e[f.index];
+    for (let A of i) {
+      let h = e[A.index];
       a.push({
-        seg: Tt(h, z, z + 1, o),
+        seg: wt(h, z, z + 1, o),
         isVisible: !0,
         isAbsolute: !1,
-        absoluteTop: f.levelCoord,
-        marginTop: f.levelCoord - s
-      }), s = f.levelCoord + f.thickness;
+        absoluteTop: A.levelCoord,
+        marginTop: A.levelCoord - s
+      }), s = A.levelCoord + A.thickness;
     }
-    let A = [];
+    let u = [];
     s = 0, d = 0;
-    for (let f of i) {
-      let h = e[f.index], R = f.span.end - f.span.start > 1, W = f.span.start === z;
-      d += f.levelCoord - s, s = f.levelCoord + f.thickness, R ? (d += f.thickness, W && A.push({
-        seg: Tt(h, f.span.start, f.span.end, o),
+    for (let A of i) {
+      let h = e[A.index], R = A.span.end - A.span.start > 1, W = A.span.start === z;
+      d += A.levelCoord - s, s = A.levelCoord + A.thickness, R ? (d += A.thickness, W && u.push({
+        seg: wt(h, A.span.start, A.span.end, o),
         isVisible: !0,
         isAbsolute: !0,
-        absoluteTop: f.levelCoord,
+        absoluteTop: A.levelCoord,
         marginTop: 0
-      })) : W && (A.push({
-        seg: Tt(h, f.span.start, f.span.end, o),
+      })) : W && (u.push({
+        seg: wt(h, A.span.start, A.span.end, o),
         isVisible: !0,
         isAbsolute: !1,
-        absoluteTop: f.levelCoord,
+        absoluteTop: A.levelCoord,
         marginTop: d
         // claim the margin
       }), d = 0);
     }
-    n.push(a), b.push(A), r.push(d);
+    n.push(a), b.push(u), r.push(d);
   }
   return { singleColPlacements: n, multiColPlacements: b, leftoverMargins: r };
 }
@@ -12701,7 +12701,7 @@ function A5(t, e) {
       o[n].push(M);
   return o;
 }
-function Tt(t, e, o, M) {
+function wt(t, e, o, M) {
   if (t.firstCol === e && t.lastCol === o - 1)
     return t;
   let n = t.eventRange, b = n.range, r = F1(b, {
@@ -12720,7 +12720,7 @@ class u5 extends mb {
     super(...arguments), this.hiddenConsumes = !1, this.forceHidden = {};
   }
   addSegs(e) {
-    const o = super.addSegs(e), { entriesByLevel: M } = this, n = (b) => !this.forceHidden[tt(b)];
+    const o = super.addSegs(e), { entriesByLevel: M } = this, n = (b) => !this.forceHidden[ot(b)];
     for (let b = 0; b < M.length; b += 1)
       M[b] = M[b].filter(n);
     return o;
@@ -12728,10 +12728,10 @@ class u5 extends mb {
   handleInvalidInsertion(e, o, M) {
     const { entriesByLevel: n, forceHidden: b } = this, { touchingEntry: r, touchingLevel: z, touchingLateral: i } = e;
     if (this.hiddenConsumes && r) {
-      const a = tt(r);
+      const a = ot(r);
       if (!b[a])
         if (this.allowReslicing) {
-          const s = Object.assign(Object.assign({}, r), { span: gb(r.span, o.span) }), d = tt(s);
+          const s = Object.assign(Object.assign({}, r), { span: gb(r.span, o.span) }), d = ot(s);
           b[d] = !0, n[z][i] = s, M.push(s), this.splitEntry(r, o, M);
         } else
           b[a] = !0, M.push(r);
@@ -12750,27 +12750,27 @@ class Zc extends $0 {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { options: n } = M, b = e.cells.length, r = ro(e.businessHourSegs, b), z = ro(e.bgEventSegs, b), i = ro(this.getHighlightSegs(), b), a = ro(this.getMirrorSegs(), b), { singleColPlacements: s, multiColPlacements: d, moreCnts: A, moreMarginTops: f } = l5(oM(e.fgEventSegs, n.eventOrder), e.dayMaxEvents, e.dayMaxEventRows, n.eventOrderStrict, o.segHeights, o.maxContentHeight, e.cells), h = (
+    let { props: e, state: o, context: M } = this, { options: n } = M, b = e.cells.length, r = po(e.businessHourSegs, b), z = po(e.bgEventSegs, b), i = po(this.getHighlightSegs(), b), a = po(this.getMirrorSegs(), b), { singleColPlacements: s, multiColPlacements: d, moreCnts: u, moreMarginTops: A } = l5(oM(e.fgEventSegs, n.eventOrder), e.dayMaxEvents, e.dayMaxEventRows, n.eventOrderStrict, o.segHeights, o.maxContentHeight, e.cells), h = (
       // TODO: messy way to compute this
       e.eventDrag && e.eventDrag.affectedInstances || e.eventResize && e.eventResize.affectedInstances || {}
     );
-    return u(
+    return f(
       "tr",
       { ref: this.rootElRef, role: "row" },
       e.renderIntro && e.renderIntro(),
       e.cells.map((R, W) => {
         let g = this.renderFgSegs(W, e.forPrint ? s[W] : d[W], e.todayRange, h), N = this.renderFgSegs(W, f5(a[W], d), e.todayRange, {}, !!e.eventDrag, !!e.eventResize, !1);
-        return u(a5, { key: R.key, elRef: this.cellElRefs.createRef(R.key), innerElRef: this.frameElRefs.createRef(R.key), dateProfile: e.dateProfile, date: R.date, showDayNumber: e.showDayNumbers, showWeekNumber: e.showWeekNumbers && W === 0, forceDayTop: e.showWeekNumbers, todayRange: e.todayRange, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, extraRenderProps: R.extraRenderProps, extraDataAttrs: R.extraDataAttrs, extraClassNames: R.extraClassNames, extraDateSpan: R.extraDateSpan, moreCnt: A[W], moreMarginTop: f[W], singlePlacements: s[W], fgContentElRef: this.fgElRefs.createRef(R.key), fgContent: (
+        return f(a5, { key: R.key, elRef: this.cellElRefs.createRef(R.key), innerElRef: this.frameElRefs.createRef(R.key), dateProfile: e.dateProfile, date: R.date, showDayNumber: e.showDayNumbers, showWeekNumber: e.showWeekNumbers && W === 0, forceDayTop: e.showWeekNumbers, todayRange: e.todayRange, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, extraRenderProps: R.extraRenderProps, extraDataAttrs: R.extraDataAttrs, extraClassNames: R.extraClassNames, extraDateSpan: R.extraDateSpan, moreCnt: u[W], moreMarginTop: A[W], singlePlacements: s[W], fgContentElRef: this.fgElRefs.createRef(R.key), fgContent: (
           // Fragment scopes the keys
-          u(
+          f(
             M0,
             null,
-            u(M0, null, g),
-            u(M0, null, N)
+            f(M0, null, g),
+            f(M0, null, N)
           )
         ), bgContent: (
           // Fragment scopes the keys
-          u(
+          f(
             M0,
             null,
             this.renderFillSegs(i[W], "highlight"),
@@ -12800,19 +12800,19 @@ class Zc extends $0 {
     return e.eventResize && e.eventResize.segs.length ? e.eventResize.segs : [];
   }
   renderFgSegs(e, o, M, n, b, r, z) {
-    let { context: i } = this, { eventSelection: a } = this.props, { framePositions: s } = this.state, d = this.props.cells.length === 1, A = b || r || z, f = [];
+    let { context: i } = this, { eventSelection: a } = this.props, { framePositions: s } = this.state, d = this.props.cells.length === 1, u = b || r || z, A = [];
     if (s)
       for (let h of o) {
-        let { seg: R } = h, { instanceId: W } = R.eventRange.instance, g = h.isVisible && !n[W], N = h.isAbsolute, B = "", k = "";
-        N && (i.isRtl ? (k = 0, B = s.lefts[R.lastCol] - s.lefts[R.firstCol]) : (B = 0, k = s.rights[R.firstCol] - s.rights[R.lastCol])), f.push(u("div", { className: "fc-daygrid-event-harness" + (N ? " fc-daygrid-event-harness-abs" : ""), key: Kc(R), ref: A ? null : this.segHarnessRefs.createRef($c(R)), style: {
+        let { seg: R } = h, { instanceId: W } = R.eventRange.instance, g = h.isVisible && !n[W], N = h.isAbsolute, B = "", C = "";
+        N && (i.isRtl ? (C = 0, B = s.lefts[R.lastCol] - s.lefts[R.firstCol]) : (B = 0, C = s.rights[R.firstCol] - s.rights[R.lastCol])), A.push(f("div", { className: "fc-daygrid-event-harness" + (N ? " fc-daygrid-event-harness-abs" : ""), key: Kc(R), ref: u ? null : this.segHarnessRefs.createRef($c(R)), style: {
           visibility: g ? "" : "hidden",
           marginTop: N ? "" : h.marginTop,
           top: N ? h.absoluteTop : "",
           left: B,
-          right: k
-        } }, Gc(R) ? u(Qc, Object.assign({ seg: R, isDragging: b, isSelected: W === a, defaultDisplayEventEnd: d }, v1(R, M))) : u(Vc, Object.assign({ seg: R, isDragging: b, isResizing: r, isDateSelecting: z, isSelected: W === a, defaultDisplayEventEnd: d }, v1(R, M)))));
+          right: C
+        } }, Gc(R) ? f(Qc, Object.assign({ seg: R, isDragging: b, isSelected: W === a, defaultDisplayEventEnd: d }, v1(R, M))) : f(Vc, Object.assign({ seg: R, isDragging: b, isResizing: r, isDateSelecting: z, isSelected: W === a, defaultDisplayEventEnd: d }, v1(R, M)))));
       }
-    return f;
+    return A;
   }
   renderFillSegs(e, o) {
     let { isRtl: M } = this.context, { todayRange: n } = this.props, { framePositions: b } = this.state, r = [];
@@ -12825,9 +12825,9 @@ class Zc extends $0 {
           left: 0,
           right: b.rights[z.firstCol] - b.rights[z.lastCol]
         };
-        r.push(u("div", { key: Ab(z.eventRange), className: "fc-daygrid-bg-harness", style: i }, o === "bg-event" ? u(Bb, Object.assign({ seg: z }, v1(z, n))) : Eb(o)));
+        r.push(f("div", { key: Ab(z.eventRange), className: "fc-daygrid-bg-harness", style: i }, o === "bg-event" ? f(Bb, Object.assign({ seg: z }, v1(z, n))) : Eb(o)));
       }
-    return u(M0, {}, ...r);
+    return f(M0, {}, ...r);
   }
   updateSizing(e) {
     let { props: o, state: M, frameElRefs: n } = this;
@@ -12908,14 +12908,14 @@ class Jc extends $0 {
   }
   render() {
     let { props: e, context: o } = this, M = e.cells.length, n = this.splitBusinessHourSegs(e.businessHourSegs, M), b = this.splitBgEventSegs(e.bgEventSegs, M), r = this.splitFgEventSegs(e.fgEventSegs, M), z = this.splitDateSelectionSegs(e.dateSelectionSegs, M), i = this.splitEventDrag(e.eventDrag, M), a = this.splitEventResize(e.eventResize, M), s = M >= 7 && e.clientWidth ? e.clientWidth / o.options.aspectRatio / 6 : null;
-    return u(S1, { unit: "day" }, (d, A) => u(M0, null, e.cells.map((f, h) => u(Zc, {
+    return f(S1, { unit: "day" }, (d, u) => f(M0, null, e.cells.map((A, h) => f(Zc, {
       ref: this.rowRefs.createRef(h),
-      key: f.length ? f[0].date.toISOString() : h,
+      key: A.length ? A[0].date.toISOString() : h,
       showDayNumbers: M > 1,
       showWeekNumbers: e.showWeekNumbers,
-      todayRange: A,
+      todayRange: u,
       dateProfile: e.dateProfile,
-      cells: f,
+      cells: A,
       renderIntro: e.renderRowIntro,
       businessHourSegs: n[h],
       eventSelection: e.eventSelection,
@@ -13014,7 +13014,7 @@ class ea extends $0 {
       n ? "" : "fc-daygrid-body-natural"
       // will height of one row depend on the others?
     ];
-    return u(
+    return f(
       "div",
       { ref: this.elRef, className: r.join(" "), style: {
         // these props are important to give this wrapper correct dimensions for interactions
@@ -13022,7 +13022,7 @@ class ea extends $0 {
         width: e.clientWidth,
         minWidth: e.tableMinWidth
       } },
-      u(
+      f(
         "table",
         { role: "presentation", className: "fc-scrollgrid-sync-table", style: {
           width: e.clientWidth,
@@ -13030,10 +13030,10 @@ class ea extends $0 {
           height: n ? e.clientHeight : ""
         } },
         e.colGroupNode,
-        u(
+        f(
           "tbody",
           { role: "presentation" },
-          u(Jc, { dateProfile: e.dateProfile, cells: e.cells, renderRowIntro: e.renderRowIntro, showWeekNumbers: e.showWeekNumbers, clientWidth: e.clientWidth, clientHeight: e.clientHeight, businessHourSegs: e.businessHourSegs, bgEventSegs: e.bgEventSegs, fgEventSegs: e.fgEventSegs, dateSelectionSegs: e.dateSelectionSegs, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, dayMaxEvents: M, dayMaxEventRows: o, forPrint: e.forPrint, isHitComboAllowed: e.isHitComboAllowed })
+          f(Jc, { dateProfile: e.dateProfile, cells: e.cells, renderRowIntro: e.renderRowIntro, showWeekNumbers: e.showWeekNumbers, clientWidth: e.clientWidth, clientHeight: e.clientHeight, businessHourSegs: e.businessHourSegs, bgEventSegs: e.bgEventSegs, fgEventSegs: e.fgEventSegs, dateSelectionSegs: e.dateSelectionSegs, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, dayMaxEvents: M, dayMaxEventRows: o, forPrint: e.forPrint, isHitComboAllowed: e.isHitComboAllowed })
         )
       )
     );
@@ -13060,7 +13060,7 @@ class ea extends $0 {
 }
 function R5(t, e) {
   let o;
-  return e.currentRangeUnit.match(/year|month/) && (o = t.querySelector(`[data-date="${yn(e.currentDate)}-01"]`)), o || (o = t.querySelector(`[data-date="${It(e.currentDate)}"]`)), o;
+  return e.currentRangeUnit.match(/year|month/) && (o = t.querySelector(`[data-date="${yn(e.currentDate)}-01"]`)), o || (o = t.querySelector(`[data-date="${Pt(e.currentDate)}"]`)), o;
 }
 class Cb extends Lb {
   constructor() {
@@ -13076,15 +13076,15 @@ class ta extends $0 {
   }
   render() {
     let { props: e, context: o } = this;
-    return u(ea, Object.assign({ ref: this.tableRef }, this.slicer.sliceProps(e, e.dateProfile, e.nextDayThreshold, o, e.dayTableModel), { dateProfile: e.dateProfile, cells: e.dayTableModel.cells, colGroupNode: e.colGroupNode, tableMinWidth: e.tableMinWidth, renderRowIntro: e.renderRowIntro, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.showWeekNumbers, expandRows: e.expandRows, headerAlignElRef: e.headerAlignElRef, clientWidth: e.clientWidth, clientHeight: e.clientHeight, forPrint: e.forPrint }));
+    return f(ea, Object.assign({ ref: this.tableRef }, this.slicer.sliceProps(e, e.dateProfile, e.nextDayThreshold, o, e.dayTableModel), { dateProfile: e.dateProfile, cells: e.dayTableModel.cells, colGroupNode: e.colGroupNode, tableMinWidth: e.tableMinWidth, renderRowIntro: e.renderRowIntro, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.showWeekNumbers, expandRows: e.expandRows, headerAlignElRef: e.headerAlignElRef, clientWidth: e.clientWidth, clientHeight: e.clientHeight, forPrint: e.forPrint }));
   }
 }
-class m5 extends jc {
+class m5 extends Yc {
   constructor() {
     super(...arguments), this.buildDayTableModel = I(kb), this.headerRef = s0(), this.tableRef = s0();
   }
   render() {
-    let { options: e, dateProfileGenerator: o } = this.context, { props: M } = this, n = this.buildDayTableModel(M.dateProfile, o), b = e.dayHeaders && u(yb, { ref: this.headerRef, dateProfile: M.dateProfile, dates: n.headerDates, datesRepDistinctDays: n.rowCnt === 1 }), r = (z) => u(ta, { ref: this.tableRef, dateProfile: M.dateProfile, dayTableModel: n, businessHours: M.businessHours, dateSelection: M.dateSelection, eventStore: M.eventStore, eventUiBases: M.eventUiBases, eventSelection: M.eventSelection, eventDrag: M.eventDrag, eventResize: M.eventResize, nextDayThreshold: e.nextDayThreshold, colGroupNode: z.tableColGroupNode, tableMinWidth: z.tableMinWidth, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.weekNumbers, expandRows: !M.isHeightAuto, headerAlignElRef: this.headerElRef, clientWidth: z.clientWidth, clientHeight: z.clientHeight, forPrint: M.forPrint });
+    let { options: e, dateProfileGenerator: o } = this.context, { props: M } = this, n = this.buildDayTableModel(M.dateProfile, o), b = e.dayHeaders && f(yb, { ref: this.headerRef, dateProfile: M.dateProfile, dates: n.headerDates, datesRepDistinctDays: n.rowCnt === 1 }), r = (z) => f(ta, { ref: this.tableRef, dateProfile: M.dateProfile, dayTableModel: n, businessHours: M.businessHours, dateSelection: M.dateSelection, eventStore: M.eventStore, eventUiBases: M.eventUiBases, eventSelection: M.eventSelection, eventDrag: M.eventDrag, eventResize: M.eventResize, nextDayThreshold: e.nextDayThreshold, colGroupNode: z.tableColGroupNode, tableMinWidth: z.tableMinWidth, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.weekNumbers, expandRows: !M.isHeightAuto, headerAlignElRef: this.headerElRef, clientWidth: z.clientWidth, clientHeight: z.clientHeight, forPrint: M.forPrint });
     return e.dayMinWidth ? this.renderHScrollLayout(b, r, n.colCnt, e.dayMinWidth) : this.renderSimpleLayout(b, r);
   }
 }
@@ -13116,7 +13116,7 @@ function Ma(t) {
   return { start: M, end: n };
 }
 var g5 = ':root{--fc-daygrid-event-dot-width:8px}.fc-daygrid-day-events:after,.fc-daygrid-day-events:before,.fc-daygrid-day-frame:after,.fc-daygrid-day-frame:before,.fc-daygrid-event-harness:after,.fc-daygrid-event-harness:before{clear:both;content:"";display:table}.fc .fc-daygrid-body{position:relative;z-index:1}.fc .fc-daygrid-day.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-daygrid-day-frame{min-height:100%;position:relative}.fc .fc-daygrid-day-top{display:flex;flex-direction:row-reverse}.fc .fc-day-other .fc-daygrid-day-top{opacity:.3}.fc .fc-daygrid-day-number{padding:4px;position:relative;z-index:4}.fc .fc-daygrid-month-start{font-size:1.1em;font-weight:700}.fc .fc-daygrid-day-events{margin-top:1px}.fc .fc-daygrid-body-balanced .fc-daygrid-day-events{left:0;position:absolute;right:0}.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{min-height:2em;position:relative}.fc .fc-daygrid-body-natural .fc-daygrid-day-events{margin-bottom:1em}.fc .fc-daygrid-event-harness{position:relative}.fc .fc-daygrid-event-harness-abs{left:0;position:absolute;right:0;top:0}.fc .fc-daygrid-bg-harness{bottom:0;position:absolute;top:0}.fc .fc-daygrid-day-bg .fc-non-business{z-index:1}.fc .fc-daygrid-day-bg .fc-bg-event{z-index:2}.fc .fc-daygrid-day-bg .fc-highlight{z-index:3}.fc .fc-daygrid-event{margin-top:1px;z-index:6}.fc .fc-daygrid-event.fc-event-mirror{z-index:7}.fc .fc-daygrid-day-bottom{font-size:.85em;margin:0 2px}.fc .fc-daygrid-day-bottom:after,.fc .fc-daygrid-day-bottom:before{clear:both;content:"";display:table}.fc .fc-daygrid-more-link{border-radius:3px;cursor:pointer;line-height:1;margin-top:1px;max-width:100%;overflow:hidden;padding:2px;position:relative;white-space:nowrap;z-index:4}.fc .fc-daygrid-more-link:hover{background-color:rgba(0,0,0,.1)}.fc .fc-daygrid-week-number{background-color:var(--fc-neutral-bg-color);color:var(--fc-neutral-text-color);min-width:1.5em;padding:2px;position:absolute;text-align:center;top:0;z-index:5}.fc .fc-more-popover .fc-popover-body{min-width:220px;padding:10px}.fc-direction-ltr .fc-daygrid-event.fc-event-start,.fc-direction-rtl .fc-daygrid-event.fc-event-end{margin-left:2px}.fc-direction-ltr .fc-daygrid-event.fc-event-end,.fc-direction-rtl .fc-daygrid-event.fc-event-start{margin-right:2px}.fc-direction-ltr .fc-daygrid-more-link{float:left}.fc-direction-ltr .fc-daygrid-week-number{border-radius:0 0 3px 0;left:0}.fc-direction-rtl .fc-daygrid-more-link{float:right}.fc-direction-rtl .fc-daygrid-week-number{border-radius:0 0 0 3px;right:0}.fc-liquid-hack .fc-daygrid-day-frame{position:static}.fc-daygrid-event{border-radius:3px;font-size:var(--fc-small-font-size);position:relative;white-space:nowrap}.fc-daygrid-block-event .fc-event-time{font-weight:700}.fc-daygrid-block-event .fc-event-time,.fc-daygrid-block-event .fc-event-title{padding:1px}.fc-daygrid-dot-event{align-items:center;display:flex;padding:2px 0}.fc-daygrid-dot-event .fc-event-title{flex-grow:1;flex-shrink:1;font-weight:700;min-width:0;overflow:hidden}.fc-daygrid-dot-event.fc-event-mirror,.fc-daygrid-dot-event:hover{background:rgba(0,0,0,.1)}.fc-daygrid-dot-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-daygrid-event-dot{border:calc(var(--fc-daygrid-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-daygrid-event-dot-width)/2);box-sizing:content-box;height:0;margin:0 4px;width:0}.fc-direction-ltr .fc-daygrid-event .fc-event-time{margin-right:3px}.fc-direction-rtl .fc-daygrid-event .fc-event-time{margin-left:3px}';
-Ie(g5);
+Pe(g5);
 var na = x0({
   name: "@fullcalendar/daygrid",
   initialView: "dayGridMonth",
@@ -13170,9 +13170,9 @@ function ba(t) {
     "fc-timegrid-slot-label",
     t.isLabeled ? "fc-scrollgrid-shrink" : "fc-timegrid-slot-minor"
   ];
-  return u(Q1.Consumer, null, (o) => {
+  return f(Q1.Consumer, null, (o) => {
     if (!t.isLabeled)
-      return u("td", { className: e.join(" "), "data-time": t.isoTimeStr });
+      return f("td", { className: e.join(" "), "data-time": t.isoTimeStr });
     let { dateEnv: M, options: n, viewApi: b } = o, r = (
       // TODO: fully pre-parse
       n.slotLabelFormat == null ? L5 : Array.isArray(n.slotLabelFormat) ? m0(n.slotLabelFormat[0]) : m0(n.slotLabelFormat)
@@ -13183,12 +13183,12 @@ function ba(t) {
       view: b,
       text: M.format(t.date, r)
     };
-    return u(T0, { elTag: "td", elClasses: e, elAttrs: {
+    return f(T0, { elTag: "td", elClasses: e, elAttrs: {
       "data-time": t.isoTimeStr
-    }, renderProps: z, generatorName: "slotLabelContent", customGenerator: n.slotLabelContent, defaultGenerator: v5, classNameGenerator: n.slotLabelClassNames, didMount: n.slotLabelDidMount, willUnmount: n.slotLabelWillUnmount }, (i) => u(
+    }, renderProps: z, generatorName: "slotLabelContent", customGenerator: n.slotLabelContent, defaultGenerator: v5, classNameGenerator: n.slotLabelClassNames, didMount: n.slotLabelDidMount, willUnmount: n.slotLabelWillUnmount }, (i) => f(
       "div",
       { className: "fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame" },
-      u(i, { elTag: "div", elClasses: [
+      f(i, { elTag: "div", elClasses: [
         "fc-timegrid-slot-label-cushion",
         "fc-scrollgrid-shrink-cushion"
       ] })
@@ -13200,10 +13200,10 @@ function v5(t) {
 }
 class N5 extends $ {
   render() {
-    return this.props.slatMetas.map((e) => u(
+    return this.props.slatMetas.map((e) => f(
       "tr",
       { key: e.key },
-      u(ba, Object.assign({}, e))
+      f(ba, Object.assign({}, e))
     ));
   }
 }
@@ -13216,28 +13216,28 @@ class ra extends $0 {
       let o = this.scrollerElRef.current;
       o && (o.scrollTop = e);
     }, this.renderHeadAxis = (e, o = "") => {
-      let { options: M } = this.context, { dateProfile: n } = this.props, b = n.renderRange, z = Pe(b.start, b.end) === 1 ? nt(this.context, b.start, "week") : {};
-      return M.weekNumbers && e === "day" ? u(Sc, { elTag: "th", elClasses: [
+      let { options: M } = this.context, { dateProfile: n } = this.props, b = n.renderRange, z = He(b.start, b.end) === 1 ? bt(this.context, b.start, "week") : {};
+      return M.weekNumbers && e === "day" ? f(Sc, { elTag: "th", elClasses: [
         "fc-timegrid-axis",
         "fc-scrollgrid-shrink"
       ], elAttrs: {
         "aria-hidden": !0
-      }, date: b.start, defaultFormat: S5 }, (i) => u(
+      }, date: b.start, defaultFormat: S5 }, (i) => f(
         "div",
         { className: [
           "fc-timegrid-axis-frame",
           "fc-scrollgrid-shrink-frame",
           "fc-timegrid-axis-frame-liquid"
         ].join(" "), style: { height: o } },
-        u(i, { elTag: "a", elClasses: [
+        f(i, { elTag: "a", elClasses: [
           "fc-timegrid-axis-cushion",
           "fc-scrollgrid-shrink-cushion",
           "fc-scrollgrid-sync-inner"
         ], elAttrs: z })
-      )) : u(
+      )) : f(
         "th",
         { "aria-hidden": !0, className: "fc-timegrid-axis" },
-        u("div", { className: "fc-timegrid-axis-frame", style: { height: o } })
+        f("div", { className: "fc-timegrid-axis-frame", style: { height: o } })
       );
     }, this.renderTableRowAxis = (e) => {
       let { options: o, viewApi: M } = this.context, n = {
@@ -13246,19 +13246,19 @@ class ra extends $0 {
       };
       return (
         // TODO: make reusable hook. used in list view too
-        u(T0, { elTag: "td", elClasses: [
+        f(T0, { elTag: "td", elClasses: [
           "fc-timegrid-axis",
           "fc-scrollgrid-shrink"
         ], elAttrs: {
           "aria-hidden": !0
-        }, renderProps: n, generatorName: "allDayContent", customGenerator: o.allDayContent, defaultGenerator: w5, classNameGenerator: o.allDayClassNames, didMount: o.allDayDidMount, willUnmount: o.allDayWillUnmount }, (b) => u(
+        }, renderProps: n, generatorName: "allDayContent", customGenerator: o.allDayContent, defaultGenerator: w5, classNameGenerator: o.allDayClassNames, didMount: o.allDayDidMount, willUnmount: o.allDayWillUnmount }, (b) => f(
           "div",
           { className: [
             "fc-timegrid-axis-frame",
             "fc-scrollgrid-shrink-frame",
             e == null ? " fc-timegrid-axis-frame-liquid" : ""
           ].join(" "), style: { height: e } },
-          u(b, { elTag: "span", elClasses: [
+          f(b, { elTag: "span", elClasses: [
             "fc-timegrid-axis-cushion",
             "fc-scrollgrid-shrink-cushion",
             "fc-scrollgrid-sync-inner"
@@ -13272,7 +13272,7 @@ class ra extends $0 {
   // rendering
   // ----------------------------------------------------------------------------------------------------
   renderSimpleLayout(e, o, M) {
-    let { context: n, props: b } = this, r = [], z = Xt(n.options);
+    let { context: n, props: b } = this, r = [], z = xt(n.options);
     return e && r.push({
       type: "header",
       key: "header",
@@ -13291,10 +13291,10 @@ class ra extends $0 {
       key: "all-day-divider",
       outerContent: (
         // TODO: rename to cellContent so don't need to define <tr>?
-        u(
+        f(
           "tr",
           { role: "presentation", className: "fc-scrollgrid-section" },
-          u("td", { className: "fc-timegrid-divider " + n.theme.getClass("tableCellShaded") })
+          f("td", { className: "fc-timegrid-divider " + n.theme.getClass("tableCellShaded") })
         )
       )
     })), r.push({
@@ -13306,18 +13306,18 @@ class ra extends $0 {
         scrollerElRef: this.scrollerElRef,
         content: M
       }
-    }), u(
-      xe,
+    }), f(
+      Ie,
       { elRef: this.rootElRef, elClasses: ["fc-timegrid"], viewSpec: n.viewSpec },
-      u(Sb, { liquid: !b.isHeightAuto && !b.forPrint, collapsibleWidth: b.forPrint, cols: [{ width: "shrink" }], sections: r })
+      f(Sb, { liquid: !b.isHeightAuto && !b.forPrint, collapsibleWidth: b.forPrint, cols: [{ width: "shrink" }], sections: r })
     );
   }
   renderHScrollLayout(e, o, M, n, b, r, z) {
     let i = this.context.pluginHooks.scrollGridImpl;
     if (!i)
       throw new Error("No ScrollGrid implementation");
-    let { context: a, props: s } = this, d = !s.forPrint && Xt(a.options), A = !s.forPrint && MM(a.options), f = [];
-    e && f.push({
+    let { context: a, props: s } = this, d = !s.forPrint && xt(a.options), u = !s.forPrint && MM(a.options), A = [];
+    e && A.push({
       type: "header",
       key: "header",
       isSticky: d,
@@ -13325,7 +13325,7 @@ class ra extends $0 {
       chunks: [
         {
           key: "axis",
-          rowContent: (R) => u("tr", { role: "presentation" }, this.renderHeadAxis("day", R.rowSyncHeights[0]))
+          rowContent: (R) => f("tr", { role: "presentation" }, this.renderHeadAxis("day", R.rowSyncHeights[0]))
         },
         {
           key: "cols",
@@ -13334,34 +13334,34 @@ class ra extends $0 {
           rowContent: e
         }
       ]
-    }), o && (f.push({
+    }), o && (A.push({
       type: "body",
       key: "all-day",
       syncRowHeights: !0,
       chunks: [
         {
           key: "axis",
-          rowContent: (R) => u("tr", { role: "presentation" }, this.renderTableRowAxis(R.rowSyncHeights[0]))
+          rowContent: (R) => f("tr", { role: "presentation" }, this.renderTableRowAxis(R.rowSyncHeights[0]))
         },
         {
           key: "cols",
           content: o
         }
       ]
-    }), f.push({
+    }), A.push({
       key: "all-day-divider",
       type: "body",
       outerContent: (
         // TODO: rename to cellContent so don't need to define <tr>?
-        u(
+        f(
           "tr",
           { role: "presentation", className: "fc-scrollgrid-section" },
-          u("td", { colSpan: 2, className: "fc-timegrid-divider " + a.theme.getClass("tableCellShaded") })
+          f("td", { colSpan: 2, className: "fc-timegrid-divider " + a.theme.getClass("tableCellShaded") })
         )
       )
     }));
     let h = a.options.nowIndicator;
-    return f.push({
+    return A.push({
       type: "body",
       key: "body",
       liquid: !0,
@@ -13371,28 +13371,28 @@ class ra extends $0 {
           key: "axis",
           content: (R) => (
             // TODO: make this now-indicator arrow more DRY with TimeColsContent
-            u(
+            f(
               "div",
               { className: "fc-timegrid-axis-chunk" },
-              u(
+              f(
                 "table",
                 { "aria-hidden": !0, style: { height: R.expandRows ? R.clientHeight : "" } },
                 R.tableColGroupNode,
-                u(
+                f(
                   "tbody",
                   null,
-                  u(N5, { slatMetas: r })
+                  f(N5, { slatMetas: r })
                 )
               ),
-              u(
+              f(
                 "div",
                 { className: "fc-timegrid-now-indicator-container" },
-                u(S1, {
+                f(S1, {
                   unit: h ? "minute" : "day"
                   /* hacky */
                 }, (W) => {
                   let g = h && z && z.safeComputeTop(W);
-                  return typeof g == "number" ? u(Yt, { elClasses: ["fc-timegrid-now-indicator-arrow"], elStyle: { top: g }, isAxis: !0, date: W }) : null;
+                  return typeof g == "number" ? f(Yt, { elClasses: ["fc-timegrid-now-indicator-arrow"], elStyle: { top: g }, isAxis: !0, date: W }) : null;
                 })
               )
             )
@@ -13404,27 +13404,27 @@ class ra extends $0 {
           content: M
         }
       ]
-    }), A && f.push({
+    }), u && A.push({
       key: "footer",
       type: "footer",
       isSticky: !0,
       chunks: [
         {
           key: "axis",
-          content: kt
+          content: Xt
         },
         {
           key: "cols",
-          content: kt
+          content: Xt
         }
       ]
-    }), u(
-      xe,
+    }), f(
+      Ie,
       { elRef: this.rootElRef, elClasses: ["fc-timegrid"], viewSpec: a.viewSpec },
-      u(i, { liquid: !s.isHeightAuto && !s.forPrint, forPrint: s.forPrint, collapsibleWidth: !1, colGroups: [
+      f(i, { liquid: !s.isHeightAuto && !s.forPrint, forPrint: s.forPrint, collapsibleWidth: !1, colGroups: [
         { width: "shrink", cols: [{ width: "shrink" }] },
         { cols: [{ span: n, minWidth: b }] }
-      ], sections: f })
+      ], sections: A })
     );
   }
   /* Dimensions
@@ -13443,7 +13443,7 @@ class B5 {
   }
   safeComputeTop(e) {
     let { dateProfile: o } = this;
-    if (j1(o.currentRange, e)) {
+    if (Y1(o.currentRange, e)) {
       let M = g0(e), n = e.valueOf() - M.valueOf();
       if (n >= M1(o.slotMinTime) && n < M1(o.slotMaxTime))
         return this.computeTimeTop(r0(n));
@@ -13466,17 +13466,17 @@ class B5 {
 class E5 extends $ {
   render() {
     let { props: e, context: o } = this, { options: M } = o, { slatElRefs: n } = e;
-    return u("tbody", null, e.slatMetas.map((b, r) => {
+    return f("tbody", null, e.slatMetas.map((b, r) => {
       let z = {
         time: b.time,
         date: o.dateEnv.toDate(b.date),
         view: o.viewApi
       };
-      return u(
+      return f(
         "tr",
         { key: b.key, ref: n.createRef(b.key) },
-        e.axis && u(ba, Object.assign({}, b)),
-        u(T0, { elTag: "td", elClasses: [
+        e.axis && f(ba, Object.assign({}, b)),
+        f(T0, { elTag: "td", elClasses: [
           "fc-timegrid-slot",
           "fc-timegrid-slot-lane",
           !b.isLabeled && "fc-timegrid-slot-minor"
@@ -13493,10 +13493,10 @@ class D5 extends $ {
   }
   render() {
     let { props: e, context: o } = this;
-    return u(
+    return f(
       "div",
       { ref: this.rootElRef, className: "fc-timegrid-slots" },
-      u(
+      f(
         "table",
         { "aria-hidden": !0, className: o.theme.getClass("table"), style: {
           minWidth: e.tableMinWidth,
@@ -13504,7 +13504,7 @@ class D5 extends $ {
           height: e.minHeight
         } },
         e.tableColGroupNode,
-        u(E5, { slatElRefs: this.slatElRefs, axis: e.axis, slatMetas: e.slatMetas })
+        f(E5, { slatElRefs: this.slatElRefs, axis: e.axis, slatMetas: e.slatMetas })
       )
     );
   }
@@ -13525,7 +13525,7 @@ class D5 extends $ {
 function _5(t, e) {
   return e.map((o) => t[o.key]);
 }
-function b2(t, e) {
+function r2(t, e) {
   let o = [], M;
   for (M = 0; M < e; M += 1)
     o.push([]);
@@ -13553,10 +13553,10 @@ function cz(t, e) {
 class C5 extends $ {
   render() {
     let { props: e } = this;
-    return u(Db, { elClasses: ["fc-timegrid-more-link"], elStyle: {
+    return f(Db, { elClasses: ["fc-timegrid-more-link"], elStyle: {
       top: e.top,
       bottom: e.bottom
-    }, allDayDate: null, moreCnt: e.hiddenSegs.length, allSegs: e.hiddenSegs, hiddenSegs: e.hiddenSegs, extraDateSpan: e.extraDateSpan, dateProfile: e.dateProfile, todayRange: e.todayRange, popoverContent: () => za(e.hiddenSegs, e), defaultGenerator: k5, forceTimed: !0 }, (o) => u(o, { elTag: "div", elClasses: ["fc-timegrid-more-link-inner", "fc-sticky"] }));
+    }, allDayDate: null, moreCnt: e.hiddenSegs.length, allSegs: e.hiddenSegs, hiddenSegs: e.hiddenSegs, extraDateSpan: e.extraDateSpan, dateProfile: e.dateProfile, todayRange: e.todayRange, popoverContent: () => za(e.hiddenSegs, e), defaultGenerator: k5, forceTimed: !0 }, (o) => f(o, { elTag: "div", elClasses: ["fc-timegrid-more-link-inner", "fc-sticky"] }));
   }
 }
 function k5(t) {
@@ -13566,7 +13566,7 @@ function X5(t, e, o) {
   let M = new mb();
   e != null && (M.strictOrder = e), o != null && (M.maxStackCnt = o);
   let n = M.addSegs(t), b = zc(n), r = x5(M);
-  return r = U5(r, 1), { segRects: Y5(r), hiddenGroups: b };
+  return r = U5(r, 1), { segRects: j5(r), hiddenGroups: b };
 }
 function x5(t) {
   const { entriesByLevel: e } = t, o = Xb((M, n) => M + ":" + n, (M, n) => {
@@ -13602,41 +13602,41 @@ function H5(t, e, o) {
   for (; i < z && M[i] < r; i += 1)
     ;
   for (; i < z; i += 1) {
-    let a = n[i], s, d = En(a, b.span.start, Bn), A = d[0] + d[1], f = A;
+    let a = n[i], s, d = En(a, b.span.start, Bn), u = d[0] + d[1], A = u;
     for (
       ;
       // loop through entries that horizontally intersect
-      (s = a[f]) && // but not past the whole seg list
+      (s = a[A]) && // but not past the whole seg list
       s.span.start < b.span.end;
     )
-      f += 1;
-    if (A < f)
-      return { level: i, lateralStart: A, lateralEnd: f };
+      A += 1;
+    if (u < A)
+      return { level: i, lateralStart: u, lateralEnd: A };
   }
   return null;
 }
 function U5(t, e) {
-  const o = Xb((M, n, b) => tt(M), (M, n, b) => {
+  const o = Xb((M, n, b) => ot(M), (M, n, b) => {
     let { nextLevelNodes: r, thickness: z } = M, i = z + b, a = z / i, s, d = [];
     if (!r.length)
       s = e;
     else
-      for (let f of r)
+      for (let A of r)
         if (s === void 0) {
-          let h = o(f, n, i);
+          let h = o(A, n, i);
           s = h[0], d.push(h[1]);
         } else {
-          let h = o(f, s, 0);
+          let h = o(A, s, 0);
           d.push(h[1]);
         }
-    let A = (s - n) * a;
-    return [s - A, Object.assign(Object.assign({}, M), { thickness: A, nextLevelNodes: d })];
+    let u = (s - n) * a;
+    return [s - u, Object.assign(Object.assign({}, M), { thickness: u, nextLevelNodes: d })];
   });
   return t.map((M) => o(M, 0, 0)[1]);
 }
-function Y5(t) {
+function j5(t) {
   let e = [];
-  const o = Xb((n, b, r) => tt(n), (n, b, r) => {
+  const o = Xb((n, b, r) => ot(n), (n, b, r) => {
     let z = Object.assign(Object.assign({}, n), {
       levelCoord: b,
       stackDepth: r,
@@ -13676,7 +13676,7 @@ function sz(t, e, o = null, M = 0) {
     }
   return n;
 }
-function j5(t, e, o, M) {
+function Y5(t, e, o, M) {
   let n = [], b = [];
   for (let a = 0; a < t.length; a += 1) {
     let s = e[a];
@@ -13703,7 +13703,7 @@ const F5 = m0({
 });
 class pa extends $ {
   render() {
-    return u(bM, Object.assign({}, this.props, { elClasses: [
+    return f(bM, Object.assign({}, this.props, { elClasses: [
       "fc-timegrid-event",
       "fc-v-event",
       this.props.isShort && "fc-timegrid-event-short"
@@ -13723,23 +13723,23 @@ class G5 extends $ {
       // TODO: messy way to compute this
       e.eventDrag && e.eventDrag.affectedInstances || e.eventResize && e.eventResize.affectedInstances || {}
     ), z = this.sortEventSegs(e.fgEventSegs, M.eventOrder);
-    return u(Tb, { elTag: "td", elRef: e.elRef, elClasses: [
+    return f(Tb, { elTag: "td", elRef: e.elRef, elClasses: [
       "fc-timegrid-col",
       ...e.extraClassNames || []
-    ], elAttrs: Object.assign({ role: "gridcell" }, e.extraDataAttrs), date: e.date, dateProfile: e.dateProfile, todayRange: e.todayRange, extraRenderProps: e.extraRenderProps }, (i) => u(
+    ], elAttrs: Object.assign({ role: "gridcell" }, e.extraDataAttrs), date: e.date, dateProfile: e.dateProfile, todayRange: e.todayRange, extraRenderProps: e.extraRenderProps }, (i) => f(
       "div",
       { className: "fc-timegrid-col-frame" },
-      u(
+      f(
         "div",
         { className: "fc-timegrid-col-bg" },
         this.renderFillSegs(e.businessHourSegs, "non-business"),
         this.renderFillSegs(e.bgEventSegs, "bg-event"),
         this.renderFillSegs(e.dateSelectionSegs, "highlight")
       ),
-      u("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(z, r, !1, !1, !1)),
-      u("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(b, {}, !!e.eventDrag, !!e.eventResize, !!n, "mirror")),
-      u("div", { className: "fc-timegrid-now-indicator-container" }, this.renderNowIndicator(e.nowIndicatorSegs)),
-      wb(M) && u(i, { elTag: "div", elClasses: ["fc-timegrid-col-misc"] })
+      f("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(z, r, !1, !1, !1)),
+      f("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(b, {}, !!e.eventDrag, !!e.eventResize, !!n, "mirror")),
+      f("div", { className: "fc-timegrid-now-indicator-container" }, this.renderNowIndicator(e.nowIndicatorSegs)),
+      wb(M) && f(i, { elTag: "div", elClasses: ["fc-timegrid-col-misc"] })
     ));
   }
   renderFgSegs(e, o, M, n, b, r) {
@@ -13747,17 +13747,17 @@ class G5 extends $ {
     return z.forPrint ? za(e, z) : this.renderPositionedFgSegs(e, o, M, n, b, r);
   }
   renderPositionedFgSegs(e, o, M, n, b, r) {
-    let { eventMaxStack: z, eventShortHeight: i, eventOrderStrict: a, eventMinHeight: s } = this.context.options, { date: d, slatCoords: A, eventSelection: f, todayRange: h, nowDate: R } = this.props, W = M || n || b, g = sz(e, d, A, s), { segPlacements: N, hiddenGroups: B } = j5(e, g, a, z);
-    return u(
+    let { eventMaxStack: z, eventShortHeight: i, eventOrderStrict: a, eventMinHeight: s } = this.context.options, { date: d, slatCoords: u, eventSelection: A, todayRange: h, nowDate: R } = this.props, W = M || n || b, g = sz(e, d, u, s), { segPlacements: N, hiddenGroups: B } = Y5(e, g, a, z);
+    return f(
       M0,
       null,
       this.renderHiddenGroups(B, e),
-      N.map((k) => {
-        let { seg: j, rect: Y } = k, U = j.eventRange.instance.instanceId, Z = W || !!(!o[U] && Y), S0 = an(Y && Y.span), W0 = !W && Y ? this.computeSegHStyle(Y) : { left: 0, right: 0 }, H0 = !!Y && Y.stackForward > 0, O1 = !!Y && Y.span.end - Y.span.start < i;
-        return u(
+      N.map((C) => {
+        let { seg: Y, rect: j } = C, U = Y.eventRange.instance.instanceId, Z = W || !!(!o[U] && j), S0 = an(j && j.span), W0 = !W && j ? this.computeSegHStyle(j) : { left: 0, right: 0 }, H0 = !!j && j.stackForward > 0, O1 = !!j && j.span.end - j.span.start < i;
+        return f(
           "div",
           { className: "fc-timegrid-event-harness" + (H0 ? " fc-timegrid-event-harness-inset" : ""), key: r || U, style: Object.assign(Object.assign({ visibility: Z ? "" : "hidden" }, S0), W0) },
-          u(pa, Object.assign({ seg: j, isDragging: M, isResizing: n, isDateSelecting: b, isSelected: U === f, isShort: O1 }, v1(j, h, R)))
+          f(pa, Object.assign({ seg: Y, isDragging: M, isResizing: n, isDateSelecting: b, isSelected: U === A, isShort: O1 }, v1(Y, h, R)))
         );
       })
     );
@@ -13765,21 +13765,21 @@ class G5 extends $ {
   // will already have eventMinHeight applied because segInputs already had it
   renderHiddenGroups(e, o) {
     let { extraDateSpan: M, dateProfile: n, todayRange: b, nowDate: r, eventSelection: z, eventDrag: i, eventResize: a } = this.props;
-    return u(M0, null, e.map((s) => {
-      let d = an(s.span), A = V5(s.entries, o);
-      return u(C5, { key: Qo(rM(A)), hiddenSegs: A, top: d.top, bottom: d.bottom, extraDateSpan: M, dateProfile: n, todayRange: b, nowDate: r, eventSelection: z, eventDrag: i, eventResize: a });
+    return f(M0, null, e.map((s) => {
+      let d = an(s.span), u = V5(s.entries, o);
+      return f(C5, { key: Qo(rM(u)), hiddenSegs: u, top: d.top, bottom: d.bottom, extraDateSpan: M, dateProfile: n, todayRange: b, nowDate: r, eventSelection: z, eventDrag: i, eventResize: a });
     }));
   }
   renderFillSegs(e, o) {
     let { props: M, context: n } = this, r = sz(e, M.date, M.slatCoords, n.options.eventMinHeight).map((z, i) => {
       let a = e[i];
-      return u("div", { key: Ab(a.eventRange), className: "fc-timegrid-bg-harness", style: an(z) }, o === "bg-event" ? u(Bb, Object.assign({ seg: a }, v1(a, M.todayRange, M.nowDate))) : Eb(o));
+      return f("div", { key: Ab(a.eventRange), className: "fc-timegrid-bg-harness", style: an(z) }, o === "bg-event" ? f(Bb, Object.assign({ seg: a }, v1(a, M.todayRange, M.nowDate))) : Eb(o));
     });
-    return u(M0, null, r);
+    return f(M0, null, r);
   }
   renderNowIndicator(e) {
     let { slatCoords: o, date: M } = this.props;
-    return o ? e.map((n, b) => u(
+    return o ? e.map((n, b) => f(
       Yt,
       {
         // key doesn't matter. will only ever be one
@@ -13806,12 +13806,12 @@ class G5 extends $ {
 }
 function za(t, { todayRange: e, nowDate: o, eventSelection: M, eventDrag: n, eventResize: b }) {
   let r = (n ? n.affectedInstances : null) || (b ? b.affectedInstances : null) || {};
-  return u(M0, null, t.map((z) => {
+  return f(M0, null, t.map((z) => {
     let i = z.eventRange.instance.instanceId;
-    return u(
+    return f(
       "div",
       { key: i, style: { visibility: r[i] ? "hidden" : "" } },
-      u(pa, Object.assign({ seg: z, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: i === M, isShort: !1 }, v1(z, e, o)))
+      f(pa, Object.assign({ seg: z, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: i === M, isShort: !1 }, v1(z, e, o)))
     );
   }));
 }
@@ -13826,36 +13826,36 @@ function V5(t, e) {
 }
 class Q5 extends $ {
   constructor() {
-    super(...arguments), this.splitFgEventSegs = I(b2), this.splitBgEventSegs = I(b2), this.splitBusinessHourSegs = I(b2), this.splitNowIndicatorSegs = I(b2), this.splitDateSelectionSegs = I(b2), this.splitEventDrag = I(cz), this.splitEventResize = I(cz), this.rootElRef = s0(), this.cellElRefs = new Z0();
+    super(...arguments), this.splitFgEventSegs = I(r2), this.splitBgEventSegs = I(r2), this.splitBusinessHourSegs = I(r2), this.splitNowIndicatorSegs = I(r2), this.splitDateSelectionSegs = I(r2), this.splitEventDrag = I(cz), this.splitEventResize = I(cz), this.rootElRef = s0(), this.cellElRefs = new Z0();
   }
   render() {
     let { props: e, context: o } = this, M = o.options.nowIndicator && e.slatCoords && e.slatCoords.safeComputeTop(e.nowDate), n = e.cells.length, b = this.splitFgEventSegs(e.fgEventSegs, n), r = this.splitBgEventSegs(e.bgEventSegs, n), z = this.splitBusinessHourSegs(e.businessHourSegs, n), i = this.splitNowIndicatorSegs(e.nowIndicatorSegs, n), a = this.splitDateSelectionSegs(e.dateSelectionSegs, n), s = this.splitEventDrag(e.eventDrag, n), d = this.splitEventResize(e.eventResize, n);
-    return u(
+    return f(
       "div",
       { className: "fc-timegrid-cols", ref: this.rootElRef },
-      u(
+      f(
         "table",
         { role: "presentation", style: {
           minWidth: e.tableMinWidth,
           width: e.clientWidth
         } },
         e.tableColGroupNode,
-        u(
+        f(
           "tbody",
           { role: "presentation" },
-          u(
+          f(
             "tr",
             { role: "row" },
-            e.axis && u(
+            e.axis && f(
               "td",
               { "aria-hidden": !0, className: "fc-timegrid-col fc-timegrid-axis" },
-              u(
+              f(
                 "div",
                 { className: "fc-timegrid-col-frame" },
-                u("div", { className: "fc-timegrid-now-indicator-container" }, typeof M == "number" && u(Yt, { elClasses: ["fc-timegrid-now-indicator-arrow"], elStyle: { top: M }, isAxis: !0, date: e.nowDate }))
+                f("div", { className: "fc-timegrid-now-indicator-container" }, typeof M == "number" && f(Yt, { elClasses: ["fc-timegrid-now-indicator-arrow"], elStyle: { top: M }, isAxis: !0, date: e.nowDate }))
               )
             ),
-            e.cells.map((A, f) => u(G5, { key: A.key, elRef: this.cellElRefs.createRef(A.key), dateProfile: e.dateProfile, date: A.date, nowDate: e.nowDate, todayRange: e.todayRange, extraRenderProps: A.extraRenderProps, extraDataAttrs: A.extraDataAttrs, extraClassNames: A.extraClassNames, extraDateSpan: A.extraDateSpan, fgEventSegs: b[f], bgEventSegs: r[f], businessHourSegs: z[f], nowIndicatorSegs: i[f], dateSelectionSegs: a[f], eventDrag: s[f], eventResize: d[f], slatCoords: e.slatCoords, eventSelection: e.eventSelection, forPrint: e.forPrint }))
+            e.cells.map((u, A) => f(G5, { key: u.key, elRef: this.cellElRefs.createRef(u.key), dateProfile: e.dateProfile, date: u.date, nowDate: e.nowDate, todayRange: e.todayRange, extraRenderProps: u.extraRenderProps, extraDataAttrs: u.extraDataAttrs, extraClassNames: u.extraClassNames, extraDateSpan: u.extraDateSpan, fgEventSegs: b[A], bgEventSegs: r[A], businessHourSegs: z[A], nowIndicatorSegs: i[A], dateSelectionSegs: a[A], eventDrag: s[A], eventResize: d[A], slatCoords: e.slatCoords, eventSelection: e.eventSelection, forPrint: e.forPrint }))
           )
         )
       )
@@ -13908,7 +13908,7 @@ class ia extends $0 {
   }
   render() {
     let { props: e, state: o } = this;
-    return u(
+    return f(
       "div",
       { className: "fc-timegrid-body", ref: this.handleRootEl, style: {
         // these props are important to give this wrapper correct dimensions for interactions
@@ -13916,8 +13916,8 @@ class ia extends $0 {
         width: e.clientWidth,
         minWidth: e.tableMinWidth
       } },
-      u(D5, { axis: e.axis, dateProfile: e.dateProfile, slatMetas: e.slatMetas, clientWidth: e.clientWidth, minHeight: e.expandRows ? e.clientHeight : "", tableMinWidth: e.tableMinWidth, tableColGroupNode: e.axis ? e.tableColGroupNode : null, onCoords: this.handleSlatCoords }),
-      u(Q5, { cells: e.cells, axis: e.axis, dateProfile: e.dateProfile, businessHourSegs: e.businessHourSegs, bgEventSegs: e.bgEventSegs, fgEventSegs: e.fgEventSegs, dateSelectionSegs: e.dateSelectionSegs, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, todayRange: e.todayRange, nowDate: e.nowDate, nowIndicatorSegs: e.nowIndicatorSegs, clientWidth: e.clientWidth, tableMinWidth: e.tableMinWidth, tableColGroupNode: e.tableColGroupNode, slatCoords: o.slatCoords, onColCoords: this.handleColCoords, forPrint: e.forPrint })
+      f(D5, { axis: e.axis, dateProfile: e.dateProfile, slatMetas: e.slatMetas, clientWidth: e.clientWidth, minHeight: e.expandRows ? e.clientHeight : "", tableMinWidth: e.tableMinWidth, tableColGroupNode: e.axis ? e.tableColGroupNode : null, onCoords: this.handleSlatCoords }),
+      f(Q5, { cells: e.cells, axis: e.axis, dateProfile: e.dateProfile, businessHourSegs: e.businessHourSegs, bgEventSegs: e.bgEventSegs, fgEventSegs: e.fgEventSegs, dateSelectionSegs: e.dateSelectionSegs, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, todayRange: e.todayRange, nowDate: e.nowDate, nowIndicatorSegs: e.nowIndicatorSegs, clientWidth: e.clientWidth, tableMinWidth: e.tableMinWidth, tableColGroupNode: e.tableColGroupNode, slatCoords: o.slatCoords, onColCoords: this.handleColCoords, forPrint: e.forPrint })
     );
   }
   componentDidMount() {
@@ -13932,16 +13932,16 @@ class ia extends $0 {
   queryHit(e, o) {
     let { dateEnv: M, options: n } = this.context, { colCoords: b } = this, { dateProfile: r } = this.props, { slatCoords: z } = this.state, { snapDuration: i, snapsPerSlot: a } = this.processSlotOptions(this.props.slotDuration, n.snapDuration), s = b.leftToIndex(e), d = z.positions.topToIndex(o);
     if (s != null && d != null) {
-      let A = this.props.cells[s], f = z.positions.tops[d], h = z.positions.getHeight(d), R = (o - f) / h, W = Math.floor(R * a), g = d * a + W, N = this.props.cells[s].date, B = gn(r.slotMinTime, Ni(i, g)), k = M.add(N, B), j = M.add(k, i);
+      let u = this.props.cells[s], A = z.positions.tops[d], h = z.positions.getHeight(d), R = (o - A) / h, W = Math.floor(R * a), g = d * a + W, N = this.props.cells[s].date, B = gn(r.slotMinTime, Ni(i, g)), C = M.add(N, B), Y = M.add(C, i);
       return {
         dateProfile: r,
-        dateSpan: Object.assign({ range: { start: k, end: j }, allDay: !1 }, A.extraDateSpan),
+        dateSpan: Object.assign({ range: { start: C, end: Y }, allDay: !1 }, u.extraDateSpan),
         dayEl: b.els[s],
         rect: {
           left: b.lefts[s],
           right: b.rights[s],
-          top: f,
-          bottom: f + h
+          top: A,
+          bottom: A + h
         },
         layer: 0
       };
@@ -13950,7 +13950,7 @@ class ia extends $0 {
   }
 }
 function $5(t, e) {
-  let o = e || t, M = ke(t, o);
+  let o = e || t, M = Xe(t, o);
   return M === null && (o = t, M = 1), { snapDuration: o, snapsPerSlot: M };
 }
 class ca extends Lb {
@@ -13975,7 +13975,7 @@ class Z5 extends $0 {
   }
   render() {
     let { props: e, context: o } = this, { dateProfile: M, dayTableModel: n } = e, { nowIndicator: b, nextDayThreshold: r } = o.options, z = this.buildDayRanges(n, M, o.dateEnv);
-    return u(S1, { unit: b ? "minute" : "day" }, (i, a) => u(ia, Object.assign({ ref: this.timeColsRef }, this.slicer.sliceProps(e, M, null, o, z), { forPrint: e.forPrint, axis: e.axis, dateProfile: M, slatMetas: e.slatMetas, slotDuration: e.slotDuration, cells: n.cells[0], tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, clientWidth: e.clientWidth, clientHeight: e.clientHeight, expandRows: e.expandRows, nowDate: i, nowIndicatorSegs: b && this.slicer.sliceNowDate(i, M, r, o, z), todayRange: a, onScrollTopRequest: e.onScrollTopRequest, onSlatCoords: e.onSlatCoords })));
+    return f(S1, { unit: b ? "minute" : "day" }, (i, a) => f(ia, Object.assign({ ref: this.timeColsRef }, this.slicer.sliceProps(e, M, null, o, z), { forPrint: e.forPrint, axis: e.axis, dateProfile: M, slatMetas: e.slatMetas, slotDuration: e.slotDuration, cells: n.cells[0], tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, clientWidth: e.clientWidth, clientHeight: e.clientHeight, expandRows: e.expandRows, nowDate: i, nowIndicatorSegs: b && this.slicer.sliceNowDate(i, M, r, o, z), todayRange: a, onScrollTopRequest: e.onScrollTopRequest, onSlatCoords: e.onSlatCoords })));
   }
 }
 function aa(t, e, o) {
@@ -13997,7 +13997,7 @@ const Oz = [
 function sa(t, e, o, M, n) {
   let b = /* @__PURE__ */ new Date(0), r = t, z = r0(0), i = o || J5(M), a = [];
   for (; M1(r) < M1(e); ) {
-    let s = n.add(b, r), d = ke(z, i) !== null;
+    let s = n.add(b, r), d = Xe(z, i) !== null;
     a.push({
       date: s,
       time: r,
@@ -14011,7 +14011,7 @@ function sa(t, e, o, M, n) {
 function J5(t) {
   let e, o, M;
   for (e = Oz.length - 1; e >= 0; e -= 1)
-    if (o = r0(Oz[e]), M = ke(o, t), M !== null && M > 1)
+    if (o = r0(Oz[e]), M = Xe(o, t), M !== null && M > 1)
       return o;
   return t;
 }
@@ -14020,8 +14020,8 @@ class eW extends ra {
     super(...arguments), this.buildTimeColsModel = I(Oa), this.buildSlatMetas = I(sa);
   }
   render() {
-    let { options: e, dateEnv: o, dateProfileGenerator: M } = this.context, { props: n } = this, { dateProfile: b } = n, r = this.buildTimeColsModel(b, M), z = this.allDaySplitter.splitProps(n), i = this.buildSlatMetas(b.slotMinTime, b.slotMaxTime, e.slotLabelInterval, e.slotDuration, o), { dayMinWidth: a } = e, s = !a, d = a, A = e.dayHeaders && u(yb, { dates: r.headerDates, dateProfile: b, datesRepDistinctDays: !0, renderIntro: s ? this.renderHeadAxis : null }), f = e.allDaySlot !== !1 && ((R) => u(ta, Object.assign({}, z.allDay, { dateProfile: b, dayTableModel: r, nextDayThreshold: e.nextDayThreshold, tableMinWidth: R.tableMinWidth, colGroupNode: R.tableColGroupNode, renderRowIntro: s ? this.renderTableRowAxis : null, showWeekNumbers: !1, expandRows: !1, headerAlignElRef: this.headerElRef, clientWidth: R.clientWidth, clientHeight: R.clientHeight, forPrint: n.forPrint }, this.getAllDayMaxEventProps()))), h = (R) => u(Z5, Object.assign({}, z.timed, { dayTableModel: r, dateProfile: b, axis: s, slotDuration: e.slotDuration, slatMetas: i, forPrint: n.forPrint, tableColGroupNode: R.tableColGroupNode, tableMinWidth: R.tableMinWidth, clientWidth: R.clientWidth, clientHeight: R.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: R.expandRows, onScrollTopRequest: this.handleScrollTopRequest }));
-    return d ? this.renderHScrollLayout(A, f, h, r.colCnt, a, i, this.state.slatCoords) : this.renderSimpleLayout(A, f, h);
+    let { options: e, dateEnv: o, dateProfileGenerator: M } = this.context, { props: n } = this, { dateProfile: b } = n, r = this.buildTimeColsModel(b, M), z = this.allDaySplitter.splitProps(n), i = this.buildSlatMetas(b.slotMinTime, b.slotMaxTime, e.slotLabelInterval, e.slotDuration, o), { dayMinWidth: a } = e, s = !a, d = a, u = e.dayHeaders && f(yb, { dates: r.headerDates, dateProfile: b, datesRepDistinctDays: !0, renderIntro: s ? this.renderHeadAxis : null }), A = e.allDaySlot !== !1 && ((R) => f(ta, Object.assign({}, z.allDay, { dateProfile: b, dayTableModel: r, nextDayThreshold: e.nextDayThreshold, tableMinWidth: R.tableMinWidth, colGroupNode: R.tableColGroupNode, renderRowIntro: s ? this.renderTableRowAxis : null, showWeekNumbers: !1, expandRows: !1, headerAlignElRef: this.headerElRef, clientWidth: R.clientWidth, clientHeight: R.clientHeight, forPrint: n.forPrint }, this.getAllDayMaxEventProps()))), h = (R) => f(Z5, Object.assign({}, z.timed, { dayTableModel: r, dateProfile: b, axis: s, slotDuration: e.slotDuration, slatMetas: i, forPrint: n.forPrint, tableColGroupNode: R.tableColGroupNode, tableMinWidth: R.tableMinWidth, clientWidth: R.clientWidth, clientHeight: R.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: R.expandRows, onScrollTopRequest: this.handleScrollTopRequest }));
+    return d ? this.renderHScrollLayout(u, A, h, r.colCnt, a, i, this.state.slatCoords) : this.renderSimpleLayout(u, A, h);
   }
 }
 function Oa(t, e) {
@@ -14029,7 +14029,7 @@ function Oa(t, e) {
   return new dc(o, !1);
 }
 var tW = '.fc-v-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-v-event .fc-event-main{color:var(--fc-event-text-color);height:100%}.fc-v-event .fc-event-main-frame{display:flex;flex-direction:column;height:100%}.fc-v-event .fc-event-time{flex-grow:0;flex-shrink:0;max-height:100%;overflow:hidden}.fc-v-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-height:0}.fc-v-event .fc-event-title{bottom:0;max-height:100%;overflow:hidden;top:0}.fc-v-event:not(.fc-event-start){border-top-left-radius:0;border-top-right-radius:0;border-top-width:0}.fc-v-event:not(.fc-event-end){border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-width:0}.fc-v-event.fc-event-selected:before{left:-10px;right:-10px}.fc-v-event .fc-event-resizer-start{cursor:n-resize}.fc-v-event .fc-event-resizer-end{cursor:s-resize}.fc-v-event:not(.fc-event-selected) .fc-event-resizer{height:var(--fc-event-resizer-thickness);left:0;right:0}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-start{top:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer{left:50%;margin-left:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-start{top:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc .fc-timegrid .fc-daygrid-body{z-index:2}.fc .fc-timegrid-divider{padding:0 0 2px}.fc .fc-timegrid-body{min-height:100%;position:relative;z-index:1}.fc .fc-timegrid-axis-chunk{position:relative}.fc .fc-timegrid-axis-chunk>table,.fc .fc-timegrid-slots{position:relative;z-index:1}.fc .fc-timegrid-slot{border-bottom:0;height:1.5em}.fc .fc-timegrid-slot:empty:before{content:"\\00a0"}.fc .fc-timegrid-slot-minor{border-top-style:dotted}.fc .fc-timegrid-slot-label-cushion{display:inline-block;white-space:nowrap}.fc .fc-timegrid-slot-label{vertical-align:middle}.fc .fc-timegrid-axis-cushion,.fc .fc-timegrid-slot-label-cushion{padding:0 4px}.fc .fc-timegrid-axis-frame-liquid{height:100%}.fc .fc-timegrid-axis-frame{align-items:center;display:flex;justify-content:flex-end;overflow:hidden}.fc .fc-timegrid-axis-cushion{flex-shrink:0;max-width:60px}.fc-direction-ltr .fc-timegrid-slot-label-frame{text-align:right}.fc-direction-rtl .fc-timegrid-slot-label-frame{text-align:left}.fc-liquid-hack .fc-timegrid-axis-frame-liquid{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-timegrid-col-frame{min-height:100%;position:relative}.fc-media-screen.fc-liquid-hack .fc-timegrid-col-frame{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols{bottom:0;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols>table{height:100%}.fc-media-screen .fc-timegrid-col-bg,.fc-media-screen .fc-timegrid-col-events,.fc-media-screen .fc-timegrid-now-indicator-container{left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col-bg{z-index:2}.fc .fc-timegrid-col-bg .fc-non-business{z-index:1}.fc .fc-timegrid-col-bg .fc-bg-event{z-index:2}.fc .fc-timegrid-col-bg .fc-highlight{z-index:3}.fc .fc-timegrid-bg-harness{left:0;position:absolute;right:0}.fc .fc-timegrid-col-events{z-index:3}.fc .fc-timegrid-now-indicator-container{bottom:0;overflow:hidden}.fc-direction-ltr .fc-timegrid-col-events{margin:0 2.5% 0 2px}.fc-direction-rtl .fc-timegrid-col-events{margin:0 2px 0 2.5%}.fc-timegrid-event-harness{position:absolute}.fc-timegrid-event-harness>.fc-timegrid-event{bottom:0;left:0;position:absolute;right:0;top:0}.fc-timegrid-event-harness-inset .fc-timegrid-event,.fc-timegrid-event.fc-event-mirror,.fc-timegrid-more-link{box-shadow:0 0 0 1px var(--fc-page-bg-color)}.fc-timegrid-event,.fc-timegrid-more-link{border-radius:3px;font-size:var(--fc-small-font-size)}.fc-timegrid-event{margin-bottom:1px}.fc-timegrid-event .fc-event-main{padding:1px 1px 0}.fc-timegrid-event .fc-event-time{font-size:var(--fc-small-font-size);margin-bottom:1px;white-space:nowrap}.fc-timegrid-event-short .fc-event-main-frame{flex-direction:row;overflow:hidden}.fc-timegrid-event-short .fc-event-time:after{content:"\\00a0-\\00a0"}.fc-timegrid-event-short .fc-event-title{font-size:var(--fc-small-font-size)}.fc-timegrid-more-link{background:var(--fc-more-link-bg-color);color:var(--fc-more-link-text-color);cursor:pointer;margin-bottom:1px;position:absolute;z-index:9999}.fc-timegrid-more-link-inner{padding:3px 2px;top:0}.fc-direction-ltr .fc-timegrid-more-link{right:0}.fc-direction-rtl .fc-timegrid-more-link{left:0}.fc .fc-timegrid-now-indicator-arrow,.fc .fc-timegrid-now-indicator-line{pointer-events:none}.fc .fc-timegrid-now-indicator-line{border-color:var(--fc-now-indicator-color);border-style:solid;border-width:1px 0 0;left:0;position:absolute;right:0;z-index:4}.fc .fc-timegrid-now-indicator-arrow{border-color:var(--fc-now-indicator-color);border-style:solid;margin-top:-5px;position:absolute;z-index:4}.fc-direction-ltr .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 0 5px 6px;left:0}.fc-direction-rtl .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 6px 5px 0;right:0}';
-Ie(tW);
+Pe(tW);
 const oW = {
   allDaySlot: Boolean
 };
@@ -14063,26 +14063,26 @@ class MW extends $ {
     };
   }
   render() {
-    let { theme: e, dateEnv: o, options: M, viewApi: n } = this.context, { cellId: b, dayDate: r, todayRange: z } = this.props, { textId: i } = this.state, a = N2(r, z), s = M.listDayFormat ? o.format(r, M.listDayFormat) : "", d = M.listDaySideFormat ? o.format(r, M.listDaySideFormat) : "", A = Object.assign({
+    let { theme: e, dateEnv: o, options: M, viewApi: n } = this.context, { cellId: b, dayDate: r, todayRange: z } = this.props, { textId: i } = this.state, a = S2(r, z), s = M.listDayFormat ? o.format(r, M.listDayFormat) : "", d = M.listDaySideFormat ? o.format(r, M.listDaySideFormat) : "", u = Object.assign({
       date: o.toDate(r),
       view: n,
       textId: i,
       text: s,
       sideText: d,
-      navLinkAttrs: nt(this.context, r),
-      sideNavLinkAttrs: nt(this.context, r, "day", !1)
+      navLinkAttrs: bt(this.context, r),
+      sideNavLinkAttrs: bt(this.context, r, "day", !1)
     }, a);
-    return u(T0, { elTag: "tr", elClasses: [
+    return f(T0, { elTag: "tr", elClasses: [
       "fc-list-day",
-      ...Ut(a, e)
+      ...jt(a, e)
     ], elAttrs: {
-      "data-date": It(r)
-    }, renderProps: A, generatorName: "dayHeaderContent", customGenerator: M.dayHeaderContent, defaultGenerator: nW, classNameGenerator: M.dayHeaderClassNames, didMount: M.dayHeaderDidMount, willUnmount: M.dayHeaderWillUnmount }, (f) => (
+      "data-date": Pt(r)
+    }, renderProps: u, generatorName: "dayHeaderContent", customGenerator: M.dayHeaderContent, defaultGenerator: nW, classNameGenerator: M.dayHeaderClassNames, didMount: M.dayHeaderDidMount, willUnmount: M.dayHeaderWillUnmount }, (A) => (
       // TODO: force-hide top border based on :first-child
-      u(
+      f(
         "th",
         { scope: "colgroup", colSpan: 3, id: b, "aria-labelledby": i },
-        u(f, { elTag: "div", elClasses: [
+        f(A, { elTag: "div", elClasses: [
           "fc-list-day-cushion",
           e.getClass("tableCellShaded")
         ] })
@@ -14091,12 +14091,12 @@ class MW extends $ {
   }
 }
 function nW(t) {
-  return u(
+  return f(
     M0,
     null,
-    t.text && u("a", Object.assign({ id: t.textId, className: "fc-list-day-text" }, t.navLinkAttrs), t.text),
+    t.text && f("a", Object.assign({ id: t.textId, className: "fc-list-day-text" }, t.navLinkAttrs), t.text),
     t.sideText && /* not keyboard tabbable */
-    u("a", Object.assign({ "aria-hidden": !0, className: "fc-list-day-side-text" }, t.sideNavLinkAttrs), t.sideText)
+    f("a", Object.assign({ "aria-hidden": !0, className: "fc-list-day-side-text" }, t.sideNavLinkAttrs), t.sideText)
   );
 }
 const bW = m0({
@@ -14107,42 +14107,42 @@ const bW = m0({
 class rW extends $ {
   render() {
     let { props: e, context: o } = this, { options: M } = o, { seg: n, timeHeaderId: b, eventHeaderId: r, dateHeaderId: z } = e, i = M.eventTimeFormat || bW;
-    return u(nM, Object.assign({}, e, { elTag: "tr", elClasses: [
+    return f(nM, Object.assign({}, e, { elTag: "tr", elClasses: [
       "fc-list-event",
       n.eventRange.def.url && "fc-event-forced-url"
-    ], defaultGenerator: () => pW(n, o), seg: n, timeText: "", disableDragging: !0, disableResizing: !0 }), (a, s) => u(
+    ], defaultGenerator: () => pW(n, o), seg: n, timeText: "", disableDragging: !0, disableResizing: !0 }), (a, s) => f(
       M0,
       null,
       zW(n, i, o, b, z),
-      u(
+      f(
         "td",
         { "aria-hidden": !0, className: "fc-list-event-graphic" },
-        u("span", { className: "fc-list-event-dot", style: {
+        f("span", { className: "fc-list-event-dot", style: {
           borderColor: s.borderColor || s.backgroundColor
         } })
       ),
-      u(a, { elTag: "td", elClasses: ["fc-list-event-title"], elAttrs: { headers: `${r} ${z}` } })
+      f(a, { elTag: "td", elClasses: ["fc-list-event-title"], elAttrs: { headers: `${r} ${z}` } })
     ));
   }
 }
 function pW(t, e) {
   let o = ub(t, e);
-  return u("a", Object.assign({}, o), t.eventRange.def.title);
+  return f("a", Object.assign({}, o), t.eventRange.def.title);
 }
 function zW(t, e, o, M, n) {
   let { options: b } = o;
   if (b.displayEventTime !== !1) {
     let r = t.eventRange.def, z = t.eventRange.instance, i = !1, a;
-    if (r.allDay ? i = !0 : hu(t.eventRange.range) ? t.isStart ? a = a2(t, e, o, null, null, z.range.start, t.end) : t.isEnd ? a = a2(t, e, o, null, null, t.start, z.range.end) : i = !0 : a = a2(t, e, o), i) {
+    if (r.allDay ? i = !0 : hu(t.eventRange.range) ? t.isStart ? a = s2(t, e, o, null, null, z.range.start, t.end) : t.isEnd ? a = s2(t, e, o, null, null, t.start, z.range.end) : i = !0 : a = s2(t, e, o), i) {
       let s = {
         text: o.options.allDayText,
         view: o.viewApi
       };
-      return u(T0, { elTag: "td", elClasses: ["fc-list-event-time"], elAttrs: {
+      return f(T0, { elTag: "td", elClasses: ["fc-list-event-time"], elAttrs: {
         headers: `${M} ${n}`
       }, renderProps: s, generatorName: "allDayContent", customGenerator: b.allDayContent, defaultGenerator: iW, classNameGenerator: b.allDayClassNames, didMount: b.allDayDidMount, willUnmount: b.allDayWillUnmount });
     }
-    return u("td", { className: "fc-list-event-time" }, a);
+    return f("td", { className: "fc-list-event-time" }, a);
   }
   return null;
 }
@@ -14163,14 +14163,14 @@ class cW extends $0 {
   }
   render() {
     let { props: e, context: o } = this, { dayDates: M, dayRanges: n } = this.computeDateVars(e.dateProfile), b = this.eventStoreToSegs(e.eventStore, e.eventUiBases, n);
-    return u(
-      xe,
+    return f(
+      Ie,
       { elRef: this.setRootEl, elClasses: [
         "fc-list",
         o.theme.getClass("table"),
         o.options.stickyHeaderDates !== !1 ? "fc-list-sticky" : ""
       ], viewSpec: o.viewSpec },
-      u(vb, { liquid: !e.isHeightAuto, overflowX: e.isHeightAuto ? "visible" : "hidden", overflowY: e.isHeightAuto ? "visible" : "auto" }, b.length > 0 ? this.renderSegList(b, M) : this.renderEmptyMessage())
+      f(vb, { liquid: !e.isHeightAuto, overflowX: e.isHeightAuto ? "visible" : "hidden", overflowY: e.isHeightAuto ? "visible" : "auto" }, b.length > 0 ? this.renderSegList(b, M) : this.renderEmptyMessage())
     );
   }
   renderEmptyMessage() {
@@ -14178,36 +14178,36 @@ class cW extends $0 {
       text: e.noEventsText,
       view: o
     };
-    return u(T0, { elTag: "div", elClasses: ["fc-list-empty"], renderProps: M, generatorName: "noEventsContent", customGenerator: e.noEventsContent, defaultGenerator: aW, classNameGenerator: e.noEventsClassNames, didMount: e.noEventsDidMount, willUnmount: e.noEventsWillUnmount }, (n) => u(n, { elTag: "div", elClasses: ["fc-list-empty-cushion"] }));
+    return f(T0, { elTag: "div", elClasses: ["fc-list-empty"], renderProps: M, generatorName: "noEventsContent", customGenerator: e.noEventsContent, defaultGenerator: aW, classNameGenerator: e.noEventsClassNames, didMount: e.noEventsDidMount, willUnmount: e.noEventsWillUnmount }, (n) => f(n, { elTag: "div", elClasses: ["fc-list-empty-cushion"] }));
   }
   renderSegList(e, o) {
     let { theme: M, options: n } = this.context, { timeHeaderId: b, eventHeaderId: r, dateHeaderIdRoot: z } = this.state, i = OW(e);
-    return u(S1, { unit: "day" }, (a, s) => {
+    return f(S1, { unit: "day" }, (a, s) => {
       let d = [];
-      for (let A = 0; A < i.length; A += 1) {
-        let f = i[A];
-        if (f) {
-          let h = It(o[A]), R = z + "-" + h;
-          d.push(u(MW, { key: h, cellId: R, dayDate: o[A], todayRange: s })), f = oM(f, n.eventOrder);
-          for (let W of f)
-            d.push(u(rW, Object.assign({ key: h + ":" + W.eventRange.instance.instanceId, seg: W, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: !1, timeHeaderId: b, eventHeaderId: r, dateHeaderId: R }, v1(W, s, a))));
+      for (let u = 0; u < i.length; u += 1) {
+        let A = i[u];
+        if (A) {
+          let h = Pt(o[u]), R = z + "-" + h;
+          d.push(f(MW, { key: h, cellId: R, dayDate: o[u], todayRange: s })), A = oM(A, n.eventOrder);
+          for (let W of A)
+            d.push(f(rW, Object.assign({ key: h + ":" + W.eventRange.instance.instanceId, seg: W, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: !1, timeHeaderId: b, eventHeaderId: r, dateHeaderId: R }, v1(W, s, a))));
         }
       }
-      return u(
+      return f(
         "table",
         { className: "fc-list-table " + M.getClass("table") },
-        u(
+        f(
           "thead",
           null,
-          u(
+          f(
             "tr",
             null,
-            u("th", { scope: "col", id: b }, n.timeHint),
-            u("th", { scope: "col", "aria-hidden": !0 }),
-            u("th", { scope: "col", id: r }, n.eventHint)
+            f("th", { scope: "col", id: b }, n.timeHint),
+            f("th", { scope: "col", "aria-hidden": !0 }),
+            f("th", { scope: "col", id: r }, n.eventHint)
           )
         ),
-        u("tbody", null, d)
+        f("tbody", null, d)
       );
     });
   }
@@ -14257,7 +14257,7 @@ function OW(t) {
   return e;
 }
 var lW = ':root{--fc-list-event-dot-width:10px;--fc-list-event-hover-bg-color:#f5f5f5}.fc-theme-standard .fc-list{border:1px solid var(--fc-border-color)}.fc .fc-list-empty{align-items:center;background-color:var(--fc-neutral-bg-color);display:flex;height:100%;justify-content:center}.fc .fc-list-empty-cushion{margin:5em 0}.fc .fc-list-table{border-style:hidden;width:100%}.fc .fc-list-table tr>*{border-left:0;border-right:0}.fc .fc-list-sticky .fc-list-day>*{background:var(--fc-page-bg-color);position:sticky;top:0}.fc .fc-list-table thead{left:-10000px;position:absolute}.fc .fc-list-table tbody>tr:first-child th{border-top:0}.fc .fc-list-table th{padding:0}.fc .fc-list-day-cushion,.fc .fc-list-table td{padding:8px 14px}.fc .fc-list-day-cushion:after{clear:both;content:"";display:table}.fc-theme-standard .fc-list-day-cushion{background-color:var(--fc-neutral-bg-color)}.fc-direction-ltr .fc-list-day-text,.fc-direction-rtl .fc-list-day-side-text{float:left}.fc-direction-ltr .fc-list-day-side-text,.fc-direction-rtl .fc-list-day-text{float:right}.fc-direction-ltr .fc-list-table .fc-list-event-graphic{padding-right:0}.fc-direction-rtl .fc-list-table .fc-list-event-graphic{padding-left:0}.fc .fc-list-event.fc-event-forced-url{cursor:pointer}.fc .fc-list-event:hover td{background-color:var(--fc-list-event-hover-bg-color)}.fc .fc-list-event-graphic,.fc .fc-list-event-time{white-space:nowrap;width:1px}.fc .fc-list-event-dot{border:calc(var(--fc-list-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-list-event-dot-width)/2);box-sizing:content-box;display:inline-block;height:0;width:0}.fc .fc-list-event-title a{color:inherit;text-decoration:none}.fc .fc-list-event.fc-event-forced-url:hover a{text-decoration:underline}';
-Ie(lW);
+Pe(lW);
 const dW = {
   listDayFormat: lz,
   listDaySideFormat: lz,
@@ -14314,27 +14314,27 @@ class uW extends $0 {
   }
   render() {
     const { props: e, state: o, context: M } = this, { dateProfile: n, forPrint: b } = e, { options: r } = M, z = this.buildDayTableModel(n, M.dateProfileGenerator), i = this.slicer.sliceProps(e, n, r.nextDayThreshold, M, z), a = e.tableWidth != null ? e.tableWidth / r.aspectRatio : null, s = z.cells.length, d = a != null ? a / s : null;
-    return u(
+    return f(
       "div",
       { ref: e.elRef, "data-date": e.isoDateStr, className: "fc-multimonth-month", style: { width: e.width }, role: "grid", "aria-labelledby": o.labelId },
-      u(
+      f(
         "div",
         { className: "fc-multimonth-header", style: { marginBottom: d }, role: "presentation" },
-        u("div", { className: "fc-multimonth-title", id: o.labelId }, M.dateEnv.format(e.dateProfile.currentRange.start, e.titleFormat)),
-        u(
+        f("div", { className: "fc-multimonth-title", id: o.labelId }, M.dateEnv.format(e.dateProfile.currentRange.start, e.titleFormat)),
+        f(
           "table",
           { className: [
             "fc-multimonth-header-table",
             M.theme.getClass("table")
           ].join(" "), role: "presentation" },
-          u(
+          f(
             "thead",
             { role: "rowgroup" },
-            u(yb, { dateProfile: e.dateProfile, dates: z.headerDates, datesRepDistinctDays: !1 })
+            f(yb, { dateProfile: e.dateProfile, dates: z.headerDates, datesRepDistinctDays: !1 })
           )
         )
       ),
-      u(
+      f(
         "div",
         { className: [
           "fc-multimonth-daygrid",
@@ -14344,16 +14344,16 @@ class uW extends $0 {
           b && "fc-daygrid-body-unbalanced",
           b && "fc-daygrid-body-natural"
         ].join(" "), style: { marginTop: -d } },
-        u(
+        f(
           "table",
           { className: [
             "fc-multimonth-daygrid-table",
             M.theme.getClass("table")
           ].join(" "), style: { height: b ? "" : a }, role: "presentation" },
-          u(
+          f(
             "tbody",
             { role: "rowgroup" },
-            u(Jc, Object.assign({}, i, { dateProfile: n, cells: z.cells, eventSelection: e.eventSelection, dayMaxEvents: !b, dayMaxEventRows: !b, showWeekNumbers: r.weekNumbers, clientWidth: e.clientWidth, clientHeight: e.clientHeight, forPrint: b }))
+            f(Jc, Object.assign({}, i, { dateProfile: n, cells: z.cells, eventSelection: e.eventSelection, dayMaxEvents: !b, dayMaxEventRows: !b, showWeekNumbers: r.weekNumbers, clientWidth: e.clientWidth, clientHeight: e.clientHeight, forPrint: b }))
           )
         )
       )
@@ -14367,16 +14367,16 @@ class fW extends $0 {
     };
   }
   render() {
-    const { context: e, props: o, state: M } = this, { options: n } = e, { clientWidth: b, clientHeight: r } = M, z = M.monthHPadding || 0, i = Math.min(b != null ? Math.floor(b / (n.multiMonthMinWidth + z)) : 1, n.multiMonthMaxColumns) || 1, a = 100 / i + "%", s = b == null ? null : b / i - z, d = b != null && i === 1, A = this.splitDateProfileByMonth(e.dateProfileGenerator, o.dateProfile, e.dateEnv, d ? !1 : n.fixedWeekCount, n.showNonCurrentDates), f = this.buildMonthFormat(n.multiMonthTitleFormat, A), h = [
+    const { context: e, props: o, state: M } = this, { options: n } = e, { clientWidth: b, clientHeight: r } = M, z = M.monthHPadding || 0, i = Math.min(b != null ? Math.floor(b / (n.multiMonthMinWidth + z)) : 1, n.multiMonthMaxColumns) || 1, a = 100 / i + "%", s = b == null ? null : b / i - z, d = b != null && i === 1, u = this.splitDateProfileByMonth(e.dateProfileGenerator, o.dateProfile, e.dateEnv, d ? !1 : n.fixedWeekCount, n.showNonCurrentDates), A = this.buildMonthFormat(n.multiMonthTitleFormat, u), h = [
       "fc-multimonth",
       d ? "fc-multimonth-singlecol" : "fc-multimonth-multicol",
       s != null && s < 400 ? "fc-multimonth-compact" : "",
       o.isHeightAuto ? "" : "fc-scroller"
       // for AutoScroller
     ];
-    return u(xe, { elRef: this.scrollElRef, elClasses: h, viewSpec: e.viewSpec }, A.map((R, W) => {
+    return f(Ie, { elRef: this.scrollElRef, elClasses: h, viewSpec: e.viewSpec }, u.map((R, W) => {
       const g = yn(R.currentRange.start);
-      return u(uW, Object.assign({}, o, { key: g, isoDateStr: g, elRef: W === 0 ? this.firstMonthElRef : void 0, titleFormat: f, dateProfile: R, width: a, tableWidth: s, clientWidth: b, clientHeight: r }));
+      return f(uW, Object.assign({}, o, { key: g, isoDateStr: g, elRef: W === 0 ? this.firstMonthElRef : void 0, titleFormat: A, dateProfile: R, width: a, tableWidth: s, clientWidth: b, clientHeight: r }));
     }));
   }
   componentDidMount() {
@@ -14435,13 +14435,13 @@ function hW(t, e, o, M, n) {
       start: t.skipHiddenDays(d.start),
       end: t.skipHiddenDays(d.end, -1, !0)
     };
-    const A = e.activeRange ? F1(e.activeRange, n ? d : s) : null;
+    const u = e.activeRange ? F1(e.activeRange, n ? d : s) : null;
     i.push({
       currentDate: e.currentDate,
       isValid: e.isValid,
       validRange: e.validRange,
       renderRange: d,
-      activeRange: A,
+      activeRange: u,
       currentRange: s,
       currentRangeUnit: "month",
       isRangeAllDay: !0,
@@ -14462,7 +14462,7 @@ const gW = {
   multiMonthMinWidth: Number
 };
 var yW = ".fc .fc-multimonth{border:1px solid var(--fc-border-color);display:flex;flex-wrap:wrap;overflow-x:hidden;overflow-y:auto}.fc .fc-multimonth-title{font-size:1.2em;font-weight:700;padding:1em 0;text-align:center}.fc .fc-multimonth-daygrid{background:var(--fc-page-bg-color)}.fc .fc-multimonth-daygrid-table,.fc .fc-multimonth-header-table{table-layout:fixed;width:100%}.fc .fc-multimonth-daygrid-table{border-top-style:hidden!important}.fc .fc-multimonth-singlecol .fc-multimonth{position:relative}.fc .fc-multimonth-singlecol .fc-multimonth-header{background:var(--fc-page-bg-color);position:relative;top:0;z-index:2}.fc .fc-multimonth-singlecol .fc-multimonth-daygrid{position:relative;z-index:1}.fc .fc-multimonth-singlecol .fc-multimonth-daygrid-table,.fc .fc-multimonth-singlecol .fc-multimonth-header-table{border-left-style:hidden;border-right-style:hidden}.fc .fc-multimonth-singlecol .fc-multimonth-month:last-child .fc-multimonth-daygrid-table{border-bottom-style:hidden}.fc .fc-multimonth-multicol{line-height:1}.fc .fc-multimonth-multicol .fc-multimonth-month{padding:0 1.2em 1.2em}.fc .fc-multimonth-multicol .fc-daygrid-more-link{border:1px solid var(--fc-event-border-color);display:block;float:none;padding:1px}.fc .fc-multimonth-compact{line-height:1}.fc .fc-multimonth-compact .fc-multimonth-daygrid-table,.fc .fc-multimonth-compact .fc-multimonth-header-table{font-size:.9em}.fc-media-screen .fc-multimonth-singlecol .fc-multimonth-header{position:sticky}.fc-media-print .fc-multimonth{overflow:visible}";
-Ie(yW);
+Pe(yW);
 var LW = x0({
   name: "@fullcalendar/multimonth",
   initialView: "multiMonthYear",
@@ -14503,16 +14503,16 @@ function wW(t) {
   if (!EW(o)) {
     let M = BW(e, t.pluginHooks.premiumReleaseDate);
     if (M !== "valid")
-      return u("div", { className: "fc-license-message", style: TW }, M === "outdated" ? u(
+      return f("div", { className: "fc-license-message", style: TW }, M === "outdated" ? f(
         M0,
         null,
         "Your license key is too old to work with this version. ",
-        u("a", { href: NW }, "More Info")
-      ) : u(
+        f("a", { href: NW }, "More Info")
+      ) : f(
         M0,
         null,
         "Your license key is invalid. ",
-        u("a", { href: vW }, "More Info")
+        f("a", { href: vW }, "More Info")
       ));
   }
   return null;
@@ -14534,7 +14534,7 @@ function EW(t) {
 const DW = {
   schedulerLicenseKey: String
 };
-var zt = x0({
+var it = x0({
   name: "@fullcalendar/premium-common",
   premiumReleaseDate: "2025-08-10",
   optionRefiners: DW,
@@ -14587,7 +14587,7 @@ const xW = ".fc-sticky";
 class IW {
   constructor(e, o) {
     this.scrollEl = e, this.isRtl = o, this.updateSize = () => {
-      let { scrollEl: M } = this, n = rt(M, xW), b = this.queryElGeoms(n), r = M.clientWidth;
+      let { scrollEl: M } = this, n = pt(M, xW), b = this.queryElGeoms(n), r = M.clientWidth;
       PW(n, b, r);
     };
   }
@@ -14619,7 +14619,7 @@ class IW {
 function PW(t, e, o) {
   t.forEach((M, n) => {
     let { textAlign: b, elWidth: r, parentBound: z } = e[n], i = z.right - z.left, a;
-    b === "center" && i > o ? a = (o - r) / 2 : a = "", Nt(M, {
+    b === "center" && i > o ? a = (o - r) / 2 : a = "", St(M, {
       left: a,
       right: a,
       top: 0
@@ -14640,10 +14640,10 @@ class HW extends $ {
   }
   render() {
     let { props: e, state: o, context: M } = this, n = M.isRtl && Bo(), b = 0, r = 0, z = 0, { overflowX: i, overflowY: a } = e;
-    return e.forPrint && (i = "visible", a = "visible"), i === "scroll-hidden" && (z = o.xScrollbarWidth), a === "scroll-hidden" && o.yScrollbarWidth != null && (n ? b = o.yScrollbarWidth : r = o.yScrollbarWidth), u(
+    return e.forPrint && (i = "visible", a = "visible"), i === "scroll-hidden" && (z = o.xScrollbarWidth), a === "scroll-hidden" && o.yScrollbarWidth != null && (n ? b = o.yScrollbarWidth : r = o.yScrollbarWidth), f(
       "div",
       { ref: this.elRef, className: "fc-scroller-harness" + (e.liquid ? " fc-scroller-harness-liquid" : "") },
-      u(vb, { ref: this.handleScroller, elRef: this.props.scrollerElRef, overflowX: i === "scroll-hidden" ? "scroll" : i, overflowY: a === "scroll-hidden" ? "scroll" : a, overcomeLeft: b, overcomeRight: r, overcomeBottom: z, maxHeight: typeof e.maxHeight == "number" ? e.maxHeight + (i === "scroll-hidden" ? o.xScrollbarWidth : 0) : "", liquid: e.liquid, liquidIsAbsolute: !0 }, e.children)
+      f(vb, { ref: this.handleScroller, elRef: this.props.scrollerElRef, overflowX: i === "scroll-hidden" ? "scroll" : i, overflowY: a === "scroll-hidden" ? "scroll" : a, overcomeLeft: b, overcomeRight: r, overcomeBottom: z, maxHeight: typeof e.maxHeight == "number" ? e.maxHeight + (i === "scroll-hidden" ? o.xScrollbarWidth : 0) : "", liquid: e.liquid, liquidIsAbsolute: !0 }, e.children)
     );
   }
   componentDidMount() {
@@ -14674,7 +14674,7 @@ class HW extends $ {
 const Az = "wheel mousewheel DomMouseScroll MozMousePixelScroll".split(" ");
 class UW {
   constructor(e) {
-    this.el = e, this.emitter = new v2(), this.isScrolling = !1, this.isTouching = !1, this.isRecentlyWheeled = !1, this.isRecentlyScrolled = !1, this.wheelWaiter = new A2(this._handleWheelWaited.bind(this)), this.scrollWaiter = new A2(this._handleScrollWaited.bind(this)), this.handleScroll = () => {
+    this.el = e, this.emitter = new N2(), this.isScrolling = !1, this.isTouching = !1, this.isRecentlyWheeled = !1, this.isRecentlyScrolled = !1, this.wheelWaiter = new u2(this._handleWheelWaited.bind(this)), this.scrollWaiter = new u2(this._handleScrollWaited.bind(this)), this.handleScroll = () => {
       this.startScroll(), this.emitter.trigger("scroll", this.isRecentlyWheeled, this.isTouching), this.isRecentlyScrolled = !0, this.scrollWaiter.request(500);
     }, this.handleWheel = () => {
       this.isRecentlyWheeled = !0, this.wheelWaiter.request(500);
@@ -14707,7 +14707,7 @@ class UW {
     this.isRecentlyWheeled = !1;
   }
 }
-class YW {
+class jW {
   constructor(e, o) {
     this.isVertical = e, this.scrollEls = o, this.isPaused = !1, this.scrollListeners = o.map((M) => this.bindScroller(M));
   }
@@ -14781,27 +14781,27 @@ class iM extends $ {
   render() {
     let { props: e, state: o, context: M } = this, { shrinkWidths: n } = o, b = this.compileColGroupStats(e.colGroups.map((g) => [g])), r = this.renderMicroColGroups(b.map((g, N) => [g.cols, n[N]])), z = vc(e.liquid, M);
     this.getDims();
-    let i = e.sections, a = i.length, s = 0, d, A = [], f = [], h = [];
+    let i = e.sections, a = i.length, s = 0, d, u = [], A = [], h = [];
     for (; s < a && (d = i[s]).type === "header"; )
-      A.push(this.renderSection(d, s, b, r, o.sectionRowMaxHeights, !0)), s += 1;
+      u.push(this.renderSection(d, s, b, r, o.sectionRowMaxHeights, !0)), s += 1;
     for (; s < a && (d = i[s]).type === "body"; )
-      f.push(this.renderSection(d, s, b, r, o.sectionRowMaxHeights, !1)), s += 1;
+      A.push(this.renderSection(d, s, b, r, o.sectionRowMaxHeights, !1)), s += 1;
     for (; s < a && (d = i[s]).type === "footer"; )
       h.push(this.renderSection(d, s, b, r, o.sectionRowMaxHeights, !0)), s += 1;
     const R = !fb(), W = { role: "rowgroup" };
-    return u("table", {
+    return f("table", {
       ref: e.elRef,
       role: "grid",
       className: z.join(" ")
-    }, GW(b, n), !!(!R && A.length) && u("thead", W, ...A), !!(!R && f.length) && u("tbody", W, ...f), !!(!R && h.length) && u("tfoot", W, ...h), R && u("tbody", W, ...A, ...f, ...h));
+    }, GW(b, n), !!(!R && u.length) && f("thead", W, ...u), !!(!R && A.length) && f("tbody", W, ...A), !!(!R && h.length) && f("tfoot", W, ...h), R && f("tbody", W, ...u, ...A, ...h));
   }
   renderSection(e, o, M, n, b, r) {
-    return "outerContent" in e ? u(M0, { key: e.key }, e.outerContent) : u("tr", { key: e.key, role: "presentation", className: Nc(e, this.props.liquid).join(" ") }, e.chunks.map((z, i) => this.renderChunk(e, o, M[i], n[i], z, i, (b[o] || [])[i] || [], r)));
+    return "outerContent" in e ? f(M0, { key: e.key }, e.outerContent) : f("tr", { key: e.key, role: "presentation", className: Nc(e, this.props.liquid).join(" ") }, e.chunks.map((z, i) => this.renderChunk(e, o, M[i], n[i], z, i, (b[o] || [])[i] || [], r)));
   }
   renderChunk(e, o, M, n, b, r, z, i) {
     if ("outerContent" in b)
-      return u(M0, { key: b.key }, b.outerContent);
-    let { state: a } = this, { scrollerClientWidths: s, scrollerClientHeights: d } = a, [A, f] = this.getDims(), h = o * f + r, R = !this.context.isRtl || Bo() ? f - 1 : 0, W = r === R, g = o === A - 1, N = g && a.forceXScrollbars, B = W && a.forceYScrollbars, k = M && M.allowXScrolling, j = Wc(this.props, e), Y = Nb(this.props, e), U = e.expandRows && Y, Z = M && M.totalColMinWidth || "", S0 = Rc(e, b, {
+      return f(M0, { key: b.key }, b.outerContent);
+    let { state: a } = this, { scrollerClientWidths: s, scrollerClientHeights: d } = a, [u, A] = this.getDims(), h = o * A + r, R = !this.context.isRtl || Bo() ? A - 1 : 0, W = r === R, g = o === u - 1, N = g && a.forceXScrollbars, B = W && a.forceYScrollbars, C = M && M.allowXScrolling, Y = Wc(this.props, e), j = Nb(this.props, e), U = e.expandRows && j, Z = M && M.totalColMinWidth || "", S0 = Rc(e, b, {
       tableColGroupNode: n,
       tableMinWidth: Z,
       clientWidth: s[h] !== void 0 ? s[h] : null,
@@ -14810,15 +14810,15 @@ class iM extends $ {
       syncRowHeights: !!e.syncRowHeights,
       rowSyncHeights: z,
       reportRowHeightChange: this.handleRowHeightChange
-    }, i), W0 = N ? g ? "scroll" : "scroll-hidden" : k ? g ? "auto" : "scroll-hidden" : "hidden", H0 = B ? W ? "scroll" : "scroll-hidden" : j ? W ? "auto" : "scroll-hidden" : "hidden";
-    return S0 = u(HW, { ref: this.clippedScrollerRefs.createRef(h), scrollerElRef: this.scrollerElRefs.createRef(h), overflowX: W0, overflowY: H0, forPrint: this.props.forPrint, liquid: Y, maxHeight: e.maxHeight }, S0), u(i ? "th" : "td", {
+    }, i), W0 = N ? g ? "scroll" : "scroll-hidden" : C ? g ? "auto" : "scroll-hidden" : "hidden", H0 = B ? W ? "scroll" : "scroll-hidden" : Y ? W ? "auto" : "scroll-hidden" : "hidden";
+    return S0 = f(HW, { ref: this.clippedScrollerRefs.createRef(h), scrollerElRef: this.scrollerElRefs.createRef(h), overflowX: W0, overflowY: H0, forPrint: this.props.forPrint, liquid: j, maxHeight: e.maxHeight }, S0), f(i ? "th" : "td", {
       key: b.key,
       ref: this.chunkElRefs.createRef(h),
       role: "presentation"
     }, S0);
   }
   componentDidMount() {
-    this.getStickyScrolling = QM($W), this.getScrollSyncersBySection = kp(qz.bind(this, !0), null, po), this.getScrollSyncersByColumn = kp(qz.bind(this, !1), null, po), this.updateScrollSyncers(), this.handleSizing(!1), this.context.addResizeHandler(this.handleSizing);
+    this.getStickyScrolling = QM($W), this.getScrollSyncersBySection = kp(qz.bind(this, !0), null, zo), this.getScrollSyncersByColumn = kp(qz.bind(this, !1), null, zo), this.updateScrollSyncers(), this.handleSizing(!1), this.context.addResizeHandler(this.handleSizing);
   }
   componentDidUpdate(e, o) {
     this.updateScrollSyncers(), this.handleSizing(!1, o.sectionRowMaxHeights !== this.state.sectionRowMaxHeights);
@@ -14848,11 +14848,11 @@ class iM extends $ {
       if (r && r.syncRowHeights) {
         let i = [];
         for (let d = 0; d < M; d += 1) {
-          let A = b * M + d, f = [], h = this.chunkElRefs.currentMap[A];
-          h ? f = rt(h, ".fc-scrollgrid-sync-table tr").map((R) => {
+          let u = b * M + d, A = [], h = this.chunkElRefs.currentMap[u];
+          h ? A = pt(h, ".fc-scrollgrid-sync-table tr").map((R) => {
             let W = uz(R);
             return e.set(R, W), W;
-          }) : f = [], i.push(f);
+          }) : A = [], i.push(A);
         }
         let a = i[0].length, s = !0;
         for (let d = 1; d < M; d += 1)
@@ -14864,22 +14864,22 @@ class iM extends $ {
           for (let d = 0; d < M; d += 1)
             z.push([]);
           for (let d = 0; d < a; d += 1) {
-            let A = [];
+            let u = [];
             for (let h = 0; h < M; h += 1) {
               let R = i[h][d];
-              R != null && A.push(R);
+              R != null && u.push(R);
             }
-            let f = Math.max(...A);
+            let A = Math.max(...u);
             for (let h = 0; h < M; h += 1)
-              z[h].push(f);
+              z[h].push(A);
           }
         } else {
           let d = [];
-          for (let f = 0; f < M; f += 1)
-            d.push(jW(i[f]) + i[f].length);
-          let A = Math.max(...d);
-          for (let f = 0; f < M; f += 1) {
-            let h = i[f].length, R = A - h, W = Math.floor(R / h), g = R - W * (h - 1), N = [], B = 0;
+          for (let A = 0; A < M; A += 1)
+            d.push(YW(i[A]) + i[A].length);
+          let u = Math.max(...d);
+          for (let A = 0; A < M; A += 1) {
+            let h = i[A].length, R = u - h, W = Math.floor(R / h), g = R - W * (h - 1), N = [], B = 0;
             for (B < h && (N.push(g), B += 1); B < h; )
               N.push(W), B += 1;
             z.push(N);
@@ -14892,26 +14892,26 @@ class iM extends $ {
   }
   computeScrollerDims() {
     let e = Mc(), [o, M] = this.getDims(), n = !this.context.isRtl || Bo() ? M - 1 : 0, b = o - 1, r = this.clippedScrollerRefs.currentMap, z = this.scrollerElRefs.currentMap, i = !1, a = !1, s = {}, d = {};
-    for (let A = 0; A < o; A += 1) {
-      let f = A * M + n, h = r[f];
+    for (let u = 0; u < o; u += 1) {
+      let A = u * M + n, h = r[A];
       if (h && h.needsYScrolling()) {
         i = !0;
         break;
       }
     }
-    for (let A = 0; A < M; A += 1) {
-      let f = b * M + A, h = r[f];
+    for (let u = 0; u < M; u += 1) {
+      let A = b * M + u, h = r[A];
       if (h && h.needsXScrolling()) {
         a = !0;
         break;
       }
     }
-    for (let A = 0; A < o; A += 1)
-      for (let f = 0; f < M; f += 1) {
-        let h = A * M + f, R = z[h];
+    for (let u = 0; u < o; u += 1)
+      for (let A = 0; A < M; A += 1) {
+        let h = u * M + A, R = z[h];
         if (R) {
           let W = R.parentNode;
-          s[h] = Math.floor(W.getBoundingClientRect().width - (f === n && i ? e.y : 0)), d[h] = Math.floor(W.getBoundingClientRect().height - (A === b && a ? e.x : 0));
+          s[h] = Math.floor(W.getBoundingClientRect().width - (A === n && i ? e.y : 0)), d[h] = Math.floor(W.getBoundingClientRect().height - (u === b && a ? e.x : 0));
         }
       }
     return { forceYScrollbars: i, forceXScrollbars: a, scrollerClientWidths: s, scrollerClientHeights: d };
@@ -14931,7 +14931,7 @@ class iM extends $ {
     this.scrollSyncersBySection = this.getScrollSyncersBySection(n), this.scrollSyncersByColumn = this.getScrollSyncersByColumn(b);
   }
   destroyScrollSyncers() {
-    Y0(this.scrollSyncersBySection, po), Y0(this.scrollSyncersByColumn, po);
+    j0(this.scrollSyncersBySection, zo), j0(this.scrollSyncersByColumn, zo);
   }
   getChunkConfigByIndex(e) {
     let o = this.getDims()[1], M = Math.floor(e / o), n = e % o, b = this.props.sections[M];
@@ -14963,14 +14963,14 @@ iM.addStateEquality({
   scrollerClientWidths: K0,
   scrollerClientHeights: K0
 });
-function jW(t) {
+function YW(t) {
   let e = 0;
   for (let o of t)
     e += o;
   return e;
 }
 function uz(t) {
-  let e = rt(t, ".fc-scrollgrid-sync-inner").map(FW);
+  let e = pt(t, ".fc-scrollgrid-sync-inner").map(FW);
   return e.length ? Math.max(...e) : 0;
 }
 function FW(t) {
@@ -14980,9 +14980,9 @@ function GW(t, e) {
   let o = t.map((M, n) => {
     let b = M.width;
     return b === "shrink" && (b = M.totalColWidth + yc(e[n]) + 1), // eslint-disable-next-line react/jsx-key
-    u("col", { style: { width: b } });
+    f("col", { style: { width: b } });
   });
-  return u("colgroup", {}, ...o);
+  return f("colgroup", {}, ...o);
 }
 function VW(t) {
   let e = fz(t.cols, "width"), o = fz(t.cols, "minWidth"), M = Lc(t.cols), n = t.width !== "shrink" && !!(e || o || M);
@@ -15007,12 +15007,12 @@ const QW = {
   cols: mc
 };
 function KW(t, e) {
-  return so(t, e, QW);
+  return Oo(t, e, QW);
 }
 function qz(t, ...e) {
-  return new YW(t, e);
+  return new jW(t, e);
 }
-function po(t) {
+function zo(t) {
   t.destroy();
 }
 function $W(t, e) {
@@ -15021,7 +15021,7 @@ function $W(t, e) {
 var ZW = x0({
   name: "@fullcalendar/scrollgrid",
   premiumReleaseDate: "2025-08-10",
-  deps: [zt],
+  deps: [it],
   scrollGridImpl: iM
 });
 const JW = 18, Do = 6, e6 = 200;
@@ -15053,26 +15053,26 @@ function Aa(t, e, o, M) {
   };
   o6(n, t, e), ua(n, t, e), M6(n, t, e);
   let b = o.slotLabelFormat, r = Array.isArray(b) ? b : b != null ? [b] : n6(n, t, e, o);
-  n.headerFormats = r.map((k) => m0(k)), n.isTimeScale = !!n.slotDuration.milliseconds;
+  n.headerFormats = r.map((C) => m0(C)), n.isTimeScale = !!n.slotDuration.milliseconds;
   let z = null;
   if (!n.isTimeScale) {
-    const k = Xe(n.slotDuration).unit;
-    /year|month|week/.test(k) && (z = k);
+    const C = xe(n.slotDuration).unit;
+    /year|month|week/.test(C) && (z = C);
   }
-  n.largeUnit = z, n.emphasizeWeeks = vi(n.slotDuration) === 1 && Rt("weeks", t, e) >= 2 && !o.businessHours;
+  n.largeUnit = z, n.emphasizeWeeks = vi(n.slotDuration) === 1 && mt("weeks", t, e) >= 2 && !o.businessHours;
   let i = o.snapDuration, a, s;
-  i && (a = r0(i), s = ke(n.slotDuration, a)), s == null && (a = n.slotDuration, s = 1), n.snapDuration = a, n.snapsPerSlot = s;
-  let d = M1(t.slotMaxTime) - M1(t.slotMinTime), A = hz(t.renderRange.start, n, e), f = hz(t.renderRange.end, n, e);
-  n.isTimeScale && (A = e.add(A, t.slotMinTime), f = e.add(X0(f, -1), t.slotMaxTime)), n.timeWindowMs = d, n.normalizedRange = { start: A, end: f };
-  let h = [], R = A;
-  for (; R < f; )
+  i && (a = r0(i), s = Xe(n.slotDuration, a)), s == null && (a = n.slotDuration, s = 1), n.snapDuration = a, n.snapsPerSlot = s;
+  let d = M1(t.slotMaxTime) - M1(t.slotMinTime), u = hz(t.renderRange.start, n, e), A = hz(t.renderRange.end, n, e);
+  n.isTimeScale && (u = e.add(u, t.slotMinTime), A = e.add(X0(A, -1), t.slotMaxTime)), n.timeWindowMs = d, n.normalizedRange = { start: u, end: A };
+  let h = [], R = u;
+  for (; R < A; )
     _o(R, n, t, M) && h.push(R), R = e.add(R, n.slotDuration);
   n.slotDates = h;
   let W = -1, g = 0;
   const N = [], B = [];
-  for (R = A; R < f; )
+  for (R = u; R < A; )
     _o(R, n, t, M) ? (W += 1, N.push(W), B.push(g)) : N.push(W + 0.5), R = e.add(R, n.snapDuration), g += 1;
-  return n.snapDiffToIndex = N, n.snapIndexToDiff = B, n.snapCnt = W + 1, n.slotCnt = n.snapCnt / n.snapsPerSlot, n.isWeekStarts = b6(n, e), n.cellRows = r6(n, e), n.slotsPerLabel = ke(n.labelInterval, n.slotDuration), n;
+  return n.snapDiffToIndex = N, n.snapIndexToDiff = B, n.snapCnt = W + 1, n.slotCnt = n.snapCnt / n.snapsPerSlot, n.isWeekStarts = b6(n, e), n.cellRows = r6(n, e), n.slotsPerLabel = Xe(n.labelInterval, n.slotDuration), n;
 }
 function hz(t, e, o) {
   let M = t;
@@ -15103,7 +15103,7 @@ function _o(t, e, o, M) {
 function o6(t, e, o) {
   const { currentRange: M } = e;
   if (t.labelInterval && o.countDurationsBetween(M.start, M.end, t.labelInterval) > N1.MAX_TIMELINE_SLOTS && (console.warn("slotLabelInterval results in too many cells"), t.labelInterval = null), t.slotDuration && o.countDurationsBetween(M.start, M.end, t.slotDuration) > N1.MAX_TIMELINE_SLOTS && (console.warn("slotDuration results in too many cells"), t.slotDuration = null), t.labelInterval && t.slotDuration) {
-    const n = ke(t.labelInterval, t.slotDuration);
+    const n = Xe(t.labelInterval, t.slotDuration);
     (n === null || n < 1) && (console.warn("slotLabelInterval must be a multiple of slotDuration"), t.slotDuration = null);
   }
 }
@@ -15114,7 +15114,7 @@ function ua(t, e, o) {
     let b;
     if (t.slotDuration) {
       for (b of kn) {
-        const r = r0(b), z = ke(r, t.slotDuration);
+        const r = r0(b), z = Xe(r, t.slotDuration);
         if (z !== null && z <= Do) {
           n = r;
           break;
@@ -15135,7 +15135,7 @@ function M6(t, e, o) {
   if (!n) {
     const b = ua(t, e, o);
     for (let r of kn) {
-      const z = r0(r), i = ke(b, z);
+      const z = r0(r), i = Xe(b, z);
       if (i !== null && i > 1 && i <= Do) {
         n = z;
         break;
@@ -15148,7 +15148,7 @@ function M6(t, e, o) {
 function n6(t, e, o, M) {
   let n, b;
   const { labelInterval: r } = t;
-  let z = Xe(r).unit;
+  let z = xe(r).unit;
   const i = M.weekNumbers;
   let a = n = b = null;
   switch (z === "week" && !i && (z = "day"), z) {
@@ -15156,16 +15156,16 @@ function n6(t, e, o, M) {
       a = { year: "numeric" };
       break;
     case "month":
-      Rt("years", e, o) > 1 && (a = { year: "numeric" }), n = { month: "short" };
+      mt("years", e, o) > 1 && (a = { year: "numeric" }), n = { month: "short" };
       break;
     case "week":
-      Rt("years", e, o) > 1 && (a = { year: "numeric" }), n = { week: "narrow" };
+      mt("years", e, o) > 1 && (a = { year: "numeric" }), n = { week: "narrow" };
       break;
     case "day":
-      Rt("years", e, o) > 1 ? a = { year: "numeric", month: "long" } : Rt("months", e, o) > 1 && (a = { month: "long" }), i && (n = { week: "short" }), b = { weekday: "narrow", day: "numeric" };
+      mt("years", e, o) > 1 ? a = { year: "numeric", month: "long" } : mt("months", e, o) > 1 && (a = { month: "long" }), i && (n = { week: "short" }), b = { weekday: "narrow", day: "numeric" };
       break;
     case "hour":
-      i && (a = { week: "short" }), Rt("days", e, o) > 1 && (n = { weekday: "short", day: "numeric", month: "numeric", omitCommas: !0 }), b = {
+      i && (a = { week: "short" }), mt("days", e, o) > 1 && (n = { weekday: "short", day: "numeric", month: "numeric", omitCommas: !0 }), b = {
         hour: "numeric",
         minute: "2-digit",
         omitZeroMinute: !0,
@@ -15191,9 +15191,9 @@ function n6(t, e, o, M) {
   }
   return [].concat(a || [], n || [], b || []);
 }
-function Rt(t, e, o) {
+function mt(t, e, o) {
   let M = e.currentRange, n = null;
-  return t === "years" ? n = o.diffWholeYears(M.start, M.end) : t === "months" || t === "weeks" ? n = o.diffWholeMonths(M.start, M.end) : t === "days" && (n = u2(M.start, M.end)), n || 0;
+  return t === "years" ? n = o.diffWholeYears(M.start, M.end) : t === "months" || t === "weeks" ? n = o.diffWholeMonths(M.start, M.end) : t === "days" && (n = f2(M.start, M.end)), n || 0;
 }
 function b6(t, e) {
   let { slotDates: o, emphasizeWeeks: M } = t, n = null, b = [];
@@ -15208,16 +15208,16 @@ function r6(t, e) {
   for (let i = 0; i < o.length; i += 1) {
     let a = o[i], s = t.isWeekStarts[i];
     for (let d = 0; d < M.length; d += 1) {
-      let A = M[d], f = n[d], h = f[f.length - 1], R = d === M.length - 1, W = M.length > 1 && !R, g = null, N = z[d] || (R ? r : null);
+      let u = M[d], A = n[d], h = A[A.length - 1], R = d === M.length - 1, W = M.length > 1 && !R, g = null, N = z[d] || (R ? r : null);
       if (W) {
-        let B = e.format(a, A);
+        let B = e.format(a, u);
         !h || h.text !== B ? g = Wz(a, B, N) : h.colspan += 1;
-      } else if (!h || Je(e.countDurationsBetween(t.normalizedRange.start, a, t.labelInterval))) {
-        let B = e.format(a, A);
+      } else if (!h || et(e.countDurationsBetween(t.normalizedRange.start, a, t.labelInterval))) {
+        let B = e.format(a, u);
         g = Wz(a, B, N);
       } else
         h.colspan += 1;
-      g && (g.weekStart = s, f.push(g));
+      g && (g.weekStart = s, A.push(g));
     }
   }
   return n;
@@ -15227,32 +15227,32 @@ function Wz(t, e, o) {
 }
 class p6 extends $ {
   constructor() {
-    super(...arguments), this.refineRenderProps = _e(c6), this.buildCellNavLinkAttrs = I(z6);
+    super(...arguments), this.refineRenderProps = Ce(c6), this.buildCellNavLinkAttrs = I(z6);
   }
   render() {
-    let { props: e, context: o } = this, { dateEnv: M, options: n } = o, { cell: b, dateProfile: r, tDateProfile: z } = e, i = N2(b.date, e.todayRange, e.nowDate, r), a = this.refineRenderProps({
+    let { props: e, context: o } = this, { dateEnv: M, options: n } = o, { cell: b, dateProfile: r, tDateProfile: z } = e, i = S2(b.date, e.todayRange, e.nowDate, r), a = this.refineRenderProps({
       level: e.rowLevel,
       dateMarker: b.date,
       text: b.text,
       dateEnv: o.dateEnv,
       viewApi: o.viewApi
     });
-    return u(T0, { elTag: "th", elClasses: [
+    return f(T0, { elTag: "th", elClasses: [
       "fc-timeline-slot",
       "fc-timeline-slot-label",
       b.isWeekStart && "fc-timeline-slot-em",
       ...// TODO: so slot classnames for week/month/bigger. see note above about rowUnit
-      b.rowUnit === "time" ? oc(i, o.theme) : Ut(i, o.theme)
+      b.rowUnit === "time" ? oc(i, o.theme) : jt(i, o.theme)
     ], elAttrs: {
       colSpan: b.colspan,
       "data-date": M.formatIso(b.date, {
         omitTime: !z.isTimeScale,
         omitTimeZoneOffset: !0
       })
-    }, renderProps: a, generatorName: "slotLabelContent", customGenerator: n.slotLabelContent, defaultGenerator: i6, classNameGenerator: n.slotLabelClassNames, didMount: n.slotLabelDidMount, willUnmount: n.slotLabelWillUnmount }, (s) => u(
+    }, renderProps: a, generatorName: "slotLabelContent", customGenerator: n.slotLabelContent, defaultGenerator: i6, classNameGenerator: n.slotLabelClassNames, didMount: n.slotLabelDidMount, willUnmount: n.slotLabelWillUnmount }, (s) => f(
       "div",
       { className: "fc-timeline-slot-frame", style: { height: e.rowInnerHeight } },
-      u(s, { elTag: "a", elClasses: [
+      f(s, { elTag: "a", elClasses: [
         "fc-timeline-slot-cushion",
         "fc-scrollgrid-sync-inner",
         e.isSticky && "fc-sticky"
@@ -15261,7 +15261,7 @@ class p6 extends $ {
   }
 }
 function z6(t, e, o) {
-  return o && o !== "time" ? nt(t, e, o) : {};
+  return o && o !== "time" ? bt(t, e, o) : {};
 }
 function i6(t) {
   return t.text;
@@ -15277,14 +15277,14 @@ function c6(t) {
 class a6 extends $ {
   render() {
     let { dateProfile: e, tDateProfile: o, rowInnerHeights: M, todayRange: n, nowDate: b } = this.props, { cellRows: r } = o;
-    return u(M0, null, r.map((z, i) => {
+    return f(M0, null, r.map((z, i) => {
       let a = i === r.length - 1, d = [
         "fc-timeline-header-row",
         o.isTimeScale && a ? "fc-timeline-header-row-chrono" : ""
       ];
       return (
         // eslint-disable-next-line react/no-array-index-key
-        u("tr", { key: i, className: d.join(" ") }, z.map((A) => u(p6, { key: A.date.toISOString(), cell: A, rowLevel: i, dateProfile: e, tDateProfile: o, todayRange: n, nowDate: b, rowInnerHeight: M && M[i], isSticky: !a })))
+        f("tr", { key: i, className: d.join(" ") }, z.map((u) => f(p6, { key: u.date.toISOString(), cell: u, rowLevel: i, dateProfile: e, tDateProfile: o, todayRange: n, nowDate: b, rowInnerHeight: M && M[i], isSticky: !a })))
       );
     }));
   }
@@ -15306,7 +15306,7 @@ class s6 {
     );
   }
   isDateInRange(e) {
-    return j1(this.dateProfile.currentRange, e);
+    return Y1(this.dateProfile.currentRange, e);
   }
   // results range from negative width of area to 0
   dateToCoord(e) {
@@ -15344,7 +15344,7 @@ function Xn(t, e, o) {
   if (M >= e.snapDiffToIndex.length)
     return e.snapCnt;
   let n = Math.floor(M), b = e.snapDiffToIndex[n];
-  return Je(b) ? b += M - n : b = Math.ceil(b), b;
+  return et(b) ? b += M - n : b = Math.ceil(b), b;
 }
 function xb(t, e) {
   return t === null ? { left: "", right: "" } : e ? { right: t, left: "" } : { left: t, right: "" };
@@ -15357,24 +15357,24 @@ class fa extends $ {
     super(...arguments), this.rootElRef = s0();
   }
   render() {
-    let { props: e, context: o } = this, { unit: M, value: n } = Xe(e.tDateProfile.slotDuration), b = e.slatCoords && e.slatCoords.dateProfile === e.dateProfile ? e.slatCoords : null;
-    return u(S1, { unit: M, unitValue: n }, (r, z) => u(
+    let { props: e, context: o } = this, { unit: M, value: n } = xe(e.tDateProfile.slotDuration), b = e.slatCoords && e.slatCoords.dateProfile === e.dateProfile ? e.slatCoords : null;
+    return f(S1, { unit: M, unitValue: n }, (r, z) => f(
       "div",
       { className: "fc-timeline-header", ref: this.rootElRef },
-      u(
+      f(
         "table",
         { "aria-hidden": !0, className: "fc-scrollgrid-sync-table", style: { minWidth: e.tableMinWidth, width: e.clientWidth } },
         e.tableColGroupNode,
-        u(
+        f(
           "tbody",
           null,
-          u(a6, { dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: r, todayRange: z, rowInnerHeights: e.rowInnerHeights })
+          f(a6, { dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: r, todayRange: z, rowInnerHeights: e.rowInnerHeights })
         )
       ),
       o.options.nowIndicator && // need to have a container regardless of whether the current view has a visible now indicator
       // because apparently removal of the element resets the scroll for some reasons (issue #5351).
       // this issue doesn't happen for the timeline body however (
-      u("div", { className: "fc-timeline-now-indicator-container" }, b && b.isDateInRange(r) && u(Yt, { elClasses: ["fc-timeline-now-indicator-arrow"], elStyle: xb(b.dateToCoord(r), o.isRtl), isAxis: !0, date: r }))
+      f("div", { className: "fc-timeline-now-indicator-container" }, b && b.isDateInRange(r) && f(Yt, { elClasses: ["fc-timeline-now-indicator-arrow"], elStyle: xb(b.dateToCoord(r), o.isRtl), isAxis: !0, date: r }))
     ));
   }
   componentDidMount() {
@@ -15387,35 +15387,35 @@ class fa extends $ {
     this.props.onMaxCushionWidth && this.props.onMaxCushionWidth(this.computeMaxCushionWidth());
   }
   computeMaxCushionWidth() {
-    return Math.max(...rt(this.rootElRef.current, ".fc-timeline-header-row:last-child .fc-timeline-slot-cushion").map((e) => e.getBoundingClientRect().width));
+    return Math.max(...pt(this.rootElRef.current, ".fc-timeline-header-row:last-child .fc-timeline-slot-cushion").map((e) => e.getBoundingClientRect().width));
   }
 }
 class O6 extends $ {
   render() {
-    let { props: e, context: o } = this, { dateEnv: M, options: n, theme: b } = o, { date: r, tDateProfile: z, isEm: i } = e, a = N2(e.date, e.todayRange, e.nowDate, e.dateProfile), s = Object.assign(Object.assign({ date: M.toDate(e.date) }, a), { view: o.viewApi });
-    return u(T0, { elTag: "td", elRef: e.elRef, elClasses: [
+    let { props: e, context: o } = this, { dateEnv: M, options: n, theme: b } = o, { date: r, tDateProfile: z, isEm: i } = e, a = S2(e.date, e.todayRange, e.nowDate, e.dateProfile), s = Object.assign(Object.assign({ date: M.toDate(e.date) }, a), { view: o.viewApi });
+    return f(T0, { elTag: "td", elRef: e.elRef, elClasses: [
       "fc-timeline-slot",
       "fc-timeline-slot-lane",
       i && "fc-timeline-slot-em",
-      z.isTimeScale ? Je(M.countDurationsBetween(z.normalizedRange.start, e.date, z.labelInterval)) ? "fc-timeline-slot-major" : "fc-timeline-slot-minor" : "",
-      ...e.isDay ? Ut(a, b) : oc(a, b)
+      z.isTimeScale ? et(M.countDurationsBetween(z.normalizedRange.start, e.date, z.labelInterval)) ? "fc-timeline-slot-major" : "fc-timeline-slot-minor" : "",
+      ...e.isDay ? jt(a, b) : oc(a, b)
     ], elAttrs: {
       "data-date": M.formatIso(r, {
         omitTimeZoneOffset: !0,
         omitTime: !z.isTimeScale
       })
-    }, renderProps: s, generatorName: "slotLaneContent", customGenerator: n.slotLaneContent, classNameGenerator: n.slotLaneClassNames, didMount: n.slotLaneDidMount, willUnmount: n.slotLaneWillUnmount }, (d) => u(d, { elTag: "div" }));
+    }, renderProps: s, generatorName: "slotLaneContent", customGenerator: n.slotLaneContent, classNameGenerator: n.slotLaneClassNames, didMount: n.slotLaneDidMount, willUnmount: n.slotLaneWillUnmount }, (d) => f(d, { elTag: "div" }));
   }
 }
 class l6 extends $ {
   render() {
     let { props: e } = this, { tDateProfile: o, cellElRefs: M } = e, { slotDates: n, isWeekStarts: b } = o, r = !o.isTimeScale && !o.largeUnit;
-    return u(
+    return f(
       "tbody",
       null,
-      u("tr", null, n.map((z, i) => {
+      f("tr", null, n.map((z, i) => {
         let a = z.toISOString();
-        return u(O6, { key: a, elRef: M.createRef(a), date: z, dateProfile: e.dateProfile, tDateProfile: o, nowDate: e.nowDate, todayRange: e.todayRange, isEm: b[i], isDay: r });
+        return f(O6, { key: a, elRef: M.createRef(a), date: z, dateProfile: e.dateProfile, tDateProfile: o, nowDate: e.nowDate, todayRange: e.todayRange, isEm: b[i], isDay: r });
       }))
     );
   }
@@ -15436,17 +15436,17 @@ class qa extends $ {
   }
   render() {
     let { props: e, context: o } = this;
-    return u(
+    return f(
       "div",
       { className: "fc-timeline-slots", ref: this.rootElRef },
-      u(
+      f(
         "table",
         { "aria-hidden": !0, className: o.theme.getClass("table"), style: {
           minWidth: e.tableMinWidth,
           width: e.clientWidth
         } },
         e.tableColGroupNode,
-        u(l6, { cellElRefs: this.cellElRefs, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange })
+        f(l6, { cellElRefs: this.cellElRefs, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange })
       )
     );
   }
@@ -15499,14 +15499,14 @@ function ha(t, e, o) {
 function A6(t, e, o, M, n, b) {
   let r = [], z = [];
   for (let N = 0; N < t.length; N += 1) {
-    let B = t[N], k = B.eventRange.instance.instanceId, j = o[k], Y = e[N];
-    j && Y ? r.push({
+    let B = t[N], C = B.eventRange.instance.instanceId, Y = o[C], j = e[N];
+    Y && j ? r.push({
       index: N,
-      span: Y,
-      thickness: j
+      span: j,
+      thickness: Y
     }) : z.push({
       seg: B,
-      hcoords: Y,
+      hcoords: j,
       top: null
     });
   }
@@ -15516,21 +15516,21 @@ function A6(t, e, o, M, n, b) {
     seg: t[N.index],
     hcoords: N.span,
     top: null
-  })), d = zc(a), A = [], f = [];
+  })), d = zc(a), u = [], A = [];
   const h = (N) => t[N.index];
   for (let N = 0; N < d.length; N += 1) {
-    let B = d[N], k = B.entries.map(h), j = M[Qo(rM(k))];
-    j != null ? A.push({
+    let B = d[N], C = B.entries.map(h), Y = M[Qo(rM(C))];
+    Y != null ? u.push({
       index: t.length + N,
-      thickness: j,
+      thickness: Y,
       span: B.span
-    }) : f.push({
-      seg: k,
+    }) : A.push({
+      seg: C,
       hcoords: B.span,
       top: null
     });
   }
-  i.maxStackCnt = -1, i.addSegs(A);
+  i.maxStackCnt = -1, i.addSegs(u);
   let R = i.toRects(), W = [], g = 0;
   for (let N of R) {
     let B = N.index;
@@ -15541,14 +15541,14 @@ function A6(t, e, o, M, n, b) {
     }), g = Math.max(g, N.levelCoord + N.thickness);
   }
   return [
-    W.concat(z, s, f),
+    W.concat(z, s, A),
     g
   ];
 }
 class Wa extends $ {
   render() {
     let { props: e } = this, o = [].concat(e.eventResizeSegs, e.dateSelectionSegs);
-    return e.timelineCoords && u(
+    return e.timelineCoords && f(
       "div",
       { className: "fc-timeline-bg" },
       this.renderSegs(e.businessHourSegs || [], e.timelineCoords, "non-business"),
@@ -15558,10 +15558,10 @@ class Wa extends $ {
   }
   renderSegs(e, o, M) {
     let { todayRange: n, nowDate: b } = this.props, { isRtl: r } = this.context, z = ha(e, 0, o), i = e.map((a, s) => {
-      let d = z[s], A = Ib(d, r);
-      return u("div", { key: Ab(a.eventRange), className: "fc-timeline-bg-harness", style: A }, M === "bg-event" ? u(Bb, Object.assign({ seg: a }, v1(a, n, b))) : Eb(M));
+      let d = z[s], u = Ib(d, r);
+      return f("div", { key: Ab(a.eventRange), className: "fc-timeline-bg-harness", style: u }, M === "bg-event" ? f(Bb, Object.assign({ seg: a }, v1(a, n, b))) : Eb(M));
     });
-    return u(M0, null, i);
+    return f(M0, null, i);
   }
 }
 class Ra extends Lb {
@@ -15588,20 +15588,20 @@ const u6 = m0({
 class ma extends $ {
   render() {
     let { props: e } = this;
-    return u(bM, Object.assign({}, e, { elClasses: ["fc-timeline-event", "fc-h-event"], defaultTimeFormat: u6, defaultDisplayEventTime: !e.isTimeScale }));
+    return f(bM, Object.assign({}, e, { elClasses: ["fc-timeline-event", "fc-h-event"], defaultTimeFormat: u6, defaultDisplayEventTime: !e.isTimeScale }));
   }
 }
 class f6 extends $ {
   render() {
     let { props: e, context: o } = this, { hiddenSegs: M, placement: n, resourceId: b } = e, { top: r, hcoords: z } = n, i = z && r !== null, a = Ib(z, o.isRtl), s = b ? { resourceId: b } : {};
-    return u(Db, { elRef: e.elRef, elClasses: ["fc-timeline-more-link"], elStyle: Object.assign({ visibility: i ? "" : "hidden", top: r || 0 }, a), allDayDate: null, moreCnt: M.length, allSegs: M, hiddenSegs: M, dateProfile: e.dateProfile, todayRange: e.todayRange, extraDateSpan: s, popoverContent: () => u(M0, null, M.map((d) => {
-      let A = d.eventRange.instance.instanceId;
-      return u(
+    return f(Db, { elRef: e.elRef, elClasses: ["fc-timeline-more-link"], elStyle: Object.assign({ visibility: i ? "" : "hidden", top: r || 0 }, a), allDayDate: null, moreCnt: M.length, allSegs: M, hiddenSegs: M, dateProfile: e.dateProfile, todayRange: e.todayRange, extraDateSpan: s, popoverContent: () => f(M0, null, M.map((d) => {
+      let u = d.eventRange.instance.instanceId;
+      return f(
         "div",
-        { key: A, style: { visibility: e.isForcedInvisible[A] ? "hidden" : "" } },
-        u(ma, Object.assign({ isTimeScale: e.isTimeScale, seg: d, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: A === e.eventSelection }, v1(d, e.todayRange, e.nowDate)))
+        { key: u, style: { visibility: e.isForcedInvisible[u] ? "hidden" : "" } },
+        f(ma, Object.assign({ isTimeScale: e.isTimeScale, seg: d, isDragging: !1, isResizing: !1, isDateSelecting: !1, isSelected: u === e.eventSelection }, v1(d, e.todayRange, e.nowDate)))
       );
-    })) }, (d) => u(d, { elTag: "div", elClasses: ["fc-timeline-more-link-inner", "fc-sticky"] }));
+    })) }, (d) => f(d, { elTag: "div", elClasses: ["fc-timeline-more-link-inner", "fc-sticky"] }));
   }
 }
 class Pb extends $ {
@@ -15624,18 +15624,18 @@ class Pb extends $ {
       M.dateProfileGenerator,
       r,
       M.dateEnv
-    ), i = (z.eventDrag ? z.eventDrag.segs : null) || (z.eventResize ? z.eventResize.segs : null) || [], a = this.sortEventSegs(z.fgEventSegs, n.eventOrder), s = ha(a, n.eventMinWidth, e.timelineCoords), [d, A] = A6(a, s, o.eventInstanceHeights, o.moreLinkHeights, n.eventOrderStrict, n.eventMaxStack), f = (
+    ), i = (z.eventDrag ? z.eventDrag.segs : null) || (z.eventResize ? z.eventResize.segs : null) || [], a = this.sortEventSegs(z.fgEventSegs, n.eventOrder), s = ha(a, n.eventMinWidth, e.timelineCoords), [d, u] = A6(a, s, o.eventInstanceHeights, o.moreLinkHeights, n.eventOrderStrict, n.eventMaxStack), A = (
       // TODO: more convenient
       (z.eventDrag ? z.eventDrag.affectedInstances : null) || (z.eventResize ? z.eventResize.affectedInstances : null) || {}
     );
-    return u(
+    return f(
       M0,
       null,
-      u(Wa, { businessHourSegs: z.businessHourSegs, bgEventSegs: z.bgEventSegs, timelineCoords: e.timelineCoords, eventResizeSegs: z.eventResize ? z.eventResize.segs : [], dateSelectionSegs: z.dateSelectionSegs, nowDate: e.nowDate, todayRange: e.todayRange }),
-      u(
+      f(Wa, { businessHourSegs: z.businessHourSegs, bgEventSegs: z.bgEventSegs, timelineCoords: e.timelineCoords, eventResizeSegs: z.eventResize ? z.eventResize.segs : [], dateSelectionSegs: z.dateSelectionSegs, nowDate: e.nowDate, todayRange: e.todayRange }),
+      f(
         "div",
-        { className: "fc-timeline-events fc-scrollgrid-sync-inner", ref: this.innerElRef, style: { height: A } },
-        this.renderFgSegs(d, f, !1, !1, !1),
+        { className: "fc-timeline-events fc-scrollgrid-sync-inner", ref: this.innerElRef, style: { height: u } },
+        this.renderFgSegs(d, A, !1, !1, !1),
         this.renderFgSegs(q6(i, e.timelineCoords, d), {}, !!z.eventDrag, !!z.eventResize, !1)
       )
     );
@@ -15655,33 +15655,33 @@ class Pb extends $ {
     let { props: e } = this, { timelineCoords: o } = e;
     const M = this.innerElRef.current;
     e.onHeightChange && e.onHeightChange(M, !1), o && this.setState({
-      eventInstanceHeights: Y0(this.harnessElRefs.currentMap, (n) => Math.round(n.getBoundingClientRect().height)),
-      moreLinkHeights: Y0(this.moreElRefs.currentMap, (n) => Math.round(n.getBoundingClientRect().height))
+      eventInstanceHeights: j0(this.harnessElRefs.currentMap, (n) => Math.round(n.getBoundingClientRect().height)),
+      moreLinkHeights: j0(this.moreElRefs.currentMap, (n) => Math.round(n.getBoundingClientRect().height))
     }, () => {
       e.onHeightChange && e.onHeightChange(M, !0);
     }), e.syncParentMinHeight && (M.parentElement.style.minHeight = M.style.height);
   }
   renderFgSegs(e, o, M, n, b) {
     let { harnessElRefs: r, moreElRefs: z, props: i, context: a } = this, s = M || n || b;
-    return u(M0, null, e.map((d) => {
-      let { seg: A, hcoords: f, top: h } = d;
-      if (Array.isArray(A)) {
-        let N = Qo(rM(A));
-        return u(f6, { key: "m:" + N, elRef: z.createRef(N), hiddenSegs: A, placement: d, dateProfile: i.dateProfile, nowDate: i.nowDate, todayRange: i.todayRange, isTimeScale: i.tDateProfile.isTimeScale, eventSelection: i.eventSelection, resourceId: i.resourceId, isForcedInvisible: o });
+    return f(M0, null, e.map((d) => {
+      let { seg: u, hcoords: A, top: h } = d;
+      if (Array.isArray(u)) {
+        let N = Qo(rM(u));
+        return f(f6, { key: "m:" + N, elRef: z.createRef(N), hiddenSegs: u, placement: d, dateProfile: i.dateProfile, nowDate: i.nowDate, todayRange: i.todayRange, isTimeScale: i.tDateProfile.isTimeScale, eventSelection: i.eventSelection, resourceId: i.resourceId, isForcedInvisible: o });
       }
-      let R = A.eventRange.instance.instanceId, W = s || !!(!o[R] && f && h !== null), g = Ib(f, a.isRtl);
-      return u(
+      let R = u.eventRange.instance.instanceId, W = s || !!(!o[R] && A && h !== null), g = Ib(A, a.isRtl);
+      return f(
         "div",
         { key: "e:" + R, ref: s ? null : r.createRef(R), className: "fc-timeline-event-harness", style: Object.assign({ visibility: W ? "" : "hidden", top: h || 0 }, g) },
-        u(ma, Object.assign({
+        f(ma, Object.assign({
           isTimeScale: i.tDateProfile.isTimeScale,
-          seg: A,
+          seg: u,
           isDragging: M,
           isResizing: n,
           isDateSelecting: b,
           isSelected: R === i.eventSelection
           /* TODO: bad for mirror? */
-        }, v1(A, i.todayRange, i.nowDate)))
+        }, v1(u, i.todayRange, i.nowDate)))
       );
     }));
   }
@@ -15719,23 +15719,23 @@ class W6 extends $0 {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { options: n } = M, { dateProfile: b, tDateProfile: r } = e, { unit: z, value: i } = Xe(r.slotDuration);
-    return u(
+    let { props: e, state: o, context: M } = this, { options: n } = M, { dateProfile: b, tDateProfile: r } = e, { unit: z, value: i } = xe(r.slotDuration);
+    return f(
       "div",
       { className: "fc-timeline-body", ref: this.handeEl, style: {
         minWidth: e.tableMinWidth,
         height: e.clientHeight,
         width: e.clientWidth
       } },
-      u(S1, { unit: z, unitValue: i }, (a, s) => u(
+      f(S1, { unit: z, unitValue: i }, (a, s) => f(
         M0,
         null,
-        u(qa, { ref: this.slatsRef, dateProfile: b, tDateProfile: r, nowDate: a, todayRange: s, clientWidth: e.clientWidth, tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, onCoords: this.handleCoords, onScrollLeftRequest: e.onScrollLeftRequest }),
-        u(Pb, { dateProfile: b, tDateProfile: e.tDateProfile, nowDate: a, todayRange: s, nextDayThreshold: n.nextDayThreshold, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, timelineCoords: o.coords, syncParentMinHeight: !0 }),
-        n.nowIndicator && o.coords && o.coords.isDateInRange(a) && u(
+        f(qa, { ref: this.slatsRef, dateProfile: b, tDateProfile: r, nowDate: a, todayRange: s, clientWidth: e.clientWidth, tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, onCoords: this.handleCoords, onScrollLeftRequest: e.onScrollLeftRequest }),
+        f(Pb, { dateProfile: b, tDateProfile: e.tDateProfile, nowDate: a, todayRange: s, nextDayThreshold: n.nextDayThreshold, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, timelineCoords: o.coords, syncParentMinHeight: !0 }),
+        n.nowIndicator && o.coords && o.coords.isDateInRange(a) && f(
           "div",
           { className: "fc-timeline-now-indicator-container" },
-          u(Yt, { elClasses: ["fc-timeline-now-indicator-line"], elStyle: xb(o.coords.dateToCoord(a), M.isRtl), isAxis: !1, date: a })
+          f(Yt, { elClasses: ["fc-timeline-now-indicator-line"], elStyle: xb(o.coords.dateToCoord(a), M.isRtl), isAxis: !1, date: a })
         )
       ))
     );
@@ -15775,14 +15775,14 @@ class R6 extends $0 {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { options: n } = M, b = !e.forPrint && Xt(n), r = !e.forPrint && MM(n), z = this.buildTimelineDateProfile(e.dateProfile, M.dateEnv, n, M.dateProfileGenerator), { slotMinWidth: i } = n, a = ga(z, i || this.computeFallbackSlotMinWidth(z)), s = [
+    let { props: e, state: o, context: M } = this, { options: n } = M, b = !e.forPrint && xt(n), r = !e.forPrint && MM(n), z = this.buildTimelineDateProfile(e.dateProfile, M.dateEnv, n, M.dateProfileGenerator), { slotMinWidth: i } = n, a = ga(z, i || this.computeFallbackSlotMinWidth(z)), s = [
       {
         type: "header",
         key: "header",
         isSticky: b,
         chunks: [{
           key: "timeline",
-          content: (d) => u(fa, { dateProfile: e.dateProfile, clientWidth: d.clientWidth, clientHeight: d.clientHeight, tableMinWidth: d.tableMinWidth, tableColGroupNode: d.tableColGroupNode, tDateProfile: z, slatCoords: o.slatCoords, onMaxCushionWidth: i ? null : this.handleMaxCushionWidth })
+          content: (d) => f(fa, { dateProfile: e.dateProfile, clientWidth: d.clientWidth, clientHeight: d.clientHeight, tableMinWidth: d.tableMinWidth, tableColGroupNode: d.tableColGroupNode, tDateProfile: z, slatCoords: o.slatCoords, onMaxCushionWidth: i ? null : this.handleMaxCushionWidth })
         }]
       },
       {
@@ -15791,7 +15791,7 @@ class R6 extends $0 {
         liquid: !0,
         chunks: [{
           key: "timeline",
-          content: (d) => u(W6, Object.assign({}, e, { clientWidth: d.clientWidth, clientHeight: d.clientHeight, tableMinWidth: d.tableMinWidth, tableColGroupNode: d.tableColGroupNode, tDateProfile: z, onSlatCoords: this.handleSlatCoords, onScrollLeftRequest: this.handleScrollLeftRequest }))
+          content: (d) => f(W6, Object.assign({}, e, { clientWidth: d.clientWidth, clientHeight: d.clientHeight, tableMinWidth: d.tableMinWidth, tableColGroupNode: d.tableColGroupNode, tDateProfile: z, onSlatCoords: this.handleSlatCoords, onScrollLeftRequest: this.handleScrollLeftRequest }))
         }]
       }
     ];
@@ -15801,15 +15801,15 @@ class R6 extends $0 {
       isSticky: !0,
       chunks: [{
         key: "timeline",
-        content: kt
+        content: Xt
       }]
-    }), u(
-      xe,
+    }), f(
+      Ie,
       { elClasses: [
         "fc-timeline",
         n.eventOverlap === !1 ? "fc-timeline-overlap-disabled" : ""
       ], viewSpec: M.viewSpec },
-      u(iM, { ref: this.scrollGridRef, liquid: !e.isHeightAuto && !e.forPrint, forPrint: e.forPrint, collapsibleWidth: !1, colGroups: [
+      f(iM, { ref: this.scrollGridRef, liquid: !e.isHeightAuto && !e.forPrint, forPrint: e.forPrint, collapsibleWidth: !1, colGroups: [
         { cols: a }
       ], sections: s })
     );
@@ -15826,11 +15826,11 @@ function ga(t, e) {
   }];
 }
 var m6 = '.fc .fc-timeline-body{min-height:100%;position:relative;z-index:1}.fc .fc-timeline-slots{bottom:0;position:absolute;top:0;z-index:1}.fc .fc-timeline-slots>table{height:100%}.fc .fc-timeline-slot-minor{border-style:dotted}.fc .fc-timeline-slot-frame{align-items:center;display:flex;justify-content:center}.fc .fc-timeline-header-row-chrono .fc-timeline-slot-frame{justify-content:flex-start}.fc .fc-timeline-header-row:last-child .fc-timeline-slot-frame{overflow:hidden}.fc .fc-timeline-slot-cushion{padding:4px 5px;white-space:nowrap}.fc-direction-ltr .fc-timeline-slot{border-right:0!important}.fc-direction-rtl .fc-timeline-slot{border-left:0!important}.fc .fc-timeline-now-indicator-container{bottom:0;left:0;position:absolute;right:0;top:0;width:0;z-index:4}.fc .fc-timeline-now-indicator-arrow,.fc .fc-timeline-now-indicator-line{border-color:var(--fc-now-indicator-color);border-style:solid;pointer-events:none;position:absolute;top:0}.fc .fc-timeline-now-indicator-arrow{border-left-color:transparent;border-right-color:transparent;border-width:6px 5px 0;margin:0 -6px}.fc .fc-timeline-now-indicator-line{border-width:0 0 0 1px;bottom:0;margin:0 -1px}.fc .fc-timeline-events{position:relative;width:0;z-index:3}.fc .fc-timeline-event-harness,.fc .fc-timeline-more-link{position:absolute;top:0}.fc-timeline-event{z-index:1}.fc-timeline-event.fc-event-mirror{z-index:2}.fc-timeline-event{align-items:center;border-radius:0;display:flex;font-size:var(--fc-small-font-size);margin-bottom:1px;padding:2px 1px;position:relative}.fc-timeline-event .fc-event-main{flex-grow:1;flex-shrink:1;min-width:0}.fc-timeline-event .fc-event-time{font-weight:700}.fc-timeline-event .fc-event-time,.fc-timeline-event .fc-event-title{padding:0 2px;white-space:nowrap}.fc-direction-ltr .fc-timeline-event.fc-event-end,.fc-direction-ltr .fc-timeline-more-link{margin-right:1px}.fc-direction-rtl .fc-timeline-event.fc-event-end,.fc-direction-rtl .fc-timeline-more-link{margin-left:1px}.fc-timeline-overlap-disabled .fc-timeline-event{margin-bottom:0;padding-bottom:5px;padding-top:5px}.fc-timeline-event:not(.fc-event-end):after,.fc-timeline-event:not(.fc-event-start):before{border-color:transparent #000;border-style:solid;border-width:5px;content:"";flex-grow:0;flex-shrink:0;height:0;margin:0 1px;opacity:.5;width:0}.fc-direction-ltr .fc-timeline-event:not(.fc-event-start):before,.fc-direction-rtl .fc-timeline-event:not(.fc-event-end):after{border-left:0}.fc-direction-ltr .fc-timeline-event:not(.fc-event-end):after,.fc-direction-rtl .fc-timeline-event:not(.fc-event-start):before{border-right:0}.fc-timeline-more-link{background:var(--fc-more-link-bg-color);color:var(--fc-more-link-text-color);cursor:pointer;font-size:var(--fc-small-font-size);padding:1px}.fc-timeline-more-link-inner{display:inline-block;left:0;padding:2px;right:0}.fc .fc-timeline-bg{bottom:0;left:0;position:absolute;right:0;top:0;width:0;z-index:2}.fc .fc-timeline-bg .fc-non-business{z-index:1}.fc .fc-timeline-bg .fc-bg-event{z-index:2}.fc .fc-timeline-bg .fc-highlight{z-index:3}.fc .fc-timeline-bg-harness{bottom:0;position:absolute;top:0}';
-Ie(m6);
+Pe(m6);
 var ya = x0({
   name: "@fullcalendar/timeline",
   premiumReleaseDate: "2025-08-10",
-  deps: [zt],
+  deps: [it],
   initialView: "timelineDay",
   views: {
     timeline: {
@@ -15858,10 +15858,10 @@ var ya = x0({
   }
 });
 N1.COLLAPSIBLE_WIDTH_THRESHOLD = 1200;
-let yt = [], xn = [];
+let Lt = [], xn = [];
 function g6(t) {
-  yt.length || y6(), yt.push(t), t.calendarApi.on("_unmount", () => {
-    yA(yt, t), yt.length || L6();
+  Lt.length || y6(), Lt.push(t), t.calendarApi.on("_unmount", () => {
+    yA(Lt, t), Lt.length || L6();
   });
 }
 function y6() {
@@ -15871,22 +15871,22 @@ function L6() {
   window.removeEventListener("beforeprint", La), window.removeEventListener("afterprint", va);
 }
 function La() {
-  for (let t of yt)
+  for (let t of Lt)
     t.emitter.trigger("_beforeprint");
-  _t(() => {
+  Ct(() => {
     xn.push(v6());
   });
 }
 function va() {
-  for (let t of yt)
+  for (let t of Lt)
     t.emitter.trigger("_afterprint");
-  _t(() => {
+  Ct(() => {
     for (; xn.length; )
       xn.shift()();
   });
 }
 function v6() {
-  let t = rt(document.body, ".fc-scrollgrid");
+  let t = pt(document.body, ".fc-scrollgrid");
   return t.forEach(N6), () => t.forEach(S6);
 }
 function N6(t) {
@@ -15897,11 +15897,11 @@ function S6(t) {
   t.style.width = "";
 }
 var T6 = ".fc .fc-event,.fc .fc-scrollgrid table tr{-moz-column-break-inside:avoid;break-inside:avoid}.fc-media-print{display:block;max-width:100%}.fc-media-print .fc-bg-event,.fc-media-print .fc-non-business,.fc-media-print .fc-timegrid-axis-chunk,.fc-media-print .fc-timegrid-slots,.fc-media-print .fc-timeline-slots{display:none}.fc-media-print .fc-h-event,.fc-media-print .fc-toolbar button,.fc-media-print .fc-v-event{background:#fff!important;color:#000!important}.fc-media-print .fc-event,.fc-media-print .fc-event-main{color:#000!important}.fc-media-print .fc-timegrid-event{margin:.5em 0}";
-Ie(T6);
+Pe(T6);
 var w6 = x0({
   name: "@fullcalendar/adaptive",
   premiumReleaseDate: "2025-08-10",
-  deps: [zt],
+  deps: [it],
   contextInit: g6
 });
 const Na = "_fc:", B6 = {
@@ -15925,12 +15925,12 @@ const Na = "_fc:", B6 = {
   eventColor: String
 };
 function Hb(t, e = "", o, M) {
-  let { refined: n, extra: b } = y2(t, B6), r = {
+  let { refined: n, extra: b } = L2(t, B6), r = {
     id: n.id || Na + V1(),
     parentId: n.parentId || e,
     title: n.title || "",
     businessHours: n.businessHours ? Gi(n.businessHours, M) : null,
-    ui: q2({
+    ui: h2({
       editable: n.eventEditable,
       startEditable: n.eventStartEditable,
       durationEditable: n.eventDurationEditable,
@@ -16102,17 +16102,17 @@ function _6(t) {
 }
 class C6 extends $ {
   constructor() {
-    super(...arguments), this.refineRenderProps = _e(X6);
+    super(...arguments), this.refineRenderProps = Ce(X6);
   }
   render() {
     const { props: e } = this;
-    return u(Q1.Consumer, null, (o) => {
+    return f(Q1.Consumer, null, (o) => {
       let { options: M } = o, n = this.refineRenderProps({
         resource: e.resource,
         date: e.date,
         context: o
       });
-      return u(T0, { elRef: e.elRef, elTag: e.elTag, elAttrs: Object.assign(Object.assign({}, e.elAttrs), { "data-resource-id": e.resource.id, "data-date": e.date ? It(e.date) : void 0 }), elClasses: e.elClasses, elStyle: e.elStyle, renderProps: n, generatorName: "resourceLabelContent", customGenerator: M.resourceLabelContent, defaultGenerator: k6, classNameGenerator: M.resourceLabelClassNames, didMount: M.resourceLabelDidMount, willUnmount: M.resourceLabelWillUnmount }, e.children);
+      return f(T0, { elRef: e.elRef, elTag: e.elTag, elAttrs: Object.assign(Object.assign({}, e.elAttrs), { "data-resource-id": e.resource.id, "data-date": e.date ? Pt(e.date) : void 0 }), elClasses: e.elClasses, elStyle: e.elStyle, renderProps: n, generatorName: "resourceLabelContent", customGenerator: M.resourceLabelContent, defaultGenerator: k6, classNameGenerator: M.resourceLabelClassNames, didMount: M.resourceLabelDidMount, willUnmount: M.resourceLabelWillUnmount }, e.children);
     });
   }
 }
@@ -16129,13 +16129,13 @@ function X6(t) {
 class sn extends $ {
   render() {
     let { props: e } = this;
-    return u(C6, { elTag: "th", elClasses: ["fc-col-header-cell", "fc-resource"], elAttrs: {
+    return f(C6, { elTag: "th", elClasses: ["fc-col-header-cell", "fc-resource"], elAttrs: {
       role: "columnheader",
       colSpan: e.colSpan
-    }, resource: e.resource, date: e.date }, (o) => u(
+    }, resource: e.resource, date: e.date }, (o) => f(
       "div",
       { className: "fc-scrollgrid-sync-inner" },
-      u(o, { elTag: "span", elClasses: [
+      f(o, { elTag: "span", elClasses: [
         "fc-col-header-cell-cushion",
         e.isSticky && "fc-sticky"
       ] })
@@ -16148,10 +16148,10 @@ class wa extends $ {
   }
   render() {
     let { props: e, context: o } = this, M = this.buildDateFormat(o.options.dayHeaderFormat, e.datesRepDistinctDays, e.dates.length);
-    return u(S1, { unit: "day" }, (n, b) => e.dates.length === 1 ? this.renderResourceRow(e.resources, e.dates[0]) : o.options.datesAboveResources ? this.renderDayAndResourceRows(e.dates, M, b, e.resources) : this.renderResourceAndDayRows(e.resources, e.dates, M, b));
+    return f(S1, { unit: "day" }, (n, b) => e.dates.length === 1 ? this.renderResourceRow(e.resources, e.dates[0]) : o.options.datesAboveResources ? this.renderDayAndResourceRows(e.dates, M, b, e.resources) : this.renderResourceAndDayRows(e.resources, e.dates, M, b));
   }
   renderResourceRow(e, o) {
-    let M = e.map((n) => u(sn, { key: n.id, resource: n, colSpan: 1, date: o }));
+    let M = e.map((n) => f(sn, { key: n.id, resource: n, colSpan: 1, date: o }));
     return this.buildTr(M, "resources");
   }
   renderDayAndResourceRows(e, o, M, n) {
@@ -16159,9 +16159,9 @@ class wa extends $ {
     for (let z of e) {
       b.push(this.renderDateCell(z, o, M, n.length, null, !0));
       for (let i of n)
-        r.push(u(sn, { key: i.id + ":" + z.toISOString(), resource: i, colSpan: 1, date: z }));
+        r.push(f(sn, { key: i.id + ":" + z.toISOString(), resource: i, colSpan: 1, date: z }));
     }
-    return u(
+    return f(
       M0,
       null,
       this.buildTr(b, "day"),
@@ -16171,11 +16171,11 @@ class wa extends $ {
   renderResourceAndDayRows(e, o, M, n) {
     let b = [], r = [];
     for (let z of e) {
-      b.push(u(sn, { key: z.id, resource: z, colSpan: o.length, isSticky: !0 }));
+      b.push(f(sn, { key: z.id, resource: z, colSpan: o.length, isSticky: !0 }));
       for (let i of o)
         r.push(this.renderDateCell(i, M, n, 1, z));
     }
-    return u(
+    return f(
       M0,
       null,
       this.buildTr(b, "resources"),
@@ -16185,14 +16185,14 @@ class wa extends $ {
   // a cell with date text. might have a resource associated with it
   renderDateCell(e, o, M, n, b, r) {
     let { props: z } = this, i = b ? `:${b.id}` : "", a = b ? { resource: new n1(this.context, b) } : {}, s = b ? { "data-resource-id": b.id } : {};
-    return z.datesRepDistinctDays ? u(sc, { key: e.toISOString() + i, date: e, dateProfile: z.dateProfile, todayRange: M, colCnt: z.dates.length * z.resources.length, dayHeaderFormat: o, colSpan: n, isSticky: r, extraRenderProps: a, extraDataAttrs: s }) : u(
+    return z.datesRepDistinctDays ? f(sc, { key: e.toISOString() + i, date: e, dateProfile: z.dateProfile, todayRange: M, colCnt: z.dates.length * z.resources.length, dayHeaderFormat: o, colSpan: n, isSticky: r, extraRenderProps: a, extraDataAttrs: s }) : f(
       Oc,
       { key: e.getUTCDay() + i, dow: e.getUTCDay(), dayHeaderFormat: o, colSpan: n, isSticky: r, extraRenderProps: a, extraDataAttrs: s }
     );
   }
   buildTr(e, o) {
     let { renderIntro: M } = this.props;
-    return e.length || (e = [u("td", { key: 0 }, " ")]), u(
+    return e.length || (e = [f("td", { key: 0 }, " ")]), f(
       "tr",
       { key: o, role: "row" },
       M && M(o),
@@ -16223,14 +16223,14 @@ class Ba {
       let r = [];
       for (let z = 0; z < o.colCnt; z += 1)
         for (let i = 0; i < M.length; i += 1) {
-          let a = M[i], s = { resource: new n1(this.context, a) }, d = { "data-resource-id": a.id }, A = ["fc-resource"], f = { resourceId: a.id }, h = o.cells[b][z].date;
+          let a = M[i], s = { resource: new n1(this.context, a) }, d = { "data-resource-id": a.id }, u = ["fc-resource"], A = { resourceId: a.id }, h = o.cells[b][z].date;
           r[this.computeCol(z, i)] = {
             key: a.id + ":" + h.toISOString(),
             date: h,
             extraRenderProps: s,
             extraDataAttrs: d,
-            extraClassNames: A,
-            extraDateSpan: f
+            extraClassNames: u,
+            extraDateSpan: A
           };
         }
       n.push(r);
@@ -16288,8 +16288,8 @@ class _a {
   joinProps(e, o) {
     let M = [], n = [], b = [], r = [], z = [], i = [], a = "", s = o.resourceIndex.ids.concat([""]);
     for (let d of s) {
-      let A = e[d];
-      M.push(A.dateSelectionSegs), n.push(d ? A.businessHourSegs : Rz), b.push(d ? A.fgEventSegs : Rz), r.push(A.bgEventSegs), z.push(A.eventDrag), i.push(A.eventResize), a = a || A.eventSelection;
+      let u = e[d];
+      M.push(u.dateSelectionSegs), n.push(d ? u.businessHourSegs : Rz), b.push(d ? u.fgEventSegs : Rz), r.push(u.bgEventSegs), z.push(u.eventDrag), i.push(u.eventResize), a = a || u.eventSelection;
     }
     return {
       dateSelectionSegs: this.joinDateSelection(o, ...M),
@@ -16346,7 +16346,7 @@ class _a {
 }
 class Ca extends hb {
   getKeyInfo(e) {
-    let { resourceDayTableModel: o } = e, M = Y0(o.resourceIndex.indicesById, (n) => o.resources[n]);
+    let { resourceDayTableModel: o } = e, M = j0(o.resourceIndex.indicesById, (n) => o.resources[n]);
     return M[""] = {}, M;
   }
   getKeysForDateSpan(e) {
@@ -16371,8 +16371,8 @@ function fo(t, e, o, M, n, b, r) {
       if (o) {
         let s = e.length, d = M.length;
         if (fo(i.children, e, o, M.concat(0), n, b, r), s < e.length) {
-          let A = e[s], f = A.rowSpans = A.rowSpans.slice();
-          f[d] = e.length - s;
+          let u = e[s], A = u.rowSpans = u.rowSpans.slice();
+          A[d] = e.length - s;
         }
       } else {
         let s = a.spec.field + ":" + a.value, d = b[s] != null ? b[s] : r;
@@ -16466,10 +16466,10 @@ function Pa(t) {
   let e = Object.assign(Object.assign(Object.assign({}, t.extendedProps), t.ui), t);
   return delete e.ui, delete e.extendedProps, e;
 }
-function Y6(t, e) {
+function j6(t, e) {
   return t.spec === e.spec && t.value === e.value;
 }
-function j6(t, e, o) {
+function Y6(t, e, o) {
   let M = e.dateSpan.resourceId, n = o.dateSpan.resourceId;
   M && n && M !== n && (t.resourceMutation = {
     matchResourceId: M,
@@ -16566,10 +16566,10 @@ class eR {
   }
 }
 function tR(t) {
-  return Y0(t, (e) => e.ui);
+  return j0(t, (e) => e.ui);
 }
 function oR(t, e, o) {
-  return Y0(t, (M, n) => n ? MR(M, e[n], o) : M);
+  return j0(t, (M, n) => n ? MR(M, e[n], o) : M);
 }
 function MR(t, e, o) {
   let M = [];
@@ -16577,15 +16577,15 @@ function MR(t, e, o) {
     o[n] && M.unshift(o[n]);
   return M.unshift(t), Ob(M);
 }
-let Yb = [];
-function jb(t) {
-  Yb.push(t);
+let jb = [];
+function Yb(t) {
+  jb.push(t);
 }
 function Ua(t) {
-  return Yb[t];
+  return jb[t];
 }
 function nR() {
-  return Yb;
+  return jb;
 }
 const bR = {
   id: String,
@@ -16602,7 +16602,7 @@ const bR = {
 function rR(t) {
   let e;
   if (typeof t == "string" ? e = { url: t } : typeof t == "function" || Array.isArray(t) ? e = { resources: t } : typeof t == "object" && t && (e = t), e) {
-    let { refined: o, extra: M } = y2(e, bR);
+    let { refined: o, extra: M } = L2(e, bR);
     zR(M);
     let n = pR(o);
     if (n)
@@ -16773,7 +16773,7 @@ function gR(t, e) {
   let o = t.dateSpan.resourceId, M = e.dateSpan.resourceId;
   return o && M ? { resourceId: o } : null;
 }
-Ht.prototype.addResource = function(t, e = !0) {
+Ut.prototype.addResource = function(t, e = !0) {
   let o = this.getCurrentData(), M, n;
   t instanceof n1 ? (n = t._resource, M = { [n.id]: n }) : (M = {}, n = Hb(t, "", M, o)), this.dispatch({
     type: "ADD_RESOURCE",
@@ -16790,7 +16790,7 @@ Ht.prototype.addResource = function(t, e = !0) {
     }
   }), b;
 };
-Ht.prototype.getResourceById = function(t) {
+Ut.prototype.getResourceById = function(t) {
   t = String(t);
   let e = this.getCurrentData();
   if (e.resourceStore) {
@@ -16800,21 +16800,21 @@ Ht.prototype.getResourceById = function(t) {
   }
   return null;
 };
-Ht.prototype.getResources = function() {
+Ut.prototype.getResources = function() {
   let t = this.getCurrentData(), { resourceStore: e } = t, o = [];
   if (e)
     for (let M in e)
       o.push(new n1(t, e[M]));
   return o;
 };
-Ht.prototype.getTopLevelResources = function() {
+Ut.prototype.getTopLevelResources = function() {
   let t = this.getCurrentData(), { resourceStore: e } = t, o = [];
   if (e)
     for (let M in e)
       e[M].parentId || o.push(new n1(t, e[M]));
   return o;
 };
-Ht.prototype.refetchResources = function() {
+Ut.prototype.refetchResources = function() {
   this.dispatch({
     type: "REFETCH_RESOURCES"
   });
@@ -16916,7 +16916,7 @@ N0.prototype.setResources = function(t) {
     }
   });
 };
-jb({
+Yb({
   ignoreRange: !0,
   parseMeta(t) {
     return Array.isArray(t.resources) ? t.resources : null;
@@ -16927,7 +16927,7 @@ jb({
     });
   }
 });
-jb({
+Yb({
   parseMeta(t) {
     return typeof t.resources == "function" ? t.resources : null;
   },
@@ -16942,7 +16942,7 @@ jb({
     Ji(n.bind(null, b), (r) => e({ rawResources: r }), o);
   }
 });
-jb({
+Yb({
   parseMeta(t) {
     return t.url ? {
       url: t.url,
@@ -16964,7 +16964,7 @@ function _R(t, e, o) {
 var cM = x0({
   name: "@fullcalendar/resource",
   premiumReleaseDate: "2025-08-10",
-  deps: [zt],
+  deps: [it],
   reducers: [hR],
   isLoadingFuncs: [
     (t) => t.resourceSource && t.resourceSource.isFetching
@@ -16972,7 +16972,7 @@ var cM = x0({
   eventRefiners: WR,
   eventDefMemberAdders: [RR],
   isDraggableTransformers: [J6],
-  eventDragMutationMassagers: [j6],
+  eventDragMutationMassagers: [Y6],
   eventDefMutationAppliers: [F6],
   dateSelectionTransformers: [gR],
   datePointTransforms: [yR],
@@ -16991,23 +16991,23 @@ class CR extends _a {
     return o.computeColRanges(e.firstCol, e.lastCol, M).map((b) => Object.assign(Object.assign(Object.assign({}, e), b), { isStart: e.isStart && b.isStart, isEnd: e.isEnd && b.isEnd }));
   }
 }
-class Ya extends $0 {
+class ja extends $0 {
   constructor() {
     super(...arguments), this.splitter = new Ca(), this.slicers = {}, this.joiner = new CR(), this.tableRef = s0(), this.isHitComboAllowed = (e, o) => this.props.resourceDayTableModel.dayTableModel.colCnt === 1 || e.dateSpan.resourceId === o.dateSpan.resourceId;
   }
   render() {
     let { props: e, context: o } = this, { resourceDayTableModel: M, nextDayThreshold: n, dateProfile: b } = e, r = this.splitter.splitProps(e);
-    this.slicers = Y0(r, (i, a) => this.slicers[a] || new Cb());
-    let z = Y0(this.slicers, (i, a) => i.sliceProps(r[a], b, n, o, M.dayTableModel));
-    return u(ea, Object.assign({ forPrint: e.forPrint, ref: this.tableRef }, this.joiner.joinProps(z, M), { cells: M.cells, dateProfile: b, colGroupNode: e.colGroupNode, tableMinWidth: e.tableMinWidth, renderRowIntro: e.renderRowIntro, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.showWeekNumbers, expandRows: e.expandRows, headerAlignElRef: e.headerAlignElRef, clientWidth: e.clientWidth, clientHeight: e.clientHeight, isHitComboAllowed: this.isHitComboAllowed }));
+    this.slicers = j0(r, (i, a) => this.slicers[a] || new Cb());
+    let z = j0(this.slicers, (i, a) => i.sliceProps(r[a], b, n, o, M.dayTableModel));
+    return f(ea, Object.assign({ forPrint: e.forPrint, ref: this.tableRef }, this.joiner.joinProps(z, M), { cells: M.cells, dateProfile: b, colGroupNode: e.colGroupNode, tableMinWidth: e.tableMinWidth, renderRowIntro: e.renderRowIntro, dayMaxEvents: e.dayMaxEvents, dayMaxEventRows: e.dayMaxEventRows, showWeekNumbers: e.showWeekNumbers, expandRows: e.expandRows, headerAlignElRef: e.headerAlignElRef, clientWidth: e.clientWidth, clientHeight: e.clientHeight, isHitComboAllowed: this.isHitComboAllowed }));
   }
 }
-class kR extends jc {
+class kR extends Yc {
   constructor() {
     super(...arguments), this.flattenResources = I(ka), this.buildResourceDayTableModel = I(XR), this.headerRef = s0(), this.tableRef = s0();
   }
   render() {
-    let { props: e, context: o } = this, { options: M } = o, n = M.resourceOrder || Ub, b = this.flattenResources(e.resourceStore, n), r = this.buildResourceDayTableModel(e.dateProfile, o.dateProfileGenerator, b, M.datesAboveResources, o), z = M.dayHeaders && u(wa, { ref: this.headerRef, resources: b, dateProfile: e.dateProfile, dates: r.dayTableModel.headerDates, datesRepDistinctDays: !0 }), i = (a) => u(Ya, { ref: this.tableRef, dateProfile: e.dateProfile, resourceDayTableModel: r, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, nextDayThreshold: M.nextDayThreshold, tableMinWidth: a.tableMinWidth, colGroupNode: a.tableColGroupNode, dayMaxEvents: M.dayMaxEvents, dayMaxEventRows: M.dayMaxEventRows, showWeekNumbers: M.weekNumbers, expandRows: !e.isHeightAuto, headerAlignElRef: this.headerElRef, clientWidth: a.clientWidth, clientHeight: a.clientHeight, forPrint: e.forPrint });
+    let { props: e, context: o } = this, { options: M } = o, n = M.resourceOrder || Ub, b = this.flattenResources(e.resourceStore, n), r = this.buildResourceDayTableModel(e.dateProfile, o.dateProfileGenerator, b, M.datesAboveResources, o), z = M.dayHeaders && f(wa, { ref: this.headerRef, resources: b, dateProfile: e.dateProfile, dates: r.dayTableModel.headerDates, datesRepDistinctDays: !0 }), i = (a) => f(ja, { ref: this.tableRef, dateProfile: e.dateProfile, resourceDayTableModel: r, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, nextDayThreshold: M.nextDayThreshold, tableMinWidth: a.tableMinWidth, colGroupNode: a.tableColGroupNode, dayMaxEvents: M.dayMaxEvents, dayMaxEventRows: M.dayMaxEventRows, showWeekNumbers: M.weekNumbers, expandRows: !e.isHeightAuto, headerAlignElRef: this.headerElRef, clientWidth: a.clientWidth, clientHeight: a.clientHeight, forPrint: e.forPrint });
     return M.dayMinWidth ? this.renderHScrollLayout(z, i, r.colCnt, M.dayMinWidth) : this.renderSimpleLayout(z, i);
   }
 }
@@ -17019,7 +17019,7 @@ var xR = x0({
   name: "@fullcalendar/resource-daygrid",
   premiumReleaseDate: "2025-08-10",
   deps: [
-    zt,
+    it,
     cM,
     na
   ],
@@ -17045,20 +17045,20 @@ var xR = x0({
     }
   }
 });
-function ja({ depth: t, hasChildren: e, isExpanded: o, onExpanderClick: M }) {
+function Ya({ depth: t, hasChildren: e, isExpanded: o, onExpanderClick: M }) {
   let n = [];
   for (let r = 0; r < t; r += 1)
-    n.push(u("span", { className: "fc-icon" }));
+    n.push(f("span", { className: "fc-icon" }));
   let b = ["fc-icon"];
-  return e && (o ? b.push("fc-icon-minus-square") : b.push("fc-icon-plus-square")), n.push(u(
+  return e && (o ? b.push("fc-icon-minus-square") : b.push("fc-icon-plus-square")), n.push(f(
     "span",
     { className: "fc-datagrid-expander" + (e ? "" : " fc-datagrid-expander-placeholder"), onClick: M },
-    u("span", { className: b.join(" ") })
-  )), u(M0, {}, ...n);
+    f("span", { className: b.join(" ") })
+  )), f(M0, {}, ...n);
 }
 class IR extends $ {
   constructor() {
-    super(...arguments), this.refineRenderProps = _e(HR), this.onExpanderClick = (e) => {
+    super(...arguments), this.refineRenderProps = Ce(HR), this.onExpanderClick = (e) => {
       let { props: o } = this;
       o.hasChildren && this.context.dispatch({
         type: "SET_RESOURCE_ENTITY_EXPANDED",
@@ -17073,26 +17073,26 @@ class IR extends $ {
       fieldValue: e.fieldValue,
       context: o
     });
-    return u(T0, { elTag: "td", elClasses: [
+    return f(T0, { elTag: "td", elClasses: [
       "fc-datagrid-cell",
       "fc-resource"
     ], elAttrs: {
       role: "gridcell",
       "data-resource-id": e.resource.id
-    }, renderProps: n, generatorName: M.isMain ? "resourceLabelContent" : void 0, customGenerator: M.cellContent, defaultGenerator: PR, classNameGenerator: M.cellClassNames, didMount: M.cellDidMount, willUnmount: M.cellWillUnmount }, (b) => u(
+    }, renderProps: n, generatorName: M.isMain ? "resourceLabelContent" : void 0, customGenerator: M.cellContent, defaultGenerator: PR, classNameGenerator: M.cellClassNames, didMount: M.cellDidMount, willUnmount: M.cellWillUnmount }, (b) => f(
       "div",
       { className: "fc-datagrid-cell-frame", style: { height: e.innerHeight } },
-      u(
+      f(
         "div",
         { className: "fc-datagrid-cell-cushion fc-scrollgrid-sync-inner" },
-        M.isMain && u(ja, { depth: e.depth, hasChildren: e.hasChildren, isExpanded: e.isExpanded, onExpanderClick: this.onExpanderClick }),
-        u(b, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
+        M.isMain && f(Ya, { depth: e.depth, hasChildren: e.hasChildren, isExpanded: e.isExpanded, onExpanderClick: this.onExpanderClick }),
+        f(b, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
       )
     ));
   }
 }
 function PR(t) {
-  return t.fieldValue || u(M0, null, " ");
+  return t.fieldValue || f(M0, null, " ");
 }
 function HR(t) {
   return {
@@ -17107,32 +17107,32 @@ class UR extends $ {
       groupValue: e.fieldValue,
       view: o.viewApi
     };
-    return u(T0, { elTag: "td", elClasses: [
+    return f(T0, { elTag: "td", elClasses: [
       "fc-datagrid-cell",
       "fc-resource-group"
     ], elAttrs: {
       role: "gridcell",
       rowSpan: e.rowSpan
-    }, renderProps: n, generatorName: "resourceGroupLabelContent", customGenerator: M.cellContent, defaultGenerator: YR, classNameGenerator: M.cellClassNames, didMount: M.cellDidMount, willUnmount: M.cellWillUnmount }, (b) => u(
+    }, renderProps: n, generatorName: "resourceGroupLabelContent", customGenerator: M.cellContent, defaultGenerator: jR, classNameGenerator: M.cellClassNames, didMount: M.cellDidMount, willUnmount: M.cellWillUnmount }, (b) => f(
       "div",
       { className: "fc-datagrid-cell-frame fc-datagrid-cell-frame-liquid" },
-      u(b, { elTag: "div", elClasses: ["fc-datagrid-cell-cushion", "fc-sticky"] })
+      f(b, { elTag: "div", elClasses: ["fc-datagrid-cell-cushion", "fc-sticky"] })
     ));
   }
 }
-function YR(t) {
-  return t.groupValue || u(M0, null, " ");
+function jR(t) {
+  return t.groupValue || f(M0, null, " ");
 }
 class Fa extends $ {
   render() {
     let { props: e } = this, { resource: o, rowSpans: M, depth: n } = e, b = Pa(o);
-    return u("tr", { role: "row" }, e.colSpecs.map((r, z) => {
+    return f("tr", { role: "row" }, e.colSpecs.map((r, z) => {
       let i = M[z];
       if (i === 0)
         return null;
       i == null && (i = 1);
       let a = r.field ? b[r.field] : o.title || Sa(o.id);
-      return i > 1 ? u(UR, { key: z, colSpec: r, fieldValue: a, rowSpan: i }) : u(IR, { key: z, colSpec: r, resource: o, fieldValue: a, depth: n, hasChildren: e.hasChildren, isExpanded: e.isExpanded, innerHeight: e.innerHeight });
+      return i > 1 ? f(UR, { key: z, colSpec: r, fieldValue: a, rowSpan: i }) : f(IR, { key: z, colSpec: r, resource: o, fieldValue: a, depth: n, hasChildren: e.hasChildren, isExpanded: e.isExpanded, innerHeight: e.innerHeight });
     }));
   }
 }
@@ -17152,10 +17152,10 @@ class Ga extends $ {
   }
   render() {
     let { props: e, context: o } = this, M = { groupValue: e.group.value, view: o.viewApi }, n = e.group.spec;
-    return u(
+    return f(
       "tr",
       { role: "row" },
-      u(T0, { elTag: "th", elClasses: [
+      f(T0, { elTag: "th", elClasses: [
         "fc-datagrid-cell",
         "fc-resource-group",
         o.theme.getClass("tableCellShaded")
@@ -17167,24 +17167,24 @@ class Ga extends $ {
         role: "columnheader",
         scope: "colgroup",
         colSpan: e.spreadsheetColCnt
-      }, renderProps: M, generatorName: "resourceGroupLabelContent", customGenerator: n.labelContent, defaultGenerator: jR, classNameGenerator: n.labelClassNames, didMount: n.labelDidMount, willUnmount: n.labelWillUnmount }, (b) => u(
+      }, renderProps: M, generatorName: "resourceGroupLabelContent", customGenerator: n.labelContent, defaultGenerator: YR, classNameGenerator: n.labelClassNames, didMount: n.labelDidMount, willUnmount: n.labelWillUnmount }, (b) => f(
         "div",
         { className: "fc-datagrid-cell-frame", style: { height: e.innerHeight } },
-        u(
+        f(
           "div",
           { className: "fc-datagrid-cell-cushion fc-scrollgrid-sync-inner", ref: this.innerInnerRef },
-          u(ja, { depth: 0, hasChildren: !0, isExpanded: e.isExpanded, onExpanderClick: this.onExpanderClick }),
-          u(b, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
+          f(Ya, { depth: 0, hasChildren: !0, isExpanded: e.isExpanded, onExpanderClick: this.onExpanderClick }),
+          f(b, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
         )
       ))
     );
   }
 }
 Ga.addPropsEquality({
-  group: Y6
+  group: j6
 });
-function jR(t) {
-  return t.groupValue || u(M0, null, " ");
+function YR(t) {
+  return t.groupValue || f(M0, null, " ");
 }
 const FR = 20;
 class GR extends $ {
@@ -17195,42 +17195,42 @@ class GR extends $ {
     let { colSpecs: e, superHeaderRendering: o, rowInnerHeights: M } = this.props, n = { view: this.context.viewApi }, b = [];
     if (M = M.slice(), o) {
       let z = M.shift();
-      b.push(u(
+      b.push(f(
         "tr",
         { key: "row-super", role: "row" },
-        u(T0, { elTag: "th", elClasses: [
+        f(T0, { elTag: "th", elClasses: [
           "fc-datagrid-cell",
           "fc-datagrid-cell-super"
         ], elAttrs: {
           role: "columnheader",
           scope: "colgroup",
           colSpan: e.length
-        }, renderProps: n, generatorName: "resourceAreaHeaderContent", customGenerator: o.headerContent, defaultGenerator: o.headerDefault, classNameGenerator: o.headerClassNames, didMount: o.headerDidMount, willUnmount: o.headerWillUnmount }, (i) => u(
+        }, renderProps: n, generatorName: "resourceAreaHeaderContent", customGenerator: o.headerContent, defaultGenerator: o.headerDefault, classNameGenerator: o.headerClassNames, didMount: o.headerDidMount, willUnmount: o.headerWillUnmount }, (i) => f(
           "div",
           { className: "fc-datagrid-cell-frame", style: { height: z } },
-          u(i, { elTag: "div", elClasses: ["fc-datagrid-cell-cushion", "fc-scrollgrid-sync-inner"] })
+          f(i, { elTag: "div", elClasses: ["fc-datagrid-cell-cushion", "fc-scrollgrid-sync-inner"] })
         ))
       ));
     }
     let r = M.shift();
-    return b.push(u("tr", { key: "row", role: "row" }, e.map((z, i) => {
+    return b.push(f("tr", { key: "row", role: "row" }, e.map((z, i) => {
       let a = i === e.length - 1;
-      return u(T0, { key: i, elTag: "th", elClasses: ["fc-datagrid-cell"], elAttrs: { role: "columnheader" }, renderProps: n, generatorName: "resourceAreaHeaderContent", customGenerator: z.headerContent, defaultGenerator: z.headerDefault, classNameGenerator: z.headerClassNames, didMount: z.headerDidMount, willUnmount: z.headerWillUnmount }, (s) => u(
+      return f(T0, { key: i, elTag: "th", elClasses: ["fc-datagrid-cell"], elAttrs: { role: "columnheader" }, renderProps: n, generatorName: "resourceAreaHeaderContent", customGenerator: z.headerContent, defaultGenerator: z.headerDefault, classNameGenerator: z.headerClassNames, didMount: z.headerDidMount, willUnmount: z.headerWillUnmount }, (s) => f(
         "div",
         { className: "fc-datagrid-cell-frame", style: { height: r } },
-        u(
+        f(
           "div",
           { className: "fc-datagrid-cell-cushion fc-scrollgrid-sync-inner" },
-          z.isMain && u(
+          z.isMain && f(
             "span",
             { className: "fc-datagrid-expander fc-datagrid-expander-placeholder" },
-            u("span", { className: "fc-icon" })
+            f("span", { className: "fc-icon" })
           ),
-          u(s, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
+          f(s, { elTag: "span", elClasses: ["fc-datagrid-cell-main"] })
         ),
-        !a && u("div", { className: "fc-datagrid-cell-resizer", ref: this.resizerElRefs.createRef(i) })
+        !a && f("div", { className: "fc-datagrid-cell-resizer", ref: this.resizerElRefs.createRef(i) })
       ));
-    }))), u(M0, null, b);
+    }))), f(M0, null, b);
   }
   _handleColResizerEl(e, o) {
     let { colDraggings: M } = this;
@@ -17247,7 +17247,7 @@ class GR extends $ {
     if (r) {
       let z = new r(e), i, a;
       return z.emitter.on("dragstart", () => {
-        a = rt(Q0(e, "tr"), "th").map((d) => d.getBoundingClientRect().width), i = a[o];
+        a = pt(Q0(e, "tr"), "th").map((d) => d.getBoundingClientRect().width), i = a[o];
       }), z.emitter.on("dragmove", (s) => {
         a[o] = Math.max(i + s.deltaX * (n ? -1 : 1), FR), b && b(a.slice());
       }), z.setAutoScrollEnabled(!1), z;
@@ -17257,7 +17257,7 @@ class GR extends $ {
 }
 class VR extends $ {
   constructor() {
-    super(...arguments), this.refineRenderProps = _e(_6), this.handleHeightChange = (e, o) => {
+    super(...arguments), this.refineRenderProps = Ce(_6), this.handleHeightChange = (e, o) => {
       this.props.onHeightChange && this.props.onHeightChange(
         // would want to use own <tr> ref, but not guaranteed to be ready when this fires
         Q0(e, "tr"),
@@ -17267,19 +17267,19 @@ class VR extends $ {
   }
   render() {
     let { props: e, context: o } = this, { options: M } = o, n = this.refineRenderProps({ resource: e.resource, context: o });
-    return u(
+    return f(
       "tr",
       { ref: e.elRef },
-      u(T0, { elTag: "td", elClasses: [
+      f(T0, { elTag: "td", elClasses: [
         "fc-timeline-lane",
         "fc-resource"
       ], elAttrs: {
         "data-resource-id": e.resource.id
-      }, renderProps: n, generatorName: "resourceLaneContent", customGenerator: M.resourceLaneContent, classNameGenerator: M.resourceLaneClassNames, didMount: M.resourceLaneDidMount, willUnmount: M.resourceLaneWillUnmount }, (b) => u(
+      }, renderProps: n, generatorName: "resourceLaneContent", customGenerator: M.resourceLaneContent, classNameGenerator: M.resourceLaneClassNames, didMount: M.resourceLaneDidMount, willUnmount: M.resourceLaneWillUnmount }, (b) => f(
         "div",
         { className: "fc-timeline-lane-frame", style: { height: e.innerHeight } },
-        u(b, { elTag: "div", elClasses: ["fc-timeline-lane-misc"] }),
-        u(Pb, { dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, nextDayThreshold: e.nextDayThreshold, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, timelineCoords: e.timelineCoords, onHeightChange: this.handleHeightChange, resourceId: e.resource.id })
+        f(b, { elTag: "div", elClasses: ["fc-timeline-lane-misc"] }),
+        f(Pb, { dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, nextDayThreshold: e.nextDayThreshold, businessHours: e.businessHours, eventStore: e.eventStore, eventUiBases: e.eventUiBases, dateSelection: e.dateSelection, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, timelineCoords: e.timelineCoords, onHeightChange: this.handleHeightChange, resourceId: e.resource.id })
       ))
     );
   }
@@ -17290,26 +17290,26 @@ class QR extends $ {
       groupValue: e.groupValue,
       view: o.viewApi
     };
-    return u(
+    return f(
       "tr",
       { ref: e.elRef },
-      u(T0, { elTag: "td", elRef: e.elRef, elClasses: [
+      f(T0, { elTag: "td", elRef: e.elRef, elClasses: [
         "fc-timeline-lane",
         "fc-resource-group",
         o.theme.getClass("tableCellShaded")
-      ], renderProps: n, generatorName: "resourceGroupLaneContent", customGenerator: M.laneContent, classNameGenerator: M.laneClassNames, didMount: M.laneDidMount, willUnmount: M.laneWillUnmount }, (b) => u(b, { elTag: "div", elStyle: { height: e.innerHeight } }))
+      ], renderProps: n, generatorName: "resourceGroupLaneContent", customGenerator: M.laneContent, classNameGenerator: M.laneClassNames, didMount: M.laneDidMount, willUnmount: M.laneWillUnmount }, (b) => f(b, { elTag: "div", elStyle: { height: e.innerHeight } }))
     );
   }
 }
 class KR extends $ {
   render() {
     let { props: e, context: o } = this, { rowElRefs: M, innerHeights: n } = e;
-    return u("tbody", null, e.rowNodes.map((b, r) => {
+    return f("tbody", null, e.rowNodes.map((b, r) => {
       if (b.group)
-        return u(QR, { key: b.id, elRef: M.createRef(b.id), groupValue: b.group.value, renderHooks: b.group.spec, innerHeight: n[r] || "" });
+        return f(QR, { key: b.id, elRef: M.createRef(b.id), groupValue: b.group.value, renderHooks: b.group.spec, innerHeight: n[r] || "" });
       if (b.resource) {
         let z = b.resource;
-        return u(VR, Object.assign({ key: b.id, elRef: M.createRef(b.id) }, e.splitProps[z.id], { resource: z, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, nextDayThreshold: o.options.nextDayThreshold, businessHours: z.businessHours || e.fallbackBusinessHours, innerHeight: n[r] || "", timelineCoords: e.slatCoords, onHeightChange: e.onRowHeightChange }));
+        return f(VR, Object.assign({ key: b.id, elRef: M.createRef(b.id) }, e.splitProps[z.id], { resource: z, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, nextDayThreshold: o.options.nextDayThreshold, businessHours: z.businessHours || e.fallbackBusinessHours, innerHeight: n[r] || "", timelineCoords: e.slatCoords, onHeightChange: e.onRowHeightChange }));
       }
       return null;
     }));
@@ -17321,14 +17321,14 @@ class $R extends $ {
   }
   render() {
     let { props: e, context: o } = this;
-    return u(
+    return f(
       "table",
       { ref: this.rootElRef, "aria-hidden": !0, className: "fc-scrollgrid-sync-table " + o.theme.getClass("table"), style: {
         minWidth: e.tableMinWidth,
         width: e.clientWidth,
         height: e.minHeight
       } },
-      u(KR, { rowElRefs: this.rowElRefs, rowNodes: e.rowNodes, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, splitProps: e.splitProps, fallbackBusinessHours: e.fallbackBusinessHours, slatCoords: e.slatCoords, innerHeights: e.innerHeights, onRowHeightChange: e.onRowHeightChange })
+      f(KR, { rowElRefs: this.rowElRefs, rowNodes: e.rowNodes, dateProfile: e.dateProfile, tDateProfile: e.tDateProfile, nowDate: e.nowDate, todayRange: e.todayRange, splitProps: e.splitProps, fallbackBusinessHours: e.fallbackBusinessHours, slatCoords: e.slatCoords, innerHeights: e.innerHeights, onRowHeightChange: e.onRowHeightChange })
     );
   }
   componentDidMount() {
@@ -17361,7 +17361,7 @@ class JR extends $0 {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { dateProfile: n, tDateProfile: b } = e, { unit: r, value: z } = Xe(b.slotDuration), i = this.computeHasResourceBusinessHours(e.rowNodes), a = this.resourceSplitter.splitProps(e), s = a[""], d = this.bgSlicer.sliceProps(
+    let { props: e, state: o, context: M } = this, { dateProfile: n, tDateProfile: b } = e, { unit: r, value: z } = xe(b.slotDuration), i = this.computeHasResourceBusinessHours(e.rowNodes), a = this.resourceSplitter.splitProps(e), s = a[""], d = this.bgSlicer.sliceProps(
       s,
       n,
       b.isTimeScale ? null : e.nextDayThreshold,
@@ -17371,32 +17371,32 @@ class JR extends $0 {
       M.dateProfileGenerator,
       b,
       M.dateEnv
-    ), A = o.slatCoords && o.slatCoords.dateProfile === e.dateProfile ? o.slatCoords : null;
-    return u(
+    ), u = o.slatCoords && o.slatCoords.dateProfile === e.dateProfile ? o.slatCoords : null;
+    return f(
       "div",
       { ref: this.handleEl, className: [
         "fc-timeline-body",
         e.expandRows ? "fc-timeline-body-expandrows" : ""
       ].join(" "), style: { minWidth: e.tableMinWidth } },
-      u(S1, { unit: r, unitValue: z }, (f, h) => u(
+      f(S1, { unit: r, unitValue: z }, (A, h) => f(
         M0,
         null,
-        u(qa, { ref: this.slatsRef, dateProfile: n, tDateProfile: b, nowDate: f, todayRange: h, clientWidth: e.clientWidth, tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, onCoords: this.handleSlatCoords, onScrollLeftRequest: e.onScrollLeftRequest }),
-        u(Wa, {
+        f(qa, { ref: this.slatsRef, dateProfile: n, tDateProfile: b, nowDate: A, todayRange: h, clientWidth: e.clientWidth, tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, onCoords: this.handleSlatCoords, onScrollLeftRequest: e.onScrollLeftRequest }),
+        f(Wa, {
           businessHourSegs: i ? null : d.businessHourSegs,
           bgEventSegs: d.bgEventSegs,
-          timelineCoords: A,
+          timelineCoords: u,
           // empty array will result in unnecessary rerenders?
           eventResizeSegs: d.eventResize ? d.eventResize.segs : [],
           dateSelectionSegs: d.dateSelectionSegs,
-          nowDate: f,
+          nowDate: A,
           todayRange: h
         }),
-        u($R, { rowNodes: e.rowNodes, dateProfile: n, tDateProfile: e.tDateProfile, nowDate: f, todayRange: h, splitProps: a, fallbackBusinessHours: i ? e.businessHours : null, clientWidth: e.clientWidth, minHeight: e.expandRows ? e.clientHeight : "", tableMinWidth: e.tableMinWidth, innerHeights: e.rowInnerHeights, slatCoords: A, onRowCoords: this.handleRowCoords, onRowHeightChange: e.onRowHeightChange }),
-        M.options.nowIndicator && A && A.isDateInRange(f) && u(
+        f($R, { rowNodes: e.rowNodes, dateProfile: n, tDateProfile: e.tDateProfile, nowDate: A, todayRange: h, splitProps: a, fallbackBusinessHours: i ? e.businessHours : null, clientWidth: e.clientWidth, minHeight: e.expandRows ? e.clientHeight : "", tableMinWidth: e.tableMinWidth, innerHeights: e.rowInnerHeights, slatCoords: u, onRowCoords: this.handleRowCoords, onRowHeightChange: e.onRowHeightChange }),
+        M.options.nowIndicator && u && u.isDateInRange(A) && f(
           "div",
           { className: "fc-timeline-now-indicator-container" },
-          u(Yt, { elClasses: ["fc-timeline-now-indicator-line"], elStyle: xb(A.dateToCoord(f), M.isRtl), isAxis: !1, date: f })
+          f(Yt, { elClasses: ["fc-timeline-now-indicator-line"], elStyle: xb(u.dateToCoord(A), M.isRtl), isAxis: !1, date: A })
         )
       ))
     );
@@ -17451,7 +17451,7 @@ class tm extends $ {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { options: n } = M, b = !e.forPrint && Xt(n), r = !e.forPrint && MM(n), z = [
+    let { props: e, state: o, context: M } = this, { options: n } = M, b = !e.forPrint && xt(n), r = !e.forPrint && MM(n), z = [
       {
         type: "header",
         key: "header",
@@ -17467,7 +17467,7 @@ class tm extends $ {
           },
           {
             key: "divider",
-            outerContent: u("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
+            outerContent: f("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
           },
           {
             key: "timeline",
@@ -17489,7 +17489,7 @@ class tm extends $ {
           },
           {
             key: "divider",
-            outerContent: u("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
+            outerContent: f("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
           },
           {
             key: "timeline",
@@ -17506,20 +17506,20 @@ class tm extends $ {
       chunks: [
         {
           key: "datagrid",
-          content: kt
+          content: Xt
         },
         {
           key: "divider",
-          outerContent: u("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
+          outerContent: f("td", { role: "presentation", className: "fc-resource-timeline-divider " + M.theme.getClass("tableCellShaded") })
         },
         {
           key: "timeline",
-          content: kt
+          content: Xt
         }
       ]
     });
     let i = o.resourceAreaWidthOverride != null ? o.resourceAreaWidthOverride : n.resourceAreaWidth;
-    return u(iM, { ref: this.scrollGridRef, elRef: this.rootElRef, liquid: !e.isHeightAuto && !e.forPrint, forPrint: e.forPrint, collapsibleWidth: !1, colGroups: [
+    return f(iM, { ref: this.scrollGridRef, elRef: this.rootElRef, liquid: !e.isHeightAuto && !e.forPrint, forPrint: e.forPrint, collapsibleWidth: !1, colGroups: [
       { cols: e.spreadsheetCols, width: i },
       { cols: [] },
       { cols: e.timeCols }
@@ -17601,23 +17601,23 @@ class Va extends $ {
     };
   }
   render() {
-    let { props: e, state: o, context: M } = this, { options: n, viewSpec: b } = M, { superHeaderRendering: r, groupSpecs: z, orderSpecs: i, isVGrouping: a, colSpecs: s } = this.processColOptions(M.options), d = this.buildTimelineDateProfile(e.dateProfile, M.dateEnv, n, M.dateProfileGenerator), A = this.rowNodes = this.buildRowNodes(e.resourceStore, z, i, a, e.resourceEntityExpansions, n.resourcesInitiallyExpanded), { slotMinWidth: f } = n, h = ga(d, f || this.computeFallbackSlotMinWidth(d));
-    return u(
-      xe,
+    let { props: e, state: o, context: M } = this, { options: n, viewSpec: b } = M, { superHeaderRendering: r, groupSpecs: z, orderSpecs: i, isVGrouping: a, colSpecs: s } = this.processColOptions(M.options), d = this.buildTimelineDateProfile(e.dateProfile, M.dateEnv, n, M.dateProfileGenerator), u = this.rowNodes = this.buildRowNodes(e.resourceStore, z, i, a, e.resourceEntityExpansions, n.resourcesInitiallyExpanded), { slotMinWidth: A } = n, h = ga(d, A || this.computeFallbackSlotMinWidth(d));
+    return f(
+      Ie,
       { elClasses: [
         "fc-resource-timeline",
-        !this.hasNesting(A) && "fc-resource-timeline-flat",
+        !this.hasNesting(u) && "fc-resource-timeline-flat",
         "fc-timeline",
         n.eventOverlap === !1 ? "fc-timeline-overlap-disabled" : "fc-timeline-overlap-enabled"
       ], viewSpec: b },
-      u(tm, { ref: this.layoutRef, forPrint: e.forPrint, isHeightAuto: e.isHeightAuto, spreadsheetCols: Mm(s, o.spreadsheetColWidths, ""), spreadsheetHeaderRows: (R) => u(
+      f(tm, { ref: this.layoutRef, forPrint: e.forPrint, isHeightAuto: e.isHeightAuto, spreadsheetCols: Mm(s, o.spreadsheetColWidths, ""), spreadsheetHeaderRows: (R) => f(
         GR,
         { superHeaderRendering: r, colSpecs: s, onColWidthChange: this.handleColWidthChange, rowInnerHeights: R.rowSyncHeights }
-      ), spreadsheetBodyRows: (R) => u(M0, null, this.renderSpreadsheetRows(A, s, R.rowSyncHeights)), timeCols: h, timeHeaderContent: (R) => u(fa, { clientWidth: R.clientWidth, clientHeight: R.clientHeight, tableMinWidth: R.tableMinWidth, tableColGroupNode: R.tableColGroupNode, dateProfile: e.dateProfile, tDateProfile: d, slatCoords: o.slatCoords, rowInnerHeights: R.rowSyncHeights, onMaxCushionWidth: f ? null : this.handleMaxCushionWidth }), timeBodyContent: (R) => u(JR, { dateProfile: e.dateProfile, clientWidth: R.clientWidth, clientHeight: R.clientHeight, tableMinWidth: R.tableMinWidth, tableColGroupNode: R.tableColGroupNode, expandRows: R.expandRows, tDateProfile: d, rowNodes: A, businessHours: e.businessHours, dateSelection: e.dateSelection, eventStore: e.eventStore, eventUiBases: e.eventUiBases, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, resourceStore: e.resourceStore, nextDayThreshold: M.options.nextDayThreshold, rowInnerHeights: R.rowSyncHeights, onSlatCoords: this.handleSlatCoords, onRowCoords: this.handleRowCoords, onScrollLeftRequest: this.handleScrollLeftRequest, onRowHeightChange: R.reportRowHeightChange }) })
+      ), spreadsheetBodyRows: (R) => f(M0, null, this.renderSpreadsheetRows(u, s, R.rowSyncHeights)), timeCols: h, timeHeaderContent: (R) => f(fa, { clientWidth: R.clientWidth, clientHeight: R.clientHeight, tableMinWidth: R.tableMinWidth, tableColGroupNode: R.tableColGroupNode, dateProfile: e.dateProfile, tDateProfile: d, slatCoords: o.slatCoords, rowInnerHeights: R.rowSyncHeights, onMaxCushionWidth: A ? null : this.handleMaxCushionWidth }), timeBodyContent: (R) => f(JR, { dateProfile: e.dateProfile, clientWidth: R.clientWidth, clientHeight: R.clientHeight, tableMinWidth: R.tableMinWidth, tableColGroupNode: R.tableColGroupNode, expandRows: R.expandRows, tDateProfile: d, rowNodes: u, businessHours: e.businessHours, dateSelection: e.dateSelection, eventStore: e.eventStore, eventUiBases: e.eventUiBases, eventSelection: e.eventSelection, eventDrag: e.eventDrag, eventResize: e.eventResize, resourceStore: e.resourceStore, nextDayThreshold: M.options.nextDayThreshold, rowInnerHeights: R.rowSyncHeights, onSlatCoords: this.handleSlatCoords, onRowCoords: this.handleRowCoords, onScrollLeftRequest: this.handleScrollLeftRequest, onRowHeightChange: R.reportRowHeightChange }) })
     );
   }
   renderSpreadsheetRows(e, o, M) {
-    return e.map((n, b) => n.group ? u(Ga, { key: n.id, id: n.id, spreadsheetColCnt: o.length, isExpanded: n.isExpanded, group: n.group, innerHeight: M[b] || "" }) : n.resource ? u(Fa, { key: n.id, colSpecs: o, rowSpans: n.rowSpans, depth: n.depth, isExpanded: n.isExpanded, hasChildren: n.hasChildren, resource: n.resource, innerHeight: M[b] || "" }) : null);
+    return e.map((n, b) => n.group ? f(Ga, { key: n.id, id: n.id, spreadsheetColCnt: o.length, isExpanded: n.isExpanded, group: n.group, innerHeight: M[b] || "" }) : n.resource ? f(Fa, { key: n.id, colSpecs: o, rowSpans: n.rowSpans, depth: n.depth, isExpanded: n.isExpanded, hasChildren: n.hasChildren, resource: n.resource, innerHeight: M[b] || "" }) : null);
   }
   componentDidMount() {
     this.renderedRowNodes = this.rowNodes, this.scrollResponder = this.context.createScrollResponder(this.handleScrollRequest);
@@ -17708,9 +17708,9 @@ function bm(t) {
   let i = t.resourceOrder || Ub, a = [];
   for (let s of i) {
     let d = !1;
-    for (let A of b)
-      if (A.field === s.field) {
-        A.order = s.order, d = !0;
+    for (let u of b)
+      if (u.field === s.field) {
+        u.order = s.order, d = !0;
         break;
       }
     d || a.push(s);
@@ -17724,12 +17724,12 @@ function bm(t) {
   };
 }
 var rm = ".fc .fc-resource-timeline-divider{cursor:col-resize;width:3px}.fc .fc-resource-group{font-weight:inherit;text-align:inherit}.fc .fc-resource-timeline .fc-resource-group:not([rowspan]){background:var(--fc-neutral-bg-color)}.fc .fc-timeline-lane-frame{position:relative}.fc .fc-timeline-overlap-enabled .fc-timeline-lane-frame .fc-timeline-events{box-sizing:content-box;padding-bottom:10px}.fc-timeline-body-expandrows td.fc-timeline-lane{position:relative}.fc-timeline-body-expandrows .fc-timeline-lane-frame{position:static}.fc-datagrid-cell-frame-liquid{height:100%}.fc-liquid-hack .fc-datagrid-cell-frame-liquid{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc .fc-datagrid-header .fc-datagrid-cell-frame{align-items:center;display:flex;justify-content:flex-start;position:relative}.fc .fc-datagrid-cell-resizer{bottom:0;cursor:col-resize;position:absolute;top:0;width:5px;z-index:1}.fc .fc-datagrid-cell-cushion{overflow:hidden;padding:8px;white-space:nowrap}.fc .fc-datagrid-expander{cursor:pointer;opacity:.65}.fc .fc-datagrid-expander .fc-icon{display:inline-block;width:1em}.fc .fc-datagrid-expander-placeholder{cursor:auto}.fc .fc-resource-timeline-flat .fc-datagrid-expander-placeholder{display:none}.fc-direction-ltr .fc-datagrid-cell-resizer{right:-3px}.fc-direction-rtl .fc-datagrid-cell-resizer{left:-3px}.fc-direction-ltr .fc-datagrid-expander{margin-right:3px}.fc-direction-rtl .fc-datagrid-expander{margin-left:3px}";
-Ie(rm);
+Pe(rm);
 var pm = x0({
   name: "@fullcalendar/resource-timeline",
   premiumReleaseDate: "2025-08-10",
   deps: [
-    zt,
+    it,
     cM,
     ya
   ],
@@ -17775,11 +17775,11 @@ class im extends $0 {
   }
   render() {
     let { props: e, context: o } = this, { dateEnv: M, options: n } = o, { dateProfile: b, resourceDayTableModel: r } = e, z = this.dayRanges = this.buildDayRanges(r.dayTableModel, b, M), i = this.splitter.splitProps(e);
-    this.slicers = Y0(i, (s, d) => this.slicers[d] || new ca());
-    let a = Y0(this.slicers, (s, d) => s.sliceProps(i[d], b, null, o, z));
+    this.slicers = j0(i, (s, d) => this.slicers[d] || new ca());
+    let a = j0(this.slicers, (s, d) => s.sliceProps(i[d], b, null, o, z));
     return (
       // TODO: would move this further down hierarchy, but sliceNowDate needs it
-      u(S1, { unit: n.nowIndicator ? "minute" : "day" }, (s, d) => u(ia, Object.assign({ ref: this.timeColsRef }, this.joiner.joinProps(a, r), { dateProfile: b, axis: e.axis, slotDuration: e.slotDuration, slatMetas: e.slatMetas, cells: r.cells[0], tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, clientWidth: e.clientWidth, clientHeight: e.clientHeight, expandRows: e.expandRows, nowDate: s, nowIndicatorSegs: n.nowIndicator && this.buildNowIndicatorSegs(s), todayRange: d, onScrollTopRequest: e.onScrollTopRequest, forPrint: e.forPrint, onSlatCoords: e.onSlatCoords, isHitComboAllowed: this.isHitComboAllowed })))
+      f(S1, { unit: n.nowIndicator ? "minute" : "day" }, (s, d) => f(ia, Object.assign({ ref: this.timeColsRef }, this.joiner.joinProps(a, r), { dateProfile: b, axis: e.axis, slotDuration: e.slotDuration, slatMetas: e.slatMetas, cells: r.cells[0], tableColGroupNode: e.tableColGroupNode, tableMinWidth: e.tableMinWidth, clientWidth: e.clientWidth, clientHeight: e.clientHeight, expandRows: e.expandRows, nowDate: s, nowIndicatorSegs: n.nowIndicator && this.buildNowIndicatorSegs(s), todayRange: d, onScrollTopRequest: e.onScrollTopRequest, forPrint: e.forPrint, onSlatCoords: e.onSlatCoords, isHitComboAllowed: this.isHitComboAllowed })))
     );
   }
   buildNowIndicatorSegs(e) {
@@ -17792,8 +17792,8 @@ class cm extends ra {
     super(...arguments), this.flattenResources = I(ka), this.buildResourceTimeColsModel = I(am), this.buildSlatMetas = I(sa);
   }
   render() {
-    let { props: e, context: o } = this, { options: M, dateEnv: n } = o, { dateProfile: b } = e, r = this.allDaySplitter.splitProps(e), z = M.resourceOrder || Ub, i = this.flattenResources(e.resourceStore, z), a = this.buildResourceTimeColsModel(b, o.dateProfileGenerator, i, M.datesAboveResources, o), s = this.buildSlatMetas(b.slotMinTime, b.slotMaxTime, M.slotLabelInterval, M.slotDuration, n), { dayMinWidth: d } = M, A = !d, f = d, h = M.dayHeaders && u(wa, { resources: i, dates: a.dayTableModel.headerDates, dateProfile: b, datesRepDistinctDays: !0, renderIntro: A ? this.renderHeadAxis : null }), R = M.allDaySlot !== !1 && ((g) => u(Ya, Object.assign({}, r.allDay, { dateProfile: b, resourceDayTableModel: a, nextDayThreshold: M.nextDayThreshold, tableMinWidth: g.tableMinWidth, colGroupNode: g.tableColGroupNode, renderRowIntro: A ? this.renderTableRowAxis : null, showWeekNumbers: !1, expandRows: !1, headerAlignElRef: this.headerElRef, clientWidth: g.clientWidth, clientHeight: g.clientHeight, forPrint: e.forPrint }, this.getAllDayMaxEventProps()))), W = (g) => u(im, Object.assign({}, r.timed, { dateProfile: b, axis: A, slotDuration: M.slotDuration, slatMetas: s, resourceDayTableModel: a, tableColGroupNode: g.tableColGroupNode, tableMinWidth: g.tableMinWidth, clientWidth: g.clientWidth, clientHeight: g.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: g.expandRows, forPrint: e.forPrint, onScrollTopRequest: this.handleScrollTopRequest }));
-    return f ? this.renderHScrollLayout(h, R, W, a.colCnt, d, s, this.state.slatCoords) : this.renderSimpleLayout(h, R, W);
+    let { props: e, context: o } = this, { options: M, dateEnv: n } = o, { dateProfile: b } = e, r = this.allDaySplitter.splitProps(e), z = M.resourceOrder || Ub, i = this.flattenResources(e.resourceStore, z), a = this.buildResourceTimeColsModel(b, o.dateProfileGenerator, i, M.datesAboveResources, o), s = this.buildSlatMetas(b.slotMinTime, b.slotMaxTime, M.slotLabelInterval, M.slotDuration, n), { dayMinWidth: d } = M, u = !d, A = d, h = M.dayHeaders && f(wa, { resources: i, dates: a.dayTableModel.headerDates, dateProfile: b, datesRepDistinctDays: !0, renderIntro: u ? this.renderHeadAxis : null }), R = M.allDaySlot !== !1 && ((g) => f(ja, Object.assign({}, r.allDay, { dateProfile: b, resourceDayTableModel: a, nextDayThreshold: M.nextDayThreshold, tableMinWidth: g.tableMinWidth, colGroupNode: g.tableColGroupNode, renderRowIntro: u ? this.renderTableRowAxis : null, showWeekNumbers: !1, expandRows: !1, headerAlignElRef: this.headerElRef, clientWidth: g.clientWidth, clientHeight: g.clientHeight, forPrint: e.forPrint }, this.getAllDayMaxEventProps()))), W = (g) => f(im, Object.assign({}, r.timed, { dateProfile: b, axis: u, slotDuration: M.slotDuration, slatMetas: s, resourceDayTableModel: a, tableColGroupNode: g.tableColGroupNode, tableMinWidth: g.tableMinWidth, clientWidth: g.clientWidth, clientHeight: g.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: g.expandRows, forPrint: e.forPrint, onScrollTopRequest: this.handleScrollTopRequest }));
+    return A ? this.renderHScrollLayout(h, R, W, a.colCnt, d, s, this.state.slatCoords) : this.renderSimpleLayout(h, R, W);
   }
 }
 function am(t, e, o, M, n) {
@@ -17804,7 +17804,7 @@ var sm = x0({
   name: "@fullcalendar/resource-timegrid",
   premiumReleaseDate: "2025-08-10",
   deps: [
-    zt,
+    it,
     cM,
     la
   ],
@@ -17876,7 +17876,7 @@ var sm = x0({
 }, Om = function(t) {
   return A1(t) ? t : [t];
 };
-function qt(t, e, o) {
+function ht(t, e, o) {
   o === void 0 && (o = " ");
   var M = String(t);
   return e = e >> 0, M.length > e ? String(M) : (e = e - M.length, e > o.length && (o += u0(o, e / o.length)), o.slice(0, e) + String(M));
@@ -17895,13 +17895,13 @@ var lm = function(t, e, o) {
   return !U1(t);
 }, v0 = function(t, e) {
   return V0(t) && t.indexOf(e) !== -1;
-}, bt = function(t, e, o, M, n, b) {
+}, rt = function(t, e, o, M, n, b) {
   return M === void 0 && (M = 0), n === void 0 && (n = 0), b === void 0 && (b = 0), new Date(Date.UTC(t, e - 1, o, M, n, b));
-}, dm = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], Qa = 1e3 * 60 * 60 * 24, Ka = 9999, $a = bt(1970, 1, 1), Am = [6, 0, 1, 2, 3, 4, 5], s2 = function(t) {
+}, dm = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], Qa = 1e3 * 60 * 60 * 24, Ka = 9999, $a = rt(1970, 1, 1), Am = [6, 0, 1, 2, 3, 4, 5], O2 = function(t) {
   return t % 4 === 0 && t % 100 !== 0 || t % 400 === 0;
 }, Za = function(t) {
   return t instanceof Date;
-}, z2 = function(t) {
+}, i2 = function(t) {
   return Za(t) && !isNaN(t.getTime());
 }, um = function(t, e) {
   var o = t.getTime(), M = e.getTime(), n = o - M;
@@ -17912,12 +17912,12 @@ var lm = function(t, e, o) {
   return new Date($a.getTime() + t * Qa);
 }, fm = function(t) {
   var e = t.getUTCMonth();
-  return e === 1 && s2(t.getUTCFullYear()) ? 29 : dm[e];
-}, xt = function(t) {
+  return e === 1 && O2(t.getUTCFullYear()) ? 29 : dm[e];
+}, It = function(t) {
   return Am[t.getUTCDay()];
 }, Lz = function(t, e) {
-  var o = bt(t, e + 1, 1);
-  return [xt(o), fm(o)];
+  var o = rt(t, e + 1, 1);
+  return [It(o), fm(o)];
 }, es = function(t, e) {
   return e = e || t, new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate(), e.getHours(), e.getMinutes(), e.getSeconds(), e.getMilliseconds()));
 }, Hn = function(t) {
@@ -17927,7 +17927,7 @@ var lm = function(t, e, o) {
   for (var e = [], o = 0; o < t.length; o++)
     e.push(Hn(t[o]));
   return e;
-}, h2 = function(t) {
+}, W2 = function(t) {
   t.sort(function(e, o) {
     return e.getTime() - o.getTime();
   });
@@ -17935,13 +17935,13 @@ var lm = function(t, e, o) {
   e === void 0 && (e = !0);
   var o = new Date(t);
   return [
-    qt(o.getUTCFullYear().toString(), 4, "0"),
-    qt(o.getUTCMonth() + 1, 2, "0"),
-    qt(o.getUTCDate(), 2, "0"),
+    ht(o.getUTCFullYear().toString(), 4, "0"),
+    ht(o.getUTCMonth() + 1, 2, "0"),
+    ht(o.getUTCDate(), 2, "0"),
     "T",
-    qt(o.getUTCHours(), 2, "0"),
-    qt(o.getUTCMinutes(), 2, "0"),
-    qt(o.getUTCSeconds(), 2, "0"),
+    ht(o.getUTCHours(), 2, "0"),
+    ht(o.getUTCMinutes(), 2, "0"),
+    ht(o.getUTCSeconds(), 2, "0"),
     e ? "Z" : ""
   ].join("");
 }, Vb = function(t) {
@@ -17955,7 +17955,7 @@ var lm = function(t, e, o) {
 }, qm = function(t, e) {
   var o = Intl.DateTimeFormat().resolvedOptions().timeZone, M = new Date(Nz(t, o)), n = new Date(Nz(t, e ?? "UTC")), b = n.getTime() - M.getTime();
   return new Date(t.getTime() - b);
-}, Lt = (
+}, vt = (
   /** @class */
   (function() {
     function t(e, o) {
@@ -18033,7 +18033,7 @@ var Sz = (
     return e.prototype.add = function(o) {
       return this.iterator(o, this._result.length) ? (this._result.push(o), !0) : !1;
     }, e;
-  })(Lt)
+  })(vt)
 ), Co = {
   dayNames: [
     "Sunday",
@@ -18228,8 +18228,8 @@ var Sz = (
       var b = this;
       n === void 0 && (n = ","), A1(e) || (e = [e]);
       var r = function(i, a, s) {
-        for (var d = "", A = 0; A < i.length; A++)
-          A !== 0 && (A === i.length - 1 ? d += " " + s + " " : d += a + " "), d += i[A];
+        for (var d = "", u = 0; u < i.length; u++)
+          u !== 0 && (u === i.length - 1 ? d += " " + s + " " : d += a + " "), d += i[u];
         return d;
       };
       o = o || function(i) {
@@ -18296,8 +18296,8 @@ function ts(t, e) {
   return n(), o;
   function n() {
     M.expect("every");
-    var A = M.acceptNumber();
-    if (A && (o.interval = parseInt(A[0], 10)), M.isDone())
+    var u = M.acceptNumber();
+    if (u && (o.interval = parseInt(u[0], 10)), M.isDone())
       throw new Error("Unexpected end");
     switch (M.symbol) {
       case "day(s)":
@@ -18331,8 +18331,8 @@ function ts(t, e) {
       case "saturday":
       case "sunday":
         o.freq = t0.WEEKLY;
-        var f = M.symbol.substr(0, 2).toUpperCase();
-        if (o.byweekday = [t0[f]], !M.nextSymbol())
+        var A = M.symbol.substr(0, 2).toUpperCase();
+        if (o.byweekday = [t0[A]], !M.nextSymbol())
           return;
         for (; M.accept("comma"); ) {
           if (M.isDone())
@@ -18373,8 +18373,8 @@ function ts(t, e) {
     }
   }
   function b() {
-    var A = M.accept("on"), f = M.accept("the");
-    if (A || f)
+    var u = M.accept("on"), A = M.accept("the");
+    if (u || A)
       do {
         var h = a(), R = i(), W = z();
         if (h)
@@ -18400,16 +18400,16 @@ function ts(t, e) {
       } while (M.accept("comma") || M.accept("the") || M.accept("on"));
   }
   function r() {
-    var A = M.accept("at");
-    if (A)
+    var u = M.accept("at");
+    if (u)
       do {
-        var f = M.acceptNumber();
-        if (!f)
+        var A = M.acceptNumber();
+        if (!A)
           throw new Error("Unexpected symbol " + M.symbol + ", expected hour");
-        for (o.byhour = [parseInt(f[0], 10)]; M.accept("comma"); ) {
-          if (f = M.acceptNumber(), !f)
+        for (o.byhour = [parseInt(A[0], 10)]; M.accept("comma"); ) {
+          if (A = M.acceptNumber(), !A)
             throw new Error("Unexpected symbol " + M.symbol + "; expected hour");
-          o.byhour.push(parseInt(f[0], 10));
+          o.byhour.push(parseInt(A[0], 10));
         }
       } while (M.accept("comma") || M.accept("at"));
   }
@@ -18468,30 +18468,30 @@ function ts(t, e) {
       case "third":
         return M.nextSymbol(), M.accept("last") ? -3 : 3;
       case "nth":
-        var A = parseInt(M.value[1], 10);
-        if (A < -366 || A > 366)
-          throw new Error("Nth out of range: " + A);
-        return M.nextSymbol(), M.accept("last") ? -A : A;
+        var u = parseInt(M.value[1], 10);
+        if (u < -366 || u > 366)
+          throw new Error("Nth out of range: " + u);
+        return M.nextSymbol(), M.accept("last") ? -u : u;
       default:
         return !1;
     }
   }
   function s() {
     M.accept("on"), M.accept("the");
-    var A = a();
-    if (A)
-      for (o.bymonthday = [A], M.nextSymbol(); M.accept("comma"); ) {
-        if (A = a(), !A)
+    var u = a();
+    if (u)
+      for (o.bymonthday = [u], M.nextSymbol(); M.accept("comma"); ) {
+        if (u = a(), !u)
           throw new Error("Unexpected symbol " + M.symbol + "; expected monthday");
-        o.bymonthday.push(A), M.nextSymbol();
+        o.bymonthday.push(u), M.nextSymbol();
       }
   }
   function d() {
     if (M.symbol === "until") {
-      var A = Date.parse(M.text);
-      if (!A)
+      var u = Date.parse(M.text);
+      if (!u)
         throw new Error("Cannot parse until date:" + M.text);
-      o.until = new Date(A);
+      o.until = new Date(u);
     } else M.accept("for") && (o.count = parseInt(M.value[0], 10), M.expect("number"));
   }
 }
@@ -18504,7 +18504,7 @@ function Kb(t) {
 }
 var mm = function(t, e) {
   return e === void 0 && (e = Co), new t0(ts(t, e) || void 0);
-}, jt = [
+}, Ft = [
   "count",
   "until",
   "interval",
@@ -18513,12 +18513,12 @@ var mm = function(t, e) {
   "bymonth"
 ];
 We.IMPLEMENTED = [];
-We.IMPLEMENTED[f0.HOURLY] = jt;
-We.IMPLEMENTED[f0.MINUTELY] = jt;
-We.IMPLEMENTED[f0.DAILY] = ["byhour"].concat(jt);
-We.IMPLEMENTED[f0.WEEKLY] = jt;
-We.IMPLEMENTED[f0.MONTHLY] = jt;
-We.IMPLEMENTED[f0.YEARLY] = ["byweekno", "byyearday"].concat(jt);
+We.IMPLEMENTED[f0.HOURLY] = Ft;
+We.IMPLEMENTED[f0.MINUTELY] = Ft;
+We.IMPLEMENTED[f0.DAILY] = ["byhour"].concat(Ft);
+We.IMPLEMENTED[f0.WEEKLY] = Ft;
+We.IMPLEMENTED[f0.MONTHLY] = Ft;
+We.IMPLEMENTED[f0.YEARLY] = ["byweekno", "byyearday"].concat(Ft);
 var gm = function(t, e, o, M) {
   return new We(t, e, o, M).toString();
 }, ym = We.isFullyConvertible, ko = (
@@ -18550,7 +18550,7 @@ var gm = function(t, e, o, M) {
     return e.fromDate = function(o) {
       return new this(o.getUTCFullYear(), o.getUTCMonth() + 1, o.getUTCDate(), o.getUTCHours(), o.getUTCMinutes(), o.getUTCSeconds(), o.valueOf() % 1e3);
     }, e.prototype.getWeekday = function() {
-      return xt(new Date(this.getTime()));
+      return It(new Date(this.getTime()));
     }, e.prototype.getTime = function() {
       return new Date(Date.UTC(this.year, this.month - 1, this.day, this.hour, this.minute, this.second, this.millisecond)).getTime();
     }, e.prototype.getDay = function() {
@@ -18625,7 +18625,7 @@ var gm = function(t, e, o, M) {
 function os(t) {
   for (var e = [], o = Object.keys(t), M = 0, n = o; M < n.length; M++) {
     var b = n[M];
-    v0(og, b) || e.push(b), Za(t[b]) && !z2(t[b]) && e.push(b);
+    v0(og, b) || e.push(b), Za(t[b]) && !i2(t[b]) && e.push(b);
   }
   if (e.length)
     throw new Error("Invalid options: " + e.join(", "));
@@ -18652,7 +18652,7 @@ function vm(t) {
         e.bymonthday = e.dtstart.getUTCDate();
         break;
       case t0.WEEKLY:
-        e.byweekday = [xt(e.dtstart)];
+        e.byweekday = [It(e.dtstart)];
         break;
     }
   if (U0(e.bymonth) && !A1(e.bymonth) && (e.bymonth = [e.bymonth]), U0(e.byyearday) && !A1(e.byyearday) && P1(e.byyearday) && (e.byyearday = [e.byyearday]), !U0(e.bymonthday))
@@ -18701,7 +18701,7 @@ function Nm(t) {
     });
   }), o;
 }
-function Yn(t) {
+function jn(t) {
   var e = t.split(`
 `).map(Sm).filter(function(o) {
     return o !== null;
@@ -18822,7 +18822,7 @@ var xo = (
     }, t;
   })()
 );
-function jn(t) {
+function Yn(t) {
   for (var e = [], o = "", M = Object.keys(t), n = Object.keys($b), b = 0; b < M.length; b++)
     if (M[b] !== "tzid" && v0(n, M[b])) {
       var r = M[b].toUpperCase(), z = t[M[b]], i = "";
@@ -18835,8 +18835,8 @@ function jn(t) {
             P1(z) ? i = new i1(z).toString() : i = z.toString();
             break;
           case "BYWEEKDAY":
-            r = "BYDAY", i = Om(z).map(function(f) {
-              return f instanceof i1 ? f : A1(f) ? new i1(f[0], f[1]) : new i1(f);
+            r = "BYDAY", i = Om(z).map(function(A) {
+              return A instanceof i1 ? A : A1(A) ? new i1(A[0], A[1]) : new i1(A);
             }).toString();
             break;
           case "DTSTART":
@@ -18856,12 +18856,12 @@ function jn(t) {
         i && e.push([r, i]);
       }
     }
-  var d = e.map(function(f) {
-    var h = f[0], R = f[1];
+  var d = e.map(function(A) {
+    var h = A[0], R = A[1];
     return "".concat(h, "=").concat(R.toString());
-  }).join(";"), A = "";
-  return d !== "" && (A = "RRULE:".concat(d)), [o, A].filter(function(f) {
-    return !!f;
+  }).join(";"), u = "";
+  return d !== "" && (u = "RRULE:".concat(d)), [o, u].filter(function(A) {
+    return !!A;
   }).join(`
 `);
 }
@@ -18884,8 +18884,8 @@ var Dm = (
     }, t.prototype._cacheGet = function(e, o) {
       var M = !1, n = o ? Object.keys(o) : [], b = function(s) {
         for (var d = 0; d < n.length; d++) {
-          var A = n[d];
-          if (!Em(o[A], s[A]))
+          var u = n[d];
+          if (!Em(o[u], s[u]))
             return !0;
         }
         return !1;
@@ -18901,28 +18901,28 @@ var Dm = (
           }
         }
       if (!M && this.all) {
-        for (var a = new Lt(e, o), z = 0; z < this.all.length && a.accept(this.all[z]); z++)
+        for (var a = new vt(e, o), z = 0; z < this.all.length && a.accept(this.all[z]); z++)
           ;
         M = a.getValue(), this._cacheAdd(e, M, o);
       }
       return A1(M) ? vz(M) : M instanceof Date ? Hn(M) : M;
     }, t;
   })()
-), _m = P(P(P(P(P(P(P(P(P(P(P(P(P([], u0(1, 31), !0), u0(2, 28), !0), u0(3, 31), !0), u0(4, 30), !0), u0(5, 31), !0), u0(6, 30), !0), u0(7, 31), !0), u0(8, 31), !0), u0(9, 30), !0), u0(10, 31), !0), u0(11, 30), !0), u0(12, 31), !0), u0(1, 7), !0), Cm = P(P(P(P(P(P(P(P(P(P(P(P(P([], u0(1, 31), !0), u0(2, 29), !0), u0(3, 31), !0), u0(4, 30), !0), u0(5, 31), !0), u0(6, 30), !0), u0(7, 31), !0), u0(8, 31), !0), u0(9, 30), !0), u0(10, 31), !0), u0(11, 30), !0), u0(12, 31), !0), u0(1, 7), !0), km = K1(1, 29), Xm = K1(1, 30), we = K1(1, 31), t1 = K1(1, 32), xm = P(P(P(P(P(P(P(P(P(P(P(P(P([], t1, !0), Xm, !0), t1, !0), we, !0), t1, !0), we, !0), t1, !0), t1, !0), we, !0), t1, !0), we, !0), t1, !0), t1.slice(0, 7), !0), Im = P(P(P(P(P(P(P(P(P(P(P(P(P([], t1, !0), km, !0), t1, !0), we, !0), t1, !0), we, !0), t1, !0), t1, !0), we, !0), t1, !0), we, !0), t1, !0), t1.slice(0, 7), !0), Pm = K1(-28, 0), Hm = K1(-29, 0), Be = K1(-30, 0), o1 = K1(-31, 0), Um = P(P(P(P(P(P(P(P(P(P(P(P(P([], o1, !0), Hm, !0), o1, !0), Be, !0), o1, !0), Be, !0), o1, !0), o1, !0), Be, !0), o1, !0), Be, !0), o1, !0), o1.slice(0, 7), !0), Ym = P(P(P(P(P(P(P(P(P(P(P(P(P([], o1, !0), Pm, !0), o1, !0), Be, !0), o1, !0), Be, !0), o1, !0), o1, !0), Be, !0), o1, !0), Be, !0), o1, !0), o1.slice(0, 7), !0), jm = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366], Fm = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365], Ez = (function() {
+), _m = P(P(P(P(P(P(P(P(P(P(P(P(P([], u0(1, 31), !0), u0(2, 28), !0), u0(3, 31), !0), u0(4, 30), !0), u0(5, 31), !0), u0(6, 30), !0), u0(7, 31), !0), u0(8, 31), !0), u0(9, 30), !0), u0(10, 31), !0), u0(11, 30), !0), u0(12, 31), !0), u0(1, 7), !0), Cm = P(P(P(P(P(P(P(P(P(P(P(P(P([], u0(1, 31), !0), u0(2, 29), !0), u0(3, 31), !0), u0(4, 30), !0), u0(5, 31), !0), u0(6, 30), !0), u0(7, 31), !0), u0(8, 31), !0), u0(9, 30), !0), u0(10, 31), !0), u0(11, 30), !0), u0(12, 31), !0), u0(1, 7), !0), km = K1(1, 29), Xm = K1(1, 30), Be = K1(1, 31), t1 = K1(1, 32), xm = P(P(P(P(P(P(P(P(P(P(P(P(P([], t1, !0), Xm, !0), t1, !0), Be, !0), t1, !0), Be, !0), t1, !0), t1, !0), Be, !0), t1, !0), Be, !0), t1, !0), t1.slice(0, 7), !0), Im = P(P(P(P(P(P(P(P(P(P(P(P(P([], t1, !0), km, !0), t1, !0), Be, !0), t1, !0), Be, !0), t1, !0), t1, !0), Be, !0), t1, !0), Be, !0), t1, !0), t1.slice(0, 7), !0), Pm = K1(-28, 0), Hm = K1(-29, 0), Ee = K1(-30, 0), o1 = K1(-31, 0), Um = P(P(P(P(P(P(P(P(P(P(P(P(P([], o1, !0), Hm, !0), o1, !0), Ee, !0), o1, !0), Ee, !0), o1, !0), o1, !0), Ee, !0), o1, !0), Ee, !0), o1, !0), o1.slice(0, 7), !0), jm = P(P(P(P(P(P(P(P(P(P(P(P(P([], o1, !0), Pm, !0), o1, !0), Ee, !0), o1, !0), Ee, !0), o1, !0), o1, !0), Ee, !0), o1, !0), Ee, !0), o1, !0), o1.slice(0, 7), !0), Ym = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366], Fm = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365], Ez = (function() {
   for (var t = [], e = 0; e < 55; e++)
     t = t.concat(K1(7));
   return t;
 })();
 function Gm(t, e) {
-  var o = bt(t, 1, 1), M = s2(t) ? 366 : 365, n = s2(t + 1) ? 366 : 365, b = Pn(o), r = xt(o), z = W1(W1({ yearlen: M, nextyearlen: n, yearordinal: b, yearweekday: r }, Vm(t)), { wnomask: null });
+  var o = rt(t, 1, 1), M = O2(t) ? 366 : 365, n = O2(t + 1) ? 366 : 365, b = Pn(o), r = It(o), z = W1(W1({ yearlen: M, nextyearlen: n, yearordinal: b, yearweekday: r }, Vm(t)), { wnomask: null });
   if (U1(e.byweekno))
     return z;
   z.wnomask = u0(0, M + 7);
   var i, a, s = i = y1(7 - r + e.wkst, 7);
   s >= 4 ? (s = 0, a = z.yearlen + y1(r - e.wkst, 7)) : a = M - s;
-  for (var d = Math.floor(a / 7), A = y1(a, 7), f = Math.floor(d + A / 4), h = 0; h < e.byweekno.length; h++) {
+  for (var d = Math.floor(a / 7), u = y1(a, 7), A = Math.floor(d + u / 4), h = 0; h < e.byweekno.length; h++) {
     var R = e.byweekno[h];
-    if (R < 0 && (R += f + 1), R > 0 && R <= f) {
+    if (R < 0 && (R += A + 1), R > 0 && R <= A) {
       var W = void 0;
       R > 1 ? (W = s + (R - 1) * 7, s !== i && (W -= 7 - i)) : W = s;
       for (var g = 0; g < 7 && (z.wnomask[W] = 1, W++, z.wdaymask[W] !== e.wkst); g++)
@@ -18930,7 +18930,7 @@ function Gm(t, e) {
     }
   }
   if (v0(e.byweekno, 1)) {
-    var W = s + f * 7;
+    var W = s + A * 7;
     if (s !== i && (W -= 7 - i), W < M)
       for (var h = 0; h < 7 && (z.wnomask[W] = 1, W += 1, z.wdaymask[W] !== e.wkst); h++)
         ;
@@ -18940,8 +18940,8 @@ function Gm(t, e) {
     if (v0(e.byweekno, -1))
       N = -1;
     else {
-      var B = xt(bt(t - 1, 1, 1)), k = y1(7 - B.valueOf() + e.wkst, 7), j = s2(t - 1) ? 366 : 365, Y = void 0;
-      k >= 4 ? (k = 0, Y = j + y1(B - e.wkst, 7)) : Y = M - s, N = Math.floor(52 + y1(Y, 7) / 4);
+      var B = It(rt(t - 1, 1, 1)), C = y1(7 - B.valueOf() + e.wkst, 7), Y = O2(t - 1) ? 366 : 365, j = void 0;
+      C >= 4 ? (C = 0, j = Y + y1(B - e.wkst, 7)) : j = M - s, N = Math.floor(52 + y1(j, 7) / 4);
     }
     if (v0(e.byweekno, N))
       for (var W = 0; W < s; W++)
@@ -18950,11 +18950,11 @@ function Gm(t, e) {
   return z;
 }
 function Vm(t) {
-  var e = s2(t) ? 366 : 365, o = bt(t, 1, 1), M = xt(o);
+  var e = O2(t) ? 366 : 365, o = rt(t, 1, 1), M = It(o);
   return e === 365 ? {
     mmask: _m,
     mdaymask: Im,
-    nmdaymask: Ym,
+    nmdaymask: jm,
     wdaymask: Ez.slice(M),
     mrange: Fm
   } : {
@@ -18962,7 +18962,7 @@ function Vm(t) {
     mdaymask: xm,
     nmdaymask: Um,
     wdaymask: Ez.slice(M),
-    mrange: jm
+    mrange: Ym
   };
 }
 function Qm(t, e, o, M, n, b) {
@@ -18982,15 +18982,15 @@ function Qm(t, e, o, M, n, b) {
     return r;
   r.nwdaymask = u0(0, o);
   for (var i = 0; i < z.length; i++)
-    for (var a = z[i], s = a[0], d = a[1] - 1, A = 0; A < b.bynweekday.length; A++) {
-      var f = void 0, h = b.bynweekday[A], R = h[0], W = h[1];
-      W < 0 ? (f = d + (W + 1) * 7, f -= y1(n[f] - R, 7)) : (f = s + (W - 1) * 7, f += y1(7 - n[f] + R, 7)), s <= f && f <= d && (r.nwdaymask[f] = 1);
+    for (var a = z[i], s = a[0], d = a[1] - 1, u = 0; u < b.bynweekday.length; u++) {
+      var A = void 0, h = b.bynweekday[u], R = h[0], W = h[1];
+      W < 0 ? (A = d + (W + 1) * 7, A -= y1(n[A] - R, 7)) : (A = s + (W - 1) * 7, A += y1(7 - n[A] + R, 7)), s <= A && A <= d && (r.nwdaymask[A] = 1);
     }
   return r;
 }
 function Km(t, e) {
   e === void 0 && (e = 0);
-  var o = t % 19, M = Math.floor(t / 100), n = t % 100, b = Math.floor(M / 4), r = M % 4, z = Math.floor((M + 8) / 25), i = Math.floor((M - z + 1) / 3), a = Math.floor(19 * o + M - b - i + 15) % 30, s = Math.floor(n / 4), d = n % 4, A = Math.floor(32 + 2 * r + 2 * s - a - d) % 7, f = Math.floor((o + 11 * a + 22 * A) / 451), h = Math.floor((a + A - 7 * f + 114) / 31), R = (a + A - 7 * f + 114) % 31 + 1, W = Date.UTC(t, h - 1, R + e), g = Date.UTC(t, 0, 1);
+  var o = t % 19, M = Math.floor(t / 100), n = t % 100, b = Math.floor(M / 4), r = M % 4, z = Math.floor((M + 8) / 25), i = Math.floor((M - z + 1) / 3), a = Math.floor(19 * o + M - b - i + 15) % 30, s = Math.floor(n / 4), d = n % 4, u = Math.floor(32 + 2 * r + 2 * s - a - d) % 7, A = Math.floor((o + 11 * a + 22 * u) / 451), h = Math.floor((a + u - 7 * A + 114) / 31), R = (a + u - 7 * A + 114) % 31 + 1, W = Date.UTC(t, h - 1, R + e), g = Date.UTC(t, 0, 1);
   return [Math.ceil((W - g) / (1e3 * 60 * 60 * 24))];
 }
 var $m = (
@@ -19085,22 +19085,22 @@ var $m = (
         b[r] = r;
       return [b, M, n];
     }, t.prototype.wdayset = function(e, o, M) {
-      for (var n = u0(null, this.yearlen + 7), b = Pn(bt(e, o, M)) - this.yearordinal, r = b, z = 0; z < 7 && (n[b] = b, ++b, this.wdaymask[b] !== this.options.wkst); z++)
+      for (var n = u0(null, this.yearlen + 7), b = Pn(rt(e, o, M)) - this.yearordinal, r = b, z = 0; z < 7 && (n[b] = b, ++b, this.wdaymask[b] !== this.options.wkst); z++)
         ;
       return [n, r, b];
     }, t.prototype.ddayset = function(e, o, M) {
-      var n = u0(null, this.yearlen), b = Pn(bt(e, o, M)) - this.yearordinal;
+      var n = u0(null, this.yearlen), b = Pn(rt(e, o, M)) - this.yearordinal;
       return n[b] = b, [n, b, b + 1];
     }, t.prototype.htimeset = function(e, o, M, n) {
       var b = this, r = [];
       return this.options.byminute.forEach(function(z) {
         r = r.concat(b.mtimeset(e, z, M, n));
-      }), h2(r), r;
+      }), W2(r), r;
     }, t.prototype.mtimeset = function(e, o, M, n) {
       var b = this.options.bysecond.map(function(r) {
         return new ko(e, o, r, n);
       });
-      return h2(b), b;
+      return W2(b), b;
     }, t.prototype.stimeset = function(e, o, M, n) {
       return [new ko(e, o, M, n)];
     }, t.prototype.getdayset = function(e) {
@@ -19132,16 +19132,16 @@ function Zm(t, e, o, M, n, b) {
   for (var r = [], z = 0; z < t.length; z++) {
     var i = void 0, a = void 0, s = t[z];
     s < 0 ? (i = Math.floor(s / e.length), a = y1(s, e.length)) : (i = Math.floor((s - 1) / e.length), a = y1(s - 1, e.length));
-    for (var d = [], A = o; A < M; A++) {
-      var f = b[A];
-      U0(f) && d.push(f);
+    for (var d = [], u = o; u < M; u++) {
+      var A = b[u];
+      U0(A) && d.push(A);
     }
     var h = void 0;
     i < 0 ? h = d.slice(i)[0] : h = d[i];
     var R = e[a], W = Ja(n.yearordinal + h), g = es(W, R);
     v0(r, g) || r.push(g);
   }
-  return h2(r), r;
+  return W2(r), r;
 }
 function Ms(t, e) {
   var o = e.dtstart, M = e.freq, n = e.interval, b = e.until, r = e.bysetpos, z = e.count;
@@ -19150,9 +19150,9 @@ function Ms(t, e) {
   var i = Lm.fromDate(o), a = new $m(e);
   a.rebuild(i.year, i.month);
   for (var s = tg(a, i, e); ; ) {
-    var d = a.getdayset(M)(i.year, i.month, i.day), A = d[0], f = d[1], h = d[2], R = eg(A, f, h, a, e);
+    var d = a.getdayset(M)(i.year, i.month, i.day), u = d[0], A = d[1], h = d[2], R = eg(u, A, h, a, e);
     if (V0(r))
-      for (var W = Zm(r, s, f, h, a, A), g = 0; g < W.length; g++) {
+      for (var W = Zm(r, s, A, h, a, u), g = 0; g < W.length; g++) {
         var N = W[g];
         if (b && N > b)
           return ze(t);
@@ -19163,11 +19163,11 @@ function Ms(t, e) {
         }
       }
     else
-      for (var g = f; g < h; g++) {
-        var k = A[g];
-        if (U0(k))
-          for (var j = Ja(a.yearordinal + k), Y = 0; Y < s.length; Y++) {
-            var U = s[Y], N = es(j, U);
+      for (var g = A; g < h; g++) {
+        var C = u[g];
+        if (U0(C))
+          for (var Y = Ja(a.yearordinal + C), j = 0; j < s.length; j++) {
+            var U = s[j], N = es(Y, U);
             if (b && N > b)
               return ze(t);
             if (N >= o) {
@@ -19256,9 +19256,9 @@ var D1 = {
       if (e)
         return this._iter(new Sz("all", {}, e));
       var o = this._cacheGet("all");
-      return o === !1 && (o = this._iter(new Lt("all", {})), this._cacheAdd("all", o)), o;
+      return o === !1 && (o = this._iter(new vt("all", {})), this._cacheAdd("all", o)), o;
     }, t.prototype.between = function(e, o, M, n) {
-      if (M === void 0 && (M = !1), !z2(e) || !z2(o))
+      if (M === void 0 && (M = !1), !i2(e) || !i2(o))
         throw new Error("Invalid date passed in to RRule.between");
       var b = {
         before: o,
@@ -19268,21 +19268,21 @@ var D1 = {
       if (n)
         return this._iter(new Sz("between", b, n));
       var r = this._cacheGet("between", b);
-      return r === !1 && (r = this._iter(new Lt("between", b)), this._cacheAdd("between", r, b)), r;
+      return r === !1 && (r = this._iter(new vt("between", b)), this._cacheAdd("between", r, b)), r;
     }, t.prototype.before = function(e, o) {
-      if (o === void 0 && (o = !1), !z2(e))
+      if (o === void 0 && (o = !1), !i2(e))
         throw new Error("Invalid date passed in to RRule.before");
       var M = { dt: e, inc: o }, n = this._cacheGet("before", M);
-      return n === !1 && (n = this._iter(new Lt("before", M)), this._cacheAdd("before", n, M)), n;
+      return n === !1 && (n = this._iter(new vt("before", M)), this._cacheAdd("before", n, M)), n;
     }, t.prototype.after = function(e, o) {
-      if (o === void 0 && (o = !1), !z2(e))
+      if (o === void 0 && (o = !1), !i2(e))
         throw new Error("Invalid date passed in to RRule.after");
       var M = { dt: e, inc: o }, n = this._cacheGet("after", M);
-      return n === !1 && (n = this._iter(new Lt("after", M)), this._cacheAdd("after", n, M)), n;
+      return n === !1 && (n = this._iter(new vt("after", M)), this._cacheAdd("after", n, M)), n;
     }, t.prototype.count = function() {
       return this.all().length;
     }, t.prototype.toString = function() {
-      return jn(this.origOptions);
+      return Yn(this.origOptions);
     }, t.prototype.toText = function(e, o, M) {
       return gm(this, e, o, M);
     }, t.prototype.isFullyConvertibleToText = function() {
@@ -19297,38 +19297,38 @@ var D1 = {
       "HOURLY",
       "MINUTELY",
       "SECONDLY"
-    ], t.YEARLY = f0.YEARLY, t.MONTHLY = f0.MONTHLY, t.WEEKLY = f0.WEEKLY, t.DAILY = f0.DAILY, t.HOURLY = f0.HOURLY, t.MINUTELY = f0.MINUTELY, t.SECONDLY = f0.SECONDLY, t.MO = D1.MO, t.TU = D1.TU, t.WE = D1.WE, t.TH = D1.TH, t.FR = D1.FR, t.SA = D1.SA, t.SU = D1.SU, t.parseString = Yn, t.optionsToString = jn, t;
+    ], t.YEARLY = f0.YEARLY, t.MONTHLY = f0.MONTHLY, t.WEEKLY = f0.WEEKLY, t.DAILY = f0.DAILY, t.HOURLY = f0.HOURLY, t.MINUTELY = f0.MINUTELY, t.SECONDLY = f0.SECONDLY, t.MO = D1.MO, t.TU = D1.TU, t.WE = D1.WE, t.TH = D1.TH, t.FR = D1.FR, t.SA = D1.SA, t.SU = D1.SU, t.parseString = jn, t.optionsToString = Yn, t;
   })()
 );
 function Mg(t, e, o, M, n, b) {
   var r = {}, z = t.accept;
-  function i(A, f) {
+  function i(u, A) {
     o.forEach(function(h) {
-      h.between(A, f, !0).forEach(function(R) {
+      h.between(u, A, !0).forEach(function(R) {
         r[Number(R)] = !0;
       });
     });
   }
-  n.forEach(function(A) {
-    var f = new xo(A, b).rezonedDate();
-    r[Number(f)] = !0;
-  }), t.accept = function(A) {
-    var f = Number(A);
-    return isNaN(f) ? z.call(this, A) : !r[f] && (i(new Date(f - 1), new Date(f + 1)), !r[f]) ? (r[f] = !0, z.call(this, A)) : !0;
-  }, t.method === "between" && (i(t.args.after, t.args.before), t.accept = function(A) {
-    var f = Number(A);
-    return r[f] ? !0 : (r[f] = !0, z.call(this, A));
+  n.forEach(function(u) {
+    var A = new xo(u, b).rezonedDate();
+    r[Number(A)] = !0;
+  }), t.accept = function(u) {
+    var A = Number(u);
+    return isNaN(A) ? z.call(this, u) : !r[A] && (i(new Date(A - 1), new Date(A + 1)), !r[A]) ? (r[A] = !0, z.call(this, u)) : !0;
+  }, t.method === "between" && (i(t.args.after, t.args.before), t.accept = function(u) {
+    var A = Number(u);
+    return r[A] ? !0 : (r[A] = !0, z.call(this, u));
   });
   for (var a = 0; a < M.length; a++) {
     var s = new xo(M[a], b).rezonedDate();
     if (!t.accept(new Date(s.getTime())))
       break;
   }
-  e.forEach(function(A) {
-    Ms(t, A.options);
+  e.forEach(function(u) {
+    Ms(t, u.options);
   });
   var d = t._result;
-  switch (h2(d), t.method) {
+  switch (W2(d), t.method) {
     case "all":
     case "between":
       return d;
@@ -19352,12 +19352,12 @@ function ng(t, e) {
   return a.forEach(function(s) {
     var d;
     if (s) {
-      var A = zg(s), f = A.name, h = A.parms, R = A.value;
-      switch (f.toUpperCase()) {
+      var u = zg(s), A = u.name, h = u.parms, R = u.value;
+      switch (A.toUpperCase()) {
         case "RRULE":
           if (h.length)
             throw new Error("unsupported RRULE parm: ".concat(h.join(",")));
-          o.push(Yn(s));
+          o.push(jn(s));
           break;
         case "RDATE":
           var W = (d = /RDATE(?:;TZID=([^:=]+))?/i.exec(s)) !== null && d !== void 0 ? d : [], g = W[1];
@@ -19366,7 +19366,7 @@ function ng(t, e) {
         case "EXRULE":
           if (h.length)
             throw new Error("unsupported EXRULE parm: ".concat(h.join(",")));
-          n.push(Yn(R));
+          n.push(jn(R));
           break;
         case "EXDATE":
           b = b.concat(Cz(R, h));
@@ -19374,7 +19374,7 @@ function ng(t, e) {
         case "DTSTART":
           break;
         default:
-          throw new Error("unsupported property: " + f);
+          throw new Error("unsupported property: " + A);
       }
     }
   }), {
@@ -19390,14 +19390,14 @@ function bg(t, e) {
   var o = ng(t, e), M = o.rrulevals, n = o.rdatevals, b = o.exrulevals, r = o.exdatevals, z = o.dtstart, i = o.tzid, a = e.cache === !1;
   if (e.compatible && (e.forceset = !0, e.unfold = !0), e.forceset || M.length > 1 || n.length || b.length || r.length) {
     var s = new ns(a);
-    return s.dtstart(z), s.tzid(i || void 0), M.forEach(function(A) {
-      s.rrule(new t0(ln(A, z, i), a));
-    }), n.forEach(function(A) {
-      s.rdate(A);
-    }), b.forEach(function(A) {
-      s.exrule(new t0(ln(A, z, i), a));
-    }), r.forEach(function(A) {
-      s.exdate(A);
+    return s.dtstart(z), s.tzid(i || void 0), M.forEach(function(u) {
+      s.rrule(new t0(ln(u, z, i), a));
+    }), n.forEach(function(u) {
+      s.rdate(u);
+    }), b.forEach(function(u) {
+      s.exrule(new t0(ln(u, z, i), a));
+    }), r.forEach(function(u) {
+      s.exdate(u);
     }), e.compatible && e.dtstart && s.rdate(z), s;
   }
   var d = M[0] || {};
@@ -19511,7 +19511,7 @@ var ns = (
       });
     }, e.prototype.valueOf = function() {
       var o = [];
-      return !this._rrule.length && this._dtstart && (o = o.concat(jn({ dtstart: this._dtstart }))), this._rrule.forEach(function(M) {
+      return !this._rrule.length && this._dtstart && (o = o.concat(Yn({ dtstart: this._dtstart }))), this._rrule.forEach(function(M) {
         o = o.concat(M.toString().split(`
 `));
       }), this._exrule.forEach(function(M) {
@@ -19547,7 +19547,7 @@ function Xz(t, e) {
 function xz(t, e) {
   if (!(t instanceof Date))
     throw new TypeError(String(t) + " is not Date instance");
-  v0(e.map(Number), Number(t)) || (e.push(t), h2(e));
+  v0(e.map(Number), Number(t)) || (e.push(t), W2(e));
 }
 function Iz(t, e, o) {
   var M = !o || o.toUpperCase() === "UTC", n = M ? "".concat(t, ":") : "".concat(t, ";TZID=").concat(o, ":"), b = e.map(function(r) {
@@ -19662,7 +19662,7 @@ function fg(t) {
 function C1(t) {
   return t instanceof Array || Object.prototype.toString.call(t) === "[object Array]";
 }
-function ot(t) {
+function Mt(t) {
   return t != null && Object.prototype.toString.call(t) === "[object Object]";
 }
 function q0(t, e) {
@@ -19683,7 +19683,7 @@ function a1(t) {
 function he(t) {
   return typeof t == "number" || Object.prototype.toString.call(t) === "[object Number]";
 }
-function w2(t) {
+function B2(t) {
   return t instanceof Date || Object.prototype.toString.call(t) === "[object Date]";
 }
 function rs(t, e) {
@@ -19692,7 +19692,7 @@ function rs(t, e) {
     o.push(e(t[M], M));
   return o;
 }
-function Ee(t, e) {
+function De(t, e) {
   for (var o in e)
     q0(e, o) && (t[o] = e[o]);
   return q0(e, "toString") && (t.toString = e.toString), q0(e, "valueOf") && (t.valueOf = e.valueOf), t;
@@ -19743,7 +19743,7 @@ function Jb(t) {
 }
 function aM(t) {
   var e = $1(NaN);
-  return t != null ? Ee(b0(e), t) : b0(e).userInvalidated = !0, e;
+  return t != null ? De(b0(e), t) : b0(e).userInvalidated = !0, e;
 }
 var Hz = H.momentProperties = [], dn = !1;
 function er(t, e) {
@@ -19753,18 +19753,18 @@ function er(t, e) {
       M = Hz[o], n = e[M], a1(n) || (t[M] = n);
   return t;
 }
-function B2(t) {
+function E2(t) {
   er(this, t), this._d = new Date(t._d != null ? t._d.getTime() : NaN), this.isValid() || (this._d = /* @__PURE__ */ new Date(NaN)), dn === !1 && (dn = !0, H.updateOffset(this), dn = !1);
 }
 function k1(t) {
-  return t instanceof B2 || t != null && t._isAMomentObject != null;
+  return t instanceof E2 || t != null && t._isAMomentObject != null;
 }
 function ps(t) {
   H.suppressDeprecationWarnings === !1 && typeof console < "u" && console.warn && console.warn("Deprecation warning: " + t);
 }
 function T1(t, e) {
   var o = !0;
-  return Ee(function() {
+  return De(function() {
     if (H.deprecationHandler != null && H.deprecationHandler(null, t), o) {
       var M = [], n, b, r, z = arguments.length;
       for (b = 0; b < z; b++) {
@@ -19805,11 +19805,11 @@ function hg(t) {
   );
 }
 function Vn(t, e) {
-  var o = Ee({}, t), M;
+  var o = De({}, t), M;
   for (M in e)
-    q0(e, M) && (ot(t[M]) && ot(e[M]) ? (o[M] = {}, Ee(o[M], t[M]), Ee(o[M], e[M])) : e[M] != null ? o[M] = e[M] : delete o[M]);
+    q0(e, M) && (Mt(t[M]) && Mt(e[M]) ? (o[M] = {}, De(o[M], t[M]), De(o[M], e[M])) : e[M] != null ? o[M] = e[M] : delete o[M]);
   for (M in t)
-    q0(t, M) && !q0(e, M) && ot(t[M]) && (o[M] = Ee({}, o[M]));
+    q0(t, M) && !q0(e, M) && Mt(t[M]) && (o[M] = De({}, o[M]));
   return o;
 }
 function tr(t) {
@@ -19838,14 +19838,14 @@ function G1(t, e, o) {
   var M = "" + Math.abs(t), n = e - M.length, b = t >= 0;
   return (b ? o ? "+" : "" : "-") + Math.pow(10, Math.max(0, n)).toString().substr(1) + M;
 }
-var or = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g, zo = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g, An = {}, wt = {};
+var or = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g, io = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g, An = {}, Bt = {};
 function J(t, e, o, M) {
   var n = M;
   typeof M == "string" && (n = function() {
     return this[M]();
-  }), t && (wt[t] = n), e && (wt[e[0]] = function() {
+  }), t && (Bt[t] = n), e && (Bt[e[0]] = function() {
     return G1(n.apply(this, arguments), e[1], e[2]);
-  }), o && (wt[o] = function() {
+  }), o && (Bt[o] = function() {
     return this.localeData().ordinal(
       n.apply(this, arguments),
       t
@@ -19858,7 +19858,7 @@ function mg(t) {
 function gg(t) {
   var e = t.match(or), o, M;
   for (o = 0, M = e.length; o < M; o++)
-    wt[e[o]] ? e[o] = wt[e[o]] : e[o] = mg(e[o]);
+    Bt[e[o]] ? e[o] = Bt[e[o]] : e[o] = mg(e[o]);
   return function(n) {
     var b = "", r;
     for (r = 0; r < M; r++)
@@ -19874,11 +19874,11 @@ function is(t, e) {
   function M(n) {
     return e.longDateFormat(n) || n;
   }
-  for (zo.lastIndex = 0; o >= 0 && zo.test(t); )
+  for (io.lastIndex = 0; o >= 0 && io.test(t); )
     t = t.replace(
-      zo,
+      io,
       M
-    ), zo.lastIndex = 0, o -= 1;
+    ), io.lastIndex = 0, o -= 1;
   return t;
 }
 var yg = {
@@ -19929,7 +19929,7 @@ function Dg(t, e) {
   var o = this._relativeTime[t > 0 ? "future" : "past"];
   return Z1(o) ? o(e) : o.replace(/%s/i, e);
 }
-var Yz = {
+var jz = {
   D: "date",
   dates: "date",
   date: "date",
@@ -19980,7 +19980,7 @@ var Yz = {
   year: "year"
 };
 function w1(t) {
-  return typeof t == "string" ? Yz[t] || Yz[t.toLowerCase()] : void 0;
+  return typeof t == "string" ? jz[t] || jz[t.toLowerCase()] : void 0;
 }
 function Mr(t) {
   var e = {}, o, M;
@@ -20014,7 +20014,7 @@ function Cg(t) {
     return M.priority - n.priority;
   }), e;
 }
-var cs = /\d/, R1 = /\d\d/, as = /\d{3}/, nr = /\d{4}/, sM = /[+-]?\d{6}/, D0 = /\d\d?/, ss = /\d\d\d\d?/, Os = /\d\d\d\d\d\d?/, OM = /\d{1,3}/, br = /\d{1,4}/, lM = /[+-]?\d{1,6}/, Ft = /\d+/, dM = /[+-]?\d+/, kg = /Z|[+-]\d\d:?\d\d/gi, AM = /Z|[+-]\d\d(?::?\d\d)?/gi, Xg = /[+-]?\d+(\.\d{1,3})?/, E2 = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, Gt = /^[1-9]\d?/, rr = /^([1-9]\d|\d)/, Po;
+var cs = /\d/, R1 = /\d\d/, as = /\d{3}/, nr = /\d{4}/, sM = /[+-]?\d{6}/, D0 = /\d\d?/, ss = /\d\d\d\d?/, Os = /\d\d\d\d\d\d?/, OM = /\d{1,3}/, br = /\d{1,4}/, lM = /[+-]?\d{1,6}/, Gt = /\d+/, dM = /[+-]?\d+/, kg = /Z|[+-]\d\d:?\d\d/gi, AM = /Z|[+-]\d\d(?::?\d\d)?/gi, Xg = /[+-]?\d+(\.\d{1,3})?/, D2 = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i, Vt = /^[1-9]\d?/, rr = /^([1-9]\d|\d)/, Po;
 Po = {};
 function Q(t, e, o) {
   Po[t] = Z1(e) ? e : function(M, n) {
@@ -20052,7 +20052,7 @@ function L0(t, e) {
   }), n = t.length, o = 0; o < n; o++)
     Kn[t[o]] = M;
 }
-function D2(t, e) {
+function _2(t, e) {
   L0(t, function(o, M, n, b) {
     n._w = n._w || {}, e(o, n._w, n, b);
   });
@@ -20063,7 +20063,7 @@ function Pg(t, e, o) {
 function uM(t) {
   return t % 4 === 0 && t % 100 !== 0 || t % 400 === 0;
 }
-var b1 = 0, ae = 1, Y1 = 2, G0 = 3, _1 = 4, se = 5, Ze = 6, Hg = 7, Ug = 8;
+var b1 = 0, ae = 1, j1 = 2, G0 = 3, _1 = 4, se = 5, Je = 6, Hg = 7, Ug = 8;
 J("Y", 0, 0, function() {
   var t = this.year();
   return t <= 9999 ? G1(t, 4) : "+" + t;
@@ -20089,22 +20089,22 @@ L0("YY", function(t, e) {
 L0("Y", function(t, e) {
   e[b1] = parseInt(t, 10);
 });
-function O2(t) {
+function l2(t) {
   return uM(t) ? 366 : 365;
 }
 H.parseTwoDigitYear = function(t) {
   return i0(t) + (i0(t) > 68 ? 1900 : 2e3);
 };
-var ls = Vt("FullYear", !0);
-function Yg() {
+var ls = Qt("FullYear", !0);
+function jg() {
   return uM(this.year());
 }
-function Vt(t, e) {
+function Qt(t, e) {
   return function(o) {
-    return o != null ? (ds(this, t, o), H.updateOffset(this, e), this) : W2(this, t);
+    return o != null ? (ds(this, t, o), H.updateOffset(this, e), this) : R2(this, t);
   };
 }
-function W2(t, e) {
+function R2(t, e) {
   if (!t.isValid())
     return NaN;
   var o = t._d, M = t._isUTC;
@@ -20156,7 +20156,7 @@ function ds(t, e, o) {
     b = o, r = t.month(), z = t.date(), z = z === 29 && r === 1 && !uM(b) ? 28 : z, n ? M.setUTCFullYear(b, r, z) : M.setFullYear(b, r, z);
   }
 }
-function jg(t) {
+function Yg(t) {
   return t = w1(t), Z1(this[t]) ? this[t]() : this;
 }
 function Fg(t, e) {
@@ -20195,7 +20195,7 @@ J("MMM", 0, 0, function(t) {
 J("MMMM", 0, 0, function(t) {
   return this.localeData().months(this, t);
 });
-Q("M", D0, Gt);
+Q("M", D0, Vt);
 Q("MM", D0, R1);
 Q("MMM", function(t, e) {
   return e.monthsShortRegex(t);
@@ -20212,7 +20212,7 @@ L0(["MMM", "MMMM"], function(t, e, o, M) {
 });
 var Vg = "January_February_March_April_May_June_July_August_September_October_November_December".split(
   "_"
-), As = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), us = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, Qg = E2, Kg = E2;
+), As = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"), us = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/, Qg = D2, Kg = D2;
 function $g(t, e) {
   return t ? C1(this._months) ? this._months[t.month()] : this._months[(this._months.isFormat || us).test(e) ? "format" : "standalone"][t.month()] : C1(this._months) ? this._months : this._months.standalone;
 }
@@ -20261,7 +20261,7 @@ function fs(t, e) {
   return M = M < 29 ? M : Math.min(M, pr(t.year(), o)), t._isUTC ? t._d.setUTCMonth(o, M) : t._d.setMonth(o, M), t;
 }
 function qs(t) {
-  return t != null ? (fs(this, t), H.updateOffset(this, !0), this) : W2(this, "Month");
+  return t != null ? (fs(this, t), H.updateOffset(this, !0), this) : R2(this, "Month");
 }
 function ty() {
   return pr(this.year(), this.month());
@@ -20291,22 +20291,22 @@ function ny(t, e, o, M, n, b, r) {
   var z;
   return t < 100 && t >= 0 ? (z = new Date(t + 400, e, o, M, n, b, r), isFinite(z.getFullYear()) && z.setFullYear(t)) : z = new Date(t, e, o, M, n, b, r), z;
 }
-function R2(t) {
+function m2(t) {
   var e, o;
   return t < 100 && t >= 0 ? (o = Array.prototype.slice.call(arguments), o[0] = t + 400, e = new Date(Date.UTC.apply(null, o)), isFinite(e.getUTCFullYear()) && e.setUTCFullYear(t)) : e = new Date(Date.UTC.apply(null, arguments)), e;
 }
 function Ho(t, e, o) {
-  var M = 7 + e - o, n = (7 + R2(t, 0, M).getUTCDay() - e) % 7;
+  var M = 7 + e - o, n = (7 + m2(t, 0, M).getUTCDay() - e) % 7;
   return -n + M - 1;
 }
 function Ws(t, e, o, M, n) {
   var b = (7 + o - M) % 7, r = Ho(t, M, n), z = 1 + 7 * (e - 1) + b + r, i, a;
-  return z <= 0 ? (i = t - 1, a = O2(i) + z) : z > O2(t) ? (i = t + 1, a = z - O2(t)) : (i = t, a = z), {
+  return z <= 0 ? (i = t - 1, a = l2(i) + z) : z > l2(t) ? (i = t + 1, a = z - l2(t)) : (i = t, a = z), {
     year: i,
     dayOfYear: a
   };
 }
-function m2(t, e, o) {
+function g2(t, e, o) {
   var M = Ho(t.year(), e, o), n = Math.floor((t.dayOfYear() - M - 1) / 7) + 1, b, r;
   return n < 1 ? (r = t.year() - 1, b = n + Ae(r, e, o)) : n > Ae(t.year(), e, o) ? (b = n - Ae(t.year(), e, o), r = t.year() + 1) : (r = t.year(), b = n), {
     week: b,
@@ -20315,22 +20315,22 @@ function m2(t, e, o) {
 }
 function Ae(t, e, o) {
   var M = Ho(t, e, o), n = Ho(t + 1, e, o);
-  return (O2(t) - M + n) / 7;
+  return (l2(t) - M + n) / 7;
 }
 J("w", ["ww", 2], "wo", "week");
 J("W", ["WW", 2], "Wo", "isoWeek");
-Q("w", D0, Gt);
+Q("w", D0, Vt);
 Q("ww", D0, R1);
-Q("W", D0, Gt);
+Q("W", D0, Vt);
 Q("WW", D0, R1);
-D2(
+_2(
   ["w", "ww", "W", "WW"],
   function(t, e, o, M) {
     e[M.substr(0, 1)] = i0(t);
   }
 );
 function by(t) {
-  return m2(t, this._week.dow, this._week.doy).week;
+  return g2(t, this._week.dow, this._week.doy).week;
 }
 var ry = {
   dow: 0,
@@ -20349,7 +20349,7 @@ function iy(t) {
   return t == null ? e : this.add((t - e) * 7, "d");
 }
 function cy(t) {
-  var e = m2(this, 1, 4).week;
+  var e = g2(this, 1, 4).week;
   return t == null ? e : this.add((t - e) * 7, "d");
 }
 J("d", 0, "do", "day");
@@ -20376,11 +20376,11 @@ Q("ddd", function(t, e) {
 Q("dddd", function(t, e) {
   return e.weekdaysRegex(t);
 });
-D2(["dd", "ddd", "dddd"], function(t, e, o, M) {
+_2(["dd", "ddd", "dddd"], function(t, e, o, M) {
   var n = o._locale.weekdaysParse(t, M, o._strict);
   n != null ? e.d = n : b0(o).invalidWeekday = t;
 });
-D2(["d", "e", "E"], function(t, e, o, M) {
+_2(["d", "e", "E"], function(t, e, o, M) {
   e[M] = i0(t);
 });
 function ay(t, e) {
@@ -20392,7 +20392,7 @@ function sy(t, e) {
 function zr(t, e) {
   return t.slice(e, 7).concat(t.slice(0, e));
 }
-var Oy = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), Rs = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), ly = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), dy = E2, Ay = E2, uy = E2;
+var Oy = "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), Rs = "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"), ly = "Su_Mo_Tu_We_Th_Fr_Sa".split("_"), dy = D2, Ay = D2, uy = D2;
 function fy(t, e) {
   var o = C1(this._weekdays) ? this._weekdays : this._weekdays[t && t !== !0 && this._weekdays.isFormat.test(e) ? "format" : "standalone"];
   return t === !0 ? zr(o, this._week.dow) : t ? o[t.day()] : o;
@@ -20443,7 +20443,7 @@ function Ry(t, e, o) {
 function my(t) {
   if (!this.isValid())
     return t != null ? this : NaN;
-  var e = W2(this, "Day");
+  var e = R2(this, "Day");
   return t != null ? (t = ay(t, this.localeData()), this.add(t - e, "d")) : e;
 }
 function gy(t) {
@@ -20526,8 +20526,8 @@ function gs(t, e) {
 Q("a", gs);
 Q("A", gs);
 Q("H", D0, rr);
-Q("h", D0, Gt);
-Q("k", D0, Gt);
+Q("h", D0, Vt);
+Q("k", D0, Vt);
 Q("HH", D0, R1);
 Q("hh", D0, R1);
 Q("kk", D0, R1);
@@ -20565,7 +20565,7 @@ L0("Hmmss", function(t, e, o) {
 function Ty(t) {
   return (t + "").toLowerCase().charAt(0) === "p";
 }
-var wy = /[ap]\.?m?\.?/i, By = Vt("Hours", !0);
+var wy = /[ap]\.?m?\.?/i, By = Qt("Hours", !0);
 function Ey(t, e, o) {
   return t > 11 ? o ? "pm" : "PM" : o ? "am" : "AM";
 }
@@ -20583,7 +20583,7 @@ var ys = {
   weekdaysMin: ly,
   weekdaysShort: Rs,
   meridiemParse: wy
-}, k0 = {}, r2 = {}, g2;
+}, k0 = {}, p2 = {}, y2;
 function Dy(t, e) {
   var o, M = Math.min(t.length, e.length);
   for (o = 0; o < M; o += 1)
@@ -20591,12 +20591,12 @@ function Dy(t, e) {
       return o;
   return M;
 }
-function jz(t) {
+function Yz(t) {
   return t && t.toLowerCase().replace("_", "-");
 }
 function _y(t) {
   for (var e = 0, o, M, n, b; e < t.length; ) {
-    for (b = jz(t[e]).split("-"), o = b.length, M = jz(t[e + 1]), M = M ? M.split("-") : null; o > 0; ) {
+    for (b = Yz(t[e]).split("-"), o = b.length, M = Yz(t[e + 1]), M = M ? M.split("-") : null; o > 0; ) {
       if (n = fM(b.slice(0, o).join("-")), n)
         return n;
       if (M && M.length >= o && Dy(b, M) >= o - 1)
@@ -20605,7 +20605,7 @@ function _y(t) {
     }
     e++;
   }
-  return g2;
+  return y2;
 }
 function Cy(t) {
   return !!(t && t.match("^[^/\\\\]*$"));
@@ -20614,17 +20614,17 @@ function fM(t) {
   var e = null, o;
   if (k0[t] === void 0 && typeof module < "u" && module && module.exports && Cy(t))
     try {
-      e = g2._abbr, o = require, o("./locale/" + t), Ce(e);
+      e = y2._abbr, o = require, o("./locale/" + t), ke(e);
     } catch {
       k0[t] = null;
     }
   return k0[t];
 }
-function Ce(t, e) {
+function ke(t, e) {
   var o;
-  return t && (a1(e) ? o = Re(t) : o = ar(t, e), o ? g2 = o : typeof console < "u" && console.warn && console.warn(
+  return t && (a1(e) ? o = Re(t) : o = ar(t, e), o ? y2 = o : typeof console < "u" && console.warn && console.warn(
     "Locale " + t + " not found. Did you forget to load it?"
-  )), g2._abbr;
+  )), y2._abbr;
 }
 function ar(t, e) {
   if (e !== null) {
@@ -20640,28 +20640,28 @@ function ar(t, e) {
       else if (o = fM(e.parentLocale), o != null)
         M = o._config;
       else
-        return r2[e.parentLocale] || (r2[e.parentLocale] = []), r2[e.parentLocale].push({
+        return p2[e.parentLocale] || (p2[e.parentLocale] = []), p2[e.parentLocale].push({
           name: t,
           config: e
         }), null;
-    return k0[t] = new tr(Vn(M, e)), r2[t] && r2[t].forEach(function(n) {
+    return k0[t] = new tr(Vn(M, e)), p2[t] && p2[t].forEach(function(n) {
       ar(n.name, n.config);
-    }), Ce(t), k0[t];
+    }), ke(t), k0[t];
   } else
     return delete k0[t], null;
 }
 function ky(t, e) {
   if (e != null) {
     var o, M, n = ys;
-    k0[t] != null && k0[t].parentLocale != null ? k0[t].set(Vn(k0[t]._config, e)) : (M = fM(t), M != null && (n = M._config), e = Vn(n, e), M == null && (e.abbr = t), o = new tr(e), o.parentLocale = k0[t], k0[t] = o), Ce(t);
+    k0[t] != null && k0[t].parentLocale != null ? k0[t].set(Vn(k0[t]._config, e)) : (M = fM(t), M != null && (n = M._config), e = Vn(n, e), M == null && (e.abbr = t), o = new tr(e), o.parentLocale = k0[t], k0[t] = o), ke(t);
   } else
-    k0[t] != null && (k0[t].parentLocale != null ? (k0[t] = k0[t].parentLocale, t === Ce() && Ce(t)) : k0[t] != null && delete k0[t]);
+    k0[t] != null && (k0[t].parentLocale != null ? (k0[t] = k0[t].parentLocale, t === ke() && ke(t)) : k0[t] != null && delete k0[t]);
   return k0[t];
 }
 function Re(t) {
   var e;
   if (t && t._locale && t._locale._abbr && (t = t._locale._abbr), !t)
-    return g2;
+    return y2;
   if (!C1(t)) {
     if (e = fM(t), e)
       return e;
@@ -20674,9 +20674,9 @@ function Xy() {
 }
 function sr(t) {
   var e, o = t._a;
-  return o && b0(t).overflow === -2 && (e = o[ae] < 0 || o[ae] > 11 ? ae : o[Y1] < 1 || o[Y1] > pr(o[b1], o[ae]) ? Y1 : o[G0] < 0 || o[G0] > 24 || o[G0] === 24 && (o[_1] !== 0 || o[se] !== 0 || o[Ze] !== 0) ? G0 : o[_1] < 0 || o[_1] > 59 ? _1 : o[se] < 0 || o[se] > 59 ? se : o[Ze] < 0 || o[Ze] > 999 ? Ze : -1, b0(t)._overflowDayOfYear && (e < b1 || e > Y1) && (e = Y1), b0(t)._overflowWeeks && e === -1 && (e = Hg), b0(t)._overflowWeekday && e === -1 && (e = Ug), b0(t).overflow = e), t;
+  return o && b0(t).overflow === -2 && (e = o[ae] < 0 || o[ae] > 11 ? ae : o[j1] < 1 || o[j1] > pr(o[b1], o[ae]) ? j1 : o[G0] < 0 || o[G0] > 24 || o[G0] === 24 && (o[_1] !== 0 || o[se] !== 0 || o[Je] !== 0) ? G0 : o[_1] < 0 || o[_1] > 59 ? _1 : o[se] < 0 || o[se] > 59 ? se : o[Je] < 0 || o[Je] > 999 ? Je : -1, b0(t)._overflowDayOfYear && (e < b1 || e > j1) && (e = j1), b0(t)._overflowWeeks && e === -1 && (e = Hg), b0(t)._overflowWeekday && e === -1 && (e = Ug), b0(t).overflow = e), t;
 }
-var xy = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Iy = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Py = /Z|[+-]\d\d(?::?\d\d)?/, io = [
+var xy = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Iy = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, Py = /Z|[+-]\d\d(?::?\d\d)?/, co = [
   ["YYYYYY-MM-DD", /[+-]\d{6}-\d\d-\d\d/],
   ["YYYY-MM-DD", /\d{4}-\d\d-\d\d/],
   ["GGGG-[W]WW-E", /\d{4}-W\d\d-\d/],
@@ -20700,7 +20700,7 @@ var xy = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(
   ["HHmmss", /\d\d\d\d\d\d/],
   ["HHmm", /\d\d\d\d/],
   ["HH", /\d\d/]
-], Hy = /^\/?Date\((-?\d+)/i, Uy = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/, Yy = {
+], Hy = /^\/?Date\((-?\d+)/i, Uy = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/, jy = {
   UT: 0,
   GMT: 0,
   EDT: -240,
@@ -20713,11 +20713,11 @@ var xy = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(
   PST: -480
 };
 function Ls(t) {
-  var e, o, M = t._i, n = xy.exec(M) || Iy.exec(M), b, r, z, i, a = io.length, s = un.length;
+  var e, o, M = t._i, n = xy.exec(M) || Iy.exec(M), b, r, z, i, a = co.length, s = un.length;
   if (n) {
     for (b0(t).iso = !0, e = 0, o = a; e < o; e++)
-      if (io[e][1].exec(n[1])) {
-        r = io[e][0], b = io[e][2] !== !1;
+      if (co[e][1].exec(n[1])) {
+        r = co[e][0], b = co[e][2] !== !1;
         break;
       }
     if (r == null) {
@@ -20750,7 +20750,7 @@ function Ls(t) {
   } else
     t._isValid = !1;
 }
-function jy(t, e, o, M, n, b) {
+function Yy(t, e, o, M, n, b) {
   var r = [
     Fy(t),
     As.indexOf(e),
@@ -20781,7 +20781,7 @@ function Vy(t, e, o) {
 }
 function Qy(t, e, o) {
   if (t)
-    return Yy[t];
+    return jy[t];
   if (e)
     return 0;
   var M = parseInt(o, 10), n = M % 100, b = (M - n) / 100;
@@ -20790,7 +20790,7 @@ function Qy(t, e, o) {
 function vs(t) {
   var e = Uy.exec(Gy(t._i)), o;
   if (e) {
-    if (o = jy(
+    if (o = Yy(
       e[4],
       e[3],
       e[2],
@@ -20799,7 +20799,7 @@ function vs(t) {
       e[7]
     ), !Vy(e[1], o, t))
       return;
-    t._a = o, t._tzm = Qy(e[8], e[9], e[10]), t._d = R2.apply(null, t._a), t._d.setUTCMinutes(t._d.getUTCMinutes() - t._tzm), b0(t).rfc2822 = !0;
+    t._a = o, t._tzm = Qy(e[8], e[9], e[10]), t._d = m2.apply(null, t._a), t._d.setUTCMinutes(t._d.getUTCMinutes() - t._tzm), b0(t).rfc2822 = !0;
   } else
     t._isValid = !1;
 }
@@ -20825,7 +20825,7 @@ H.createFromInputFallback = T1(
     t._d = /* @__PURE__ */ new Date(t._i + (t._useUTC ? " UTC" : ""));
   }
 );
-function mt(t, e, o) {
+function gt(t, e, o) {
   return t ?? e ?? o;
 }
 function $y(t) {
@@ -20839,11 +20839,11 @@ function $y(t) {
 function Or(t) {
   var e, o, M = [], n, b, r;
   if (!t._d) {
-    for (n = $y(t), t._w && t._a[Y1] == null && t._a[ae] == null && Zy(t), t._dayOfYear != null && (r = mt(t._a[b1], n[b1]), (t._dayOfYear > O2(r) || t._dayOfYear === 0) && (b0(t)._overflowDayOfYear = !0), o = R2(r, 0, t._dayOfYear), t._a[ae] = o.getUTCMonth(), t._a[Y1] = o.getUTCDate()), e = 0; e < 3 && t._a[e] == null; ++e)
+    for (n = $y(t), t._w && t._a[j1] == null && t._a[ae] == null && Zy(t), t._dayOfYear != null && (r = gt(t._a[b1], n[b1]), (t._dayOfYear > l2(r) || t._dayOfYear === 0) && (b0(t)._overflowDayOfYear = !0), o = m2(r, 0, t._dayOfYear), t._a[ae] = o.getUTCMonth(), t._a[j1] = o.getUTCDate()), e = 0; e < 3 && t._a[e] == null; ++e)
       t._a[e] = M[e] = n[e];
     for (; e < 7; e++)
       t._a[e] = M[e] = t._a[e] == null ? e === 2 ? 1 : 0 : t._a[e];
-    t._a[G0] === 24 && t._a[_1] === 0 && t._a[se] === 0 && t._a[Ze] === 0 && (t._nextDay = !0, t._a[G0] = 0), t._d = (t._useUTC ? R2 : ny).apply(
+    t._a[G0] === 24 && t._a[_1] === 0 && t._a[se] === 0 && t._a[Je] === 0 && (t._nextDay = !0, t._a[G0] = 0), t._d = (t._useUTC ? m2 : ny).apply(
       null,
       M
     ), b = t._useUTC ? t._d.getUTCDay() : t._d.getDay(), t._tzm != null && t._d.setUTCMinutes(t._d.getUTCMinutes() - t._tzm), t._nextDay && (t._a[G0] = 24), t._w && typeof t._w.d < "u" && t._w.d !== b && (b0(t).weekdayMismatch = !0);
@@ -20851,11 +20851,11 @@ function Or(t) {
 }
 function Zy(t) {
   var e, o, M, n, b, r, z, i, a;
-  e = t._w, e.GG != null || e.W != null || e.E != null ? (b = 1, r = 4, o = mt(
+  e = t._w, e.GG != null || e.W != null || e.E != null ? (b = 1, r = 4, o = gt(
     e.GG,
     t._a[b1],
-    m2(E0(), 1, 4).year
-  ), M = mt(e.W, 1), n = mt(e.E, 1), (n < 1 || n > 7) && (i = !0)) : (b = t._locale._week.dow, r = t._locale._week.doy, a = m2(E0(), b, r), o = mt(e.gg, t._a[b1], a.year), M = mt(e.w, a.week), e.d != null ? (n = e.d, (n < 0 || n > 6) && (i = !0)) : e.e != null ? (n = e.e + b, (e.e < 0 || e.e > 6) && (i = !0)) : n = b), M < 1 || M > Ae(o, b, r) ? b0(t)._overflowWeeks = !0 : i != null ? b0(t)._overflowWeekday = !0 : (z = Ws(o, M, n, b, r), t._a[b1] = z.year, t._dayOfYear = z.dayOfYear);
+    g2(E0(), 1, 4).year
+  ), M = gt(e.W, 1), n = gt(e.E, 1), (n < 1 || n > 7) && (i = !0)) : (b = t._locale._week.dow, r = t._locale._week.doy, a = g2(E0(), b, r), o = gt(e.gg, t._a[b1], a.year), M = gt(e.w, a.week), e.d != null ? (n = e.d, (n < 0 || n > 6) && (i = !0)) : e.e != null ? (n = e.e + b, (e.e < 0 || e.e > 6) && (i = !0)) : n = b), M < 1 || M > Ae(o, b, r) ? b0(t)._overflowWeeks = !0 : i != null ? b0(t)._overflowWeekday = !0 : (z = Ws(o, M, n, b, r), t._a[b1] = z.year, t._dayOfYear = z.dayOfYear);
 }
 H.ISO_8601 = function() {
 };
@@ -20875,7 +20875,7 @@ function lr(t) {
   for (n = is(t._f, t._locale).match(or) || [], s = n.length, o = 0; o < s; o++)
     b = n[o], M = (e.match(xg(b, t)) || [])[0], M && (r = e.substr(0, e.indexOf(M)), r.length > 0 && b0(t).unusedInput.push(r), e = e.slice(
       e.indexOf(M) + M.length
-    ), i += M.length), wt[b] ? (M ? b0(t).empty = !1 : b0(t).unusedTokens.push(b), Pg(b, M, t)) : t._strict && !M && b0(t).unusedTokens.push(b);
+    ), i += M.length), Bt[b] ? (M ? b0(t).empty = !1 : b0(t).unusedTokens.push(b), Pg(b, M, t)) : t._strict && !M && b0(t).unusedTokens.push(b);
   b0(t).charsLeftOver = z - i, e.length > 0 && b0(t).unusedInput.push(e), t._a[G0] <= 12 && b0(t).bigHour === !0 && t._a[G0] > 0 && (b0(t).bigHour = void 0), b0(t).parsedDateParts = t._a.slice(0), b0(t).meridiem = t._meridiem, t._a[G0] = Jy(
     t._locale,
     t._a[G0],
@@ -20894,7 +20894,7 @@ function eL(t) {
   }
   for (n = 0; n < i; n++)
     b = 0, r = !1, e = er({}, t), t._useUTC != null && (e._useUTC = t._useUTC), e._f = t._f[n], lr(e), Jb(e) && (r = !0), b += b0(e).charsLeftOver, b += b0(e).unusedTokens.length * 10, b0(e).score = b, z ? b < M && (M = b, o = e) : (M == null || b < M || r) && (M = b, o = e, r && (z = !0));
-  Ee(t, o || e);
+  De(t, o || e);
 }
 function tL(t) {
   if (!t._d) {
@@ -20908,22 +20908,22 @@ function tL(t) {
   }
 }
 function oL(t) {
-  var e = new B2(sr(Ns(t)));
+  var e = new E2(sr(Ns(t)));
   return e._nextDay && (e.add(1, "d"), e._nextDay = void 0), e;
 }
 function Ns(t) {
   var e = t._i, o = t._f;
-  return t._locale = t._locale || Re(t._l), e === null || o === void 0 && e === "" ? aM({ nullInput: !0 }) : (typeof e == "string" && (t._i = e = t._locale.preparse(e)), k1(e) ? new B2(sr(e)) : (w2(e) ? t._d = e : C1(o) ? eL(t) : o ? lr(t) : ML(t), Jb(t) || (t._d = null), t));
+  return t._locale = t._locale || Re(t._l), e === null || o === void 0 && e === "" ? aM({ nullInput: !0 }) : (typeof e == "string" && (t._i = e = t._locale.preparse(e)), k1(e) ? new E2(sr(e)) : (B2(e) ? t._d = e : C1(o) ? eL(t) : o ? lr(t) : ML(t), Jb(t) || (t._d = null), t));
 }
 function ML(t) {
   var e = t._i;
-  a1(e) ? t._d = new Date(H.now()) : w2(e) ? t._d = new Date(e.valueOf()) : typeof e == "string" ? Ky(t) : C1(e) ? (t._a = rs(e.slice(0), function(o) {
+  a1(e) ? t._d = new Date(H.now()) : B2(e) ? t._d = new Date(e.valueOf()) : typeof e == "string" ? Ky(t) : C1(e) ? (t._a = rs(e.slice(0), function(o) {
     return parseInt(o, 10);
-  }), Or(t)) : ot(e) ? tL(t) : he(e) ? t._d = new Date(e) : H.createFromInputFallback(t);
+  }), Or(t)) : Mt(e) ? tL(t) : he(e) ? t._d = new Date(e) : H.createFromInputFallback(t);
 }
 function Ss(t, e, o, M, n) {
   var b = {};
-  return (e === !0 || e === !1) && (M = e, e = void 0), (o === !0 || o === !1) && (M = o, o = void 0), (ot(t) && Zb(t) || C1(t) && t.length === 0) && (t = void 0), b._isAMomentObject = !0, b._useUTC = b._isUTC = n, b._l = o, b._i = t, b._f = e, b._strict = M, oL(b);
+  return (e === !0 || e === !1) && (M = e, e = void 0), (o === !0 || o === !1) && (M = o, o = void 0), (Mt(t) && Zb(t) || C1(t) && t.length === 0) && (t = void 0), b._isAMomentObject = !0, b._useUTC = b._isUTC = n, b._l = o, b._i = t, b._f = e, b._strict = M, oL(b);
 }
 function E0(t, e, o, M) {
   return Ss(t, e, o, M, !1);
@@ -20959,7 +20959,7 @@ function pL() {
 }
 var zL = function() {
   return Date.now ? Date.now() : +/* @__PURE__ */ new Date();
-}, p2 = [
+}, z2 = [
   "year",
   "quarter",
   "month",
@@ -20971,15 +20971,15 @@ var zL = function() {
   "millisecond"
 ];
 function iL(t) {
-  var e, o = !1, M, n = p2.length;
+  var e, o = !1, M, n = z2.length;
   for (e in t)
-    if (q0(t, e) && !(P0.call(p2, e) !== -1 && (t[e] == null || !isNaN(t[e]))))
+    if (q0(t, e) && !(P0.call(z2, e) !== -1 && (t[e] == null || !isNaN(t[e]))))
       return !1;
   for (M = 0; M < n; ++M)
-    if (t[p2[M]]) {
+    if (t[z2[M]]) {
       if (o)
         return !1;
-      parseFloat(t[p2[M]]) !== i0(t[p2[M]]) && (o = !0);
+      parseFloat(t[z2[M]]) !== i0(t[z2[M]]) && (o = !0);
     }
   return !0;
 }
@@ -21027,7 +21027,7 @@ function dr(t, e) {
 }
 function Ar(t, e) {
   var o, M;
-  return e._isUTC ? (o = e.clone(), M = (k1(t) || w2(t) ? t.valueOf() : E0(t).valueOf()) - o.valueOf(), o._d.setTime(o._d.valueOf() + M), H.updateOffset(o, !1), o) : E0(t).local();
+  return e._isUTC ? (o = e.clone(), M = (k1(t) || B2(t) ? t.valueOf() : E0(t).valueOf()) - o.valueOf(), o._d.setTime(o._d.valueOf() + M), H.updateOffset(o, !1), o) : E0(t).local();
 }
 function Zn(t) {
   return -Math.round(t._d.getTimezoneOffset());
@@ -21100,20 +21100,20 @@ function X1(t, e) {
     M: t._months
   } : he(t) || !isNaN(+t) ? (o = {}, e ? o[e] = +t : o.milliseconds = +t) : (M = gL.exec(t)) ? (n = M[1] === "-" ? -1 : 1, o = {
     y: 0,
-    d: i0(M[Y1]) * n,
+    d: i0(M[j1]) * n,
     h: i0(M[G0]) * n,
     m: i0(M[_1]) * n,
     s: i0(M[se]) * n,
-    ms: i0($n(M[Ze] * 1e3)) * n
+    ms: i0($n(M[Je] * 1e3)) * n
     // the millisecond decimal point is included in the match
   }) : (M = yL.exec(t)) ? (n = M[1] === "-" ? -1 : 1, o = {
-    y: Ve(M[2], n),
-    M: Ve(M[3], n),
-    w: Ve(M[4], n),
-    d: Ve(M[5], n),
-    h: Ve(M[6], n),
-    m: Ve(M[7], n),
-    s: Ve(M[8], n)
+    y: Qe(M[2], n),
+    M: Qe(M[3], n),
+    w: Qe(M[4], n),
+    d: Qe(M[5], n),
+    h: Qe(M[6], n),
+    m: Qe(M[7], n),
+    s: Qe(M[8], n)
   }) : o == null ? o = {} : typeof o == "object" && ("from" in o || "to" in o) && (r = LL(
     E0(o.from),
     E0(o.to)
@@ -21121,7 +21121,7 @@ function X1(t, e) {
 }
 X1.fn = qM.prototype;
 X1.invalid = aL;
-function Ve(t, e) {
+function Qe(t, e) {
   var o = t && parseFloat(t.replace(",", "."));
   return (isNaN(o) ? 0 : o) * e;
 }
@@ -21144,17 +21144,17 @@ function Es(t, e) {
 }
 function Ds(t, e, o, M) {
   var n = e._milliseconds, b = $n(e._days), r = $n(e._months);
-  t.isValid() && (M = M ?? !0, r && fs(t, W2(t, "Month") + r * o), b && ds(t, "Date", W2(t, "Date") + b * o), n && t._d.setTime(t._d.valueOf() + n * o), M && H.updateOffset(t, b || r));
+  t.isValid() && (M = M ?? !0, r && fs(t, R2(t, "Month") + r * o), b && ds(t, "Date", R2(t, "Date") + b * o), n && t._d.setTime(t._d.valueOf() + n * o), M && H.updateOffset(t, b || r));
 }
 var vL = Es(1, "add"), NL = Es(-1, "subtract");
 function _s(t) {
   return typeof t == "string" || t instanceof String;
 }
 function SL(t) {
-  return k1(t) || w2(t) || _s(t) || he(t) || wL(t) || TL(t) || t === null || t === void 0;
+  return k1(t) || B2(t) || _s(t) || he(t) || wL(t) || TL(t) || t === null || t === void 0;
 }
 function TL(t) {
-  var e = ot(t) && !Zb(t), o = !1, M = [
+  var e = Mt(t) && !Zb(t), o = !1, M = [
     "years",
     "year",
     "y",
@@ -21191,7 +21191,7 @@ function wL(t) {
   }).length === 0), e && o;
 }
 function BL(t) {
-  var e = ot(t) && !Zb(t), o = !1, M = [
+  var e = Mt(t) && !Zb(t), o = !1, M = [
     "sameDay",
     "nextDay",
     "lastDay",
@@ -21215,7 +21215,7 @@ function DL(t, e) {
   );
 }
 function _L() {
-  return new B2(this);
+  return new E2(this);
 }
 function CL(t, e) {
   var o = k1(t) ? t : E0(t);
@@ -21291,7 +21291,7 @@ H.defaultFormatUtc = "YYYY-MM-DDTHH:mm:ss[Z]";
 function UL() {
   return this.clone().locale("en").format("ddd MMM DD YYYY HH:mm:ss [GMT]ZZ");
 }
-function YL(t) {
+function jL(t) {
   if (!this.isValid())
     return null;
   var e = t !== !0, o = e ? this.clone().utc() : this;
@@ -21303,7 +21303,7 @@ function YL(t) {
     e ? "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]" : "YYYY-MM-DD[T]HH:mm:ss.SSSZ"
   );
 }
-function jL() {
+function YL() {
   if (!this.isValid())
     return "moment.invalid(/* " + this._i + " */)";
   var t = "moment", e = "", o, M, n, b;
@@ -21339,8 +21339,8 @@ var ks = T1(
 function Xs() {
   return this._locale;
 }
-var Uo = 1e3, Bt = 60 * Uo, Yo = 60 * Bt, xs = (365 * 400 + 97) * 24 * Yo;
-function Et(t, e) {
+var Uo = 1e3, Et = 60 * Uo, jo = 60 * Et, xs = (365 * 400 + 97) * 24 * jo;
+function Dt(t, e) {
   return (t % e + e) % e;
 }
 function Is(t, e, o) {
@@ -21386,16 +21386,16 @@ function $L(t) {
       e = o(this.year(), this.month(), this.date());
       break;
     case "hour":
-      e = this._d.valueOf(), e -= Et(
-        e + (this._isUTC ? 0 : this.utcOffset() * Bt),
-        Yo
+      e = this._d.valueOf(), e -= Dt(
+        e + (this._isUTC ? 0 : this.utcOffset() * Et),
+        jo
       );
       break;
     case "minute":
-      e = this._d.valueOf(), e -= Et(e, Bt);
+      e = this._d.valueOf(), e -= Dt(e, Et);
       break;
     case "second":
-      e = this._d.valueOf(), e -= Et(e, Uo);
+      e = this._d.valueOf(), e -= Dt(e, Uo);
       break;
   }
   return this._d.setTime(e), H.updateOffset(this, !0), this;
@@ -21437,16 +21437,16 @@ function ZL(t) {
       e = o(this.year(), this.month(), this.date() + 1) - 1;
       break;
     case "hour":
-      e = this._d.valueOf(), e += Yo - Et(
-        e + (this._isUTC ? 0 : this.utcOffset() * Bt),
-        Yo
+      e = this._d.valueOf(), e += jo - Dt(
+        e + (this._isUTC ? 0 : this.utcOffset() * Et),
+        jo
       ) - 1;
       break;
     case "minute":
-      e = this._d.valueOf(), e += Bt - Et(e, Bt) - 1;
+      e = this._d.valueOf(), e += Et - Dt(e, Et) - 1;
       break;
     case "second":
-      e = this._d.valueOf(), e += Uo - Et(e, Uo) - 1;
+      e = this._d.valueOf(), e += Uo - Dt(e, Uo) - 1;
       break;
   }
   return this._d.setTime(e), H.updateOffset(this, !0), this;
@@ -21491,7 +21491,7 @@ function bv() {
   return Jb(this);
 }
 function rv() {
-  return Ee({}, b0(this));
+  return De({}, b0(this));
 }
 function pv() {
   return b0(this).overflow;
@@ -21526,10 +21526,10 @@ L0(
     n ? b0(o).era = n : b0(o).invalidEra = t;
   }
 );
-Q("y", Ft);
-Q("yy", Ft);
-Q("yyy", Ft);
-Q("yyyy", Ft);
+Q("y", Gt);
+Q("yy", Gt);
+Q("yyy", Gt);
+Q("yyyy", Gt);
 Q("yo", Wv);
 L0(["y", "yy", "yyy", "yyyy"], b1);
 L0(["yo"], function(t, e, o, M) {
@@ -21629,7 +21629,7 @@ function hv(t, e) {
   return e.erasNarrowRegex(t);
 }
 function Wv(t, e) {
-  return e._eraYearOrdinalRegex || Ft;
+  return e._eraYearOrdinalRegex || Gt;
 }
 function fr() {
   var t = [], e = [], o = [], M = [], n, b, r, z, i, a = this.eras();
@@ -21661,13 +21661,13 @@ Q("GGGG", br, nr);
 Q("gggg", br, nr);
 Q("GGGGG", lM, sM);
 Q("ggggg", lM, sM);
-D2(
+_2(
   ["gggg", "ggggg", "GGGG", "GGGGG"],
   function(t, e, o, M) {
     e[M.substr(0, 2)] = i0(t);
   }
 );
-D2(["gg", "GG"], function(t, e, o, M) {
+_2(["gg", "GG"], function(t, e, o, M) {
   e[M] = H.parseTwoDigitYear(t);
 });
 function Rv(t) {
@@ -21706,10 +21706,10 @@ function vv() {
 }
 function Hs(t, e, o, M, n) {
   var b;
-  return t == null ? m2(this, M, n).year : (b = Ae(t, M, n), e > b && (e = b), Nv.call(this, t, e, o, M, n));
+  return t == null ? g2(this, M, n).year : (b = Ae(t, M, n), e > b && (e = b), Nv.call(this, t, e, o, M, n));
 }
 function Nv(t, e, o, M, n) {
-  var b = Ws(t, e, o, M, n), r = R2(b.year, 0, b.dayOfYear);
+  var b = Ws(t, e, o, M, n), r = m2(b.year, 0, b.dayOfYear);
   return this.year(r.getUTCFullYear()), this.month(r.getUTCMonth()), this.date(r.getUTCDate()), this;
 }
 J("Q", 0, "Qo", "quarter");
@@ -21721,16 +21721,16 @@ function Sv(t) {
   return t == null ? Math.ceil((this.month() + 1) / 3) : this.month((t - 1) * 3 + this.month() % 3);
 }
 J("D", ["DD", 2], "Do", "date");
-Q("D", D0, Gt);
+Q("D", D0, Vt);
 Q("DD", D0, R1);
 Q("Do", function(t, e) {
   return t ? e._dayOfMonthOrdinalParse || e._ordinalParse : e._dayOfMonthOrdinalParseLenient;
 });
-L0(["D", "DD"], Y1);
+L0(["D", "DD"], j1);
 L0("Do", function(t, e) {
-  e[Y1] = i0(t.match(D0)[0]);
+  e[j1] = i0(t.match(D0)[0]);
 });
-var Us = Vt("Date", !0);
+var Us = Qt("Date", !0);
 J("DDD", ["DDDD", 3], "DDDo", "dayOfYear");
 Q("DDD", OM);
 Q("DDDD", as);
@@ -21747,12 +21747,12 @@ J("m", ["mm", 2], 0, "minute");
 Q("m", D0, rr);
 Q("mm", D0, R1);
 L0(["m", "mm"], _1);
-var wv = Vt("Minutes", !1);
+var wv = Qt("Minutes", !1);
 J("s", ["ss", 2], 0, "second");
 Q("s", D0, rr);
 Q("ss", D0, R1);
 L0(["s", "ss"], se);
-var Bv = Vt("Seconds", !1);
+var Bv = Qt("Seconds", !1);
 J("S", 0, 0, function() {
   return ~~(this.millisecond() / 100);
 });
@@ -21781,15 +21781,15 @@ J(0, ["SSSSSSSSS", 9], 0, function() {
 Q("S", OM, cs);
 Q("SS", OM, R1);
 Q("SSS", OM, as);
-var De, Ys;
-for (De = "SSSS"; De.length <= 9; De += "S")
-  Q(De, Ft);
+var _e, js;
+for (_e = "SSSS"; _e.length <= 9; _e += "S")
+  Q(_e, Gt);
 function Ev(t, e) {
-  e[Ze] = i0(("0." + t) * 1e3);
+  e[Je] = i0(("0." + t) * 1e3);
 }
-for (De = "S"; De.length <= 9; De += "S")
-  L0(De, Ev);
-Ys = Vt("Milliseconds", !1);
+for (_e = "S"; _e.length <= 9; _e += "S")
+  L0(_e, Ev);
+js = Qt("Milliseconds", !1);
 J("z", 0, 0, "zoneAbbr");
 J("zz", 0, 0, "zoneName");
 function Dv() {
@@ -21798,7 +21798,7 @@ function Dv() {
 function _v() {
   return this._isUTC ? "Coordinated Universal Time" : "";
 }
-var x = B2.prototype;
+var x = E2.prototype;
 x.add = vL;
 x.calendar = DL;
 x.clone = _L;
@@ -21809,7 +21809,7 @@ x.from = GL;
 x.fromNow = VL;
 x.to = QL;
 x.toNow = KL;
-x.get = jg;
+x.get = Yg;
 x.invalidAt = pv;
 x.isAfter = CL;
 x.isBefore = kL;
@@ -21830,8 +21830,8 @@ x.subtract = NL;
 x.toArray = ov;
 x.toObject = Mv;
 x.toDate = tv;
-x.toISOString = YL;
-x.inspect = jL;
+x.toISOString = jL;
+x.inspect = YL;
 typeof Symbol < "u" && Symbol.for != null && (x[Symbol.for("nodejs.util.inspect.custom")] = function() {
   return "Moment<" + this.format() + ">";
 });
@@ -21845,7 +21845,7 @@ x.eraNarrow = Ov;
 x.eraAbbr = lv;
 x.eraYear = dv;
 x.year = ls;
-x.isLeapYear = Yg;
+x.isLeapYear = jg;
 x.weekYear = Rv;
 x.isoWeekYear = mv;
 x.quarter = x.quarters = Sv;
@@ -21865,7 +21865,7 @@ x.dayOfYear = Tv;
 x.hour = x.hours = By;
 x.minute = x.minutes = wv;
 x.second = x.seconds = Bv;
-x.millisecond = x.milliseconds = Ys;
+x.millisecond = x.milliseconds = js;
 x.utcOffset = lL;
 x.utc = AL;
 x.local = uL;
@@ -21904,7 +21904,7 @@ function Cv(t) {
 function kv() {
   return E0.apply(null, arguments).parseZone();
 }
-function js(t) {
+function Ys(t) {
   return t;
 }
 var h0 = tr.prototype;
@@ -21912,8 +21912,8 @@ h0.calendar = Rg;
 h0.longDateFormat = Lg;
 h0.invalidDate = Ng;
 h0.ordinal = wg;
-h0.preparse = js;
-h0.postformat = js;
+h0.preparse = Ys;
+h0.postformat = Ys;
 h0.relativeTime = Eg;
 h0.pastFuture = Dg;
 h0.set = hg;
@@ -21940,25 +21940,25 @@ h0.weekdaysShortRegex = vy;
 h0.weekdaysMinRegex = Ny;
 h0.isPM = Ty;
 h0.meridiem = Ey;
-function jo(t, e, o, M) {
+function Yo(t, e, o, M) {
   var n = Re(), b = $1().set(M, e);
   return n[o](b, t);
 }
 function Fs(t, e, o) {
   if (he(t) && (e = t, t = void 0), t = t || "", e != null)
-    return jo(t, e, o, "month");
+    return Yo(t, e, o, "month");
   var M, n = [];
   for (M = 0; M < 12; M++)
-    n[M] = jo(t, M, o, "month");
+    n[M] = Yo(t, M, o, "month");
   return n;
 }
 function qr(t, e, o, M) {
   typeof t == "boolean" ? (he(e) && (o = e, e = void 0), e = e || "") : (e = t, o = e, t = !1, he(e) && (o = e, e = void 0), e = e || "");
   var n = Re(), b = t ? n._week.dow : 0, r, z = [];
   if (o != null)
-    return jo(e, (o + b) % 7, M, "day");
+    return Yo(e, (o + b) % 7, M, "day");
   for (r = 0; r < 7; r++)
-    z[r] = jo(e, (r + b) % 7, M, "day");
+    z[r] = Yo(e, (r + b) % 7, M, "day");
   return z;
 }
 function Xv(t, e) {
@@ -21976,7 +21976,7 @@ function Pv(t, e, o) {
 function Hv(t, e, o) {
   return qr(t, e, o, "weekdaysMin");
 }
-Ce("en", {
+ke("en", {
   eras: [
     {
       since: "0001-01-01",
@@ -22003,7 +22003,7 @@ Ce("en", {
 });
 H.lang = T1(
   "moment.lang is deprecated. Use moment.locale instead.",
-  Ce
+  ke
 );
 H.langData = T1(
   "moment.langData is deprecated. Use moment.localeData instead.",
@@ -22018,10 +22018,10 @@ function Gs(t, e, o, M) {
   var n = X1(e, o);
   return t._milliseconds += M * n._milliseconds, t._days += M * n._days, t._months += M * n._months, t._bubble();
 }
-function Yv(t, e) {
+function jv(t, e) {
   return Gs(this, t, e, 1);
 }
-function jv(t, e) {
+function Yv(t, e) {
   return Gs(this, t, e, -1);
 }
 function Gz(t) {
@@ -22081,16 +22081,16 @@ function M8() {
 function n8(t) {
   return t = w1(t), this.isValid() ? this[t + "s"]() : NaN;
 }
-function it(t) {
+function ct(t) {
   return function() {
     return this.isValid() ? this._data[t] : NaN;
   };
 }
-var b8 = it("milliseconds"), r8 = it("seconds"), p8 = it("minutes"), z8 = it("hours"), i8 = it("days"), c8 = it("months"), a8 = it("years");
+var b8 = ct("milliseconds"), r8 = ct("seconds"), p8 = ct("minutes"), z8 = ct("hours"), i8 = ct("days"), c8 = ct("months"), a8 = ct("years");
 function s8() {
   return L1(this.days() / 7);
 }
-var ce = Math.round, vt = {
+var ce = Math.round, Nt = {
   ss: 44,
   // a few seconds to seconds
   s: 45,
@@ -22110,36 +22110,36 @@ function O8(t, e, o, M, n) {
   return n.relativeTime(e || 1, !!o, t, M);
 }
 function l8(t, e, o, M) {
-  var n = X1(t).abs(), b = ce(n.as("s")), r = ce(n.as("m")), z = ce(n.as("h")), i = ce(n.as("d")), a = ce(n.as("M")), s = ce(n.as("w")), d = ce(n.as("y")), A = b <= o.ss && ["s", b] || b < o.s && ["ss", b] || r <= 1 && ["m"] || r < o.m && ["mm", r] || z <= 1 && ["h"] || z < o.h && ["hh", z] || i <= 1 && ["d"] || i < o.d && ["dd", i];
-  return o.w != null && (A = A || s <= 1 && ["w"] || s < o.w && ["ww", s]), A = A || a <= 1 && ["M"] || a < o.M && ["MM", a] || d <= 1 && ["y"] || ["yy", d], A[2] = e, A[3] = +t > 0, A[4] = M, O8.apply(null, A);
+  var n = X1(t).abs(), b = ce(n.as("s")), r = ce(n.as("m")), z = ce(n.as("h")), i = ce(n.as("d")), a = ce(n.as("M")), s = ce(n.as("w")), d = ce(n.as("y")), u = b <= o.ss && ["s", b] || b < o.s && ["ss", b] || r <= 1 && ["m"] || r < o.m && ["mm", r] || z <= 1 && ["h"] || z < o.h && ["hh", z] || i <= 1 && ["d"] || i < o.d && ["dd", i];
+  return o.w != null && (u = u || s <= 1 && ["w"] || s < o.w && ["ww", s]), u = u || a <= 1 && ["M"] || a < o.M && ["MM", a] || d <= 1 && ["y"] || ["yy", d], u[2] = e, u[3] = +t > 0, u[4] = M, O8.apply(null, u);
 }
 function d8(t) {
   return t === void 0 ? ce : typeof t == "function" ? (ce = t, !0) : !1;
 }
 function A8(t, e) {
-  return vt[t] === void 0 ? !1 : e === void 0 ? vt[t] : (vt[t] = e, t === "s" && (vt.ss = e - 1), !0);
+  return Nt[t] === void 0 ? !1 : e === void 0 ? Nt[t] : (Nt[t] = e, t === "s" && (Nt.ss = e - 1), !0);
 }
 function u8(t, e) {
   if (!this.isValid())
     return this.localeData().invalidDate();
-  var o = !1, M = vt, n, b;
-  return typeof t == "object" && (e = t, t = !1), typeof t == "boolean" && (o = t), typeof e == "object" && (M = Object.assign({}, vt, e), e.s != null && e.ss == null && (M.ss = e.s - 1)), n = this.localeData(), b = l8(this, !o, M, n), o && (b = n.pastFuture(+this, b)), n.postformat(b);
+  var o = !1, M = Nt, n, b;
+  return typeof t == "object" && (e = t, t = !1), typeof t == "boolean" && (o = t), typeof e == "object" && (M = Object.assign({}, Nt, e), e.s != null && e.ss == null && (M.ss = e.s - 1)), n = this.localeData(), b = l8(this, !o, M, n), o && (b = n.pastFuture(+this, b)), n.postformat(b);
 }
 var fn = Math.abs;
-function ht(t) {
+function Wt(t) {
   return (t > 0) - (t < 0) || +t;
 }
 function WM() {
   if (!this.isValid())
     return this.localeData().invalidDate();
   var t = fn(this._milliseconds) / 1e3, e = fn(this._days), o = fn(this._months), M, n, b, r, z = this.asSeconds(), i, a, s, d;
-  return z ? (M = L1(t / 60), n = L1(M / 60), t %= 60, M %= 60, b = L1(o / 12), o %= 12, r = t ? t.toFixed(3).replace(/\.?0+$/, "") : "", i = z < 0 ? "-" : "", a = ht(this._months) !== ht(z) ? "-" : "", s = ht(this._days) !== ht(z) ? "-" : "", d = ht(this._milliseconds) !== ht(z) ? "-" : "", i + "P" + (b ? a + b + "Y" : "") + (o ? a + o + "M" : "") + (e ? s + e + "D" : "") + (n || M || t ? "T" : "") + (n ? d + n + "H" : "") + (M ? d + M + "M" : "") + (t ? d + r + "S" : "")) : "P0D";
+  return z ? (M = L1(t / 60), n = L1(M / 60), t %= 60, M %= 60, b = L1(o / 12), o %= 12, r = t ? t.toFixed(3).replace(/\.?0+$/, "") : "", i = z < 0 ? "-" : "", a = Wt(this._months) !== Wt(z) ? "-" : "", s = Wt(this._days) !== Wt(z) ? "-" : "", d = Wt(this._milliseconds) !== Wt(z) ? "-" : "", i + "P" + (b ? a + b + "Y" : "") + (o ? a + o + "M" : "") + (e ? s + e + "D" : "") + (n || M || t ? "T" : "") + (n ? d + n + "H" : "") + (M ? d + M + "M" : "") + (t ? d + r + "S" : "")) : "P0D";
 }
 var l0 = qM.prototype;
 l0.isValid = cL;
 l0.abs = Uv;
-l0.add = Yv;
-l0.subtract = jv;
+l0.add = jv;
+l0.subtract = Yv;
 l0.as = Gv;
 l0.asMilliseconds = Qs;
 l0.asSeconds = Vv;
@@ -22193,8 +22193,8 @@ H.now = zL;
 H.utc = $1;
 H.unix = Cv;
 H.months = Xv;
-H.isDate = w2;
-H.locale = Ce;
+H.isDate = B2;
+H.locale = ke;
 H.invalid = aM;
 H.duration = X1;
 H.isMoment = k1;
@@ -22300,20 +22300,20 @@ function m8() {
       (!e || typeof e.version != "string") && p1("Moment Timezone requires Moment.js. See https://momentjs.com/timezone/docs/#/use-it/browser/");
       var a = e.version.split("."), s = +a[0], d = +a[1];
       (s < 2 || s === 2 && d < 6) && p1("Moment Timezone requires Moment.js >= 2.6.0. You are using Moment.js " + e.version + ". See momentjs.com");
-      function A(m) {
+      function u(m) {
         return m > 96 ? m - 87 : m > 64 ? m - 29 : m - 48;
       }
-      function f(m) {
-        var T = 0, E = m.split("."), C = E[0], K = E[1] || "", p0 = 1, _0, d0 = 0, c0 = 1;
-        for (m.charCodeAt(0) === 45 && (T = 1, c0 = -1), T; T < C.length; T++)
-          _0 = A(C.charCodeAt(T)), d0 = 60 * d0 + _0;
+      function A(m) {
+        var T = 0, E = m.split("."), k = E[0], K = E[1] || "", p0 = 1, _0, d0 = 0, c0 = 1;
+        for (m.charCodeAt(0) === 45 && (T = 1, c0 = -1), T; T < k.length; T++)
+          _0 = u(k.charCodeAt(T)), d0 = 60 * d0 + _0;
         for (T = 0; T < K.length; T++)
-          p0 = p0 / 60, _0 = A(K.charCodeAt(T)), d0 += _0 * p0;
+          p0 = p0 / 60, _0 = u(K.charCodeAt(T)), d0 += _0 * p0;
         return d0 * c0;
       }
       function h(m) {
         for (var T = 0; T < m.length; T++)
-          m[T] = f(m[T]);
+          m[T] = A(m[T]);
       }
       function R(m, T) {
         for (var E = 0; E < T; E++)
@@ -22321,17 +22321,17 @@ function m8() {
         m[T - 1] = 1 / 0;
       }
       function W(m, T) {
-        var E = [], C;
-        for (C = 0; C < T.length; C++)
-          E[C] = m[T[C]];
+        var E = [], k;
+        for (k = 0; k < T.length; k++)
+          E[k] = m[T[k]];
         return E;
       }
       function g(m) {
-        var T = m.split("|"), E = T[2].split(" "), C = T[3].split(""), K = T[4].split(" ");
-        return h(E), h(C), h(K), R(K, C.length), {
+        var T = m.split("|"), E = T[2].split(" "), k = T[3].split(""), K = T[4].split(" ");
+        return h(E), h(k), h(K), R(K, k.length), {
           name: T[0],
-          abbrs: W(T[1].split(" "), C),
-          offsets: W(E, C),
+          abbrs: W(T[1].split(" "), k),
+          offsets: W(E, k),
           untils: K,
           population: T[5] | 0
         };
@@ -22347,8 +22347,8 @@ function m8() {
           return E - 1;
         if (m >= T[E - 1])
           return -1;
-        for (var C, K = 0, p0 = E - 1; p0 - K > 1; )
-          C = Math.floor((K + p0) / 2), T[C] <= m ? K = C : p0 = C;
+        for (var k, K = 0, p0 = E - 1; p0 - K > 1; )
+          k = Math.floor((K + p0) / 2), T[k] <= m ? K = k : p0 = k;
         return p0;
       }
       N.prototype = {
@@ -22356,9 +22356,9 @@ function m8() {
           this.name = m.name, this.abbrs = m.abbrs, this.untils = m.untils, this.offsets = m.offsets, this.population = m.population;
         },
         _index: function(m) {
-          var T = +m, E = this.untils, C;
-          if (C = B(T, E), C >= 0)
-            return C;
+          var T = +m, E = this.untils, k;
+          if (k = B(T, E), k >= 0)
+            return k;
         },
         countries: function() {
           var m = this.name;
@@ -22367,9 +22367,9 @@ function m8() {
           });
         },
         parse: function(m) {
-          var T = +m, E = this.offsets, C = this.untils, K = C.length - 1, p0, _0, d0, c0;
+          var T = +m, E = this.offsets, k = this.untils, K = k.length - 1, p0, _0, d0, c0;
           for (c0 = 0; c0 < K; c0++)
-            if (p0 = E[c0], _0 = E[c0 + 1], d0 = E[c0 && c0 - 1], p0 < _0 && R0.moveAmbiguousForward ? p0 = _0 : p0 > d0 && R0.moveInvalidForward && (p0 = d0), T < C[c0] - p0 * 6e4)
+            if (p0 = E[c0], _0 = E[c0 + 1], d0 = E[c0 && c0 - 1], p0 < _0 && R0.moveAmbiguousForward ? p0 = _0 : p0 > d0 && R0.moveInvalidForward && (p0 = d0), T < k[c0] - p0 * 6e4)
               return E[c0];
           return E[K];
         },
@@ -22383,42 +22383,42 @@ function m8() {
           return this.offsets[this._index(m)];
         }
       };
-      function k(m, T) {
+      function C(m, T) {
         this.name = m, this.zones = T;
       }
-      function j(m) {
+      function Y(m) {
         var T = m.toTimeString(), E = T.match(/\([a-z ]+\)/i);
         E && E[0] ? (E = E[0].match(/[A-Z]/g), E = E ? E.join("") : void 0) : (E = T.match(/[A-Z]{3,5}/g), E = E ? E[0] : void 0), E === "GMT" && (E = void 0), this.at = +m, this.abbr = E, this.offset = m.getTimezoneOffset();
       }
-      function Y(m) {
+      function j(m) {
         this.zone = m, this.offsetScore = 0, this.abbrScore = 0;
       }
-      Y.prototype.scoreOffsetAt = function(m) {
+      j.prototype.scoreOffsetAt = function(m) {
         this.offsetScore += Math.abs(this.zone.utcOffset(m.at) - m.offset), this.zone.abbr(m.at).replace(/[^A-Z]/g, "") !== m.abbr && this.abbrScore++;
       };
       function U(m, T) {
-        for (var E, C; C = ((T.at - m.at) / 12e4 | 0) * 6e4; )
-          E = new j(new Date(m.at + C)), E.offset === m.offset ? m = E : T = E;
+        for (var E, k; k = ((T.at - m.at) / 12e4 | 0) * 6e4; )
+          E = new Y(new Date(m.at + k)), E.offset === m.offset ? m = E : T = E;
         return m;
       }
       function Z() {
-        var m = (/* @__PURE__ */ new Date()).getFullYear() - 2, T = new j(new Date(m, 0, 1)), E = T.offset, C = [T], K, p0, _0, d0;
+        var m = (/* @__PURE__ */ new Date()).getFullYear() - 2, T = new Y(new Date(m, 0, 1)), E = T.offset, k = [T], K, p0, _0, d0;
         for (d0 = 1; d0 < 48; d0++)
-          _0 = new Date(m, d0, 1).getTimezoneOffset(), _0 !== E && (p0 = new j(new Date(m, d0, 1)), K = U(T, p0), C.push(K), C.push(new j(new Date(K.at + 6e4))), T = p0, E = _0);
+          _0 = new Date(m, d0, 1).getTimezoneOffset(), _0 !== E && (p0 = new Y(new Date(m, d0, 1)), K = U(T, p0), k.push(K), k.push(new Y(new Date(K.at + 6e4))), T = p0, E = _0);
         for (d0 = 0; d0 < 4; d0++)
-          C.push(new j(new Date(m + d0, 0, 1))), C.push(new j(new Date(m + d0, 6, 1)));
-        return C;
+          k.push(new Y(new Date(m + d0, 0, 1))), k.push(new Y(new Date(m + d0, 6, 1)));
+        return k;
       }
       function S0(m, T) {
         return m.offsetScore !== T.offsetScore ? m.offsetScore - T.offsetScore : m.abbrScore !== T.abbrScore ? m.abbrScore - T.abbrScore : m.zone.population !== T.zone.population ? T.zone.population - m.zone.population : T.zone.name.localeCompare(m.zone.name);
       }
       function W0(m, T) {
-        var E, C;
+        var E, k;
         for (h(T), E = 0; E < T.length; E++)
-          C = T[E], z[C] = z[C] || {}, z[C][m] = !0;
+          k = T[E], z[k] = z[k] || {}, z[k][m] = !0;
       }
       function H0(m) {
-        var T = m.length, E = {}, C = [], K = {}, p0, _0, d0, c0;
+        var T = m.length, E = {}, k = [], K = {}, p0, _0, d0, c0;
         for (p0 = 0; p0 < T; p0++)
           if (d0 = m[p0].offset, !K.hasOwnProperty(d0)) {
             c0 = z[d0] || {};
@@ -22427,8 +22427,8 @@ function m8() {
             K[d0] = !0;
           }
         for (p0 in E)
-          E.hasOwnProperty(p0) && C.push(r[p0]);
-        return C;
+          E.hasOwnProperty(p0) && k.push(r[p0]);
+        return k;
       }
       function O1() {
         try {
@@ -22441,9 +22441,9 @@ function m8() {
           }
         } catch {
         }
-        var E = Z(), C = E.length, K = H0(E), p0 = [], _0, d0, c0;
+        var E = Z(), k = E.length, K = H0(E), p0 = [], _0, d0, c0;
         for (d0 = 0; d0 < K.length; d0++) {
-          for (_0 = new Y(J0(K[d0])), c0 = 0; c0 < C; c0++)
+          for (_0 = new j(J0(K[d0])), c0 = 0; c0 < k; c0++)
             _0.scoreOffsetAt(E[c0]);
           p0.push(_0);
         }
@@ -22456,36 +22456,36 @@ function m8() {
         return (m || "").toLowerCase().replace(/\//g, "_");
       }
       function ge(m) {
-        var T, E, C, K;
+        var T, E, k, K;
         for (typeof m == "string" && (m = [m]), T = 0; T < m.length; T++)
-          C = m[T].split("|"), E = C[0], K = x1(E), M[K] = m[T], r[K] = E, W0(K, C[2].split(" "));
+          k = m[T].split("|"), E = k[0], K = x1(E), M[K] = m[T], r[K] = E, W0(K, k[2].split(" "));
       }
       function J0(m, T) {
         m = x1(m);
-        var E = M[m], C;
-        return E instanceof N ? E : typeof E == "string" ? (E = new N(E), M[m] = E, E) : n[m] && T !== J0 && (C = J0(n[m], J0)) ? (E = M[m] = new N(), E._set(C), E.name = r[m], E) : null;
+        var E = M[m], k;
+        return E instanceof N ? E : typeof E == "string" ? (E = new N(E), M[m] = E, E) : n[m] && T !== J0 && (k = J0(n[m], J0)) ? (E = M[m] = new N(), E._set(k), E.name = r[m], E) : null;
       }
-      function Ue() {
+      function je() {
         var m, T = [];
         for (m in r)
           r.hasOwnProperty(m) && (M[m] || M[n[m]]) && r[m] && T.push(r[m]);
         return T.sort();
       }
-      function Qt() {
+      function Kt() {
         return Object.keys(b);
       }
-      function ct(m) {
-        var T, E, C, K;
+      function at(m) {
+        var T, E, k, K;
         for (typeof m == "string" && (m = [m]), T = 0; T < m.length; T++)
-          E = m[T].split("|"), C = x1(E[0]), K = x1(E[1]), n[C] = K, r[C] = E[0], n[K] = C, r[K] = E[1];
+          E = m[T].split("|"), k = x1(E[0]), K = x1(E[1]), n[k] = K, r[k] = E[0], n[K] = k, r[K] = E[1];
       }
       function r1(m) {
-        var T, E, C, K;
+        var T, E, k, K;
         if (!(!m || !m.length))
           for (T = 0; T < m.length; T++)
-            K = m[T].split("|"), E = K[0].toUpperCase(), C = K[1].split(" "), b[E] = new k(
+            K = m[T].split("|"), E = K[0].toUpperCase(), k = K[1].split(" "), b[E] = new C(
               E,
-              C
+              k
             );
       }
       function Ye(m) {
@@ -22494,16 +22494,16 @@ function m8() {
       function m1(m, T) {
         if (m = Ye(m), !m) return null;
         var E = m.zones.sort();
-        return T ? E.map(function(C) {
-          var K = J0(C);
+        return T ? E.map(function(k) {
+          var K = J0(k);
           return {
-            name: C,
+            name: k,
             offset: K.utcOffset(/* @__PURE__ */ new Date())
           };
         }) : E;
       }
       function o0(m) {
-        ge(m.zones), ct(m.links), r1(m.countries), R0.dataVersion = m.version;
+        ge(m.zones), at(m.links), r1(m.countries), R0.dataVersion = m.version;
       }
       function l1(m) {
         return l1.didShowError || (l1.didShowError = !0, p1("moment.tz.zoneExists('" + m + "') has been deprecated in favor of !moment.tz.zone('" + m + "')")), !!J0(m);
@@ -22516,20 +22516,20 @@ function m8() {
         typeof console < "u" && typeof console.error == "function" && console.error(m);
       }
       function R0(m) {
-        var T = Array.prototype.slice.call(arguments, 0, -1), E = arguments[arguments.length - 1], C = e.utc.apply(null, T), K;
-        return !e.isMoment(m) && F(C) && (K = J0(E)) && C.add(K.parse(C), "minutes"), C.tz(E), C;
+        var T = Array.prototype.slice.call(arguments, 0, -1), E = arguments[arguments.length - 1], k = e.utc.apply(null, T), K;
+        return !e.isMoment(m) && F(k) && (K = J0(E)) && k.add(K.parse(k), "minutes"), k.tz(E), k;
       }
-      R0.version = o, R0.dataVersion = "", R0._zones = M, R0._links = n, R0._names = r, R0._countries = b, R0.add = ge, R0.link = ct, R0.load = o0, R0.zone = J0, R0.zoneExists = l1, R0.guess = c1, R0.names = Ue, R0.Zone = N, R0.unpack = g, R0.unpackBase60 = f, R0.needsOffset = F, R0.moveInvalidForward = !0, R0.moveAmbiguousForward = !1, R0.countries = Qt, R0.zonesForCountry = m1;
-      var j0 = e.fn;
+      R0.version = o, R0.dataVersion = "", R0._zones = M, R0._links = n, R0._names = r, R0._countries = b, R0.add = ge, R0.link = at, R0.load = o0, R0.zone = J0, R0.zoneExists = l1, R0.guess = c1, R0.names = je, R0.Zone = N, R0.unpack = g, R0.unpackBase60 = A, R0.needsOffset = F, R0.moveInvalidForward = !0, R0.moveAmbiguousForward = !1, R0.countries = Kt, R0.zonesForCountry = m1;
+      var Y0 = e.fn;
       e.tz = R0, e.defaultZone = null, e.updateOffset = function(m, T) {
-        var E = e.defaultZone, C;
+        var E = e.defaultZone, k;
         if (m._z === void 0 && (E && F(m) && !m._isUTC && m.isValid() && (m._d = e.utc(m._a)._d, m.utc().add(E.parse(m), "minutes")), m._z = E), m._z)
-          if (C = m._z.utcOffset(m), Math.abs(C) < 16 && (C = C / 60), m.utcOffset !== void 0) {
+          if (k = m._z.utcOffset(m), Math.abs(k) < 16 && (k = k / 60), m.utcOffset !== void 0) {
             var K = m._z;
-            m.utcOffset(-C, T), m._z = K;
+            m.utcOffset(-k, T), m._z = K;
           } else
-            m.zone(C, T);
-      }, j0.tz = function(m, T) {
+            m.zone(k, T);
+      }, Y0.tz = function(m, T) {
         if (m) {
           if (typeof m != "string")
             throw new Error("Time zone name must be a string, got " + m + " [" + typeof m + "]");
@@ -22553,7 +22553,7 @@ function m8() {
           return arguments.length > 0 && (this._z = null), m.apply(this, arguments);
         };
       }
-      j0.zoneName = y(j0.zoneName), j0.zoneAbbr = y(j0.zoneAbbr), j0.utc = S(j0.utc), j0.local = S(j0.local), j0.utcOffset = D(j0.utcOffset), e.tz.setDefault = function(m) {
+      Y0.zoneName = y(Y0.zoneName), Y0.zoneAbbr = y(Y0.zoneAbbr), Y0.utc = S(Y0.utc), Y0.local = S(Y0.local), Y0.utcOffset = D(Y0.utcOffset), e.tz.setDefault = function(m) {
         return (s < 2 || s === 2 && d < 9) && p1("Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js " + e.version + "."), e.defaultZone = m ? J0(m) : null, e;
       };
       var _ = e.momentProperties;
@@ -22588,7 +22588,7 @@ var B8 = x0({
   name: "@fullcalendar/moment-timezone",
   namedTimeZonedImpl: w8
 });
-Ao.loadPersian({ usePersianDigits: !1 });
+Ne.loadPersian({ usePersianDigits: !1 });
 function D8({
   locale: t,
   plugins: e,
@@ -22616,34 +22616,8 @@ function D8({
         locales: wh
       };
       (t === "fa" || t === "fa-AF") && (console.log("[FullCalendar] Configuring Jalali calendar for locale:", t), d.titleFormat = function(A) {
-        return Ao(A.date.marker).format("jMMMM jYYYY");
-      }, d.fixedWeekCount = !1, d.showNonCurrentDates = !1, n.initialView || (d.initialView = "jalaliMonth"), d.views = {
-        jalaliMonth: {
-          type: "dayGrid",
-          duration: { days: 1 },
-          // Will be overridden by visibleRange
-          buttonText: "ماه",
-          fixedWeekCount: !1,
-          visibleRange: function(A) {
-            console.log("[FullCalendar] jalaliMonth visibleRange called with:", A);
-            const f = Ao(A), h = f.clone().startOf("jMonth"), R = f.clone().endOf("jMonth").add(1, "day");
-            return console.log("[FullCalendar] Jalali month range:", {
-              start: h.format("YYYY-MM-DD"),
-              startJalali: h.format("jYYYY-jMM-jDD"),
-              end: R.format("YYYY-MM-DD"),
-              endJalali: R.format("jYYYY-jMM-jDD"),
-              currentDate: Ao(A).format("jYYYY-jMM-jDD")
-            }), {
-              start: h.toDate(),
-              end: R.toDate()
-            };
-          }
-        },
-        // Alias dayGridMonth to jalaliMonth for compatibility
-        dayGridMonth: {
-          type: "jalaliMonth"
-        }
-      }), this.calendar = new bq(this.$el, {
+        return Ne(A.date.marker).format("jMMMM jYYYY");
+      }, d.fixedWeekCount = !1, d.showNonCurrentDates = !1), this.calendar = new bq(this.$el, {
         ...d,
         ...n,
         // Apply user config AFTER our Jalali config so they can still override if needed
@@ -22651,35 +22625,52 @@ function D8({
         eventContent: i,
         eventDidMount: a,
         eventWillUnmount: s,
-        events: (A, f, h) => {
+        events: (A, h, R) => {
           this.$wire.fetchEvents({
             start: A.startStr,
             end: A.endStr,
             timezone: A.timeZone
-          }).then(f).catch(h);
+          }).then(h).catch(R);
         },
-        eventClick: ({ event: A, jsEvent: f }) => {
-          if (f.preventDefault(), A.url) {
-            const h = (R) => R.which > 1 || R.altKey || R.ctrlKey || R.metaKey || R.shiftKey;
+        eventClick: ({ event: A, jsEvent: h }) => {
+          if (h.preventDefault(), A.url) {
+            const R = (W) => W.which > 1 || W.altKey || W.ctrlKey || W.metaKey || W.shiftKey;
             return window.open(
               A.url,
-              A.extendedProps.shouldOpenUrlInNewTab || h(f) ? "_blank" : "_self"
+              A.extendedProps.shouldOpenUrlInNewTab || R(h) ? "_blank" : "_self"
             );
           }
           this.$wire.onEventClick(A);
         },
         eventDrop: async ({
           event: A,
-          oldEvent: f,
-          relatedEvents: h,
-          delta: R,
-          oldResource: W,
-          newResource: g,
+          oldEvent: h,
+          relatedEvents: R,
+          delta: W,
+          oldResource: g,
+          newResource: N,
+          revert: B
+        }) => {
+          const C = await this.$wire.onEventDrop(
+            A,
+            h,
+            R,
+            W,
+            g,
+            N
+          );
+          typeof C == "boolean" && C && B();
+        },
+        eventResize: async ({
+          event: A,
+          oldEvent: h,
+          relatedEvents: R,
+          startDelta: W,
+          endDelta: g,
           revert: N
         }) => {
-          const B = await this.$wire.onEventDrop(
+          const B = await this.$wire.onEventResize(
             A,
-            f,
             h,
             R,
             W,
@@ -22687,51 +22678,48 @@ function D8({
           );
           typeof B == "boolean" && B && N();
         },
-        eventResize: async ({
-          event: A,
-          oldEvent: f,
-          relatedEvents: h,
-          startDelta: R,
-          endDelta: W,
-          revert: g
-        }) => {
-          const N = await this.$wire.onEventResize(
-            A,
-            f,
-            h,
-            R,
-            W
-          );
-          typeof N == "boolean" && N && g();
-        },
-        dateClick: ({ dateStr: A, allDay: f, view: h, resource: R }) => {
+        dateClick: ({ dateStr: A, allDay: h, view: R, resource: W }) => {
           r && this.$wire.onDateSelect(
             A,
             null,
-            f,
-            h,
-            R
-          );
-        },
-        select: ({ startStr: A, endStr: f, allDay: h, view: R, resource: W }) => {
-          r && this.$wire.onDateSelect(
-            A,
-            f,
             h,
             R,
             W
           );
+        },
+        select: ({ startStr: A, endStr: h, allDay: R, view: W, resource: g }) => {
+          r && this.$wire.onDateSelect(
+            A,
+            h,
+            R,
+            W,
+            g
+          );
         }
-      }), this.calendar.render(), window.addEventListener(
+      }), this.calendar.render();
+      const u = t === "fa" || t === "fa-AF";
+      window.addEventListener(
         "filament-fullcalendar--refresh",
         () => this.calendar.refetchEvents()
-      ), window.addEventListener(
-        "filament-fullcalendar--prev",
-        () => this.calendar.prev()
-      ), window.addEventListener(
-        "filament-fullcalendar--next",
-        () => this.calendar.next()
-      ), window.addEventListener(
+      ), window.addEventListener("filament-fullcalendar--prev", () => {
+        if (u && this.calendar.view.type === "dayGridMonth") {
+          const A = this.calendar.getDate(), R = Ne(A).subtract(1, "jMonth").toDate();
+          console.log("[FullCalendar] Jalali prev:", {
+            from: Ne(A).format("jYYYY-jMM-jDD"),
+            to: Ne(R).format("jYYYY-jMM-jDD")
+          }), this.calendar.gotoDate(R);
+        } else
+          this.calendar.prev();
+      }), window.addEventListener("filament-fullcalendar--next", () => {
+        if (u && this.calendar.view.type === "dayGridMonth") {
+          const A = this.calendar.getDate(), R = Ne(A).add(1, "jMonth").toDate();
+          console.log("[FullCalendar] Jalali next:", {
+            from: Ne(A).format("jYYYY-jMM-jDD"),
+            to: Ne(R).format("jYYYY-jMM-jDD")
+          }), this.calendar.gotoDate(R);
+        } else
+          this.calendar.next();
+      }), window.addEventListener(
         "filament-fullcalendar--today",
         () => this.calendar.today()
       ), window.addEventListener(

@@ -34,6 +34,9 @@
     - [locale(`string` | `null` $locale)](#localestring--null-locale)
     - [plugins(`array` $plugins, `bool` $merge)](#pluginsarray-plugins-bool-merge)
     - [config(`array` $config)](#configarray-config)
+- [Solar Hijri (Jalali) Calendar Support](#solar-hijri-jalali-calendar-support)
+  - [Using Jalali Calendar](#using-jalali-calendar)
+  - [Features](#features-1)
 - [Interacting with actions](#interacting-with-actions)
     - [Customizing actions](#customizing-actions)
     - [Authorizing actions](#authorizing-actions)
@@ -295,6 +298,52 @@ See: [plugins](https://fullcalendar.io/docs/plugin-index)
 The configuration of the calendar. Not all configurations have a dedicated fluent method to interact with it, therefore you can pass pretty much any configuration listed in the FullCalendar's TOC. See: [FullCalendar Docs](https://fullcalendar.io/docs#toc)
 
 `config` (Default: `[]`)
+
+<br>
+
+# Solar Hijri (Jalali) Calendar Support
+
+This package includes support for the Solar Hijri (Jalali) calendar system commonly used in Iran and Afghanistan through the integration of [moment-jalaali](https://github.com/jalaali/moment-jalaali).
+
+## Using Jalali Calendar
+
+To use the Jalali calendar in your widget, configure the locale to Persian (`fa`) or Dari (`fa-AF`):
+
+```php
+<?php
+
+namespace App\Providers\Filament;
+
+use Filament\Panel;
+use Filament\PanelProvider;
+use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->default()
+            ->id('admin')
+            ->path('admin')
+            ...
+            ->plugin(
+                FilamentFullCalendarPlugin::make()
+                    ->locale('fa') // Set Persian locale for Jalali calendar
+                    ->plugins(['dayGrid', 'timeGrid', 'moment']) // Include moment plugin
+            );
+    }
+}
+```
+
+The moment-jalaali library automatically extends Moment.js with Jalali calendar support, so dates will be displayed in the Solar Hijri calendar format when using Persian locale.
+
+## Features
+
+- **Automatic date conversion**: Dates are automatically converted between Gregorian and Jalali calendars
+- **Persian month and day names**: When using Persian locale, month and day names are displayed in Persian
+- **Compatible with all FullCalendar features**: Works seamlessly with all existing FullCalendar plugins and features
+- **No breaking changes**: The Gregorian calendar continues to work as default for other locales
 
 <br>
 

@@ -1,5 +1,9 @@
 import { Calendar } from '@fullcalendar/core'
 import locales from '@fullcalendar/core/locales-all'
+import momentJalaali from 'moment-jalaali'
+
+// Configure moment-jalaali to use Jalaali calendar
+momentJalaali.loadPersian({ usePersianDigits: false })
 
 export default function fullcalendar({
     locale,
@@ -19,15 +23,35 @@ export default function fullcalendar({
         calendar: null,
 
         init() {
-            this.calendar = new Calendar(this.$el, {
+            // Prepare calendar configuration
+            const calendarConfig = {
                 plugins: plugins.map((plugin) => availablePlugins[plugin]),
                 locale,
                 ...(schedulerLicenseKey && { schedulerLicenseKey }),
                 timeZone,
                 editable,
                 selectable,
-                ...config,
                 locales,
+            }
+
+            // Configure Jalali calendar system for Persian locales
+            if (locale === 'fa' || locale === 'fa-AF') {
+                console.log('[FullCalendar] Configuring Jalali calendar for locale:', locale);
+                
+                // Override title format to show Jalali date  
+                calendarConfig.titleFormat = function(date) {
+                    const m = momentJalaali(date.date.marker)
+                    return m.format('jMMMM jYYYY')
+                }
+                
+                // Configure fixed week count
+                calendarConfig.fixedWeekCount = false
+                calendarConfig.showNonCurrentDates = false
+            }
+
+            this.calendar = new Calendar(this.$el, {
+                ...calendarConfig,
+                ...config, // Apply user config AFTER our Jalali config so they can still override if needed
                 eventClassNames,
                 eventContent,
                 eventDidMount,
@@ -129,17 +153,44 @@ export default function fullcalendar({
 
             this.calendar.render()
 
+            // Override prev/next navigation for Jalali calendar
+            const isJalali = locale === 'fa' || locale === 'fa-AF'
+            
             window.addEventListener('filament-fullcalendar--refresh', () =>
                 this.calendar.refetchEvents(),
             )
 
-            window.addEventListener('filament-fullcalendar--prev', () =>
-                this.calendar.prev(),
-            )
+            window.addEventListener('filament-fullcalendar--prev', () => {
+                if (isJalali && this.calendar.view.type === 'dayGridMonth') {
+                    // Get current date and move back by one Jalali month
+                    const currentDate = this.calendar.getDate()
+                    const m = momentJalaali(currentDate)
+                    const newDate = m.subtract(1, 'jMonth').toDate()
+                    console.log('[FullCalendar] Jalali prev:', {
+                        from: momentJalaali(currentDate).format('jYYYY-jMM-jDD'),
+                        to: momentJalaali(newDate).format('jYYYY-jMM-jDD')
+                    })
+                    this.calendar.gotoDate(newDate)
+                } else {
+                    this.calendar.prev()
+                }
+            })
 
-            window.addEventListener('filament-fullcalendar--next', () =>
-                this.calendar.next(),
-            )
+            window.addEventListener('filament-fullcalendar--next', () => {
+                if (isJalali && this.calendar.view.type === 'dayGridMonth') {
+                    // Get current date and move forward by one Jalali month
+                    const currentDate = this.calendar.getDate()
+                    const m = momentJalaali(currentDate)
+                    const newDate = m.add(1, 'jMonth').toDate()
+                    console.log('[FullCalendar] Jalali next:', {
+                        from: momentJalaali(currentDate).format('jYYYY-jMM-jDD'),
+                        to: momentJalaali(newDate).format('jYYYY-jMM-jDD')
+                    })
+                    this.calendar.gotoDate(newDate)
+                } else {
+                    this.calendar.next()
+                }
+            })
 
             window.addEventListener('filament-fullcalendar--today', () =>
                 this.calendar.today(),

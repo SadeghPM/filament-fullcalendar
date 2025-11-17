@@ -50,34 +50,18 @@ export default function fullcalendar({
                 
                 // Set initial view if not specified
                 if (!config.initialView) {
-                    calendarConfig.initialView = 'dayGridMonth'
+                    calendarConfig.initialView = 'jalaliMonth'
                 }
                 
-                // Override ALL dayGrid-based views to use Jalali month boundaries
+                // Create a custom Jalali month view
                 calendarConfig.views = {
-                    dayGrid: {
+                    jalaliMonth: {
+                        type: 'dayGrid',
+                        duration: { days: 1 }, // Will be overridden by visibleRange
+                        buttonText: 'ماه',
+                        fixedWeekCount: false,
                         visibleRange: function(currentDate) {
-                            console.log('[FullCalendar] visibleRange called with:', currentDate);
-                            const m = momentJalaali(currentDate)
-                            const start = m.clone().startOf('jMonth')
-                            const end = m.clone().endOf('jMonth').add(1, 'day')
-                            
-                            console.log('[FullCalendar] Jalali range:', {
-                                start: start.format('YYYY-MM-DD'),
-                                startJalali: start.format('jYYYY-jMM-jDD'),
-                                end: end.format('YYYY-MM-DD'),
-                                endJalali: end.format('jYYYY-jMM-jDD')
-                            });
-                            
-                            return {
-                                start: start.toDate(),
-                                end: end.toDate()
-                            }
-                        }
-                    },
-                    dayGridMonth: {
-                        visibleRange: function(currentDate) {
-                            console.log('[FullCalendar] dayGridMonth visibleRange called with:', currentDate);
+                            console.log('[FullCalendar] jalaliMonth visibleRange called with:', currentDate);
                             const m = momentJalaali(currentDate)
                             const start = m.clone().startOf('jMonth')
                             const end = m.clone().endOf('jMonth').add(1, 'day')
@@ -86,7 +70,8 @@ export default function fullcalendar({
                                 start: start.format('YYYY-MM-DD'),
                                 startJalali: start.format('jYYYY-jMM-jDD'),
                                 end: end.format('YYYY-MM-DD'),
-                                endJalali: end.format('jYYYY-jMM-jDD')
+                                endJalali: end.format('jYYYY-jMM-jDD'),
+                                currentDate: momentJalaali(currentDate).format('jYYYY-jMM-jDD')
                             });
                             
                             return {
@@ -94,6 +79,10 @@ export default function fullcalendar({
                                 end: end.toDate()
                             }
                         }
+                    },
+                    // Alias dayGridMonth to jalaliMonth for compatibility
+                    dayGridMonth: {
+                        type: 'jalaliMonth'
                     }
                 }
             }

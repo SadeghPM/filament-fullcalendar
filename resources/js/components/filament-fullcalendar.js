@@ -1,5 +1,9 @@
 import { Calendar } from '@fullcalendar/core'
 import locales from '@fullcalendar/core/locales-all'
+import momentJalaali from 'moment-jalaali'
+
+// Configure moment-jalaali to use Jalaali calendar
+momentJalaali.loadPersian({ usePersianDigits: false })
 
 export default function fullcalendar({
     locale,

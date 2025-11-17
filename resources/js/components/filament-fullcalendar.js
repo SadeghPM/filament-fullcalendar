@@ -31,29 +31,41 @@ export default function fullcalendar({
                 timeZone,
                 editable,
                 selectable,
-                ...config,
                 locales,
             }
 
             // Configure Jalali calendar system for Persian locales
             if (locale === 'fa' || locale === 'fa-AF') {
-                // Override visible range to use Jalali month boundaries
-                calendarConfig.visibleRange = function(currentDate) {
-                    const m = momentJalaali(currentDate)
-                    const start = m.clone().startOf('jMonth').toDate()
-                    const end = m.clone().endOf('jMonth').add(1, 'day').toDate()
-                    return { start, end }
-                }
-                
                 // Override title format to show Jalali date
                 calendarConfig.titleFormat = function(date) {
                     const m = momentJalaali(date.date.marker)
                     return m.format('jMMMM jYYYY')
                 }
+                
+                // Configure fixed week count
+                calendarConfig.fixedWeekCount = false
+                calendarConfig.showNonCurrentDates = false
+                
+                // Override dayGridMonth view to use Jalali month boundaries
+                calendarConfig.views = {
+                    dayGridMonth: {
+                        visibleRange: function(currentDate) {
+                            const m = momentJalaali(currentDate)
+                            const start = m.clone().startOf('jMonth')
+                            const end = m.clone().endOf('jMonth').add(1, 'day')
+                            
+                            return {
+                                start: start.toDate(),
+                                end: end.toDate()
+                            }
+                        }
+                    }
+                }
             }
 
             this.calendar = new Calendar(this.$el, {
                 ...calendarConfig,
+                ...config, // Apply user config AFTER our Jalali config so they can still override if needed
                 eventClassNames,
                 eventContent,
                 eventDidMount,

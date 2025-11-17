@@ -22613,16 +22613,24 @@ function D8({
         timeZone: M,
         editable: b,
         selectable: r,
-        ...n,
         locales: wh
       };
-      (t === "fa" || t === "fa-AF") && (d.visibleRange = function(A) {
-        const f = Dn(A), h = f.clone().startOf("jMonth").toDate(), R = f.clone().endOf("jMonth").add(1, "day").toDate();
-        return { start: h, end: R };
-      }, d.titleFormat = function(A) {
+      (t === "fa" || t === "fa-AF") && (d.titleFormat = function(A) {
         return Dn(A.date.marker).format("jMMMM jYYYY");
+      }, d.fixedWeekCount = !1, d.showNonCurrentDates = !1, d.views = {
+        dayGridMonth: {
+          visibleRange: function(A) {
+            const f = Dn(A), h = f.clone().startOf("jMonth"), R = f.clone().endOf("jMonth").add(1, "day");
+            return {
+              start: h.toDate(),
+              end: R.toDate()
+            };
+          }
+        }
       }), this.calendar = new bq(this.$el, {
         ...d,
+        ...n,
+        // Apply user config AFTER our Jalali config so they can still override if needed
         eventClassNames: z,
         eventContent: i,
         eventDidMount: a,

@@ -23,7 +23,8 @@ export default function fullcalendar({
         calendar: null,
 
         init() {
-            this.calendar = new Calendar(this.$el, {
+            // Prepare calendar configuration
+            const calendarConfig = {
                 plugins: plugins.map((plugin) => availablePlugins[plugin]),
                 locale,
                 ...(schedulerLicenseKey && { schedulerLicenseKey }),
@@ -32,6 +33,27 @@ export default function fullcalendar({
                 selectable,
                 ...config,
                 locales,
+            }
+
+            // Configure Jalali calendar system for Persian locales
+            if (locale === 'fa' || locale === 'fa-AF') {
+                // Override visible range to use Jalali month boundaries
+                calendarConfig.visibleRange = function(currentDate) {
+                    const m = momentJalaali(currentDate)
+                    const start = m.clone().startOf('jMonth').toDate()
+                    const end = m.clone().endOf('jMonth').add(1, 'day').toDate()
+                    return { start, end }
+                }
+                
+                // Override title format to show Jalali date
+                calendarConfig.titleFormat = function(date) {
+                    const m = momentJalaali(date.date.marker)
+                    return m.format('jMMMM jYYYY')
+                }
+            }
+
+            this.calendar = new Calendar(this.$el, {
+                ...calendarConfig,
                 eventClassNames,
                 eventContent,
                 eventDidMount,

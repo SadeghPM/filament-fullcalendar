@@ -48,9 +48,14 @@ export default function fullcalendar({
                 calendarConfig.fixedWeekCount = false
                 calendarConfig.showNonCurrentDates = false
                 
-                // Override dayGridMonth view to use Jalali month boundaries
+                // Set initial view if not specified
+                if (!config.initialView) {
+                    calendarConfig.initialView = 'dayGridMonth'
+                }
+                
+                // Override ALL dayGrid-based views to use Jalali month boundaries
                 calendarConfig.views = {
-                    dayGridMonth: {
+                    dayGrid: {
                         visibleRange: function(currentDate) {
                             console.log('[FullCalendar] visibleRange called with:', currentDate);
                             const m = momentJalaali(currentDate)
@@ -58,6 +63,26 @@ export default function fullcalendar({
                             const end = m.clone().endOf('jMonth').add(1, 'day')
                             
                             console.log('[FullCalendar] Jalali range:', {
+                                start: start.format('YYYY-MM-DD'),
+                                startJalali: start.format('jYYYY-jMM-jDD'),
+                                end: end.format('YYYY-MM-DD'),
+                                endJalali: end.format('jYYYY-jMM-jDD')
+                            });
+                            
+                            return {
+                                start: start.toDate(),
+                                end: end.toDate()
+                            }
+                        }
+                    },
+                    dayGridMonth: {
+                        visibleRange: function(currentDate) {
+                            console.log('[FullCalendar] dayGridMonth visibleRange called with:', currentDate);
+                            const m = momentJalaali(currentDate)
+                            const start = m.clone().startOf('jMonth')
+                            const end = m.clone().endOf('jMonth').add(1, 'day')
+                            
+                            console.log('[FullCalendar] Jalali month range:', {
                                 start: start.format('YYYY-MM-DD'),
                                 startJalali: start.format('jYYYY-jMM-jDD'),
                                 end: end.format('YYYY-MM-DD'),

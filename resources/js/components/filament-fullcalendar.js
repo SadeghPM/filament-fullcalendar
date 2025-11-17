@@ -36,6 +36,8 @@ export default function fullcalendar({
 
             // Configure Jalali calendar system for Persian locales
             if (locale === 'fa' || locale === 'fa-AF') {
+                console.log('[FullCalendar] Configuring Jalali calendar for locale:', locale);
+                
                 // Override title format to show Jalali date
                 calendarConfig.titleFormat = function(date) {
                     const m = momentJalaali(date.date.marker)
@@ -50,9 +52,17 @@ export default function fullcalendar({
                 calendarConfig.views = {
                     dayGridMonth: {
                         visibleRange: function(currentDate) {
+                            console.log('[FullCalendar] visibleRange called with:', currentDate);
                             const m = momentJalaali(currentDate)
                             const start = m.clone().startOf('jMonth')
                             const end = m.clone().endOf('jMonth').add(1, 'day')
+                            
+                            console.log('[FullCalendar] Jalali range:', {
+                                start: start.format('YYYY-MM-DD'),
+                                startJalali: start.format('jYYYY-jMM-jDD'),
+                                end: end.format('YYYY-MM-DD'),
+                                endJalali: end.format('jYYYY-jMM-jDD')
+                            });
                             
                             return {
                                 start: start.toDate(),
